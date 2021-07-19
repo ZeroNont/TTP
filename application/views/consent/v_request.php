@@ -32,14 +32,16 @@
                                 <th scope="col">สิ่งของ</th>
                                 <th scope="col">ช่วงเวลาร้องขอ</th>
                                 <th scope="col">ผู้รับผิดชอบ</th>
+                                <th scope="col">ดำเนินการ</th>
                             </tr>
                     </thead>
-                         
 
                         <tbody align="center">
                                         <?php
                                             for($i=0;$i<count($arr_req);$i++){ ?>
                                                 <tr>
+                                                    
+        
                                                     <!-- column ลำดับ # -->
                                                     <td style='text-align: center;'>
                                                         <?php echo ($i+1);?>
@@ -65,8 +67,20 @@
                                                     <td>
                                                         <?php echo $arr_req[$i]->Supervisor;?>
                                                     </td>
+
+                                                    <!-- column ดำเนินการ -->
+                                                    <td style='text-align: center;'>
+
+                                                        <!-- ปุ่มแก้ไข -->
+                                                        <a href=" <?php echo site_url() . '/request/ttp_request/show_request_detail/' . $arr_req[$i]->Form_ID; ?>">
+                                                             <button class="btn btn-warning"> <i class="fa fa-pencil"></i> </button>
+                                                        </a>
+
+                                                        
+                                                    </td>
                                                     
                                                 </tr>
+                                              
                                             <?php } ?>
                                     </tbody>  
                 </table>

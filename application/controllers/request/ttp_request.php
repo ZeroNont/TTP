@@ -52,5 +52,12 @@ class ttp_request extends MainController
         $this->output('consent/v_request', $data);
     }
 
+    public function show_request_detail($id)
+	{
+        $this->load->model('M_ttp_request', 'mreq');
+        $data['arr_req'] = $this->mreq->get_by_id($id)->row();
+        $this->output('consent/v_request_detail',$data);
+	}
+
 }
 // 
