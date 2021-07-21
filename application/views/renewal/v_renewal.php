@@ -111,13 +111,16 @@ table, th, td {
                                     
                                     <tbody>    
                                     <tr>
-                                    <?php for ($i = 0; $i < 5; $i++) { ?>
+                                    <?php for ($i = 0; $i < count($arr_renew); $i++) { ?>
                                         
                                         <td style='text-align:center'> <?php echo ($i + 1); ?></td>
                                         <td>HR2021-00<?php echo ($i+1); ?></td>
-                                                <td>หัวฉีดน้ำมัน</td>
-                                                <td>คมสัน แหลมเปี๊ยบ</td>
-                                                <td>17-2<?php echo ($i+1); ?> ต.ค. 2021</td>
+
+                                                <td><?php echo $arr_renew[$i]->Item; ?></td>
+                                                <td><?php echo $arr_renew[$i]->Officer; ?></td>
+                                                <td><?php echo $arr_renew[$i]->Start_date; 
+                                                echo '-';
+                                                echo $arr_renew[$i]->End_date; ?></td>
                                                 <td>อนุมัติ</td>
                                                 <td><?php 
                                                 if($i%2==0)
@@ -130,8 +133,15 @@ table, th, td {
                                                 }
                                                 
                                                 ?></td>
+
+                                                <!--ปุ่มขอต่ออายุ-->
                                                 
-                                                <td> <i class="ni ni-email-83 text-dark"></i></td>
+                                                <td> 
+                                                <a href='<?php echo site_url() . '/Renewal/Renewal_controller/show_re_form/' ?>'>
+                                                <button class="btn btn-primary"> <i class="ni ni-email-83 text-dark"></i></button>
+                                                </a>
+                                                </td>
+                                                
                                     </tbody>            
                                                
                                                     
