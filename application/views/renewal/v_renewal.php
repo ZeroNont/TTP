@@ -92,14 +92,14 @@ table, th, td {
                                 <thead>
                                     <table >
                                     <tr>
-                                    <th>#</th> 
-                                    <th>Running No.</th> 
-                                    <th>Item</th>
-                                    <th>Office in Charge</th>
-                                    <th>Schedule</th>
-                                    <th>Status</th>
-                                    <th>Number of times</th>
-                                    <th>Submit a request</th>
+                                    <th><h5>#</h5></th> 
+                                    <th><h5>Running No.</h5></th> 
+                                    <th><h5>Item</h5></th>
+                                    <th><h5>Office in Charge</h5></th>
+                                    <th><h5>Schedule</h5></th>
+                                    <th><h5>Status</h5></th>
+                                    <th><h5>Number of times</h5></th>
+                                    <th><h5>Submit a request</h5></th>
                                     </tr>
                                    
                                 <thead>
@@ -131,7 +131,7 @@ table, th, td {
                                                 
                                                 ?></td>
                                                 
-                                                <td> <i class="ni ni-email"></i></td>
+                                                <td> <i class="ni ni-email-83 text-dark"></i></td>
                                     </tbody>            
                                                
                                                     
