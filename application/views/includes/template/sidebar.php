@@ -49,7 +49,7 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>history/ttp_history_user/index">
+                          <a class="nav-link" href="<?php echo base_url() ?>history/ttp_history/index">
                               <i class="ni ni-time-alarm text-pink"></i>
                               <span class="nav-link-text">History Form</span>
                           </a>
