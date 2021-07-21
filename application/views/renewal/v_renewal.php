@@ -57,6 +57,11 @@
  
 }
 
+table, th, td {
+
+  text-align:center;
+}
+
 
 </style>
 </head>
@@ -84,23 +89,57 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="row align-items-center">
-                                <div class="col-8">
-                                    <h1 class="mb-0">Temporary Tag Permission System</h1>
-                                </div>
+                                <thead>
+                                    <table >
+                                    <tr>
+                                    <th>#</th> 
+                                    <th>Running No.</th> 
+                                    <th>Item</th>
+                                    <th>Office in Charge</th>
+                                    <th>Schedule</th>
+                                    <th>Status</th>
+                                    <th>Number of times</th>
+                                    <th>Submit a request</th>
+                                    </tr>
+                                   
+                                <thead>
 
                             </div>
                         </div>
-                        <div class="card-body ">
-                          <h2>Welcome รอเอาชื่อจากดาต้าเบส</h2>
-<br><br>
-                          <h6>ปัจจุบัน ทางบริษัท ได้มีการให้พนักงาน </h6>
-                          <h6>ทำการวางของในจุดต่างๆ ตามที่จัดไว้</h6>
-                          <h6>ทำให้ต้องมีการขออนุญาตวางของในพื้นที่โรงงานชั่วคราว</h6>
-                          <h6>เพื่อให้มีพื้นที่จัดเก็บของชั่วคราว</h6>
-                          <h6>ในการรอการจัดการจัดจุดวางของให้เหมาะสม</h6>
-                          <br><br>
-                          <button class="button" >เริ่มกรอกแบบฟอร์ม</button> <!--เหลือเอากดลิ้งไปหน้าอื่น-->
-                        </div>
+                        
+                                
+                                    
+                                    <tbody>    
+                                    <tr>
+                                    <?php for ($i = 0; $i < 5; $i++) { ?>
+                                        
+                                        <td style='text-align:center'> <?php echo ($i + 1); ?></td>
+                                        <td>HR2021-00<?php echo ($i+1); ?></td>
+                                                <td>หัวฉีดน้ำมัน</td>
+                                                <td>คมสัน แหลมเปี๊ยบ</td>
+                                                <td>17-2<?php echo ($i+1); ?> ต.ค. 2021</td>
+                                                <td>อนุมัติ</td>
+                                                <td><?php 
+                                                if($i%2==0)
+                                                {
+                                                    echo '1/2';
+                                                }
+                                                else
+                                                {
+                                                    echo '3/3';
+                                                }
+                                                
+                                                ?></td>
+                                                
+                                                <td> <i class="ni ni-email"></i></td>
+                                    </tbody>            
+                                               
+                                                    
+                                    </tr>
+                                    <?php } ?>
+                                    </table>
+                              
+                        
                     </div>
                 </div>
             </div>

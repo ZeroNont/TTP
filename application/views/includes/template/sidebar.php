@@ -13,7 +13,7 @@
                   <!-- Nav items -->
                   <ul class="navbar-nav">
                       <li class="nav-item ">
-                          <a class="nav-link " href="<?php echo base_url() ?>home/ttp_home/index">
+                          <a class="nav-link " href="<?php echo base_url() ?>Main/Main_controller/show_main">
                               <i class="ni ni-tv-2 text-primary"></i>
                               <span class="nav-link-text">Home</span>
                           </a>
@@ -25,7 +25,7 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="examples/map.html">
+                          <a class="nav-link" href="<?php echo base_url() ?>Renewal/Renewal_controller/show_renewal">
                               <i class="ni ni-single-copy-04 text-primary"></i>
                               <span class="nav-link-text">Renewall Form</span>
                           </a>
@@ -49,7 +49,7 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>history/ttp_history_user/index">
+                          <a class="nav-link" href="<?php echo base_url() ?>history/ttp_history/index">
                               <i class="ni ni-time-alarm text-pink"></i>
                               <span class="nav-link-text">History Form</span>
                           </a>

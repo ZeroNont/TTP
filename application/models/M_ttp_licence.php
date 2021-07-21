@@ -1,5 +1,6 @@
-<?php
-include_once("Da_ttp_licence.php");
+defined('BASEPATH') or exit('No direct script access allowed');
+
+require_once 'PCS_model.php';
 
 class M_ttp_licence extends Da_ttp_licence
 {
