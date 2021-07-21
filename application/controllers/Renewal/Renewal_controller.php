@@ -3,7 +3,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class Main_controller extends MainController
+class Renewal_controller extends MainController
 {
 
 	/**
@@ -30,9 +30,9 @@ class Main_controller extends MainController
 	* @author 	Kunanya Singmee
 	* @Create Date 2564-7-10
 	*/
-	function show_main()
+	function show_renewal()
 	{
-		$this->output('main/v_main');
+		$this->output('renewal/v_renewal');
 	}
 	// function index()
 
