@@ -34,6 +34,15 @@
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>argon/assets/css/argon.css?v=1.2.0" type="text/css">
+    <link rel="stylesheet" type="text/css" href="dt/jquery.dataTables.min.css">
+    <script type="text/javascript" language="javascript" src="dt/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" language="javascript" src="dt/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+
 </head>
 
 <body>
