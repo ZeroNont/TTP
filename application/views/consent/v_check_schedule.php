@@ -1,53 +1,47 @@
 <!--
 /*
-* v_history_user
-* show History Employee
+* v_check_schedule
+* show schedule form requestd
 * @author Phatchara Khongthandee
-* @Create Date 2564-07-15
+* @Create Date 2564-07-16
 */
 -->
 
 <!DOCTYPE html>
 <html>
-<!-- CSS -->
+    <!-- CSS -->
 <style>
-#history_table td,
-#history_table th 
-{
-    padding: 8px;
-    text-align: center;
-}
-
-#history_table tr:nth-child(even) 
-{
-    background-color: #e9ecef;
-}
-
-#history_table tr:hover 
-{
-    background-color: #adb5bd;
-}
-
-#card_radius 
-{
-    margin-left: 14px;
-    margin-right: 15px;
-    border-radius: 24px;
-    width: auto;
-    min-height: 300px;
-}
-
-#history_table 
-{
-    width: 98%;
-    margin-top: 20px;
-    margin-left: 10px;
-}
+    #history_table td, #history_table th 
+    {
+        padding: 8px;
+        text-align: center;
+    }
+    #history_table tr:nth-child(even) 
+    {
+        background-color:  #dee2e6;
+        }
+    #history_table tr:hover 
+    {
+        background-color: #adb5bd;
+    }
+    #card_radius
+    {
+        margin-left: 15px;
+        margin-right: 15px;
+        border-radius: 24px;
+        width: auto;
+        min-height: 300px;
+    }
+    #history_table
+    {
+        width: 98%;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
 </style>
 
 <head>
-    <title>History</title>
-    <!--Argon CSS -->
+    <!-- Argon CSS -->
     <link rel="stylesheet" href="../../assets/css/argon.css?v=1.2.0" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -66,13 +60,6 @@
     <!-- Sidenav -->
     <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
         <div class="scrollbar-inner">
-            <!-- Brand -->
-            <div class="sidenav-header  align-items-center">
-                <a class="navbar-brand" href="javascript:void(0)">
-                    <img src="../../assets/img/brand/blue.png" class="navbar-brand-img" alt="..." width="150"
-                        height="800">
-                </a>
-            </div>
             <div class="navbar-inner">
                 <!-- Collapse -->
                 <div class="collapse navbar-collapse" id="sidenav-collapse-main">
@@ -97,8 +84,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profile.html">
-                                <i class="fas fa-calendar-check text-dark"></i>
+                            <a class="nav-link active text-red" href="profile.html">
+                                <i class="fas fa-calendar-check text-red active"></i>
                                 <span class="nav-link-text">Check Schedule</span>
                             </a>
                         </li>
@@ -115,8 +102,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active text-red" href="upgrade.html">
-                                <i class="fas fa-history text-red active"></i>
+                            <a class="nav-link" href="upgrade.html">
+                                <i  class="fas fa-history text-dark"></i>
                                 <span class="nav-link-text">History Form</span>
                             </a>
                         </li>
@@ -131,61 +118,56 @@
             </div>
         </div>
     </nav>
-
     <!-- Table Requestd form -->
     <div class="card-header" id="card_radius">
-        <div class="table-responsive">
-            <table class="table align-items-center" id="history_table">
-                <thead class="thead-light">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Running No.</th>
-                        <th scope="col">Item</th>
-                        <th scope="col">Schedule</th>
-                        <th scope="col">Officer in charge</th>
-                    </tr>
-                </thead>
-                <tbody class="list">
-                    <a href="<?php echo site_url().'history/ttp_history/'?>">
-                    <?php for ($i = 0; $i < count($em_form); $i++){?>
-                    <tr>
-                        <td class="text-center">
-                            <?php echo ($i + 1); ?> </td>
-                        </td>
-                        <td>
-                            <?php echo $em_form[$i]->Form_ID ?></td>
-                        </td>
-                        <td>
-                            <?php echo $em_form[$i]->Item ?></td>
-                        </td>
-                        <td>
-                        <?php echo $em_form[$i]->Start_date." - ".$em_form[$i]->End_date ?></td>
-                        </td>
-                        <td>
-                            <?php echo $em_form[$i]->Officer ?></td>
-                        </td>
-                    </tr>
-                    <?php }?>
-                </tbody>
-            </table>
-            </div>
+            <div class="table-responsive">
+                <table class="table align-items-center" id="history_table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#</th>
+                                <th scope="col">Running No.</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Officer in charge</th>
+                                <th scope="col">Remaining time</th>
+                                <th scope="col">End Date</th>
+                            </tr>
+                    </thead>
+                        <tbody class="list">
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    HR2021-001
+                                </td>
+                                <td>
+                                    หัวฉีดน้ำมัน และเชื้อเพลิง
+                                </td>
+                                <td>
+                                    20/12/2021 - 20/12/2022
+                                </td>
+                                <td>
+                                    Argon Design System Argon Design System
+                                </td>
+                                <td>
+                                    11
+                                </td>
+                            </tr>
+                        </tbody>   
+                </table>
+            <div>
         </div>
-        <!-- Argon Scripts -->
-        <!-- Core -->
-        <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="../../assets/vendor/js-cookie/js.cookie.js"></script>
-        <script src="../../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-        <script src="../../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-        <!-- Argon JS -->
-        <script src="../../assets/js/argon.js?v=1.2.0"></script>
-        <script type="text/javascript">
-        $(function() {
-            $('#datetimepickerDemo').datetimepicker({
-                minDate: new Date()
-            });
+    </div>          
+
+    <!-- Argon JS -->
+    <script src="../../assets/js/argon.js?v=1.2.0"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('#datetimepickerDemo').datetimepicker({
+            minDate: new Date()
         });
-        </script>
+    });
+    </script>
 </body>
 
 </html>

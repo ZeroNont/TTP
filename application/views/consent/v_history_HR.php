@@ -189,10 +189,17 @@
                                         <?php echo $hr_form[$i]->Item ?></td>
                                     </td>
                                     <td>
-                                    <?php echo $hr_form[$i]->Start_date." - ".$ap_form[$i]->End_date ?></td>
+                                    <?php echo $hr_form[$i]->Start_date." - ".$hr_form[$i]->End_date ?></td>
                                     </td>
                                     <td>
                                         <?php echo $hr_form[$i]->Officer ?></td>
+                                    </td>
+                                     <!-- column ดำเนินการ -->
+                                    <td style='text-align: center;'>
+                                      <!-- ปุ่มดำเนินการ -->
+                                            <a href=" <?php echo site_url() . '/history/ttp_history/show_history_detail/' . $hr_form[$i]->Form_ID; ?>">
+                                                <button class="btn btn-warning"> <i class="fa fa-pencil"></i> </button>
+                                            </a>
                                     </td>
                                 </tr>
                             <?php }?>

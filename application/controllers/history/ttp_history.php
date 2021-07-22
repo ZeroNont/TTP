@@ -40,21 +40,30 @@ class ttp_history extends MainController
 	* @Create Date 2564-7-19
 	*/
  
+    function index()
+    {
+        $this->output('consent/v_history_user');
+    }
+    // function index()
+    
     function show_history_employee(){
+        $id = '326';
         $this->load->model('M_history_user', 'ttp');
-        $data['arr_form'] = $this->ttp->get_history_em()->result();
+        $data['em_form'] = $this->ttp->get_history_em($id)->result();
         $this->output('consent/v_history_user', $data);
     }// function show_history_em()
 
     function show_history_supervisor(){
+        $id = '003' ;
         $this->load->model('M_history_user', 'ttp');
-        $data['sp_form'] = $this->ttp->get_history_sp()->result();
+        $data['sp_form'] = $this->ttp->get_history_sp($id)->result();
         $this->output('consent/v_history_supervisor', $data);
     } // function show_history_supervisor()
 
     function show_history_appplant(){
+        $id = '002' ;
         $this->load->model('M_history_user', 'ttp');
-        $data['ap_form'] = $this->ttp->get_history_ap()->result();
+        $data['ap_form'] = $this->ttp->get_history_ap($id)->result();
         $this->output('consent/v_history_approveplant', $data);
     } // function show_history_appplant()
 
@@ -63,5 +72,15 @@ class ttp_history extends MainController
         $data['hr_form'] = $this->ttp->get_history_hr()->result();
         $this->output('consent/v_history_HR', $data);
     } // function show_history_hr()
+
+    public function show_history_detail($id)
+	{
+        $this->load->model('M_ttp_history_user', 'ttp');
+        $data['arr_form'] = $this->ttp->get_by_id($id)->result()();
+        $data['arr_list'] = $this->ttp->get_form_list()->result();
+        $data['arr_approval'] = $this->ttp->get_approval()->result();
+        $data['arr_file'] = $this->ttp->get_form_file()->result();
+        $this->output('consent/v_history_detail');
+	}// function show_history_detail()
 
 }
