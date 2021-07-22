@@ -31,13 +31,14 @@
                         <?php echo $obj_plan[$i]->Empname_eng . '            ' . $obj_plan[$i]->Empsurname_eng ?>
                     </td>
                     <td>
-                        <?php echo $i ?>
-                        <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal"><i
-                                class="material-icons">Edit</i></button>
+
+
+                        <button class="btn btn-danger btn-sm" data-toggle="modal"
+                            data-target="#exampleModal<?php echo $i; ?>"><i class="material-icons">Edit</i></button>
                         <!-- Modal -->
-                        <?php echo $i ?>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+                        <div id="exampleModal<?php echo $i; ?>" class="modal fade" role="dialog">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header ">
@@ -46,28 +47,39 @@
 
                                             Edit Detail
                                         </h4>
+
                                         <button type=" button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <?php echo $i ?>
+
                                     <div class="modal-body">
-                                        <form>
-                                            <?php echo $i ?>
+                                        <form action="<?php echo site_url() . 'licence_form/licence_input/insert'; ?>"
+                                            method="post" enctype="multipart/form-data">
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Employee ID</label>
                                                 <input type="text" class="form-control"
                                                     value="<?php echo $obj_plan[$i]->Emp_ID ?>">
-
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputPassword1" class="form-label">Name</label>
                                                 <input type="text" class="form-control"
-                                                    value="<?php echo $obj_plan[$i]->Empname_eng . '    ' . $obj_plan[$i]->Empsurname_eng ?>">
+                                                    value="<?php echo $obj_plan[$i]->Empname_eng . '    ' . $obj_plan[$i]->Empsurname_eng ?>"
+                                                    disabled>
                                             </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword1" class="form-label">Plant No.</label>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo $obj_plan[$i]->Plant_No ?>">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword1" class="form-label">Plant Name</label>
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo $obj_plan[$i]->Plant_name ?>">
+                                            </div>
+                                            <button type="submit" class="btn btn-success float-right">Submit</button>
                                             <button type="button" class="btn btn-danger float-right"
                                                 data-dismiss="modal">Cancle</button>
-                                            <button type="submit" class="btn btn-success float-right">Submit</button>
                                         </form>
                                     </div>
 

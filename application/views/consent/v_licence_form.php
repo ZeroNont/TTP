@@ -127,7 +127,8 @@
                                 </label><br>
                                 <select name="Approve_Plant" id="Approve_Plant" class="form-select"
                                     aria-label="Default select example">
-                                    <option value="0">-----------Please select-----------</option>
+                                    <option value="0">-------------------------Please select-------------------------
+                                    </option>
                                     <?php for ($i = 0; $i < count($obj_plan); $i++) { ?>
                                     <option value="<?php echo $obj_plan[$i]->Emp_ID ?>">
                                         <?php echo "Plan: " . $obj_plan[$i]->Plant_No . "  :  " . $obj_plan[$i]->Plant_name . " : " . $obj_plan[$i]->Empname_th . " " . $obj_plan[$i]->Empsurname_th ?>
