@@ -3,7 +3,7 @@
 <!-- <div class="card" id="card_radius"> -->
 
 <h1>
-    Approve PlanManagement
+    Approve Plan Management (การจัดการข้อมูล Approve Plant)
     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#Add"><i class="material-icons">Add
             Approve
             Plan</i></button>
