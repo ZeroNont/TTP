@@ -41,7 +41,8 @@ class Ttp_Controller extends MainController
 	*/
 	function index()
 	{
-		$this->output('Main_index');
+		// $this->output('Main_index');
+		$this->output_login("login/v_user_login");
 	}
 	// function index()
 
