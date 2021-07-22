@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Temporary Tag  Permission System</title>
+    <title>Temporary Tag Permission System</title>
     <!-- Favicon -->
     <link rel="icon" href="<?php echo base_url(); ?>argon/assets/img/brand/denso.jpg" type="image/png">
     <!-- Fonts -->
@@ -42,6 +42,7 @@
     <script type="text/javascript" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
     <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+
 
 </head>
 

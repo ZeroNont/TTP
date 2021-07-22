@@ -1,3 +1,6 @@
+<h1>
+    permission to place (การขออนุญาตวางของ)
+</h1><br>
 <div class="col-xl-12 order-xl-1">
     <div class="card">
         <div class="card-header">
@@ -127,7 +130,8 @@
                                 </label><br>
                                 <select name="Approve_Plant" id="Approve_Plant" class="form-select"
                                     aria-label="Default select example">
-                                    <option value="0">-------------------------Please select-------------------------
+                                    <option value="0">-------------------------Please
+                                        select-------------------------
                                     </option>
                                     <?php for ($i = 0; $i < count($obj_plan); $i++) { ?>
                                     <option value="<?php echo $obj_plan[$i]->Emp_ID ?>">
