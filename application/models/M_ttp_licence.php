@@ -6,16 +6,16 @@ class M_ttp_licence extends Da_ttp_licence
     public function get_company()
     {
         $sql =
-            "SELECT *
-FROM company";
+        "SELECT *
+            FROM dbmc.company";
         $query = $this->db->query($sql);
         return $query;
     }
     public function get_supervisor()
     {
         $sql =
-            "SELECT *
-FROM employee";
+        "SELECT *
+        FROM dbmc.employee";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -23,8 +23,8 @@ FROM employee";
     {
         $sql =
             "SELECT *
-FROM plant INNER JOIN employee
-ON plant.Emp_ID = employee.Emp_ID ";
+            FROM ttps_database.plant AS pla INNER JOIN dbmc.employee AS emp
+            ON pla.Emp_ID = emp.Emp_ID ";
         $query = $this->db->query($sql);
         return $query;
     }

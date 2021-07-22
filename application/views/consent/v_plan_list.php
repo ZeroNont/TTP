@@ -33,7 +33,7 @@
                     <td>
 
 
-                        <button class="btn btn-danger btn-sm" data-toggle="modal"
+                        <button class="btn btn-warning btn-sm" data-toggle="modal"
                             data-target="#exampleModal<?php echo $i; ?>"><i class="material-icons">Edit</i></button>
                         <!-- Modal -->
 
