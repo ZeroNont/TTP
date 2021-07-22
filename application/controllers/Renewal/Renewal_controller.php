@@ -32,9 +32,16 @@ class Renewal_controller extends MainController
 	*/
 	function show_renewal()
 	{
-		$this->output('renewal/v_renewal');
+		$this->load->model('M_renewal', 'ttp');
+        $data['arr_renew'] = $this->ttp->get_all()->result();
+		$this->output('renewal/v_renewal',$data);
 	}
 	// function index()
+
+	function show_re_form()
+	{
+		$this->output('renewal/v_renew_form');
+	}
 
 }
 // 
