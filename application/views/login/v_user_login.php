@@ -73,7 +73,7 @@
                     </div>
                     <div class="text-center">
                         <!-- Button login -->
-                        <button type="submit" class="btn btn-primary my-4" onclick='login()'>เข้าสู่ระบบ</button>
+                        <button type="submit" class="btn btn-danger my-4" onclick='login()'>เข้าสู่ระบบ</button>
                     </div>
                 </div>
             </div>
