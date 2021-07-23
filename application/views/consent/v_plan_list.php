@@ -7,7 +7,7 @@ function get_Emp() {
     var empname = "";
     $.ajax({
         type: "POST",
-        url: "<?php echo base_url(); ?> /ttp_Emp/tttp_Emp/earch_by_employee_id",
+        url: "<?php echo base_url(); ?> /ttp_Emp/ttp_Emp/earch_by_employee_id",
         data: {
             "Emp_id": Emp_id
         },
