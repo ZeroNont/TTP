@@ -7,6 +7,7 @@
     <h1 style="text-align:center">
         Temporary Tag Permission Report
     </h1>
+    <br>
 
     <div class="row">
         <div class="col-lg-3"></div>
@@ -33,7 +34,7 @@
     <div class="row">
         <div class="col-xl-1"></div>
 
-        <div class="col-xl-3 col-md-6">
+        <div class="col-xl-4 col-md-6">
             <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
@@ -44,7 +45,7 @@
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                                <i class="ni ni-active-40"></i>
+                                <i class="ni ni-single-copy-04"></i>
                             </div>
                         </div>
                     </div>
@@ -57,18 +58,18 @@
         </div>
         <!-- All Requests  -->
 
-        <div class="col-xl-4 col-md-6">
+        <div class="col-xl-3 col-md-6">
             <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Approved</h5>
-                            <span class="h2 font-weight-bold mb-0">50</span>
+                            <span class="h2 font-weight-bold mb-0">25</span>
                         </div>
                         <div class="col-auto">
-                            <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                                <i class="ni ni-active-40"></i>
+                            <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                                <i class="ni ni-check-bold"></i>
                             </div>
                         </div>
                     </div>
@@ -87,12 +88,12 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <h5 class="card-title text-uppercase text-muted mb-0">All Requests</h5>
-                            <span class="h2 font-weight-bold mb-0">50</span>
+                            <h5 class="card-title text-uppercase text-muted mb-0">Pending Approval</h5>
+                            <span class="h2 font-weight-bold mb-0">20</span>
                         </div>
                         <div class="col-auto">
-                            <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
-                                <i class="ni ni-active-40"></i>
+                            <div class="icon icon-shape bg-gradient-yellow text-white rounded-circle shadow">
+                                <i class="ni ni-time-alarm"></i>
                             </div>
                         </div>
                     </div>
@@ -115,7 +116,7 @@
                 <div class="card-header bg-transparent">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
-                            <h5 class="h3 text-black mb-0">Graph number of requests for permission</h5>
+                            <h5 class="h2 text-black mb-0">Graph number of requests for permission</h5>
                         </div>
                         <div class="col-lg-6" align="right">
                             <div class="form-group">
@@ -183,6 +184,7 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
+                                <th scope="col">#</th>
                                 <th scope="col">Running No.</th>
                                 <th scope="col">Requester</th>
                                 <th scope="col">Status</th>
@@ -191,6 +193,7 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td>1</td>
                                 <th scope="row">
                                     /argon/
                                 </th>
@@ -200,11 +203,12 @@
                                 <td>
                                     340
                                 </td>
-                                <td>
-                                    <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
+                                <td >
+                                    <i class="fas fa-search text-success mr-3"></i>
                                 </td>
                             </tr>
                             <tr>
+                                <td>2</td>
                                 <th scope="row">
                                     /argon/index.html
                                 </th>
@@ -215,51 +219,10 @@
                                     319
                                 </td>
                                 <td>
-                                    <i class="fas fa-arrow-down text-warning mr-3"></i> 46,53%
+                                    <i class="fas fa-search text-success mr-3"></i>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row">
-                                    /argon/charts.html
-                                </th>
-                                <td>
-                                    3,513
-                                </td>
-                                <td>
-                                    294
-                                </td>
-                                <td>
-                                    <i class="fas fa-arrow-down text-warning mr-3"></i> 36,49%
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    /argon/tables.html
-                                </th>
-                                <td>
-                                    2,050
-                                </td>
-                                <td>
-                                    147
-                                </td>
-                                <td>
-                                    <i class="fas fa-arrow-up text-success mr-3"></i> 50,87%
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    /argon/profile.html
-                                </th>
-                                <td>
-                                    1,795
-                                </td>
-                                <td>
-                                    190
-                                </td>
-                                <td>
-                                    <i class="fas fa-arrow-down text-danger mr-3"></i> 46,53%
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
