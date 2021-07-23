@@ -43,7 +43,7 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="examples/login.html">
+                          <a class="nav-link" href="<?php echo base_url() ?>check_status/ttp_check_status/index">
                               <i class="ni ni-tag text-info"></i>
                               <span class="nav-link-text">Status Form</span>
                           </a>
@@ -74,13 +74,13 @@
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="<?php echo base_url() ?>plan_management/plan_list/index">
-                              <i class="ni ni-single-02 text-default"></i>
+                              <i class="ni ni-single-02 text-green"></i>
                               <span class="nav-link-text">Plant Management</span>
                           </a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="examples/upgrade.html">
-                              <i class="ni ni-chart-bar-32 text-purple"></i>
+                              <i class="ni ni-chart-bar-32 text-blue"></i>
                               <span class="nav-link-text">Report</span>
                           </a>
                       </li>

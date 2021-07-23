@@ -5,7 +5,7 @@
 * @input  -   
 * @output -
 * @author Jirayut Saifah
-* @Create Date 2564-7-21
+* @Create Date 2564-7-23
 */
 ?>
 <?php
@@ -37,7 +37,7 @@ class ttp_Emp extends MainController
 	* @input 
 	* @output 
 	* @author 	Jirayut Saifah
-	* @Create Date 2564-7-21
+	* @Create Date 2564-7-23
 	*/
    function search_by_employee_id(){
        $Emp_id=$this->post('Emp_id');
