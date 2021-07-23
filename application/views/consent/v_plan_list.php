@@ -1,7 +1,30 @@
 <!-- ตารางรายการคำขอ -->
 <!-- Table Requestd form -->
 <!-- <div class="card" id="card_radius"> -->
-
+<script>
+function get_Emp() {
+    Emp_id = document.getElementById('Emp_id').value;
+    var empname = "";
+    $.ajax({
+        type: "POST",
+        url: "<?php echo base_url(); ?> /ttp_Emp/tttp_Emp/earch_by_employee_id",
+        data: {
+            "Emp_id": Emp_id
+        },
+        dataType: "JSON",
+        success: function(data, status) {
+            if (data.length == 0) {
+                document.getElementById("showname_modal").value = "ไม่มีข้อมูล";
+            } else {
+                empname = data[0].Empname_eng. + " " + data[0].Empsurename_eng
+                document.getElementById("showname_modal").value = empname;
+                console.log(999)
+                console.log(empname)
+            }
+        }
+    });
+}
+</script>
 <h1>
     Approve Plan Management (การจัดการข้อมูล Approve Plant)
     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#Add"><i class="material-icons">Add
@@ -27,12 +50,13 @@
                 <form action="<?php echo site_url() . 'plan_management/plan_input/insert'; ?>" method="post"
                     enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Employee ID</label>
-                        <input type="text" class="form-control" name="Emp_ID">
+                        <label for="focusedinput" class="form-label">Employee ID</label>
+                        <input type="text" class="form-control" name="Emp_ID" id="Emp_id_modal" placeholder="JS000xxx"
+                            onkeyup="get_Emp()">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Name</label>
-                        <input type="text" class="form-control" disabled>
+                        <label for="focusedinput" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="showname_modal" disabled>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Plant No.</label>
@@ -105,7 +129,8 @@
                                         <form action="<?php echo site_url() . 'licence_form/licence_input/insert'; ?>"
                                             method="post" enctype="multipart/form-data">
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Employee ID</label>
+                                                <label for="exampleInputEmail1" class="form-label">Employee
+                                                    ID</label>
                                                 <input type="text" class="form-control"
                                                     value="<?php echo $obj_plan[$i]->Emp_ID ?>">
                                             </div>
@@ -116,12 +141,14 @@
                                                     disabled>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="exampleInputPassword1" class="form-label">Plant No.</label>
+                                                <label for="exampleInputPassword1" class="form-label">Plant
+                                                    No.</label>
                                                 <input type="text" class="form-control"
                                                     value="<?php echo $obj_plan[$i]->Plant_No ?>">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="exampleInputPassword1" class="form-label">Plant Name</label>
+                                                <label for="exampleInputPassword1" class="form-label">Plant
+                                                    Name</label>
                                                 <input type="text" class="form-control"
                                                     value="<?php echo $obj_plan[$i]->Plant_name ?>" id="province_auto">
                                             </div>
