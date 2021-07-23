@@ -28,4 +28,13 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    public function get_status()
+    {
+        $sql =
+            "SELECT *
+            FROM ttps_database.requested_form WHERE CURDATE() <= End_date  
+            LIMIT 0,30";
+        $query = $this->db->query($sql);
+        return $query;
+    }
 }

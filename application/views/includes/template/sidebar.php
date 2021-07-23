@@ -43,11 +43,13 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="examples/login.html">
+                          <a class="nav-link" href="<?php echo base_url() ?>check_status/ttp_check_status/index">
                               <i class="ni ni-tag text-info"></i>
                               <span class="nav-link-text">Status Form</span>
                           </a>
                       </li>
+
+
                       <li class="nav-item">
                           <a class="nav-link" href="<?php echo base_url() ?>history/ttp_history/index">
                               <i class="ni ni-time-alarm text-pink"></i>
@@ -60,9 +62,33 @@
                               <span class="nav-link-text">Requested</span>
                           </a>
                       </li>
+
+                  </ul>
+                  <hr class="my-3">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="examples/upgrade.html">
+                              <i class="ni ni-active-40 text-red"></i>
+                              <span class="nav-link-text">Approve Form</span>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="<?php echo base_url() ?>plan_management/plan_list/index">
+                              <i class="ni ni-single-02 text-green"></i>
+                              <span class="nav-link-text">Plant Management</span>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="<?php echo base_url() ?>Report/Report_controller/show_report">
+                              <i class="ni ni-chart-bar-32 text-blue"></i>
+                              <span class="nav-link-text">Report</span>
+                          </a>
+                      </li>
                   </ul>
                   <!-- Divider -->
+
               </div>
+
           </div>
       </div>
   </nav>
