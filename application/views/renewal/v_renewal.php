@@ -121,24 +121,30 @@ table, th, td {
                                                 <td><?php echo $arr_renew[$i]->Start_date; 
                                                 echo '-';
                                                 echo $arr_renew[$i]->End_date; ?></td>
-                                                <td>อนุมัติ</td>
-                                                <td><?php 
-                                                if($i%2==0)
+                                                <td>
+                                                <?php
+                                                if($arr_renew[$i]->Status==0)
                                                 {
-                                                    echo '1/2';
+                                                    echo 'รออนุมัติ';
                                                 }
                                                 else
                                                 {
-                                                    echo '3/3';
+                                                    echo 'อนุมัติ';
                                                 }
+                                                ?>
+                                                </td>
+
+                                                <td><?php 
+                                                echo $arr_renew[$i]->Form_count; echo '/3';
                                                 
                                                 ?></td>
 
                                                 <!--ปุ่มขอต่ออายุ-->
                                                 
                                                 <td> 
-                                                <a href='<?php echo site_url() . '/Renewal/Renewal_controller/show_re_form/' ?>'>
-                                                <button class="btn btn-primary"> <i class="ni ni-email-83 text-dark"></i></button>
+                                                <a href='<?php echo site_url() . 'Renewal/Renewal_controller/show_reform/'
+                                                .$arr_renew[$i]->Form_ID?>'>
+                                                <button> <i class="ni ni-email-83 text-dark"></i></button>
                                                 </a>
                                                 </td>
                                                 

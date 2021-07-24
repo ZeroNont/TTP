@@ -6,30 +6,7 @@ require_once(dirname(__FILE__) . "/../MainController.php");
 class Renewal_controller extends MainController
 {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-
-	/*
-	* index
-	* 
-	* @input 
-	* @output 
-	* @author 	Kunanya Singmee
-	* @Create Date 2564-7-10
-	*/
+	
 	function show_renewal()
 	{
 		$this->load->model('M_renewal', 'ttp');
@@ -38,10 +15,29 @@ class Renewal_controller extends MainController
 	}
 	// function index()
 
-	function show_re_form()
-	{
-		$this->output('renewal/v_renew_form');
-	}
+	function show_reform($Form_ID)
+    {
+		$this->load->model('M_renewal', 'ttp');
+        $data['arr_comp'] = $this->ttp->get_company()->result();
+        $data['arr_plan'] = $this->ttp->get_plan()->result();
+        $data['arr_supervisor'] = $this->ttp->get_supervisor()->result();
+        $data['arr_formfile'] = $this->ttp->get_formfile()->result();
+        $data['arr_renew'] = $this->ttp->get_bydate($Form_ID)->result();
+        $this->output('renewal/v_renew_form', $data);
+    
+	} //show_table
 
+	function update_date()
+	{
+		
+		$this->load->model('Da_renewal', 'ttp');
+
+		date_add($End_date,('Add_date'));
+		$this->ttp->End_date = $this->input->post('End_date');
+		$this->ttp->update();
+		redirect('/Renewal/Renewal_controller/show_renewal');
+
+		
+	}
 }
 // 
