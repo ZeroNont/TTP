@@ -44,7 +44,43 @@
     <script type="text/javascript" src="DataTables/datatables.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <style type="text/css">
+    #printable {
+        display: block;
+    }
 
+    @media print {
+        #non-printable {
+            display: none;
+        }
+
+        #printable {
+            display: block;
+        }
+
+        #hid {
+            display: none;
+            /* ซ่อน  */
+        }
+
+        body {
+            -webkit-print-color-adjust: exact;
+        }
+
+        /* กำหนดให้สีในหน้าเว็บสามารถพิมพ์ได้อย่างถูกต้อง */
+        .hideWhenPrint {
+            /* // เนื้อหาในคลาส hideWhenPrint จะถูกปิดตาทิ้งไปเมื่อพิมพ์บนกระดาษ */
+            display: none;
+        }
+
+
+
+        @page {
+            margin: 2.5cm;
+            size: A3 landscape;
+        }
+    }
+    </style>
 </head>
 
 <body>

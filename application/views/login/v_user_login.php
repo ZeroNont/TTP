@@ -18,26 +18,26 @@
                 User_login: $('#User_login').val(),
                 Pass_login: $('#Pass_login').val()
             },
-            success: function(res) {
-                console.log('success')
-                console.log(res)
-                if (res == true) {
+            success: function(data,status) {
+                console.log(status)
+                var obj = JSON.parse(data)
+                console.log(obj.Enp_ID)
+                if (status == 'success') {
                     setTimeout(function() {
                         window.location.href =
-                            '<?php echo site_url() . 'Login/Login_controller/show_user_home' ?>'
-
+                            '<?php echo site_url() . 'Login/Login_controller/show_user_home/' ?>'+obj.Enp_ID
                     }, 500)
                 } //if
                 else {
                     console.log('fail')
                     alert('รหัสผ่านผิด กรุณากรอกใหม่อีกครั้ง')
-                    console.log(res)
+                    console.log(status)
 
                 } //else
             },
-            error: function(res) {
+            error: function(status) {
                 console.log('fail')
-                console.log(res)
+                console.log(status)
             }
         });
         

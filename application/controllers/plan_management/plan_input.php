@@ -49,5 +49,21 @@ class plan_input extends MainController
         $this->ttp->insert();
         redirect('plan_management/plan_list/index');
     }
+    function edit()
+    {
+        $this->load->model('Da_ttp_plan_list', 'ttp');
+        $this->ttp->Emp_ID = $this->input->post('Emp_ID');
+        $this->ttp->Plant_name = $this->input->post('Plant_name');
+        $this->ttp->Plant_No = $this->input->post('Plant_No');
+        $this->ttp->Plant_ID = $this->input->post('Plant_ID');
+        // echo  $this->input->post('Plant_ID');
+        // echo  $this->input->post('Plant_name');
+        // echo  $this->input->post('Emp_ID');
+        // echo  $this->input->post('Plant_name');
+        // echo  $this->input->post('Plant_No');
+
+        $this->ttp->update();
+        redirect('plan_management/plan_list/index');
+    }
 }
 // 

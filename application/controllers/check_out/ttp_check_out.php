@@ -5,14 +5,14 @@
 * @input  -   
 * @output -
 * @author Jirayut Saifah
-* @Create Date 2564-7-16
+* @Create Date 2564-7-23
 */
 ?>
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class licence_input extends MainController
+class ttp_check_out extends MainController
 {
 
     /**
@@ -37,15 +37,23 @@ class licence_input extends MainController
 	* @input 
 	* @output 
 	* @author 	Jirayut Saifah
-	* @Create Date 2564-7-16
+	* @Create Date 2564-7-23
 	*/
     function index()
     {
         $this->load->model('M_ttp_licence', 'ttp');
-        $data['obj_company'] = $this->ttp->get_company()->result();
-        $data['obj_plan'] = $this->ttp->get_plan()->result();
-        $data['obj_supervisor'] = $this->ttp->get_supervisor()->result();
-        $this->output('consent/v_licence_form', $data);
+        $data['obj_form'] = $this->ttp->get_form()->result();
+        $this->output('consent/v_check_out', $data);
+    }
+    function check_out($id)
+    {
+        $num = 5;
+        $this->load->model('Da_ttp_licence', 'ttp');
+        $this->ttp->Form_ID = $id;
+        $this->ttp->Status = $num;
+        $this->ttp->check_out();
+        redirect('check_out/ttp_check_out/index');
+       
     }
     // function index()
     function insert()
@@ -61,6 +69,7 @@ class licence_input extends MainController
 
         $this->load->model('Da_ttp_licence', 'ttp');
         $this->ttp->Emp_ID = $i;
+        $this->ttp->Form_ID = $id;
         $this->ttp->Item = $this->input->post('Item');
         $this->ttp->Start_date = $this->input->post('Start_date');
         $this->ttp->End_date = $this->input->post('End_date');
@@ -68,13 +77,12 @@ class licence_input extends MainController
         $this->ttp->Reason = $this->input->post('Reason');
         $this->ttp->Officer = $this->input->post('Officer');
         $this->ttp->Tell = $this->input->post('Tell');
-        $this->ttp->Supervisor_ID = $this->input->post('Supervisor');
+        $this->ttp->Supervisor = $this->input->post('Supervisor');
         $this->ttp->Company_ID = $this->input->post('Company_ID');
-        $this->ttp->Approve_Plant_ID = $this->input->post('Approve_Plant');
+        $this->ttp->Approve_Plant = $this->input->post('Approve_Plant');
         $this->ttp->Form_count = $j;
         //echo $this->input->post('Company_ID');
         $this->ttp->insert_form();
-        $this->ttp->insert_approve();
         move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
         $this->ttp->Layout_location = $Layout_name;
         move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
