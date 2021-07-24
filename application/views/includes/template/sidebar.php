@@ -32,7 +32,7 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="examples/profile.html">
+                          <a class="nav-link" href="<?php echo base_url() ?>check_schedule/ttp_check_schedule/show_check_schedule">
                               <i class="ni ni-calendar-grid-58 text-yellow"></i>
                               <span class="nav-link-text">Check Schedule</span>
                           </a>
@@ -52,7 +52,7 @@
 
 
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>history/ttp_history/index">
+                          <a class="nav-link" href="<?php echo base_url() ?>history/ttp_history/show_history_employee">
                               <i class="ni ni-time-alarm text-pink"></i>
                               <span class="nav-link-text">History Form</span>
                           </a>
@@ -80,7 +80,7 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="examples/upgrade.html">
+                          <a class="nav-link" href="<?php echo base_url() ?>Report/Report_controller/show_report">
                               <i class="ni ni-chart-bar-32 text-blue"></i>
                               <span class="nav-link-text">Report</span>
                           </a>
