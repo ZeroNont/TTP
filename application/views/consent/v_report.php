@@ -41,7 +41,15 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">All Requests</h5>
-                            <span class="h2 font-weight-bold mb-0">50</span>
+                            <span class="h2 font-weight-bold mb-0">
+                                <?php
+                                $total_request = 0;
+                                for ($i = 0; $i < count($requested); $i++) {
+                                    $total_request += 1;
+                                }
+                                echo $total_request;
+                                ?>
+                            </span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -50,8 +58,8 @@
                         </div>
                     </div>
                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span class="text-nowrap">Since last month</span>
+                        <!-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span> -->
+                        <span class="text-nowrap">Send to requests</span>
                     </p>
                 </div>
             </div>
@@ -65,7 +73,15 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Approved</h5>
-                            <span class="h2 font-weight-bold mb-0">25</span>
+                            <span class="h2 font-weight-bold mb-0">
+                                <?php
+                                $total_approval = 0;
+                                for ($i = 0; $i < count($approval); $i++) {
+                                    $total_approval += 1;
+                                }
+                                echo $total_approval;
+                                ?>
+                            </span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -74,8 +90,8 @@
                         </div>
                     </div>
                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span class="text-nowrap">Since last month</span>
+                        <!-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span> -->
+                        <span class="text-nowrap">Send to requests</span>
                     </p>
                 </div>
             </div>
@@ -89,7 +105,12 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Pending Approval</h5>
-                            <span class="h2 font-weight-bold mb-0">20</span>
+                            <span class="h2 font-weight-bold mb-0">
+                                <?php
+                                $pending_approval = count($requested) - $total_approval;
+                                echo $pending_approval;
+                                ?>
+                            </span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-gradient-yellow text-white rounded-circle shadow">
@@ -98,8 +119,8 @@
                         </div>
                     </div>
                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span class="text-nowrap">Since last month</span>
+                        <!-- <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span> -->
+                        <span class="text-nowrap">Send to requests</span>
                     </p>
                 </div>
             </div>
@@ -192,37 +213,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <th scope="row">
-                                    /argon/
-                                </th>
-                                <td>
-                                    4,569
-                                </td>
-                                <td>
-                                    340
-                                </td>
-                                <td >
-                                    <i class="fas fa-search text-success mr-3"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <th scope="row">
-                                    /argon/index.html
-                                </th>
-                                <td>
-                                    3,985
-                                </td>
-                                <td>
-                                    319
-                                </td>
-                                <td>
-                                    <i class="fas fa-search text-success mr-3"></i>
-                                </td>
-                            </tr>
-
+                            <?php
+                            for ($i = 0; $i < count($requested); $i++) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $i + 1; ?></td>
+                                    <th scope="row"><?php echo $requested[$i]->HR_ID ?></th>
+                                    <th scope="row"><?php echo $requested[$i]->Officer ?></th>
+                                    <?php
+                                    if ($requested[$i]->Status == '4') {
+                                        $Status = 'ยังอยู่ในคลัง';
+                                    } else {
+                                        $Status = 'สิ้นสุดการวาง';
+                                    }
+                                    ?>
+                                    <td><?php echo $Status ?></td>
+                                    <td>
+                                        <i class="fas fa-search text-success mr-3"></i>
+                                    </td>
+                                </tr>
+                            <?php  } ?>
                         </tbody>
                     </table>
                 </div>
