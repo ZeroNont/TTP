@@ -60,24 +60,17 @@ class ttp_request extends MainController
         $this->output('consent/v_request_detail',$data);
 	}
 
-     public function update_request_form()
-     {
-         $this->load->model('Da_ttp_request','daup');
-         $this->daup->fr_id =  $this->input->post('fr_id');
-         $this->daup->fr_first_name =  $this->input->post('first_name');
-         $this->daup->fr_last_name =  $this->input->post('last_name');
-         $this->daup->fr_pf_id =  $this->input->post('pf_id');
+    public function insert_reason()
+    {
+   
+        $this->load->model('Da_ttp_request','dain');
 
-         if($this->input->post('fr_status') == 'T'){
-             $this->daup->fr_status = '1';
-         }else{
-             $this->daup->fr_status = '2';
-         }
+        $this->dain->reject_reason =  $this->input->post('reject_reason');
+        
+        $this->dain->insert();
 
-         $this->daup->update();
-
-         redirect('/Ossd_c_2/Select/show_table');
-     }
+        redirect('/request/ttp_request/show_request_list');
+    }//function insert friend
 
 }
 // 

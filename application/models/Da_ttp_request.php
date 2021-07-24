@@ -5,10 +5,19 @@ require 'ttps_model.php';
 
 class Da_ttp_request extends ttps_model
 {
+    public $reject_reason;
     
     public function __construct()
     {
         parent::__construct();
+    }
+
+    public function insert()
+    {
+        $sql = "INSERT INTO ttps_database.approval(reject_reason) 
+                VALUES (?)";
+        $this->db->query($sql, array($this->reject_reason));
+
     }
 
     // public function insert_approval()
