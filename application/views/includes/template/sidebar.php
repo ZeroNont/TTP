@@ -31,7 +31,7 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="examples/profile.html">
+                          <a class="nav-link" href="<?php echo base_url() ?>check_schedule/ttp_check_schedule/index">
                               <i class="ni ni-calendar-grid-58 text-yellow"></i>
                               <span class="nav-link-text">Check Schedule</span>
                           </a>
@@ -49,7 +49,7 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>history/ttp_history/index">
+                          <a class="nav-link" href="<?php echo base_url() ?>history/ttp_history/show_history_employee">
                               <i class="ni ni-time-alarm text-pink"></i>
                               <span class="nav-link-text">History Form</span>
                           </a>

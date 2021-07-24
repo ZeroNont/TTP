@@ -174,6 +174,7 @@
                                 <th scope="col">Item</th>
                                 <th scope="col">Schedule</th>
                                 <th scope="col">Officer in charge</th>
+                                <th scope="col">Action</th>
                             </tr>
                     </thead>
                         <tbody class="list">

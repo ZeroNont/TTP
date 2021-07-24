@@ -32,7 +32,7 @@ class ttp_check_schedule extends MainController
      */
 
     /*
-	* show_history_em
+	* 
 	* 
 	* @input 
 	* @output 
@@ -40,9 +40,10 @@ class ttp_check_schedule extends MainController
 	* @Create Date 2564-7-19
 	*/
  
-    function index()
+    function show_check_schedule()
     {
-        $this->output('consent/v_check_schedule');
-    }
-    // function index()
+        $this->load->model('M_ttp_check_schedule', 'ttp');
+        $data['arr_schedule'] = $this->ttp->get_all()->result();
+        $this->output('consent/v_check_schedule', $data);
+    }// function show_check_schedule()()
 }

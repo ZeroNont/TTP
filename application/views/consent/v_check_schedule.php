@@ -133,26 +133,28 @@
                             </tr>
                     </thead>
                         <tbody class="list">
-                            <tr>
-                                <td>
-                                    1
-                                </td>
-                                <td>
-                                    HR2021-001
-                                </td>
-                                <td>
-                                    หัวฉีดน้ำมัน และเชื้อเพลิง
-                                </td>
-                                <td>
-                                    20/12/2021 - 20/12/2022
-                                </td>
-                                <td>
-                                    Argon Design System Argon Design System
-                                </td>
-                                <td>
-                                    11
-                                </td>
-                            </tr>
+                            <?php for ($i = 0; $i < count($arr_schedule); $i++){?>
+                                <tr>
+                                    <td class="text-center">
+                                        <?php echo ($i + 1); ?> </td>
+                                    </td>
+                                    <td>
+                                        <?php echo $arr_schedule[$i]->Form_ID ?></td>
+                                    </td>
+                                    <td>
+                                        <?php echo $arr_schedule[$i]->Item ?></td>
+                                    </td>
+                                    <td>
+                                    <?php echo $arr_schedule[$i]->Officer ?></td>
+                                    </td>
+                                    <td>
+                                        <?php echo $arr_schedule[$i]->Officer ?></td>
+                                    </td>
+                                    <td>
+                                        <?php echo $arr_schedule[$i]->End_date ?></td>
+                                    </td>
+                                </tr>
+                            <?php }?>
                         </tbody>   
                 </table>
             <div>
