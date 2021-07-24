@@ -39,7 +39,7 @@ class M_ttp_history extends Da_ttp_history
     {
         $sql = "SELECT *
                 FROM ttps_database.requested_form 
-                WHERE Approve_Plant = $id";
+                WHERE Emp_ID = $id";
 
         $query = $this->db->query($sql);
         return $query;
@@ -49,7 +49,7 @@ class M_ttp_history extends Da_ttp_history
     {
         $sql = "SELECT *
                     FROM ttps_database.requested_form 
-                    WHERE Supervisor = $id";
+                    WHERE Emp_ID = $id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -73,16 +73,6 @@ class M_ttp_history extends Da_ttp_history
         $query = $this->db->query($sql);
         return $query;
     }
-
-    // public function get_approval()
-    // {
-    //     $sql = "SELECT * 
-    //             FROM ttps_database.approval 
-    //             INNER JOIN ttps_database.requested_form
-    //             ON  approval.Form_ID = requested_form.Form_ID ";
-    //     $query = $this->db->query($sql);
-    //     return $query;
-    // }
 
     public function get_form_file()
     {
