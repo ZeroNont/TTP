@@ -61,7 +61,11 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger"
                                             data-dismiss="modal">Cancle</button>
-                                        <button type="button" class="btn btn-success">Confirm</button>
+                                        <a
+                                            href="<?php echo site_url() . 'check_out/ttp_check_out/check_out/' . $obj_form[$i]->Form_ID; ?>">
+                                            <button type="button" class="btn btn-success">Confirm</button>
+                                        </a>
+
                                     </div>
                                 </div>
                             </div>

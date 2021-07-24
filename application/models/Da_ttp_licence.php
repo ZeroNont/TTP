@@ -28,4 +28,11 @@ class Da_ttp_licence extends ttps_model
 
         $this->db->query($sql, array($this->Layout_location, $this->Plan_location));
     }
+    public function check_out()
+    {
+        $sql = " UPDATE ttps_database.requested_form
+        SET Status=?
+        WHERE Form_ID=?;";
+        $this->db->query($sql, array($this->Status, $this->Form_ID));
+    } 
 }

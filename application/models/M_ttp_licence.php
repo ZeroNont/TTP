@@ -7,7 +7,7 @@ class M_ttp_licence extends Da_ttp_licence
     {
         $sql =
             "SELECT *
-            FROM ttps_database.requested_form";
+            FROM ttps_database.requested_form Where Status=4 ";
         $query = $this->db->query($sql);
         return $query;
     }

@@ -45,6 +45,16 @@ class ttp_check_out extends MainController
         $data['obj_form'] = $this->ttp->get_form()->result();
         $this->output('consent/v_check_out', $data);
     }
+    function check_out($id)
+    {
+        $num = 5;
+        $this->load->model('Da_ttp_licence', 'ttp');
+        $this->ttp->Form_ID = $id;
+        $this->ttp->Status = $num;
+        $this->ttp->check_out();
+        redirect('check_out/ttp_check_out/index');
+       
+    }
     // function index()
     function insert()
     {
