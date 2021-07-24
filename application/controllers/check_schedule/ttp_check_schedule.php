@@ -40,8 +40,16 @@ class ttp_check_schedule extends MainController
 	* @Create Date 2564-7-19
 	*/
  
-    function show_check_schedule()
+    function show_check_schedule($Enp_ID)
     {
+        $this->load->model('M_ttp_Emp','meng');
+		$this->meng->Emp_ID = $Enp_ID;
+		$data['Emp_ID'] = $this->meng->get_emp()->row();
+		$temp = $data['Emp_ID'];
+		$this->session->set_userdata('UsEmp_ID', $temp->Emp_ID);
+		$this->session->set_userdata('UsName_EN', $temp->Empname_eng." ".$temp->Empsurname_eng);
+		$this->session->set_userdata('UsName_TH', $temp->Empname_th." ".$temp->Empsurname_th);
+		$this->session->set_userdata('UsDepartment', $temp->Department);
         $id = '000326';
         $this->load->model('M_ttp_check_schedule', 'ttp');
         $data['arr_schedule'] = $this->ttp->get_by_id($id)->result();

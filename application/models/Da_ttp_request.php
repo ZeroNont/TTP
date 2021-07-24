@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-require 'ttps_model.php';
+include_once ('ttps_model.php');
 
 class Da_ttp_request extends ttps_model
 {

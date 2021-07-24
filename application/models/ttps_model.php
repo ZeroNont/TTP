@@ -4,8 +4,8 @@
 * -
 * @author JIRAYUT SAIFAH
 * @Create Date 2564-7-15
-*/
-
+*/?>
+<?php
 class ttps_model extends CI_Model
 {
 

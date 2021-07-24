@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-include_once 'Da_ttp_request.php';
+include_once ('Da_ttp_request.php');
 
 class M_ttp_request extends Da_ttp_request
 {

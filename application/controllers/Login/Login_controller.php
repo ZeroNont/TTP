@@ -11,7 +11,7 @@ class Login_controller extends MainController
 	}//function construct
     public function show_user_login()
     {//show login
-        $this->load->view("login/v_user_login");
+        $this->output_login("login/v_user_login");
     }//end show_admin_login
     
 	public function show_user_home($Enp_ID){
@@ -19,11 +19,11 @@ class Login_controller extends MainController
 		$this->meng->Emp_ID = $Enp_ID;
 		$data['Emp_ID'] = $this->meng->get_emp()->row();
 		$temp = $data['Emp_ID'];
-			$this->session->set_userdata('UsEmp_ID', $temp->Emp_ID);
-            $this->session->set_userdata('UsName_EN', $temp->Empname_eng." ".$temp->Empsurname_eng);
-            $this->session->set_userdata('UsName_TH', $temp->Empname_th." ".$temp->Empsurname_th);
-            $this->session->set_userdata('UsDepartment', $temp->Department);
-		$this->output("main/v_main");
+		$this->session->set_userdata('UsEmp_ID', $temp->Emp_ID);
+		$this->session->set_userdata('UsName_EN', $temp->Empname_eng." ".$temp->Empsurname_eng);
+		$this->session->set_userdata('UsName_TH', $temp->Empname_th." ".$temp->Empsurname_th);
+		$this->session->set_userdata('UsDepartment', $temp->Department);
+		$this->output("consent/v_main");
 
 	}
     public function login()
@@ -38,17 +38,18 @@ class Login_controller extends MainController
 		if(count($userlogin)==1){
 			// $result = implode($userlogin);
 			$data = $userlogin;
-			$status = true ;
+			$status = true;
 			echo json_encode($data,$status);
+			
 		}else{
-			$status = false ;
+			$status = false;
 			echo json_encode($status);
 		}
 	}
         public function logout()
     {//logout to admin login page
         $this->session->sess_destroy();
-        redirect('Login/Login_controller/show_user_login');
+        $this->show_user_login();
     }//end logout
 	}//end login
 
