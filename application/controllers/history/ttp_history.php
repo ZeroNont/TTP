@@ -53,32 +53,11 @@ class ttp_history extends MainController
         $this->output('consent/v_history_user', $data);
     }// function show_history_em()
 
-    // function show_history_supervisor(){
-    //     $id = '326';
-    //     $this->load->model('M_ttp_history', 'ttp');
-    //     $data['sp_form'] = $this->ttp->get_history_sp($id)->result();
-    //     $this->output('consent/v_history_supervisor', $data);
-    // } // function show_history_supervisor()
-
-    // function show_history_appplant(){
-    //     $id = '0033';
-    //     $this->load->model('M_ttp_history', 'ttp');
-    //     $data['ap_form'] = $this->ttp->get_history_ap($id)->result();
-    //     $this->output('consent/v_history_approveplant', $data);
-    // } // function show_history_appplant()
-
-    // function show_history_hr(){
-    //     $this->load->model('M_ttp_history', 'ttp');
-    //     $data['hr_form'] = $this->ttp->get_history_hr()->result();
-    //     $this->output('consent/v_history_HR', $data);
-    // } // function show_history_hr()
-
-    public function show_history_detail()
+    public function show_history_detail($id)
 	{
-        $id = '2' ;
         $this->load->model('M_ttp_history', 'ttp');
         $data['arr_form'] = $this->ttp->get_by_id($id)->row();
-        $data['arr_list'] = $this->ttp->get_form_list($id)->row();
+        $data['arr_list'] = $this->ttp->get_form_list()->row();
         $data['arr_file'] = $this->ttp->get_form_file()->result();
         $this->output('consent/v_history_detail', $data);
 	}// function show_history_detail()

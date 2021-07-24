@@ -42,8 +42,10 @@ class ttp_check_schedule extends MainController
  
     function show_check_schedule()
     {
+        $id = '000326';
         $this->load->model('M_ttp_check_schedule', 'ttp');
-        $data['arr_schedule'] = $this->ttp->get_all()->result();
+        $data['arr_schedule'] = $this->ttp->get_by_id($id)->result();
         $this->output('consent/v_check_schedule', $data);
     }// function show_check_schedule()()
+
 }
