@@ -1,0 +1,85 @@
+<!--
+=========================================================
+* Argon Dashboard - v1.2.0
+=========================================================
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+
+
+* Copyright  Creative Tim (http://www.creative-tim.com)
+* Coded by www.creative-tim.com
+
+
+
+=========================================================
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+
+<style>
+.button {
+    background-color: #ff0000;
+    border-radius: 20px;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+</style>
+</head>
+
+<body>
+    <!-- Sidenav -->
+
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+        <!-- Topnav -->
+
+        <!-- Header -->
+        <!-- Header -->
+        <div class="header pb-6 d-flex align-items-center"
+            style="min-height: 100px;  background-size: cover; background-position: center top;">
+            <!-- Mask -->
+            <!-- Header container -->
+
+        </div>
+        <!-- Page content -->
+        <div class="container-fluid mt--6 ">
+            <div class="row">
+
+                <div class="col-xl-12 order-xl-1">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row align-items-center">
+                                <div class="col-8">
+                                    <h1 class="mb-0">Temporary Tag Permission System</h1>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-body ">
+                            <h2>Welcome <?php echo $_SESSION['UsName_EN'] ?></h2>
+                            <br><br>
+                            <h6>ปัจจุบัน ทางบริษัท ได้มีการให้พนักงาน </h6>
+                            <h6>ทำการวางของในจุดต่างๆ ตามที่จัดไว้</h6>
+                            <h6>ทำให้ต้องมีการขออนุญาตวางของในพื้นที่โรงงานชั่วคราว</h6>
+                            <h6>เพื่อให้มีพื้นที่จัดเก็บของชั่วคราว</h6>
+                            <h6>ในการรอการจัดการจัดจุดวางของให้เหมาะสม</h6>
+                            <br><br>
+
+                            <!--ปุ่มเพิ่มคำขอ-->
+                            <a href='<?php echo site_url() . '/licence_form/licence_input/index/' ?>'>
+                                <button class="button">เริ่มกรอกแบบฟอร์ม</button>
+                                <!--เหลือเอากดลิ้งไปหน้าอื่น-->
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </html>

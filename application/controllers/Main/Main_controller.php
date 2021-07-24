@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
@@ -32,7 +31,7 @@ class Main_controller extends MainController
 	*/
 	function show_main()
 	{
-		$this->output('main/v_main');
+		$this->output('consent/v_main');
 	}
 	// function index()
 
