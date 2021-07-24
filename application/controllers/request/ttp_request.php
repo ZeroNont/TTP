@@ -56,8 +56,28 @@ class ttp_request extends MainController
 	{
         $this->load->model('M_ttp_request', 'mreq');
         $data['arr_req'] = $this->mreq->get_by_id($id)->row();
+        $data['arr_emp'] = $this->mreq->get_all()->row();
         $this->output('consent/v_request_detail',$data);
 	}
+
+     public function update_request_form()
+     {
+         $this->load->model('Da_ttp_request','daup');
+         $this->daup->fr_id =  $this->input->post('fr_id');
+         $this->daup->fr_first_name =  $this->input->post('first_name');
+         $this->daup->fr_last_name =  $this->input->post('last_name');
+         $this->daup->fr_pf_id =  $this->input->post('pf_id');
+
+         if($this->input->post('fr_status') == 'T'){
+             $this->daup->fr_status = '1';
+         }else{
+             $this->daup->fr_status = '2';
+         }
+
+         $this->daup->update();
+
+         redirect('/Ossd_c_2/Select/show_table');
+     }
 
 }
 // 

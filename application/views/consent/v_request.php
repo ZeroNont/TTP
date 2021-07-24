@@ -65,13 +65,13 @@
 
                                                     <!-- column ผู้รับผิดชอบ -->
                                                     <td>
-                                                        <?php echo $arr_req[$i]->Supervisor;?>
+                                                        <?php echo $arr_req[$i]->Empname_th.' '.$arr_req[$i]->Empsurname_th;?>
                                                     </td>
 
                                                     <!-- column ดำเนินการ -->
                                                     <td style='text-align: center;'>
 
-                                                        <!-- ปุ่มแก้ไข -->
+                                                        <!-- ปุ่มดำเนินการ -->
                                                         <a href=" <?php echo site_url() . '/request/ttp_request/show_request_detail/' . $arr_req[$i]->Form_ID; ?>">
                                                              <button class="btn btn-warning"> <i class="fa fa-pencil"></i> </button>
                                                         </a>

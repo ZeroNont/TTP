@@ -2,8 +2,7 @@
     <div class="card">
         
         <div class="card-body ">
-            <form action="<?php echo site_url() . 'licence_form/licence_input/insert'; ?>" method="post"
-                enctype="multipart/form-data">
+            
 
                 <div class="pl-lg-4">
                     <div class="row">
@@ -49,7 +48,7 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-address">Officer in Charge
                                     (ผู้รับผิดชอบ)</label>
-                                <input class="form-control" type="text" name="Officer" require value="<?php echo $arr_req->Supervisor ?>">
+                                <input class="form-control" type="text" name="Officer" require value="<?php echo $arr_emp->Empname_th.' '.$arr_emp->Empsurname_th ?>">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -67,8 +66,10 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-country">Layout
                                     (รูปแบบการวาง)</label>
-                                <input type="file" name="Layout" class="form-control">
+                                <input type="file" name="Layout" class="form-control" require value="<?php echo $arr_req->Layout_location ?>">
+                                <?php echo $arr_req->Layout_location ?>
                             </div>
+
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -84,14 +85,85 @@
                 <div class="row">
                     <div class="col-lg-4">
 
-                        <button type="submit" class="btn btn-danger btn-lg float-right">ไม่อนุมัติ</button>
+                        <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger btn-lg float-right" data-toggle="modal" data-target="#exampleModal_reject">
+                                ไม่อนุมัติ
+                            </button>
+                        <!-- Modal -->
+                            <div class="modal fade" id="exampleModal_reject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...ldldlld
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
                     </div>
+
                     <div class="col-lg-4">
-                        <button type="submit" class="btn btn-success btn-lg float-right">อนุมัติ</button>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-success btn-lg float-right" data-toggle="modal" data-target="#exampleModal_approve">
+                                อนุมัติ
+                            </button>
+                        <!-- Modal -->
+                            <div class="modal fade" id="exampleModal_approve" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" align="center">
+                                    <h1 class="modal-title" id="exampleModalLabel">ยืนยันการอนุมัติคำขอ</h1>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">ยกเลิก</button>
+
+                                        <!-- Button trigger modal -->
+                                                <button type="button" class="btn btn-success btn-lg float-right" data-toggle="modal" data-target="#exampleModal" 
+                                                action="<?php echo site_url() . '/request/ttp_request/update_request_form/'; ?>">
+                                                ยืนยัน
+                                                </button>
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                    
+                                                    <div class="modal-body" align="center">
+                                                        <h1> อนุมัติคำขอสำเร็จ </h1>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-success btn-lg float-right">ตกลง</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+
+
+                                </div>
+
+                                </div>
+                            </div>
+                            </div>
                     </div>
                 </div>
 
-            </form>
+            
         </div>
     </div>
 </div>
