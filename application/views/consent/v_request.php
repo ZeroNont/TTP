@@ -18,6 +18,10 @@
     
 </style>
 
+<h1>
+    Request (อนุมัติคำร้องขออนุญาต)
+</h1>
+
 <body>
     <!-- ตารางรายการคำขอ -->
     <!-- Table Requestd form -->
@@ -28,11 +32,11 @@
                     <thead class="thead-light">
                         <tr>
                             <th scope="col">#</th>
-                                <th scope="col">รหัสกำกับ</th>
-                                <th scope="col">สิ่งของ</th>
-                                <th scope="col">ช่วงเวลาร้องขอ</th>
-                                <th scope="col">ผู้รับผิดชอบ</th>
-                                <th scope="col">ดำเนินการ</th>
+                                <th scope="col">RUNNING NO.</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Schedule</th>
+                                <th scope="col">OFFICER IN CHARGE</th>
+                                <th scope="col">ACTION</th>
                             </tr>
                     </thead>
 
