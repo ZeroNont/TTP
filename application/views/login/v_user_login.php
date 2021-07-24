@@ -25,6 +25,7 @@
                     setTimeout(function() {
                         window.location.href =
                             '<?php echo site_url() . 'Login/Login_controller/show_user_home' ?>'
+
                     }, 500)
                 } //if
                 else {

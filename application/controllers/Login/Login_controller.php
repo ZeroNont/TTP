@@ -16,17 +16,21 @@ class Login_controller extends MainController
     
 	public function show_user_home(){
 		$this->output("main/v_main");
+		
+
 	}
     public function login()
 	{//login for admin
 		$User_login = $this->input->POST('User_login');
 		$Pass_login = $this->input->POST('Pass_login');
-
+		
 		$this->load->model('M_ttp_login','mlog');
 
 		$userlogin = $this->mlog->check_login($User_login,$Pass_login)->result();
+
 		if(count($userlogin)==1){
-			$_SESSION['user_login'] = $this->input->post('User_login');
+			$Enp_ID = $this->input->POST('Enp_ID');
+			$_SESSION['user_login'] = $this->input->post('Enp_ID');
 			echo true;
 		}else{
 			echo false;
