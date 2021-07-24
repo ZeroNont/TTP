@@ -91,7 +91,7 @@
                             </div>
                         </div>
                         <div class="card-body ">
-                          <h2>Welcome รอเอาชื่อจากดาต้าเบส</h2>
+                          <h2>Welcome <?php echo $_SESSION['UsName_EN'] ?></h2>
 <br><br>
                           <h6>ปัจจุบัน ทางบริษัท ได้มีการให้พนักงาน </h6>
                           <h6>ทำการวางของในจุดต่างๆ ตามที่จัดไว้</h6>
