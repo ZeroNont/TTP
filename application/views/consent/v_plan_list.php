@@ -3,21 +3,48 @@
 <!-- <div class="card" id="card_radius"> -->
 <script>
 function get_Emp() {
-    Emp_id = document.getElementById('Emp_id').value;
+    Emp_id = document.getElementById('Emp_id_modal').value;
     var empname = "";
+    console.log(Emp_id)
     $.ajax({
         type: "POST",
-        url: "<?php echo base_url(); ?> /ttp_Emp/ttp_Emp/earch_by_employee_id",
+        url: "<?php echo base_url(); ?>ttp_Emp/ttp_Emp/search_by_employee_id",
         data: {
             "Emp_id": Emp_id
         },
         dataType: "JSON",
         success: function(data, status) {
+            console.log(data);
             if (data.length == 0) {
                 document.getElementById("showname_modal").value = "ไม่มีข้อมูล";
             } else {
-                empname = data[0].Empname_eng. + " " + data[0].Empsurename_eng
+                empname = data[0].Empname_eng + " " + data[0].Empsurname_eng;
                 document.getElementById("showname_modal").value = empname;
+                console.log(999)
+                console.log(empname)
+            }
+        }
+    });
+}
+
+function getEmp_edit(i) {
+    Emp_id = document.getElementById('Emp_id' + i).value;
+    var empname = "";
+    console.log(Emp_id)
+    $.ajax({
+        type: "POST",
+        url: "<?php echo base_url(); ?>ttp_Emp/ttp_Emp/search_by_employee_id",
+        data: {
+            "Emp_id": Emp_id
+        },
+        dataType: "JSON",
+        success: function(data, status) {
+            console.log(data);
+            if (data.length == 0) {
+                document.getElementById("Emp_name" + i).value = "ไม่มีข้อมูล";
+            } else {
+                empname = data[0].Empname_eng + " " + data[0].Empsurname_eng;
+                document.getElementById("Emp_name" + i).value = empname;
                 console.log(999)
                 console.log(empname)
             }
@@ -56,7 +83,7 @@ function get_Emp() {
                     </div>
                     <div class="mb-3">
                         <label for="focusedinput" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="showname_modal" disabled>
+                        <input type="text" class="form-control" id="showname_modal" disabled name="Plant_name">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Plant No.</label>
@@ -126,31 +153,38 @@ function get_Emp() {
                                     </div>
 
                                     <div class="modal-body">
-                                        <form action="<?php echo site_url() . 'licence_form/licence_input/insert'; ?>"
+                                        <form
+                                            action="<?php echo site_url() . 'plan_management/plan_input/edit/' . $obj_plan[$i]->Emp_ID;; ?>"
                                             method="post" enctype="multipart/form-data">
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Employee
                                                     ID</label>
                                                 <input type="text" class="form-control"
-                                                    value="<?php echo $obj_plan[$i]->Emp_ID ?>">
+                                                    value="<?php echo $obj_plan[$i]->Emp_ID ?>"
+                                                    id="Emp_id<?php echo $i; ?>"
+                                                    onkeyup="getEmp_edit(<?php echo $i; ?>)" name="Emp_ID">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputPassword1" class="form-label">Name</label>
                                                 <input type="text" class="form-control"
                                                     value="<?php echo $obj_plan[$i]->Empname_eng . '    ' . $obj_plan[$i]->Empsurname_eng ?>"
-                                                    disabled>
+                                                    disabled id="Emp_name<?php echo $i; ?>">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputPassword1" class="form-label">Plant
                                                     No.</label>
                                                 <input type="text" class="form-control"
-                                                    value="<?php echo $obj_plan[$i]->Plant_No ?>">
+                                                    value="<?php echo $obj_plan[$i]->Plant_No ?>" name="Plant_No">
+                                                <input type="text" class="form-control"
+                                                    value="<?php echo $obj_plan[$i]->Plant_ID ?>" name="Plant_ID"
+                                                    hidden>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputPassword1" class="form-label">Plant
                                                     Name</label>
                                                 <input type="text" class="form-control"
-                                                    value="<?php echo $obj_plan[$i]->Plant_name ?>" id="province_auto">
+                                                    value="<?php echo $obj_plan[$i]->Plant_name ?>" id="province_auto"
+                                                    name="Plant_name">
                                             </div>
                                             <button type="submit" class="btn btn-success float-right">Submit</button>
                                             <button type="button" class="btn btn-danger float-right"

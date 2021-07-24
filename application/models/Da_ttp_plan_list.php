@@ -17,4 +17,11 @@ class Da_ttp_plan_list extends ttps_model
                 VALUES (?,?,?)";
         $this->db->query($sql, array($this->Emp_ID, $this->Plant_name, $this->Plant_No));
     }
+    public function update()
+    {
+        $sql = "UPDATE ttps_database.plant 
+        SET Emp_ID=?,Plant_name=?,Plant_No=?
+        WHERE Plant_ID=?;";
+        $this->db->query($sql, array($this->Emp_ID, $this->Plant_name, $this->Plant_No, $this->Plant_ID));
+    }
 }

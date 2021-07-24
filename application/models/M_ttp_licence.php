@@ -3,6 +3,14 @@ include_once("Da_ttp_licence.php");
 
 class M_ttp_licence extends Da_ttp_licence
 {
+    public function get_form()
+    {
+        $sql =
+            "SELECT *
+            FROM ttps_database.requested_form";
+        $query = $this->db->query($sql);
+        return $query;
+    }
     public function get_company()
     {
         $sql =
@@ -37,4 +45,5 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    
 }
