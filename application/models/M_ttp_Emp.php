@@ -7,8 +7,9 @@ class M_ttp_Emp extends Da_ttp_Emp
     {
         $sql =
             "SELECT *
-        FROM dbmc.employee";
-        $query = $this->db->query($sql);
+        FROM dbmc.employee
+        WHERE Emp_ID = ?";
+        $query = $this->db->query($sql, array($this->Emp_ID));
         return $query;
     }
     public function get_emp()

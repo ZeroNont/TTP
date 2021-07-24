@@ -28,9 +28,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>argon/assets/vendor/nucleo/css/nucleo.css" type="text/css">
-    <link rel="stylesheet"
-        href="<?php echo base_url(); ?>argon/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
-        type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>argon/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>argon/assets/css/argon.css?v=1.2.0" type="text/css">
@@ -44,7 +42,43 @@
     <script type="text/javascript" src="DataTables/datatables.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <style type="text/css">
+        #printable {
+            display: block;
+        }
 
+        @media print {
+            #non-printable {
+                display: none;
+            }
+
+            #printable {
+                display: block;
+            }
+
+            #hid {
+                display: none;
+                /* ซ่อน  */
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+
+            /* กำหนดให้สีในหน้าเว็บสามารถพิมพ์ได้อย่างถูกต้อง */
+            .hideWhenPrint {
+                /* // เนื้อหาในคลาส hideWhenPrint จะถูกปิดตาทิ้งไปเมื่อพิมพ์บนกระดาษ */
+                display: none;
+            }
+
+
+
+            @page {
+                margin: 2.5cm;
+                size: A4 landscape; // หรือเช่น 21cm 29.7cm landscape
+            }
+        }
+    </style>
 </head>
 
 <body>

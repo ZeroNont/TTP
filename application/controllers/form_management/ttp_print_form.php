@@ -5,14 +5,14 @@
 * @input  -   
 * @output -
 * @author Jirayut Saifah
-* @Create Date 2564-7-23
+* @Create Date 2564-7-24
 */
 ?>
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class ttp_Emp extends MainController
+class ttp_print_form extends MainController
 {
 
     /**
@@ -37,16 +37,13 @@ class ttp_Emp extends MainController
 	* @input 
 	* @output 
 	* @author 	Jirayut Saifah
-	* @Create Date 2564-7-23
+	* @Create Date 2564-7-24
 	*/
-   function search_by_employee_id(){
-
-        $Emp_id = $this->input->post('Emp_id');
-       $this->load->model('M_ttp_Emp','emp');
-        $this->emp->Emp_ID = $Emp_id;
-        $data = $this->emp->get_name_emp()->result();
-
-       echo json_encode($data);
-   }
+    function index()
+    {
+        // $this->load->model('M_ttp_plan_list', 'ttp');
+        // $data['obj_plan'] = $this->ttp->get_plan()->result();
+        $this->output('consent/v_print_form');
+    }
 }
 // 

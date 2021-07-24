@@ -1,5 +1,6 @@
   <!-- Sidenav -->
-  <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+
+  <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="hid">
       <div class="scrollbar-inner">
           <!-- Brand -->
           <div class="sidenav-header  align-items-center">
@@ -31,13 +32,13 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>check_schedule/ttp_check_schedule/index">
+                          <a class="nav-link" href="<?php echo base_url() ?>check_schedule/ttp_check_schedule/show_check_schedule">
                               <i class="ni ni-calendar-grid-58 text-yellow"></i>
                               <span class="nav-link-text">Check Schedule</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="examples/tables.html">
+                          <a class="nav-link" href="<?php echo base_url() ?>check_out/ttp_check_out/index">
                               <i class="ni ni-user-run text-default"></i>
                               <span class="nav-link-text">Check out</span>
                           </a>
@@ -92,4 +93,5 @@
           </div>
       </div>
   </nav>
+
   <!-- Main content -->
