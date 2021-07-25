@@ -1,19 +1,4 @@
-<!--
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-
-
-* Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
-
-
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
-
+<head>
 <style>
 .button {
     background-color: #ff0000;
@@ -27,12 +12,18 @@
     cursor: pointer;
 
 }
+
+body 
+{
+    background-image: src="../../argon/assets/img/brand/mainBG.JPG" ;
+}
+
 </style>
 </head>
 
 <body>
     <!-- Sidenav -->
-
+   
     <!-- Main content -->
     <div class="main-content" id="panel">
         <!-- Topnav -->
@@ -81,5 +72,5 @@
 
         </div>
     </div>
-
+</body>
     </html>

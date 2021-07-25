@@ -41,8 +41,9 @@ class ttp_check_out extends MainController
 	*/
     function index()
     {
+        $id = $_SESSION['UsEmp_ID'];
         $this->load->model('M_ttp_licence', 'ttp');
-        $data['obj_form'] = $this->ttp->get_form($temp->Emp_ID)->result();
+        $data['obj_form'] = $this->ttp->get_form($id)->result();
         $this->output('consent/v_check_out', $data);
     }
     function check_out($id)

@@ -80,4 +80,3 @@ class Login_controller extends MainController
         redirect('Login/Login_controller/show_user_login', 'refresh');
     }
 	}//end login
-
