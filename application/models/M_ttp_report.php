@@ -10,4 +10,21 @@ class M_ttp_report extends Da_ttp_report
         $query = $this->db->query($sql);
         return $query;
     }
+
+    public function get_all_requested_form()
+    {
+        $sql = "SELECT * 
+                    FROM ttps_database.requested_form";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    public function get_all_approval()
+    {
+        $sql = "SELECT * 
+                    FROM ttps_database.approval";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
 }

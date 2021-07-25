@@ -7,8 +7,6 @@
 */
 -->
 
-<!DOCTYPE html>
-<html>
 <!-- CSS -->
 <style>
 #history_table td,
@@ -60,7 +58,6 @@
                     </tr>
                 </thead>
                 <tbody class="list">
-                    <a href="<?php echo site_url().'history/ttp_history/'?>">
                     <?php for ($i = 0; $i < count($em_form); $i++){?>
                     <tr>
                         <td class="text-center">
@@ -73,7 +70,10 @@
                             <?php echo $em_form[$i]->Item ?></td>
                         </td>
                         <td>
-                        <?php echo $em_form[$i]->Start_date." - ".$em_form[$i]->End_date ?></td>
+                        <?php
+                            $startDate = date("d/m/Y", strtotime($em_form[$i]->Start_date)); 
+                            $endDate  = date("d/m/Y", strtotime($em_form[$i]->End_date));?>
+                        <?php echo $startDate." - ".$endDate ?></td>
                         </td>
                         <td>
                             <?php echo $em_form[$i]->Officer ?></td>
@@ -82,7 +82,9 @@
                         <td style='text-align: center;'>
                             <!-- ปุ่มดำเนินการ -->
                             <a href=" <?php echo site_url() . '/history/ttp_history/show_history_detail/' . $em_form[$i]->Form_ID; ?>">
-                                <button class="btn btn-warning"> <i class="fa fa-pencil"></i> </button>
+                            <button type="button" class="btn btn-primary btn-sm" style="background-color: info;"> 
+                                <i class="fas fa-search"></i>
+                            </button>
                             </a>
                         </td>
                     </tr>
@@ -91,22 +93,3 @@
             </table>
             </div>
         </div>
-        <!-- Argon Scripts -->
-        <!-- Core -->
-        <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="../../assets/vendor/js-cookie/js.cookie.js"></script>
-        <script src="../../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-        <script src="../../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-        <!-- Argon JS -->
-        <script src="../../assets/js/argon.js?v=1.2.0"></script>
-        <script type="text/javascript">
-        $(function() {
-            $('#datetimepickerDemo').datetimepicker({
-                minDate: new Date()
-            });
-        });
-        </script>
-</body>
-
-</html>

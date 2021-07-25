@@ -2,12 +2,15 @@
 $(document).ready(function() {
     $("#btn_success").click(function() {
         $("#Modal_approve").hide();
-        
+
     });
 
 });
 </script>
 
+<h1>
+    Request (อนุมัติคำร้องขออนุญาต)
+</h1>
 <div class="col-xl-12 order-xl-1">
     <div class="card">
 
@@ -104,30 +107,10 @@ $(document).ready(function() {
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-danger btn-lg float-right" data-toggle="modal"
-                        data-target="#exampleModal_reject">
+                        data-target="#Modal_reject">
                         ไม่อนุมัติ
                     </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal_reject" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    ...ldldlld
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div class="col-lg-4">
@@ -147,6 +130,35 @@ $(document).ready(function() {
 </div>
 </div>
 <!-- Modal -->
+<div class="modal fade" id="Modal_reject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body" align="center">
+                กรุณากรอกเหตุผล
+            </div>
+
+
+            <form method="POST" action="<?php echo site_url().'/request/ttp_request/insert_reason/'; ?>">
+
+                <input type="text" name="reject_reason" class="form-control" require>
+
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
+
+                <a href=" <?php echo site_url() . '/request/ttp_request/insert_reason/' ; ?>">
+                    <button type="submit" class="btn btn-success btn-lg float-right">Summit</button>
+                </a>
+            </div>
+                
+            </form>
+
+            
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
 <div class="modal fade" id="Modal_approve" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -164,7 +176,7 @@ $(document).ready(function() {
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-success btn-lg float-right" id="btn_success" data-toggle="modal"
-                        data-target="#successModal"
+                    data-target="#successModal"
                     action="<?php echo site_url() . 'request/ttp_request/update_request_form/'; ?>">
                     ยืนยัน
                 </button>
@@ -187,7 +199,7 @@ $(document).ready(function() {
             <div class="modal-footer">
                 <a href="<?php echo site_url() . 'request/ttp_request/show_request_list/' ?>">
                     <button type="button" class="btn btn-success btn-lg float-right">ตกลง</button>
-                </a>               
+                </a>
             </div>
         </div>
     </div>

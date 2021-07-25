@@ -11,7 +11,9 @@ class M_ttp_history extends Da_ttp_history
     public function get_all()
     {
         $sql = "SELECT *
-                FROM ttps_database.requested_form";
+                FROM ttps_database.requested_form AS requested
+                INNER JOIN dbmc.employee AS emp
+                ON requested.Emp_ID = emp.Emp_ID";
 
         $query = $this->db->query($sql);
         return $query;
@@ -19,57 +21,31 @@ class M_ttp_history extends Da_ttp_history
     
     public function get_by_id($id)
     {
-        $sql = "SELECT *
-                FROM ttps_database.requested_form
-                WHERE Form_ID = $id";
-        $query = $this->db->query($sql);
-        return $query;
+            $sql = "SELECT *
+                    FROM ttps_database.requested_form AS requested
+                    WHERE requested.Form_ID = $id";
+            $query = $this->db->query($sql);
+            return $query;
+
     }
 
     public function get_history_em($id)
     {
             $sql = "SELECT * 
-                    FROM ttps_database.requested_form 
+                    FROM ttps_database.requested_form
                     WHERE Emp_ID = $id";
             $query = $this->db->query($sql);
             return $query;
     }
 
-    public function get_history_ap($id)
-    {
-        $sql = "SELECT *
-                FROM ttps_database.requested_form 
-                WHERE Emp_ID = $id";
-
-        $query = $this->db->query($sql);
-        return $query;
-    }
-
-    public function get_history_sp($id)
-    {
-        $sql = "SELECT *
-                    FROM ttps_database.requested_form 
-                    WHERE Emp_ID = $id";
-        $query = $this->db->query($sql);
-        return $query;
-    }
-
-    public function get_history_hr()
-    {
-        $sql = "SELECT *
-                FROM ttps_database.requested_form ";
-
-        $query = $this->db->query($sql);
-        return $query;
-    }
-
-    public function get_form_list($id)
+    public function get_form_list()
     {
         $sql = "SELECT * 
-                FROM (ttps_database.requested_form AS request
-                INNER JOIN dbmc.employee AS emp ON request.Emp_ID = emp.emp_ID)
-                INNER JOIN ttps_database.approval AS approval ON request.Form_ID = approval.Form_ID
-                WHERE approval.Form_ID = $id";
+        FROM ttps_database.requested_form AS req
+        INNER JOIN dbmc.employee AS emp
+        ON  req.Emp_ID = emp.Emp_ID 
+        INNER JOIN ttps_database.approval 
+        ON  req.Form_ID = approval.Form_ID ";
         $query = $this->db->query($sql);
         return $query;
     }

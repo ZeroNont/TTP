@@ -14,37 +14,37 @@
                   <!-- Nav items -->
                   <ul class="navbar-nav">
                       <li class="nav-item ">
-                          <a class="nav-link " href="<?php echo base_url() ?>Main/Main_controller/show_main">
+                          <a class="nav-link " href="<?php  echo site_url() . 'Main/Main_controller/show_main/'.$_SESSION['UsEmp_ID']?>">
                               <i class="ni ni-tv-2 text-primary"></i>
                               <span class="nav-link-text">Home</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>licence_form/licence_input/index">
+                          <a class="nav-link" href="<?php echo base_url(). 'licence_form/licence_input/index/'.$_SESSION['UsEmp_ID']?>">
                               <i class="ni ni-badge text-orange"></i>
                               <span class="nav-link-text">Licence Form</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>Renewal/Renewal_controller/show_renewal">
+                          <a class="nav-link" href="<?php echo base_url().'Renewal/Renewal_controller/show_renewal/'.$_SESSION['UsEmp_ID']?>">
                               <i class="ni ni-single-copy-04 text-primary"></i>
                               <span class="nav-link-text">Renewall Form</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>check_schedule/ttp_check_schedule/show_check_schedule">
+                          <a class="nav-link" href="<?php echo base_url().'check_schedule/ttp_check_schedule/show_check_schedule/'.$_SESSION['UsEmp_ID']?>">
                               <i class="ni ni-calendar-grid-58 text-yellow"></i>
                               <span class="nav-link-text">Check Schedule</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>check_out/ttp_check_out/index">
+                          <a class="nav-link" href="<?php echo base_url().'check_out/ttp_check_out/index/'.$_SESSION['UsEmp_ID']?>">
                               <i class="ni ni-user-run text-default"></i>
                               <span class="nav-link-text">Check out</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>check_status/ttp_check_status/index">
+                          <a class="nav-link" href="<?php echo base_url().'check_status/ttp_check_status/index/'.$_SESSION['UsEmp_ID']?>">
                               <i class="ni ni-tag text-info"></i>
                               <span class="nav-link-text">Status Form</span>
                           </a>
@@ -52,13 +52,13 @@
 
 
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>history/ttp_history/show_history_employee">
+                          <a class="nav-link" href="<?php echo base_url().'history/ttp_history/show_history_employee/'.$_SESSION['UsEmp_ID']?>">
                               <i class="ni ni-time-alarm text-pink"></i>
                               <span class="nav-link-text">History Form</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>request/ttp_request/show_request_list">
+                          <a class="nav-link" href="<?php echo base_url().'request/ttp_request/show_request_list/'.$_SESSION['UsEmp_ID']?>">
                               <i class="ni ni-email-83 text-dark"></i>
                               <span class="nav-link-text">Requested</span>
                           </a>
@@ -74,13 +74,13 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>plan_management/plan_list/index">
+                          <a class="nav-link" href="<?php echo base_url().'plan_management/plan_list/index/'.$_SESSION['UsEmp_ID']?>">
                               <i class="ni ni-single-02 text-green"></i>
                               <span class="nav-link-text">Plant Management</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() ?>Report/Report_controller/show_report">
+                          <a class="nav-link" href="<?php echo base_url().'Report/Report_controller/show_report/'.$_SESSION['UsEmp_ID']?>">
                               <i class="ni ni-chart-bar-32 text-blue"></i>
                               <span class="nav-link-text">Report</span>
                           </a>

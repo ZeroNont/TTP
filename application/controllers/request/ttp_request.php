@@ -45,8 +45,16 @@ class ttp_request extends MainController
     }
     // function index()
 
-    public function show_request_list()
+    public function show_request_list($Enp_ID)
     {
+        $this->load->model('M_ttp_Emp','meng');
+		$this->meng->Emp_ID = $Enp_ID;
+		$data['Emp_ID'] = $this->meng->get_emp()->row();
+		$temp = $data['Emp_ID'];
+		$this->session->set_userdata('UsEmp_ID', $temp->Emp_ID);
+		$this->session->set_userdata('UsName_EN', $temp->Empname_eng." ".$temp->Empsurname_eng);
+		$this->session->set_userdata('UsName_TH', $temp->Empname_th." ".$temp->Empsurname_th);
+		$this->session->set_userdata('UsDepartment', $temp->Department);
         $this->load->model('M_ttp_request', 'mreq');
         $data['arr_req'] = $this->mreq->get_all()->result();
         $this->output('consent/v_request', $data);
@@ -60,24 +68,17 @@ class ttp_request extends MainController
         $this->output('consent/v_request_detail',$data);
 	}
 
-     public function update_request_form()
-     {
-         $this->load->model('Da_ttp_request','daup');
-         $this->daup->fr_id =  $this->input->post('fr_id');
-         $this->daup->fr_first_name =  $this->input->post('first_name');
-         $this->daup->fr_last_name =  $this->input->post('last_name');
-         $this->daup->fr_pf_id =  $this->input->post('pf_id');
+    public function insert_reason()
+    {
+   
+        $this->load->model('Da_ttp_request','dain');
 
-         if($this->input->post('fr_status') == 'T'){
-             $this->daup->fr_status = '1';
-         }else{
-             $this->daup->fr_status = '2';
-         }
+        $this->dain->reject_reason =  $this->input->post('reject_reason');
+        
+        $this->dain->insert();
 
-         $this->daup->update();
-
-         redirect('/Ossd_c_2/Select/show_table');
-     }
+        redirect('/request/ttp_request/show_request_list');
+    }//function insert friend
 
 }
 // 

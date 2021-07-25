@@ -235,7 +235,7 @@
                                   <span>Support</span>
                               </a>
                               <div class="dropdown-divider"></div>
-                              <a href="<?php echo site_url().'Ttp_Controller/index'?>" class="dropdown-item"  class="dropdown-item">
+                              <a href="<?php echo site_url().'Login/Login_Controller/logout'?>" class="dropdown-item"  class="dropdown-item">
                                   <i class="ni ni-user-run"></i>
                                  
                                   <span>Logout</span>

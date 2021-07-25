@@ -6,9 +6,6 @@
 * @Create Date 2564-07-16
 */
 -->
-
-<!DOCTYPE html>
-<html>
     <!-- CSS -->
 <style>
     #history_table td, #history_table th 
@@ -56,39 +53,46 @@
                     </thead>
                         <tbody class="list">
                             <?php for ($i = 0; $i < count($arr_schedule); $i++){?>
-                                <tr>
-                                    <td class="text-center">
-                                        <?php echo ($i + 1); ?> </td>
-                                    </td>
+                                <?php $StartDate = $arr_schedule[$i]->Start_date; 
+                                      $EndDate =  $arr_schedule[$i]->End_date;
+                                      $today_date = date("Y-m-d"); 
+                                      $totalDate = ((strtotime($EndDate) - strtotime($StartDate)) / ( 60 * 60 * 24 )) +1;
+                                      $ExpDate = (strtotime($EndDate) - strtotime($today_date)) / ( 60 * 60 * 24 );?>
+                                      <?php if ($EndDate > $today_date) { ?>
+                                    <tr>
+                                        <td class="text-center">
+                                            <?php echo ($i + 1); ?> 
+                                        </td>
+                                        <td>
+                                            <?php echo $arr_schedule[$i]->Form_ID ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $arr_schedule[$i]->Item ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $arr_schedule[$i]->Officer ?>
+                                        </td>
+                                        <td>
+                                        <!-- แสดงแสดงจำนวนวันที่วางของ -->
+                                            <?php if ($StartDate != $today_date) { ?>
+                                                    <?php echo $totalDate?>
+                                            <?php }
+                                        //<!-- แสดงแสดงจำนวนวันที่เหลือ -->
+                                            if ($StartDate == $today_date) { ?>
+                                                <?php echo $ExpDate;?>
+                                            <?php }?>
+                                        </td>
                                     <td>
-                                        <?php echo $arr_schedule[$i]->Form_ID ?></td>
-                                    </td>
-                                    <td>
-                                        <?php echo $arr_schedule[$i]->Item ?></td>
-                                    </td>
-                                    <td>
-                                    <?php echo $arr_schedule[$i]->Officer ?></td>
-                                    </td>
-                                    <td>
-                                        <?php echo $arr_schedule[$i]->Officer ?></td>
-                                    </td>
-                                    <td>
-                                        <?php echo $arr_schedule[$i]->End_date ?></td>
+                                        <?php $endDate  = date("d/m/Y", strtotime($arr_schedule[$i]->End_date));?>    
+                                    <?php echo $endDate;?>
                                     </td>
                                 </tr>
+                                <?php }?>
                             <?php }?>
                         </tbody>   
                 </table>
             <div>
         </div>
-    </div>          
+    </div>        
 
-    <!-- Argon JS -->
-    <script src="../../assets/js/argon.js?v=1.2.0"></script>
-    <script type="text/javascript">
-    $(function() {
-        $('#datetimepickerDemo').datetimepicker({
-            minDate: new Date()
-        });
-    });
-    </script>
+

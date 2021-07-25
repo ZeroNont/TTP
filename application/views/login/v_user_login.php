@@ -22,21 +22,22 @@
                 console.log(status)
                 var obj = JSON.parse(data)
                 console.log(obj.Enp_ID)
-                if (status == 'success') {
+                //if (status == 'success'){
                     setTimeout(function() {
-                        window.location.href =
+                          window.location.href =
                             '<?php echo site_url() . 'Login/Login_controller/show_user_home/' ?>'+obj.Enp_ID
                     }, 500)
-                } //if
-                else {
-                    console.log('fail')
-                    alert('รหัสผ่านผิด กรุณากรอกใหม่อีกครั้ง')
-                    console.log(status)
+                // } //if
+                // else{
+                //     console.log('fail')
+                //     alert('รหัสผ่านผิด กรุณากรอกใหม่อีกครั้ง')
+                //     console.log(status)
 
-                } //else
+                // } //else
             },
             error: function(status) {
                 console.log('fail')
+                alert('รหัสผ่านผิด กรุณากรอกใหม่อีกครั้ง')
                 console.log(status)
             }
         });
