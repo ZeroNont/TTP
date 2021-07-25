@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="card-body ">
-            <form action="<?php echo site_url() . 'Renewal/Renewal_controller/update_date'; ?>" method="post"
+            <form action="<?php echo site_url() . 'Renewal/Renewal_controller/update_date/'; ?>" method='post'
                 enctype="multipart/form-data">
 
                 <div class="pl-lg-4">
@@ -19,7 +19,7 @@
                                 
                                 <!--อัพเดท/เพิ่มวันขออนุญาตวาง-->
                                 <label class="form-control-label" for="input-email">Add Days (กำหนดเวลาที่ต้องการเพิ่ม)
-                                <select id="cars" name="Add_date"><br>
+                                <select class="form-control" name="Add_date" style="text-align:center"  ><br>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -52,7 +52,8 @@
                                 <option value="30">30</option>
                                 
                                 </select>
-                                
+                             
+                              
                             </div>
                         </div>
                     </div>
