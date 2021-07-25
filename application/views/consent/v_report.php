@@ -10,8 +10,29 @@
     <br>
 
     <div class="row">
-        <div class="col-lg-3"></div>
+        <div class="col-lg-2"></div>
         <div class="col-lg-3">
+            <form id="form1" name="form1" class="form-inline" method="post" action="s.php">
+                <center>
+                    <div class="form-group">
+                        <label for="exampleInputName2">วันที่ :</label>
+                        <input name="d_s" id="datepicker" width="270" />
+                    </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label for="exampleInputEmail2">&nbsp;ถึงวันที่ :&nbsp;</label>
+                <input name="d_e" id="datepicker2" width="270" />
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+        </div>
+
+        </center>
+        </form>
+
+        <!-- <div class="col-lg-3">
             <div class="form-group">
                 <label class="form-control-label" for="input-username">Start Date
                     (วันที่เริ่มต้น)</label>
@@ -26,7 +47,7 @@
                 <input type="date" class="form-control" name="End_date" min="<?php echo date('Y-m-d'); ?>">
             </div>
 
-        </div>
+        </div> -->
     </div>
     <!-- row  -->
 
@@ -76,8 +97,10 @@
                             <span class="h2 font-weight-bold mb-0">
                                 <?php
                                 $total_approval = 0;
-                                for ($i = 0; $i < count($approval); $i++) {
-                                    $total_approval += 1;
+                                for ($i = 0; $i < count($requested); $i++) {
+                                    if ($requested[$i]->HR_No != null) {
+                                        $total_approval += 1;
+                                    }
                                 }
                                 echo $total_approval;
                                 ?>
@@ -192,11 +215,16 @@
                 <div class="card-header border-0">
                     <div class="form-group mb-0">
                         <div class="input-group input-group-alternative input-group-merge">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                            <div class="col-xl-3" align="right">
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                    <input class="form-control" placeholder="Search" type="text">
+                                </div>
+
                             </div>
-                            <input class="form-control" placeholder="Search" type="text">
                         </div>
+
                     </div>
                     <!-- <h3 class="mb-0">Light table</h3> -->
                 </div>
@@ -214,25 +242,28 @@
                         </thead>
                         <tbody>
                             <?php
+                            $num = 1;
                             for ($i = 0; $i < count($requested); $i++) {
+                                if ($requested[$i]->HR_No != null) {
                             ?>
-                                <tr>
-                                    <td><?php echo $i + 1; ?></td>
-                                    <th scope="row"><?php echo $requested[$i]->HR_ID ?></th>
-                                    <th scope="row"><?php echo $requested[$i]->Officer ?></th>
-                                    <?php
-                                    if ($requested[$i]->Status == '4') {
-                                        $Status = 'ยังอยู่ในคลัง';
-                                    } else {
-                                        $Status = 'สิ้นสุดการวาง';
-                                    }
-                                    ?>
-                                    <td><?php echo $Status ?></td>
-                                    <td>
-                                        <i class="fas fa-search text-success mr-3"></i>
-                                    </td>
-                                </tr>
-                            <?php  } ?>
+                                    <tr>
+                                        <td><?php echo $num++; ?></td>
+                                        <th scope="row"><?php echo $requested[$i]->HR_No ?></th>
+                                        <th scope="row"><?php echo $requested[$i]->Officer ?></th>
+                                        <?php
+                                        if ($requested[$i]->Status == '4') {
+                                            $Status = 'ยังอยู่ในคลัง';
+                                        } else {
+                                            $Status = 'สิ้นสุดการวาง';
+                                        }
+                                        ?>
+                                        <td><?php echo $Status ?></td>
+                                        <td>
+                                            <a href="<?php echo site_url() . 'Report/Report_controller/show_report_detail?Form_ID=' . $requested[$i]->Form_ID; ?>" class="fas fa-search text-success mr-3"></a>
+                                        </td>
+                                    </tr>
+                            <?php }
+                            } ?>
                         </tbody>
                     </table>
                 </div>
