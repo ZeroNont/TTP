@@ -57,6 +57,7 @@ class ttp_request extends MainController
         $this->load->model('M_ttp_request', 'mreq');
         $data['arr_req'] = $this->mreq->get_by_id($id)->row();
         $data['arr_emp'] = $this->mreq->get_all()->row();
+        $data['arr_file'] = $this->mreq->get_form_file()->result();
         $this->output('consent/v_request_detail',$data);
 	}
 

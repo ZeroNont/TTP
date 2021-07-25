@@ -17,7 +17,7 @@
     }
     
 </style>
-<?php echo $_SESSION['UsEmp_ID']?>
+
 <h1>
     Request (อนุมัติคำร้องขออนุญาต)
 </h1>

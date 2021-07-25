@@ -32,5 +32,15 @@ class M_ttp_request extends Da_ttp_request
         $query = $this->db->query($sql);
         return $query;
     }
+
+    public function get_form_file()
+    {
+        $sql = "SELECT * 
+                FROM ttps_database.requested_form 
+                INNER JOIN ttps_database.form_file
+                ON  requested_form.Form_ID = form_file.Form_ID ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
     
 }
