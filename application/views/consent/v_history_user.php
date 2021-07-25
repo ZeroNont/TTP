@@ -30,7 +30,7 @@
 {
     margin-left: 14px;
     margin-right: 15px;
-    border-radius: 24px;
+    border-radius: 20px;
     width: auto;
     min-height: 300px;
 }
@@ -42,7 +42,7 @@
     margin-left: 10px;
 }
 </style>
-
+<h1>History Form (ประวัติคำขอวางของ)</h1>
 <!-- Table Requestd form -->
     <div class="card-header" id="card_radius">
         <div class="table-responsive">

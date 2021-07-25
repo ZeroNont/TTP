@@ -45,5 +45,21 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    public function get_form_by_id($id)
+    {
+        $sql =
+            "SELECT *
+            FROM ttps_database.requested_form Where Form_ID=$id ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    public function get_file_by_id($id)
+    {
+        $sql =
+            "SELECT *
+            FROM ttps_database.form_file Where Form_ID=$id ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
     
 }

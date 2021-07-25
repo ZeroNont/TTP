@@ -39,11 +39,11 @@ class ttp_print_form extends MainController
 	* @author 	Jirayut Saifah
 	* @Create Date 2564-7-24
 	*/
-    function index()
+    function print_form($id)
     {
-        // $this->load->model('M_ttp_plan_list', 'ttp');
-        // $data['obj_plan'] = $this->ttp->get_plan()->result();
-        $this->output('consent/v_print_form');
+        $this->load->model('M_ttp_licence', 'ttp');
+        $data['obj_form'] = $this->ttp->get_form_by_id($id)->result();
+        $this->output('consent/v_print_form', $data);
     }
 }
 // 

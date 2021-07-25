@@ -141,7 +141,7 @@ $(document).ready(function() {
 
             <form method="POST" action="<?php echo site_url().'/request/ttp_request/insert_reason/'; ?>">
 
-                <input type="text" name="reject_reason" class="form-control" require>
+                <input type="text" name="reject_reason" class="form-control" placeholder="เหตุผลในการปฏิเสธ" require>
 
                 <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>

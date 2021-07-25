@@ -47,6 +47,16 @@ class licence_input extends MainController
         $data['obj_supervisor'] = $this->ttp->get_supervisor()->result();
         $this->output('consent/v_licence_form', $data);
     }
+    function edit_form($id)
+    {
+        $this->load->model('M_ttp_licence', 'ttp');
+        $data['obj_form'] = $this->ttp->get_form_by_id($id)->result();
+        $data['obj_file'] = $this->ttp->get_file_by_id($id)->result();
+        $data['obj_company'] = $this->ttp->get_company()->result();
+        $data['obj_plan'] = $this->ttp->get_plan()->result();
+        $data['obj_supervisor'] = $this->ttp->get_supervisor()->result();
+        $this->output('consent/v_form_edit', $data);
+    }
     // function index()
     function insert()
     {

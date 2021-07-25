@@ -1,9 +1,7 @@
 <style>
      #card_radius
     {
-        border-radius: 24px;
-        width: auto;
-        min-height: 300px;
+        border-radius: 20px;
     }
     #card_padding
     {
@@ -22,104 +20,105 @@
 </style> 
     
     <!-- Card Detail form -->
-<div class="col-xl-12 order-xl-1">
-    <div class="card">
-        
-        <div class="card-body ">
-            <form action="<?php echo site_url() . 'licence_form/licence_input/insert'; ?>" method="post"
-                enctype="multipart/form-data">
+<h1>History Form (ประวัติคำขอวางของ)</h1>
+    <div class="col-xl-12 order-xl-1">
+        <div class="card" id="card_radius">
+            
+            <div class="card-body ">
+                <form action="<?php echo site_url() . 'licence_form/licence_input/insert'; ?>" method="post"
+                    enctype="multipart/form-data">
 
-                <div class="pl-lg-4">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-username">Start Date
-                                    (วันที่เริ่มต้น)</label>
+                    <div class="pl-lg-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-username">Start Date
+                                        (วันที่เริ่มต้น)</label>
 
-                                    <input type="date" name="Start_date" class="form-control" required value="<?php echo $arr_form->Start_date ?>" disabled>
+                                        <input type="date" name="Start_date" class="form-control" required value="<?php echo $arr_form->Start_date ?>" disabled>
 
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-email">End Date
+                                        (วันที่สิ้นสุด)</label>
+                                        <input type="date" name="End_date" class="form-control" required value="<?php echo $arr_form->End_date ?>" disabled>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-email">End Date
-                                    (วันที่สิ้นสุด)</label>
-                                    <input type="date" name="End_date" class="form-control" required value="<?php echo $arr_form->End_date ?>" disabled>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-first-name">Item
+                                        (สิ่งที่ต้องการวาง)</label>
+                                    <input type="text" name="Item" class="form-control" require value="<?php echo $arr_form->Item ?>" disabled>
+                                </div>
+                            </div>
+                            <div class=" col-lg-12 ">
+                                <div class=" form-group">
+                                    <label class="form-control-label" for="input-last-name">Reason
+                                        (เหตุผลในการวาง)</label>
+                                    <input type="text" name="Reason" class="form-control" require value="<?php echo $arr_form->Reason ?>" disabled> 
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-first-name">Item
-                                    (สิ่งที่ต้องการวาง)</label>
-                                <input type="text" name="Item" class="form-control" require value="<?php echo $arr_form->Item ?>" disabled>
-                            </div>
-                        </div>
-                        <div class=" col-lg-12 ">
-                            <div class=" form-group">
-                                <label class="form-control-label" for="input-last-name">Reason
-                                    (เหตุผลในการวาง)</label>
-                                <input type="text" name="Reason" class="form-control" require value="<?php echo $arr_form->Reason ?>" disabled> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
 
-                <div class="pl-lg-4">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-address">Officer in Charge
-                                    (ผู้รับผิดชอบ)</label>
-                                <input class="form-control" type="text" name="Officer" require value="<?php echo $arr_form->Officer ?>" disabled>
+                    <div class="pl-lg-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-address">Officer in Charge
+                                        (ผู้รับผิดชอบ)</label>
+                                    <input class="form-control" type="text" name="Officer" require value="<?php echo $arr_form->Officer ?>" disabled>
+                                </div>
                             </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-city">Tell No.
+                                        (เบอร์โทรศัพท์)</label>
+                                    <input type="text" class="form-control" name="Tell" require value="<?php echo $arr_form->Tell ?>" disabled>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-city">Tell No.
-                                    (เบอร์โทรศัพท์)</label>
-                                <input type="text" class="form-control" name="Tell" require value="<?php echo $arr_form->Tell ?>" disabled>
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-country">Layout
+                                        (รูปแบบการวาง)</label>
+                                        <br>
+                                        <a href="<?php echo base_url()?>assets/file/layout/<?php echo $arr_file[0]->Layout_location ?>" download> 
+                                                <button type="button" class="btn btn-danger" id="button_size">
+                                                    <i class="fas fa-file-alt text-dark"></i>
+                                                    &nbsp;&nbsp;ไฟล์
+                                                </button> </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-country">Plan
+                                        (แผนการวาง)</label>
+                                        <br>
+                                        <a href="<?php echo base_url()?>assets/file/Plan/<?php echo $arr_file[0]->Plan_location ?>" download>  
+                                                <button type="button" class="btn btn-danger" id="button_size">
+                                                    <i class="fas fa-file-alt text-dark"></i>
+                                                        &nbsp;&nbsp;ไฟล์
+                                                </button> 
+                                        </a>
+                                </div>
                             </div>
                         </div>
                         
                     </div>
-                    <div class="row">
 
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-country">Layout
-                                    (รูปแบบการวาง)</label>
-                                    <br>
-                                    <a href="<?php echo base_url()?>assets/file/layout/<?php echo $arr_file[0]->Layout_location ?>" download> 
-                                            <button type="button" class="btn btn-danger" id="button_size">
-                                                <i class="fas fa-file-alt text-dark"></i>
-                                                &nbsp;&nbsp;ไฟล์
-                                            </button> </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-country">Plan
-                                    (แผนการวาง)</label>
-                                    <br>
-                                    <a href="<?php echo base_url()?>assets/file/Plan/<?php echo $arr_file[0]->Plan_location ?>" download>  
-                                            <button type="button" class="btn btn-danger" id="button_size">
-                                                <i class="fas fa-file-alt text-dark"></i>
-                                                    &nbsp;&nbsp;ไฟล์
-                                            </button> 
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 <!-- ========== ข้อมูลผู้พิจารณา ========== -->
         <?php if ($arr_form->Status != 1 ) { ?>
@@ -214,7 +213,7 @@
                                     </div>
             </div>
             <br>
-                    <a href="<?php echo base_url() ?>history/ttp_history/show_history_employee" >  
+                    <a href="<?php echo base_url().'history/ttp_history/show_history_employee/'.$_SESSION['UsEmp_ID']?>" >  
                         <center><button type="button" class="btn btn-danger canter" id="button_size">กลับ</button> </center>
                     </a>
             <br>
