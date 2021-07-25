@@ -118,8 +118,14 @@
                                     aria-label="Default select example">
                                     <option value="0">-----------Please select-----------</option>
                                     <?php for ($i = 0; $i < count($obj_supervisor); $i++) { ?>
+
+                                    <?php
+                                        if ($obj_supervisor[$i]->Position_Level > $obj_level[0]->Position_Level) { ?>
                                     <option value="<?php echo $obj_supervisor[$i]->Emp_ID ?>">
-                                        <?php echo $obj_supervisor[$i]->Empname_th . " " . $obj_supervisor[$i]->Empsurname_th ?>
+                                        <?php
+                                            echo $obj_supervisor[$i]->Empname_th . " " . $obj_supervisor[$i]->Empsurname_th;
+                                        }
+                                            ?>
                                     </option>
                                     <?php } ?>
 

@@ -41,10 +41,14 @@ class licence_input extends MainController
 	*/
     function index()
     {
+        $id = $_SESSION['UsEmp_ID'];
         $this->load->model('M_ttp_licence', 'ttp');
         $data['obj_company'] = $this->ttp->get_company()->result();
         $data['obj_plan'] = $this->ttp->get_plan()->result();
+        $data['obj_emp'] = $this->ttp->get_employee($id)->result();
+        $data['obj_level'] = $this->ttp->get_position_id($id)->result();
         $data['obj_supervisor'] = $this->ttp->get_supervisor()->result();
+        // print_r($data['obj_supervisor']);
         $this->output('consent/v_licence_form', $data);
     }
     function edit_form($id)

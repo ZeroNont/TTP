@@ -11,6 +11,22 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    public function get_employee($id)
+    {
+        $sql =
+            "SELECT *
+            FROM dbmc.employee INNER JOIN dbmc.position Where Emp_ID=$id  ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    public function get_position_id($id)
+    {
+        $sql =
+            "SELECT *
+            FROM dbmc.employee AS emp INNER JOIN dbmc.position AS pos ON emp.Position_ID=pos.Position_ID Where Emp_ID=$id  ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
     public function get_company()
     {
         $sql =
@@ -23,7 +39,7 @@ class M_ttp_licence extends Da_ttp_licence
     {
         $sql =
         "SELECT *
-        FROM dbmc.employee";
+        FROM dbmc.employee AS emp INNER JOIN dbmc.position AS pos where emp.Position_ID=pos.Position_ID";
         $query = $this->db->query($sql);
         return $query;
     }
