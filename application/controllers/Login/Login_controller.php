@@ -23,7 +23,7 @@ class Login_controller extends MainController
 		$this->session->set_userdata('UsName_EN', $temp->Empname_eng." ".$temp->Empsurname_eng);
 		$this->session->set_userdata('UsName_TH', $temp->Empname_th." ".$temp->Empsurname_th);
 		$this->session->set_userdata('UsDepartment', $temp->Department);
-		$this->output("consent/v_main");
+		$this->main();
 
 	}
     public function login()
@@ -38,18 +38,34 @@ class Login_controller extends MainController
 		if(count($userlogin)==1){
 			// $result = implode($userlogin);
 			$data = $userlogin;
-			$status = true;
-			echo json_encode($data,$status);
+			echo json_encode($data);
 			
 		}else{
-			$status = false;
-			echo json_encode($status);
+			$data = [];
+			echo json_encode($data);
 		}
 	}
-        public function logout()
-    {//logout to admin login page
-        $this->session->sess_destroy();
-        $this->show_user_login();
-    }//end logout
+	public function main()
+    {
+        if (!empty($this->session->userdata('UsEmp_ID'))) {
+
+            redirect('Main/Main_controller/show_main', 'refresh');
+        }
+        // if
+        else {
+            redirect('Login/Login_controller/show_user_login', 'refresh');
+        }
+        // else
+    }
+    // public function main
+
+    public function logout()
+    {
+        $this->session->unset_userdata('UsEmp_ID');
+        $this->session->unset_userdata('UsName_EN');
+        $this->session->unset_userdata('UsName_TH');
+        $this->session->unset_userdata('UsDepartment');
+        redirect('Login/Login_controller/show_user_login', 'refresh');
+    }
 	}//end login
 

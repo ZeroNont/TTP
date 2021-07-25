@@ -46,15 +46,7 @@ class ttp_history extends MainController
     }
     // function index()
     
-    function show_history_employee($Enp_ID){
-        $this->load->model('M_ttp_Emp','meng');
-		$this->meng->Emp_ID = $Enp_ID;
-		$data['Emp_ID'] = $this->meng->get_emp()->row();
-		$temp = $data['Emp_ID'];
-		$this->session->set_userdata('UsEmp_ID', $temp->Emp_ID);
-		$this->session->set_userdata('UsName_EN', $temp->Empname_eng." ".$temp->Empsurname_eng);
-		$this->session->set_userdata('UsName_TH', $temp->Empname_th." ".$temp->Empsurname_th);
-		$this->session->set_userdata('UsDepartment', $temp->Department);
+    function show_history_employee(){
         $id = '00009';
         $this->load->model('M_ttp_history', 'ttp');
         $data['em_form'] = $this->ttp->get_history_em($id)->result();
