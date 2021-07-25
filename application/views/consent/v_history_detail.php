@@ -156,7 +156,7 @@
                                        <div class="col-6 col-md-4"><span><b>ชื่อผู้อนุมัติ : 
                                             <?php echo $arr_list->Empname_th . " " . $arr_list->Empsurname_th; ?>
                                             <br>
-                                            <b>ตำแหน่ง : </b>Approve Plant <br>
+                                            <b>ตำแหน่ง : </b>Approve Plant 
                                             <?php //แสดงตำแหน่งหัวหน้าแบบกำหนดเอง หรือดึงจากดาต้า
                                             $newDate = date("d/m/Y", strtotime($arr_list->Approval_plant_date)); ?>
                                             <br>
@@ -212,11 +212,11 @@
                                         <?php } ?>
                                     </div>
             </div>
-            <br>
+           
+        <?php  }?>
+        <br>
                     <a href="<?php echo base_url().'history/ttp_history/show_history_employee/'.$_SESSION['UsEmp_ID']?>" >  
                         <center><button type="button" class="btn btn-danger canter" id="button_size">กลับ</button> </center>
                     </a>
             <br>
             <br>
-        <?php } ?>
-    

@@ -47,7 +47,7 @@ class ttp_history extends MainController
     // function index()
     
     function show_history_employee(){
-        $id = '00009';
+        $id = $_SESSION['UsEmp_ID'];
         $this->load->model('M_ttp_history', 'ttp');
         $data['em_form'] = $this->ttp->get_history_em($id)->result();
         $this->output('consent/v_history_user', $data);
