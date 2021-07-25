@@ -33,8 +33,10 @@
                     </td>
                     <td>
                         <?php
-                            if ($obj_status[$i]->Status >= 1) {
+                            if ($obj_status[$i]->Status >= 1 or $obj_status[$i]->Status <= -2) {
                                 echo "อนุมัติ";
+                            } else if ($obj_status[$i]->Status == -1) {
+                                echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
                             }
@@ -43,8 +45,10 @@
                     </td>
                     <td>
                         <?php
-                            if ($obj_status[$i]->Status >= 2) {
+                            if ($obj_status[$i]->Status >= 2 or $obj_status[$i]->Status <= -3) {
                                 echo "อนุมัติ";
+                            } else if ($obj_status[$i]->Status == -2) {
+                                echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
                             }
@@ -55,6 +59,8 @@
                         <?php
                             if ($obj_status[$i]->Status >= 3) {
                                 echo "อนุมัติ";
+                            } else if ($obj_status[$i]->Status == -3) {
+                                echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
                             }
@@ -89,7 +95,7 @@
                     <td>
                         <?php if ($obj_status[$i]->Status < 0) { ?>
                         <a
-                            href="<?php echo site_url() . 'licence_form/form_edit/show_form_edit/' . $obj_status[$i]->Form_ID; ?>">
+                            href="<?php echo site_url() . 'licence_form/licence_input/edit_form/' . $obj_status[$i]->Form_ID; ?>">
                             <img src="<?php echo site_url() . '/assets/file/icon/edit.png' ?>" width="30">
                         </a>
                         <?php } else { ?>
@@ -97,7 +103,7 @@
                         <?php } ?>
                         <?php if ($obj_status[$i]->Status == 4) { ?>
                         <a
-                            href="<?php echo site_url() . 'licence_form/form_edit/show_form_edit/' . $obj_status[$i]->Form_ID; ?>">
+                            href="<?php echo site_url() . 'form_management/ttp_print_form/print_form/' . $obj_status[$i]->Form_ID; ?>">
                             <img src="<?php echo site_url() . '/assets/file/icon/printing.png' ?>" width="30">
                         </a>
                         <?php } else { ?>

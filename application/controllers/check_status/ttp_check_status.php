@@ -45,6 +45,7 @@ class ttp_check_status extends MainController
         $data['obj_status'] = $this->ttp->get_status()->result();
         $this->output('consent/v_check_status', $data);
     }
+  
     // function index()
     function insert()
     {

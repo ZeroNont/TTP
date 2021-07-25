@@ -34,9 +34,8 @@ DIV.text {
                                     <label class="form-control-label" for="input-username">หมายเลขเอกสาร
                                         (Running No.)</label>
 
-                                    <input type="text" name="Start_date" class="form-control" required value="<?php //echo  
-                                                                                                                ?>"
-                                        disabled>
+                                    <input type="text" name="Start_date" class="form-control" required
+                                        value="<?php echo $obj_form[0]->HR_ID ?>" disabled>
 
                                 </div>
                             </div>
@@ -55,17 +54,16 @@ DIV.text {
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-first-name">ผู้รับผิดชอบ
                                         (Responsibility)</label>
-                                    <input type="text" name="Item" class="form-control" require value="<?php  //echo 
-                                                                                                        ?>" disabled>
+                                    <input type="text" name="Item" class="form-control" require
+                                        value="<?php echo $obj_form[0]->Officer ?>" disabled>
                                 </div>
                             </div>
                             <div class=" col-lg-6 ">
                                 <div class=" form-group">
                                     <label class="form-control-label" for="input-last-name">เบอร์ติดต่อ
                                         (Ext./Mobile Phone)</label>
-                                    <input type="text" name="Reason" class="form-control" require value="<?php //echo 
-                                                                                                            ?>"
-                                        disabled>
+                                    <input type="text" name="Reason" class="form-control" require
+                                        value="<?php echo $obj_form[0]->Tell ?>" disabled>
                                 </div>
                             </div>
                         </div>
@@ -79,17 +77,16 @@ DIV.text {
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-address">ชื่อ อุปกรณ์
                                         (Equipment name)</label>
-                                    <input class="form-control" type="text" name="Officer" require value="<?php //echo 
-                                                                                                            ?>"
-                                        disabled>
+                                    <input class="form-control" type="text" name="Officer" require
+                                        value="<?php echo $obj_form[0]->Item ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-city">เหตุผลในการวาง
                                         (The reason in putting)</label>
-                                    <input type="text" class="form-control" name="Tell" require value="<?php //echo 
-                                                                                                        ?>" disabled>
+                                    <input type="text" class="form-control" name="Tell" require
+                                        value="<?php echo $obj_form[0]->Reason ?>" disabled>
                                 </div>
                             </div>
                         </div>
@@ -99,9 +96,9 @@ DIV.text {
                                     <label class="form-control-label" for="input-username">วันที่เริ่มวาง
                                         (Starting Date)</label>
 
-                                    <input type="date" name="Start_date" class="form-control" required value="<?php //echo 
-                                                                                                                ?>"
-                                        disabled>
+                                    <input type="date" name="Start_date" class="form-control" required
+                                        value="<?php echo $obj_form[0]->Start_date ?>" disabled>
+
 
                                 </div>
                             </div>
@@ -109,9 +106,8 @@ DIV.text {
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-email">วันที่สิ้นสุด
                                         (End Date)</label>
-                                    <input type="date" name="End_date" class="form-control" required value="<?php //echo  
-                                                                                                            ?>"
-                                        disabled>
+                                    <input type="date" name="End_date" class="form-control" required
+                                        value="<?php echo $obj_form[0]->End_date ?>" disabled>
                                 </div>
                             </div>
                         </div>
@@ -127,11 +123,17 @@ DIV.text {
                                 <th>Approved by <br>(5S Leader) </th>
                             </tr>
                             <tr>
-                                <td><input type="text" class="form-control"></td>
-                                <td><input type="text" class="form-control"></td>
-                                <td><input type="text" class="form-control"></td>
-                                <td><input type="text" class="form-control"></td>
-                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"
+                                        value="<?php echo $obj_form[0]->Form_count ?>">
+                                </td>
+                                <td><input type="text" class="form-control" value="<?php echo $obj_form[0]->Reason ?>">
+                                </td>
+                                <td><input type="text" class="form-control" value="<?php echo $obj_form[0]->Reason ?>">
+                                </td>
+                                <td><input type="text" class="form-control" value="<?php echo $obj_form[0]->Reason ?>">
+                                </td>
+                                <td><input type="text" class="form-control" value="<?php echo $obj_form[0]->Reason ?>">
+                                </td>
                             </tr>
                         </table>
 
