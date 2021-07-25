@@ -43,8 +43,8 @@ DIV.text {
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-email">แผนก
                                         (Department)</label>
-                                    <input type="text" name="End_date" class="form-control" required value="<?php  //echo 
-                                                                                                            ?>"
+                                    <input type="text" name="End_date" class="form-control" required
+                                        value="<?php if ($obj_form[0]->Emp_ID == $obj_dep[0]->Emp_ID) echo $obj_dep[0]->Department ?>"
                                         disabled>
                                 </div>
                             </div>
@@ -110,6 +110,7 @@ DIV.text {
                                         value="<?php echo $obj_form[0]->End_date ?>" disabled>
                                 </div>
                             </div>
+
                         </div>
 
 
@@ -126,13 +127,17 @@ DIV.text {
                                 <td><input type="text" class="form-control"
                                         value="<?php echo $obj_form[0]->Form_count ?>">
                                 </td>
-                                <td><input type="text" class="form-control" value="<?php echo $obj_form[0]->Reason ?>">
+                                <td><input type="text" class="form-control"
+                                        value="<?php echo $obj_pre[0]->Empname_eng . '  ' . $obj_pre[0]->Empsurname_eng ?>">
                                 </td>
-                                <td><input type="text" class="form-control" value="<?php echo $obj_form[0]->Reason ?>">
+                                <td><input type="text" class="form-control"
+                                        value="<?php echo $obj_sup[0]->Empname_eng . '  ' . $obj_sup[0]->Empsurname_eng ?>">
                                 </td>
-                                <td><input type="text" class="form-control" value="<?php echo $obj_form[0]->Reason ?>">
+                                <td><input type="text" class="form-control"
+                                        value="<?php echo $obj_hr[0]->Empname_eng . '  ' . $obj_hr[0]->Empsurname_eng ?>">
                                 </td>
-                                <td><input type="text" class="form-control" value="<?php echo $obj_form[0]->Reason ?>">
+                                <td><input type="text" class="form-control"
+                                        value="<?php echo $obj_app[0]->Empname_eng . '  ' . $obj_app[0]->Empsurname_eng ?>">
                                 </td>
                             </tr>
                         </table>

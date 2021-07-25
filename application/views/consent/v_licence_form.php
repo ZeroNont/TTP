@@ -42,6 +42,8 @@
                                 <label class="form-control-label" for="input-first-name">Item
                                     (สิ่งที่ต้องการวาง)</label>
                                 <input type="text" name="Item" class="form-control" require>
+                                <input type="text" name="Emp_ID" class="form-control"
+                                    value="<?php echo $_SESSION['UsEmp_ID'] ?>" hidden>
                             </div>
                         </div>
                         <div class=" col-lg-12 ">

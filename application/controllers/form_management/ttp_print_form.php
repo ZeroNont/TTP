@@ -43,7 +43,13 @@ class ttp_print_form extends MainController
     {
         $this->load->model('M_ttp_licence', 'ttp');
         $data['obj_form'] = $this->ttp->get_form_by_id($id)->result();
+        $data['obj_dep'] = $this->ttp->get_sec()->result();
+        $data['obj_app'] = $this->ttp->get_approve()->result();
+        $data['obj_hr'] = $this->ttp->get_HR()->result();
+        $data['obj_sup'] = $this->ttp->get_Supervisor_ID()->result();
+        $data['obj_pre'] = $this->ttp->get_Prepare()->result();
         $this->output('consent/v_print_form', $data);
+        // print_r($data);
     }
 }
 // 

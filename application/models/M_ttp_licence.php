@@ -3,11 +3,11 @@ include_once("Da_ttp_licence.php");
 
 class M_ttp_licence extends Da_ttp_licence
 {
-    public function get_form()
+    public function get_form($id)
     {
         $sql =
             "SELECT *
-            FROM ttps_database.requested_form Where Status=4 ";
+            FROM ttps_database.requested_form Where Emp_ID=$id AND Status=4 ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -36,12 +36,12 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
-    public function get_status()
+    public function get_status($id)
     {
         $sql =
             "SELECT *
-            FROM ttps_database.requested_form WHERE CURDATE() <= End_date  
-            LIMIT 0,30";
+            FROM ttps_database.requested_form  WHERE Emp_ID=$id AND CURDATE() <= End_date  
+            LIMIT 0,30  ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -58,6 +58,46 @@ class M_ttp_licence extends Da_ttp_licence
         $sql =
             "SELECT *
             FROM ttps_database.form_file Where Form_ID=$id ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    public function get_sec()
+    {
+        $sql =
+            "SELECT *
+            FROM dbmc.employee AS emp INNER JOIN dbmc.sectioncode AS sec ON emp.Sectioncode_ID = sec.Sectioncode ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    public function get_approve()
+    {
+        $sql =
+            "SELECT *
+            FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS sec ON emp.Emp_ID = sec.Approve_plant_ID ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    public function get_HR()
+    {
+        $sql =
+            "SELECT *
+            FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS sec ON emp.Emp_ID = sec.HR_ID ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    public function get_Supervisor_ID()
+    {
+        $sql =
+            "SELECT *
+            FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS sec ON emp.Emp_ID = sec.Supervisor_ID";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    public function get_Prepare()
+    {
+        $sql =
+        "SELECT *
+            FROM dbmc.employee AS emp INNER JOIN ttps_database.requested_form AS sec ON emp.Emp_ID = sec.Emp_ID";
         $query = $this->db->query($sql);
         return $query;
     }

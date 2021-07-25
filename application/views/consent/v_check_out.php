@@ -24,7 +24,7 @@
                         <?php echo $i + 1 ?>
                     </td>
                     <td>
-                        <?php echo $obj_form[$i]->HR_ID ?>
+                        <?php echo $_SESSION['UsEmp_ID'] ?>
                     </td>
                     <td>
                         <?php echo $obj_form[$i]->Item ?>

@@ -69,7 +69,7 @@ class licence_input extends MainController
     function insert()
     {
         $date = date("Y-m-d");
-        $i = 326;
+        
         $j = 1;
         $id = strtotime('now');
         $Layout_name =  $_FILES['Layout']['name'];
@@ -78,7 +78,8 @@ class licence_input extends MainController
         $tmp_Plan =  $_FILES['Plan']['tmp_name'];
 
         $this->load->model('Da_ttp_licence', 'ttp');
-        $this->ttp->Emp_ID = $i;
+        $this->ttp->Emp_ID = $this->input->post('Emp_ID');
+        $i = $this->input->post('Emp_ID');
         $this->ttp->Item = $this->input->post('Item');
         $this->ttp->Start_date = $this->input->post('Start_date');
         $this->ttp->End_date = $this->input->post('End_date');
@@ -90,7 +91,8 @@ class licence_input extends MainController
         $this->ttp->Company_ID = $this->input->post('Company_ID');
         $this->ttp->Approve_Plant_ID = $this->input->post('Approve_Plant');
         $this->ttp->Form_count = $j;
-        //echo $this->input->post('Company_ID');
+        // echo $this->input->post('Emp_ID');
+        // echo $this->input->post('Item');
         $this->ttp->insert_form();
         $this->ttp->insert_approve();
         move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
@@ -98,7 +100,9 @@ class licence_input extends MainController
         move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
         $this->ttp->Plan_location = $Plan_name;
         $this->ttp->insert_file();
-        redirect('licence_form/licence_input/index');
+        $this->output('consent/v_licence_form', $i);
+        // $this->output('consent/v_check_status', $i);
+        // redirect('licence_form/licence_input/index');
     }
     // function index()
 

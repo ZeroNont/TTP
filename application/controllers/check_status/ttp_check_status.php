@@ -50,7 +50,7 @@ class ttp_check_status extends MainController
 		$this->session->set_userdata('UsName_TH', $temp->Empname_th." ".$temp->Empsurname_th);
 		$this->session->set_userdata('UsDepartment', $temp->Department);
         $this->load->model('M_ttp_licence', 'ttp');
-        $data['obj_status'] = $this->ttp->get_status()->result();
+        $data['obj_status'] = $this->ttp->get_status($temp->Emp_ID)->result();
         $this->output('consent/v_check_status', $data);
     }
   

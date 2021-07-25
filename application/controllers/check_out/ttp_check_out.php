@@ -50,7 +50,7 @@ class ttp_check_out extends MainController
 		$this->session->set_userdata('UsName_TH', $temp->Empname_th." ".$temp->Empsurname_th);
 		$this->session->set_userdata('UsDepartment', $temp->Department);
         $this->load->model('M_ttp_licence', 'ttp');
-        $data['obj_form'] = $this->ttp->get_form()->result();
+        $data['obj_form'] = $this->ttp->get_form($temp->Emp_ID)->result();
         $this->output('consent/v_check_out', $data);
     }
     function check_out($id)
