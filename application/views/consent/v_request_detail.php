@@ -85,9 +85,13 @@ $(document).ready(function() {
                         <div class="form-group">
                             <label class="form-control-label" for="input-country">Layout
                                 (รูปแบบการวาง)</label>
-                            <input type="file" name="Layout" class="form-control" require
-                                value="<?php echo $arr_req->Layout_location ?>">
-                            <?php echo $arr_req->Layout_location ?>
+                            <br>
+                            <a href="<?php echo base_url() ?>assets/file/layout/<?php echo $arr_file[0]->Layout_location ?>" download>
+                                <button type="button" class="btn btn-danger" id="button_size">
+                                    <i class="fas fa-file-alt text-dark"></i>
+                                    &nbsp;&nbsp;ไฟล์
+                                </button>
+                            </a>
                         </div>
 
                     </div>
@@ -95,7 +99,13 @@ $(document).ready(function() {
                         <div class="form-group">
                             <label class="form-control-label" for="input-country">Plan
                                 (แผนการวาง)</label>
-                            <input type="file" name="Plan" class="form-control" placeholder="Postal code">
+                                <br>
+                            <a href="<?php echo base_url() ?>assets/file/Plan/<?php echo $arr_file[0]->Layout_location ?>" download>
+                                <button type="button" class="btn btn-danger" id="button_size">
+                                    <i class="fas fa-file-alt text-dark"></i>
+                                    &nbsp;&nbsp;ไฟล์
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -144,16 +154,16 @@ $(document).ready(function() {
                 <input type="text" name="reject_reason" class="form-control" placeholder="เหตุผลในการปฏิเสธ" require>
 
                 <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
 
-                <a href=" <?php echo site_url() . '/request/ttp_request/insert_reason/' ; ?>">
-                    <button type="submit" class="btn btn-success btn-lg float-right">Summit</button>
-                </a>
-            </div>
-                
+                    <a href=" <?php echo site_url() . '/request/ttp_request/insert_reason/' ; ?>">
+                        <button type="submit" class="btn btn-success btn-lg float-right">Summit</button>
+                    </a>
+                </div>
+
             </form>
 
-            
+
         </div>
     </div>
 </div>
