@@ -50,7 +50,7 @@ class ttp_check_schedule extends MainController
 		$this->session->set_userdata('UsName_EN', $temp->Empname_eng." ".$temp->Empsurname_eng);
 		$this->session->set_userdata('UsName_TH', $temp->Empname_th." ".$temp->Empsurname_th);
 		$this->session->set_userdata('UsDepartment', $temp->Department);
-        $id = '000326';
+        $id = $Enp_ID;
         $this->load->model('M_ttp_check_schedule', 'ttp');
         $data['arr_schedule'] = $this->ttp->get_by_id($id)->result();
         $this->output('consent/v_check_schedule', $data);

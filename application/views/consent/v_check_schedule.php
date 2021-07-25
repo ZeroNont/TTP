@@ -16,16 +16,12 @@
     #history_table tr:nth-child(even) 
     {
         background-color:  #dee2e6;
-        }
-    #history_table tr:hover 
-    {
-        background-color: #adb5bd;
     }
     #card_radius
     {
         margin-left: 15px;
         margin-right: 15px;
-        border-radius: 24px;
+        border-radius: 20px;
         width: auto;
         min-height: 300px;
     }
@@ -38,6 +34,7 @@
 </style>
 
     <!-- Table Requestd form -->
+<h1>Check Schedule (ระยะเวลาการวางของ)</h1> 
     <div class="card-header" id="card_radius">
             <div class="table-responsive">
                 <table class="table align-items-center" id="history_table">
@@ -75,11 +72,11 @@
                                         <td>
                                         <!-- แสดงแสดงจำนวนวันที่วางของ -->
                                             <?php if ($StartDate != $today_date) { ?>
-                                                    <?php echo $totalDate?>
+                                                    <?php echo $totalDate?> วัน
                                             <?php }
                                         //<!-- แสดงแสดงจำนวนวันที่เหลือ -->
                                             if ($StartDate == $today_date) { ?>
-                                                <?php echo $ExpDate;?>
+                                                <?php echo $ExpDate;?> วัน
                                             <?php }?>
                                         </td>
                                     <td>

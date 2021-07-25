@@ -32,8 +32,8 @@ class M_ttp_history extends Da_ttp_history
     public function get_history_em($id)
     {
             $sql = "SELECT * 
-                    FROM ttps_database.requested_form
-                    WHERE Emp_ID = $id";
+                    FROM ttps_database.requested_form AS requested
+                    WHERE requested.Emp_ID = $id";
             $query = $this->db->query($sql);
             return $query;
     }

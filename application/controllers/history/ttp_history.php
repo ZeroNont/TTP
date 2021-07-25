@@ -39,13 +39,7 @@ class ttp_history extends MainController
 	* @author 	Phatchara Khongthandee
 	* @Create Date 2564-7-19
 	*/
- 
-    function index()
-    {
-        $this->output('consent/v_history_user');
-    }
-    // function index()
-    
+   
     function show_history_employee($Enp_ID){
         $this->load->model('M_ttp_Emp','meng');
 		$this->meng->Emp_ID = $Enp_ID;
@@ -55,7 +49,7 @@ class ttp_history extends MainController
 		$this->session->set_userdata('UsName_EN', $temp->Empname_eng." ".$temp->Empsurname_eng);
 		$this->session->set_userdata('UsName_TH', $temp->Empname_th." ".$temp->Empsurname_th);
 		$this->session->set_userdata('UsDepartment', $temp->Department);
-        $id = '00009';
+        $id = $Enp_ID;
         $this->load->model('M_ttp_history', 'ttp');
         $data['em_form'] = $this->ttp->get_history_em($id)->result();
         $this->output('consent/v_history_user', $data);
