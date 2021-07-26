@@ -1,8 +1,7 @@
-
 <a href="<?php echo site_url() . 'Report/Report_controller/show_report'; ?>" class="btn btn-secondary float-left"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
 
 <h1>
-    Report (รายงานข้อมูล)
+    &nbsp; Report (รายงานข้อมูล)
 </h1>
 <br>
 <div class="card-header" id="card_radius">
@@ -18,7 +17,7 @@
         <b>Plant No. :</b> <?php echo $Form_data->Plant_No; ?><br><br>
         <b>Plant Name. :</b> <?php echo $Form_data->Plant_name; ?><br><br>
         <b>Reason :</b> <?php echo $Form_data->Reason; ?><br><br>
-        <b>Requested date :</b> <?php echo date("d-m-Y",strtotime($Form_data->Requested_date)); ?><br><br>
+        <b>Requested date :</b> <?php echo date("d-m-Y", strtotime($Form_data->Requested_date)); ?><br><br>
         <b>Approval date :</b> <?php echo $Form_data->Approve_date; ?><br><br>
         <b>Starting date :</b> <?php echo $Form_data->Start_date; ?><br><br>
         <b>End date :</b> <?php echo $Form_data->End_date; ?><br><br>
@@ -32,6 +31,8 @@
         ?>
         <b>Status :</b> <?php echo $Status; ?><br>
     </h2>
-  
+
 
 </div>
+<br>
+&nbsp;

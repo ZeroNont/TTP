@@ -11,6 +11,8 @@ class Report_controller extends MainController
 		$this->load->model('M_ttp_report', 'ttp');
         $data['obj_department'] = $this->ttp->get_department()->result();
 		$data['requested'] = $this->ttp->get_all_requested_form()->result();
+		$data['chart'] = $this->ttp->get_department_to_chart()->result();
+
 		// $data['approval'] = $this->ttp->get_all_approval()->result();
         $this->output('consent/v_report', $data);
 	}
