@@ -30,8 +30,16 @@ class M_ttp_licence extends Da_ttp_licence
     public function get_company()
     {
         $sql =
-        "SELECT *
-            FROM dbmc.company";
+            "SELECT *
+            FROM dbmc.company  ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    public function get_company_by_id($id)
+    {
+        $sql =
+            "SELECT *
+            FROM dbmc.company AS com INNER JOIN ttps_database.requested_form AS req ON req.Company_ID=com.Company_ID WHERE req.Form_ID=$id ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -40,6 +48,22 @@ class M_ttp_licence extends Da_ttp_licence
         $sql =
         "SELECT *
         FROM dbmc.employee AS emp INNER JOIN dbmc.position AS pos where emp.Position_ID=pos.Position_ID";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    public function get_supervisor_by_id($id)
+    {
+        $sql =
+            "SELECT *
+        FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS app  where Form_ID=$id AND emp.Emp_ID=app.Supervisor_ID";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    public function get_plan_by_id($id)
+    {
+        $sql =
+            "SELECT *
+       FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS app INNER JOIN ttps_database.plant  where Form_ID=$id AND emp.Emp_ID=app.Approve_plant_ID";
         $query = $this->db->query($sql);
         return $query;
     }

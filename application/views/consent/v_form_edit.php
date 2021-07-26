@@ -1,5 +1,5 @@
 <h1>
-    Permission to Place (การขออนุญาตวางของ)
+    Edit permission form (แก้ไขแบบฟอร์มการขออนุญาต)
 </h1><br>
 <div class="col-xl-12 order-xl-1">
     <div class="card">
@@ -83,11 +83,14 @@
                                     (บริษัท)</label><br>
                                 <select name="Company_ID" id="company" class="form-select"
                                     aria-label="Default select example">
-                                    <option value="0">-----------Please select-----------</option>
-                                    <?php for ($i = 0; $i < count($obj_company); $i++) { ?>
+                                    <option value="<?php echo $obj_com[0]->Company_ID ?>">
+                                        <?php echo $obj_com[0]->Company_name ?></option>
+                                    <?php for ($i = 0; $i < count($obj_company); $i++) {
+                                        if ($obj_company[$i]->Company_ID != $obj_com[0]->Company_ID) { ?>
                                     <option value="<?php echo $obj_company[$i]->Company_ID ?>">
                                         <?php echo $obj_company[$i]->Company_name ?></option>
-                                    <?php } ?>
+                                    <?php }
+                                    } ?>
 
 
 
@@ -104,6 +107,12 @@
                                     (รูปแบบการวาง)</label>
                                 <input type="file" name="Layout" class="form-control"
                                     value="<?php echo $obj_file[0]->Layout_location ?>">
+                                <a id="download_link" download="Layout"
+                                    href="http://localhost/TTP/assets/file/layout/<?php echo $obj_file[0]->Layout_location ?>">Download
+                                    Layout
+                                    File</a>
+
+
 
                             </div>
                         </div>
@@ -113,6 +122,9 @@
                                     (แผนการวาง)</label>
                                 <input type="file" name="Plan" class="form-control"
                                     value="<?php echo $obj_file[0]->Plan_location ?>">
+                                <a id="download" download="Plan"
+                                    href="http://localhost/TTP/assets/file/plan/<?php echo $obj_file[0]->Plan_location ?>">Download
+                                    Plan File</a>
                             </div>
                         </div>
                     </div>
@@ -123,12 +135,17 @@
                                     (หัวหน้างาน)</label><br>
                                 <select name="Supervisor" id="Supervisor" class="form-select"
                                     aria-label="Default select example">
-                                    <option value="0">-----------Please select-----------</option>
-                                    <?php for ($i = 0; $i < count($obj_supervisor); $i++) { ?>
+                                    <option value="<?php echo $obj_sup[0]->Emp_ID ?>"><?php
+                                                                                        echo $obj_sup[0]->Empname_th . " " . $obj_sup[0]->Empsurname_th;
+
+                                                                                        ?></option>
+                                    <?php for ($i = 0; $i < count($obj_supervisor); $i++) {
+                                        if ($obj_supervisor[$i]->Position_Level > $obj_level[0]->Position_Level and $obj_sup[0]->Emp_ID != $obj_supervisor[$i]->Emp_ID) { ?>
                                     <option value="<?php echo $obj_supervisor[$i]->Emp_ID ?>">
                                         <?php echo $obj_supervisor[$i]->Empname_th . " " . $obj_supervisor[$i]->Empsurname_th ?>
                                     </option>
-                                    <?php } ?>
+                                    <?php }
+                                    } ?>
 
                                 </select>
                             </div>
@@ -139,15 +156,18 @@
                                 </label><br>
                                 <select name="Approve_Plant" id="Approve_Plant" class="form-select"
                                     aria-label="Default select example">
-                                    <option value="0">-------------------------Please
-                                        select-------------------------
+                                    <option value="<?php echo $obj_app[0]->Emp_ID ?>">
+                                        <?php echo "Plan: " . $obj_app[0]->Plant_No . "  :  " . $obj_app[0]->Plant_name . " : " . $obj_app[0]->Empname_th . " " . $obj_app[0]->Empsurname_th ?>
                                     </option>
-                                    <?php for ($i = 0; $i < count($obj_plan); $i++) { ?>
+                                    <?php for ($i = 0; $i < count($obj_plan); $i++) {
+                                        if ($obj_plan[$i]->Plant_ID != $obj_app[0]->Plant_ID) {
+                                    ?>
                                     <option value="<?php echo $obj_plan[$i]->Emp_ID ?>">
                                         <?php echo "Plan: " . $obj_plan[$i]->Plant_No . "  :  " . $obj_plan[$i]->Plant_name . " : " . $obj_plan[$i]->Empname_th . " " . $obj_plan[$i]->Empsurname_th ?>
                                     </option>
 
-                                    <?php } ?>
+                                    <?php }
+                                    } ?>
 
                                 </select>
 

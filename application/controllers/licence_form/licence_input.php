@@ -57,8 +57,12 @@ class licence_input extends MainController
         $data['obj_form'] = $this->ttp->get_form_by_id($id)->result();
         $data['obj_file'] = $this->ttp->get_file_by_id($id)->result();
         $data['obj_company'] = $this->ttp->get_company()->result();
+        $data['obj_com'] = $this->ttp->get_company_by_id($id)->result();
         $data['obj_plan'] = $this->ttp->get_plan()->result();
+        $data['obj_level'] = $this->ttp->get_position_id($id)->result();
+        $data['obj_app'] = $this->ttp->get_plan_by_id($id)->result();
         $data['obj_supervisor'] = $this->ttp->get_supervisor()->result();
+        $data['obj_sup'] = $this->ttp->get_supervisor_by_id($id)->result();
         $this->output('consent/v_form_edit', $data);
     }
     // function index()
@@ -96,7 +100,12 @@ class licence_input extends MainController
         move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
         $this->ttp->Plan_location = $Plan_name;
         $this->ttp->insert_file();
-        $this->output('consent/v_licence_form', $i);
+        $id = $_SESSION['UsEmp_ID'];
+        // echo  $id;
+        // $this->load->model('M_ttp_licence', 'ttp');
+        $data['obj_status'] = $this->ttp->get_status($id)->result();
+        // // print_r($_SESSION['Emp_ID']);
+        $this->output('consent/v_check_status', $data);
         // $this->output('consent/v_check_status', $i);
         // redirect('licence_form/licence_input/index');
     }
