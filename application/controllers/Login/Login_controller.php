@@ -56,11 +56,11 @@ class Login_controller extends MainController
 			if($_SESSION['Usrole']==1){
             	redirect('Main/Main_controller/show_main', 'refresh');
 			}else if($_SESSION['Usrole']==2){
-				//redirect('Main/Main_controller/show_main', 'refresh');
+				redirect('Main/Main_controller/show_main', 'refresh');
 			}else if($_SESSION['Usrole']==3){
-				//redirect('Main/Main_controller/show_main', 'refresh');
+				redirect('Main/Main_controller/show_main', 'refresh');
 			}else if($_SESSION['Usrole']==4){
-				//
+				redirect('Main/Main_controller/show_main', 'refresh');
 			}
         }
         // if

@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+    #bg_login{
+        
+        background-image:url("<?php echo base_url()?>pic/bg-login.jpg") ;
+        background-attachment: fixed;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .container{
+        position: fixed;
+        width: 800px;
+        height: 500px;
+        margin: 15% 35%;
+        padding: 10px;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,14 +62,15 @@
     </script>
 </head>
 
-<body>
+<body id = "bg_login">
     <!-- Login -->
-    <div style="margin-left:25%;margin-top:10%">
+    <div class="container">
         <div class="col-lg-8 col-md-7">
             <div class="card bg-secondary border-0 mb-0">
                 <div class="card-body px-lg-5 py-lg-5">
                     <div class="text-center mb-4">
-                        <h3>เข้าสู่ระบบ</h3>
+                        
+                        <h3 style = "font-size : 30px;font-family:Helvetica;color:black;">Login</h3>
                     </div>
                     <div class="form-group mb-3">
                         <div class="input-group input-group-merge input-group-alternative">
