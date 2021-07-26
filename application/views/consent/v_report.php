@@ -314,3 +314,8 @@
         }
     });
 </script>
+<?php
+for ($i = 0; $i < count($chart); $i++) {
+    echo $chart[$i]->Department;
+}
+?>

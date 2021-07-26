@@ -6,7 +6,7 @@ class M_ttp_report extends Da_ttp_report
     public function get_department()
     {
         $sql = "SELECT *
-            FROM dbmc.department";
+                FROM dbmc.department";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -14,7 +14,7 @@ class M_ttp_report extends Da_ttp_report
     public function get_all_requested_form()
     {
         $sql = "SELECT * 
-                    FROM ttps_database.requested_form";
+                FROM ttps_database.requested_form";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -36,4 +36,15 @@ class M_ttp_report extends Da_ttp_report
         return $query;
     }
 
+    public function get_department_to_chart()
+    {
+        $sql = "SELECT * 
+                FROM ttps_database.requested_form AS req
+                INNER JOIN dbmc.employee AS emp
+                ON emp.Emp_ID = req.Emp_ID
+                INNER JOIN dbmc.sectioncode AS sec
+                ON sec.Sectioncode = emp.Sectioncode_ID";
+        $query = $this->db->query($sql);
+        return $query;
+    }
 }

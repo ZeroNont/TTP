@@ -50,12 +50,11 @@ class M_ttp_history extends Da_ttp_history
         return $query;
     }
 
-    public function get_form_file()
+    public function get_form_file($id)
     {
         $sql = "SELECT * 
-                FROM ttps_database.requested_form 
-                INNER JOIN ttps_database.form_file
-                ON  requested_form.Form_ID = form_file.Form_ID ";
+                FROM ttps_database.form_file
+                where $id = form_file.Form_ID ";
         $query = $this->db->query($sql);
         return $query;
     }
