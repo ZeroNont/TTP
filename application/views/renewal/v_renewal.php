@@ -17,7 +17,7 @@
 <html>
 
 <head>
-    
+<meta charset="UTF-8" />
 
 <style>
 .button {
@@ -81,40 +81,50 @@ table, th, td {
                                     
                                     <tbody>    
                                     <tr>
-                                    <?php for ($i = 0; $i < count($arr_renew); $i++) { ?>
+                                    <?php for ($i = 0; $i < count($arr_renew); $i++) {?>   
+                                        <td style='text-align:center'> 
+                                        <?php if($arr_renew[$i]->Status==4){echo ($i + 1);} else { echo " ";} ?></td>
                                         
-                                        <td style='text-align:center'> <?php echo ($i + 1); ?></td>
-                                        <td>HR2021-00<?php echo ($i+1); ?></td>
+                                        <td><?php if($arr_renew[$i]->Status==4)
+                                        {echo "HR2021-00".($i+1) ; } 
+                                        else {echo " ";}?></td>
 
-                                                <td><?php echo $arr_renew[$i]->Item; ?></td>
-                                                <td><?php echo $arr_renew[$i]->Officer; ?></td>
-                                                <td><?php echo $arr_renew[$i]->Start_date; 
-                                                echo '-';
-                                                echo $arr_renew[$i]->End_date; ?></td>
-                                                <td>
-                                                <?php
-                                                if($arr_renew[$i]->Status==0)
-                                                {
-                                                    echo 'รออนุมัติ';
-                                                }
-                                                else
-                                                {
-                                                    echo 'อนุมัติ';
-                                                }
-                                                ?>
-                                                </td>
+                                        <td><?php if($arr_renew[$i]->Status==4)
+                                        {echo $arr_renew[$i]->Item; } 
+                                        else {echo " ";}?></td>
+                                        
+                                        <td><?php if($arr_renew[$i]->Status==4)
+                                        {echo $arr_renew[$i]->Officer; } 
+                                        else {echo " ";}?></td>
 
-                                                <td><?php 
-                                                echo $arr_renew[$i]->Form_count; echo '/3';
+                                        <td><?php if($arr_renew[$i]->Status==4)
+                                        {echo date("d F",strtotime($arr_renew[$i]->Start_date)); 
+                                            echo '-';
+                                            echo date("d F Y",strtotime($arr_renew[$i]->End_date)); } 
+                                        else {echo " ";}?></td>     
+
+                                        <td><?php if($arr_renew[$i]->Status==4)
+                                        {  if($arr_renew[$i]->Status==4)
+                                            {echo "อนุมัติ";} else {echo " ";}
+                                        } 
+                                        else {echo " ";}?></td>
+
+                                        <td><?php if($arr_renew[$i]->Status==4)
+                                        {  echo "1/3"; 
+                                        } 
+                                        else {echo " ";}?></td>
+                           
                                                 
-                                                ?></td>
-
-                                                <!--ปุ่มขอต่ออายุ-->
+                           
+                                            <!--ปุ่มขอต่ออายุ-->
                                                 
                                                 <td> 
-                                                <a href='<?php echo site_url() . 'Renewal/Renewal_controller/show_reform/'
+                                                <a href='<?php if($arr_renew[$i]->Status==4)
+                                                echo site_url() . 'Renewal/Renewal_controller/show_reform/'
                                                 .$arr_renew[$i]->Form_ID?>'>
+                                                
                                                 <button> <i class="ni ni-email-83 text-dark"></i></button>
+                                            
                                                 </a>
                                                 </td>
                                                 
@@ -124,7 +134,7 @@ table, th, td {
                                     </tr>
                                     <?php } ?>
                                     </table>
-                              
+                               
                         
                     </div>
                 </div>

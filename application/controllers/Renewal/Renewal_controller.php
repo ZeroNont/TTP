@@ -31,7 +31,7 @@ class Renewal_controller extends MainController
 	{
 		$ADD = $this->input->post('Add_date');
 		$this->load->model('Da_renewal', 'ttp');       
-		$this->ttp->End_date = $this->ttp->End_date + $this->input->post('Add_date');
+		$this->ttp->End_date = $this->ttp->End_date + date("d ",strtotime($this->input->post('Add_date')) );
 		//$this->ttp->End_date = $this->input->post('End_date');
 		$this->ttp->update();
 		redirect('/Renewal/Renewal_controller/show_renewal');
