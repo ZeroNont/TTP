@@ -12,48 +12,28 @@
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-3">
-            <form id="form1" name="form1" class="form-inline" method="post" action="s.php">
-                <center>
-                    <div class="form-group">
-                        <label for="exampleInputName2">วันที่ :</label>
-                        <input name="d_s" id="datepicker" width="270" />
-                    </div>
-        </div>
-        <div class="col-lg-3">
             <div class="form-group">
-                <label for="exampleInputEmail2">&nbsp;ถึงวันที่ :&nbsp;</label>
-                <input name="d_e" id="datepicker2" width="270" />
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
-        </div>
-
-        </center>
-        </form>
-
-        <!-- <div class="col-lg-3">
-            <div class="form-group">
-                <label class="form-control-label" for="input-username">Start Date
+                <label class="form-control-label" for="exampleInputName2">Start Date
                     (วันที่เริ่มต้น)</label>
-                <input type="date" name="Start_date" class="form-control" min="<?php echo date('Y-m-d'); ?>">
+                <input type="date" class="form-control" min="<?php echo date('Y-m-d'); ?>name=" d_s" id="datepicker" width="270">
             </div>
-
         </div>
         <div class="col-lg-3">
             <div class="form-group">
-                <label class="form-control-label" for="input-email">End Date
+                <label class="form-control-label" for="exampleInputEmail2">End Date
                     (วันที่สิ้นสุด)</label>
-                <input type="date" class="form-control" name="End_date" min="<?php echo date('Y-m-d'); ?>">
+                <input type="date" class="form-control" min="<?php echo date('Y-m-d'); ?>name=" d_e" id="datepicker2" width="270">
             </div>
-
-        </div> -->
+        </div>
+        <div class="col-lg-3">
+            <br>
+            <button onclick='show_all_data()' class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+        </div>
     </div>
-    <!-- row  -->
 
 
     <div class="row">
-        <div class="col-xl-1"></div>
+        <!-- <div class="col-xl-1"></div> -->
 
         <div class="col-xl-4 col-md-6">
             <div class="card card-stats">
@@ -87,7 +67,7 @@
         </div>
         <!-- All Requests  -->
 
-        <div class="col-xl-3 col-md-6">
+        <div class="col-xl-4 col-md-6">
             <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
@@ -121,7 +101,7 @@
         </div>
         <!-- Approved -->
 
-        <div class="col-xl-3 col-md-6">
+        <div class="col-xl-4 col-md-6">
             <div class="card card-stats">
                 <!-- Card body -->
                 <div class="card-body">
@@ -153,9 +133,9 @@
     </div>
 
     <div class="row">
-        <div class="col-xl-1"></div>
+        <!-- <div class="col-xl-1"></div> -->
 
-        <div class="col-xl-10">
+        <div class="col-xl-12">
             <div class="card">
                 <div class="card-header bg-transparent">
                     <div class="row align-items-center">
@@ -166,12 +146,8 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">department
                                     (แผนก)</label><br>
-                                <select name="Dep_id" id="department" class="form-select" aria-label="Default select example">
+                                <select name="Dep_id" id="Department" class="form-select" aria-label="Default select example">
                                     <option value="0">-----------Please select-----------</option>
-                                    <?php for ($i = 0; $i < count($obj_department); $i++) { ?>
-                                        <option value="<?php echo $obj_department[$i]->Dep_id ?>">
-                                            <?php echo $obj_department[$i]->Dep_Name ?></option>
-                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
@@ -259,7 +235,11 @@
                                         ?>
                                         <td><?php echo $Status ?></td>
                                         <td>
-                                            <a href="<?php echo site_url() . 'Report/Report_controller/show_report_detail?Form_ID=' . $requested[$i]->Form_ID; ?>" class="fas fa-search text-success mr-3"></a>
+                                            <a href="<?php echo site_url() . 'Report/Report_controller/show_report_detail?Form_ID=' . $requested[$i]->Form_ID; ?>">
+                                                <button type="button" class="btn btn-primary btn-sm" style="background-color: info;">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </a>
                                         </td>
                                     </tr>
                             <?php }
@@ -276,46 +256,128 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
 
 <script>
-    var bar_charts = document.getElementById("myChart");
-    var myChart = new Chart(bar_charts, {
-        type: 'bar',
-        data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
+    function show_chart(label, data) {
+        var bar_charts = document.getElementById("myChart");
+        var myChart = new Chart(bar_charts, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: 'Report',
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 99, 132, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255,99,132,1)'
+                    ],
+                    borderWidth: 1
                 }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
             }
-        }
-    });
+        });
+
+    }
+
+    function show_all_data() {
+        const label = [];
+        var check = '';
+        const data = [];
+        var count = 0;
+        const Dep = [];
+        $.ajax({
+            type: 'POST',
+            url: "<?php echo base_url() ?>Report/Report_controller/get_report",
+            dataType: "JSON",
+            data: {
+
+            },
+            success: function(data_charts) {
+                console.log(data_charts);
+                data_charts.forEach((row, index) => {
+                    if (index == 0) {
+                        label.push(row.Department);
+                        Dep.push(row.dep_id);
+                        check = row.Department;
+                    } else if (check != row.Department) {
+                        label.push(row.Department);
+                        Dep.push(row.dep_id);
+                        check = row.Department;
+                    }
+                });
+                // forEach data_charts
+                label.forEach((row_label, index) => {
+                    data_charts.forEach((row, index) => {
+                        if (row_label == row.Department) {
+                            count++;
+                        }
+                    });
+                    data.push(count);
+                    count = 0;
+                });
+                // forEach label
+                show_chart(label, data);
+                show_label_select(label, Dep);
+            },
+            error: function(res) {
+
+            }
+        });
+        console.log(label);
+
+    }
+
+    function show_label_select(label, Dep) {
+        var data_row = '';
+        console.log(Dep)
+        label.forEach((row_label, index) => {
+            data_row += '<option value="' + Dep[index] + '">' + row_label + '</option>';
+        });
+        // forEach label
+        $('#Department').append(data_row);
+    }
 </script>
-<?php
-for ($i = 0; $i < count($chart); $i++) {
-    echo $chart[$i]->Department;
-}
-?>
