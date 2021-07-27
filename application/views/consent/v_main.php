@@ -17,11 +17,25 @@ body
 {
     background-image: src="../../argon/assets/img/brand/mainBG.JPG" ;
 }
-
+.sizepic{
+    width : 200px;
+    height : 2  00px;
+}
+#bg_home{
+        
+        background-image:url("<?php echo base_url()?>pic/pic-home.jpg") ;
+        background-attachment: fixed;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+#cardbody{
+    margin-right : 10%;
+}
 </style>
 </head>
 
-<body>
+<body id = "bg_home">
     <!-- Sidenav -->
    
     <!-- Main content -->
@@ -42,21 +56,22 @@ body
 
                 <div class="col-xl-12 order-xl-1">
                     <div class="card">
-                        <div class="card-header">
-                            <div class="row align-items-center">
+                        <!-- <div class="card-header"> -->
+                            <!-- <div class="row align-items-center"> -->
                                 <div class="col-8">
-                                    <h1 class="mb-0">Temporary Tag Permission System</h1>
+                                    <!-- <h1 class="mb-0">Temporary Tag Permission System</h1> -->
                                 </div>
 
                             </div>
                         </div>
-                        <div class="card-body ">
-                            <h2>Welcome <?php echo $_SESSION['UsName_EN'] ?></h2>
-                            <br><br>
+                        <div  id = "cardbody">
+                            
+                            <h2 style = "font-size : 45px;font-family:Helvetica;color:red;">Welcome <?php echo $_SESSION['UsName_EN'] ?></h2>
+                            <br>
                             <h4>ปัจจุบัน ทางบริษัท ได้มีการให้พนักงาน </h4>
                             <h4>ทำการวางของในจุดต่างๆ ตามที่จัดไว้</h4>
-                            <h4>ทำให้ต้องมีการขออนุญาตวางของในพื้นที่โรงงานชั่วคราว</h4>
-                            <h4>เพื่อให้มีพื้นที่จัดเก็บของชั่วคราว</h4>
+                            <h4>ทำให้ต้องมีการขออนุญาตวางของในพื้นที่</h4>
+                            <h4>โรงงานชั่วคราวเพื่อให้มีพื้นที่จัดเก็บของชั่วคราว</h4>
                             <h4>ในการรอการจัดการจัดจุดวางของให้เหมาะสม</h4>
                           
 
