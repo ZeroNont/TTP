@@ -384,7 +384,7 @@
             } else if (row.Status < '4') {
                 data_row += '<td>รอการอนุมัติ</td>';
             }
-            data_row += '<td><a href="<?php echo site_url() ?>Report/Report_controller/show_report_detail/Form_ID= ' + row.Form_ID + ' ">'
+            data_row += '<td><a href="<?php echo site_url() ?>Report/Report_controller/show_report_detail?Form_ID= ' + row.Form_ID + ' ">'
             data_row += '<button type="button" class="btn btn-primary btn-sm" style="background-color: info;">'
             data_row += '<i class="fas fa-search"></i></button></a></td>'
             data_row += '</tr>';

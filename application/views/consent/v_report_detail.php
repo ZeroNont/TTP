@@ -1,4 +1,4 @@
-/*
+<!-- /*
 * v_report_detail
 * Display detail of requests for permission
 * @input    Form_ID
@@ -6,8 +6,7 @@
 * @author   Chakrit
 * @Create Date 2564-07-25
 * @Update Date 2564-07-26
-*/
-
+*/ -->
 
 <a href="<?php echo site_url() . 'Report/Report_controller/show_report'; ?>" class="btn btn-secondary float-left"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
 
@@ -36,8 +35,10 @@
         <?php
         if ($Form_data->Status == '4') {
             $Status = 'ยังอยู่ในคลัง';
-        } else {
+        } else if ($Form_data->Status > '4') {
             $Status = 'สิ้นสุดการวาง';
+        } else if ($Form_data->Status < '4') {
+            $Status = 'รอการอนุมัติ';
         }
         ?>
         <b>Status :</b> <?php echo $Status; ?><br>
