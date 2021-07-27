@@ -34,5 +34,12 @@ class Da_ttp_licence extends ttps_model
         SET Status=?
         WHERE Form_ID=?;";
         $this->db->query($sql, array($this->Status, $this->Form_ID));
+    }
+    public function status_print()
+    {
+        $sql = " UPDATE ttps_database.requested_form
+        SET print_status=?
+        WHERE Form_ID=?;";
+        $this->db->query($sql, array($this->print_status, $this->Form_ID));
     } 
 }

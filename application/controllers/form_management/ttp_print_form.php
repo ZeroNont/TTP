@@ -41,6 +41,11 @@ class ttp_print_form extends MainController
 	*/
     function print_form($id)
     {
+        $i = 1;
+        $this->load->model('Da_ttp_licence', 'print');
+        $this->print->Form_ID = $id;
+        $this->print->print_status = $i;
+        $this->print->status_print();
         $this->load->model('M_ttp_licence', 'ttp');
         $data['obj_form'] = $this->ttp->get_form_by_id($id)->result();
         $data['obj_dep'] = $this->ttp->get_sec()->result();
