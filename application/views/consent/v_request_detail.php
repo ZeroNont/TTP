@@ -160,7 +160,7 @@ $(document).ready(function() {
 
 
 
-                <form method="POST" action="<?php echo site_url().'/request/ttp_request/insert_reason/'; ?>">
+                <form method="POST" action="<?php echo site_url().'/request/ttp_request/reject_form/'.$arr_req->Form_ID; ?>">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -175,9 +175,7 @@ $(document).ready(function() {
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
 
-                <a href=" <?php echo site_url() . '/request/ttp_request/insert_reason/' ; ?>">
-                    <button type="submit" class="btn btn-success btn-lg float-right">Submit</button>
-                </a>
+                <button type="submit" class="btn btn-success btn-lg float-right">Submit</button>
             </div>
 
             </form>
@@ -204,11 +202,11 @@ $(document).ready(function() {
                 <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
 
                 <!-- Button trigger modal -->
-                
-                    <button type="button" class="btn btn-success btn-lg float-right" id="btn_success"
-                        data-toggle="modal" data-target="#successModal">
-                        Submit
-                    </button>
+
+                <button type="button" class="btn btn-success btn-lg float-right" id="btn_success" data-toggle="modal"
+                    data-target="#successModal">
+                    Submit
+                </button>
             </div>
 
         </div>
@@ -226,7 +224,7 @@ $(document).ready(function() {
                 <h1> อนุมัติคำขอสำเร็จ </h1>
             </div>
             <div class="modal-footer">
-            <a href="<?php echo site_url() . 'request/ttp_request/update_request_form/'. $arr_req->Form_ID ; ?>">
+                <a href="<?php echo site_url() . 'request/ttp_request/update_request_form/'. $arr_req->Form_ID ; ?>">
                     <button type="button" class="btn btn-success btn-lg float-right">Agree</button>
                 </a>
             </div>

@@ -63,14 +63,17 @@ class ttp_request extends MainController
         $this->output('consent/v_request_detail',$data);
 	}
 
-    function insert_reason()
+    function reject_form($id)
     {
    
         $this->load->model('Da_ttp_request','dain');
+        $this->dain->reject_reason =  $this->input->post('reject_reason');  
+        $this->dain->insert_reason();
 
-        $this->dain->reject_reason =  $this->input->post('reject_reason');
-        
-        $this->dain->insert();
+        $this->dain->Status = 0;
+        $this->dain->Form_ID = $id;   
+        $this->dain->update_form();
+
 
         redirect('/request/ttp_request/show_request_list');
     }//function insert friend

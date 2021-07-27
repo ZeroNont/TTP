@@ -12,7 +12,7 @@ class Da_ttp_request extends ttps_model
         parent::__construct();
     }
 
-    function insert()
+    function insert_reason()
     {
         $sql = "INSERT INTO ttps_database.approval(reject_reason) 
                 VALUES (?)";
