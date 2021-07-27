@@ -115,24 +115,24 @@ $(document).ready(function() {
             <hr>
 
             <div class="row">
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <h3>ข้อมูลพิจารณาคำขอ</h3>
-                    <h5>ชื่อ : <?php echo $arr_emp->Empname_th.' '.$arr_emp->Empsurname_th ?></h5>
-                    <h5>ตำแหน่ง : หัวหน้างาน</h5>
-                    <h5>สถานะ : อนุมัติ</h5>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <h3>ข้อมูลพิจารณาคำขอ</h3>
+                        <h5>ชื่อ : <?php echo $arr_emp->Empname_th.' '.$arr_emp->Empsurname_th ?></h5>
+                        <h5>ตำแหน่ง : หัวหน้างาน</h5>
+                        <h5>สถานะ : อนุมัติ</h5>
 
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="form-group">
-                    <h3>ข้อมูลพิจารณาคำขอ</h3>
-                    <h5>ชื่อ : <?php echo $arr_emp->Empname_th.' '.$arr_emp->Empsurname_th ?></h5>
-                    <h5>ตำแหน่ง : HR</h5>
-                    <h5>สถานะ : อนุมัติ</h5>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <h3>ข้อมูลพิจารณาคำขอ</h3>
+                        <h5>ชื่อ : <?php echo $arr_emp->Empname_th.' '.$arr_emp->Empsurname_th ?></h5>
+                        <h5>ตำแหน่ง : HR</h5>
+                        <h5>สถานะ : อนุมัติ</h5>
 
+                    </div>
                 </div>
-            </div>
             </div>
 
 
@@ -184,7 +184,7 @@ $(document).ready(function() {
 
 
 
-                <form method="POST" action="<?php echo site_url().'/approve_form/ttp_approve_form/insert_reason/'; ?>">
+                <form method="POST" action="<?php echo site_url().'/approve_form/ttp_approve_form/reject_form_Plant/'.$arr_req->Form_ID; ?>">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -199,9 +199,9 @@ $(document).ready(function() {
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
 
-                <a href=" <?php echo site_url() . '/approve_form/ttp_approve_form/insert_reason/' ; ?>">
-                    <button type="submit" class="btn btn-success btn-lg float-right">Submit</button>
-                </a>
+
+                <button type="submit" class="btn btn-success btn-lg float-right">Submit</button>
+
             </div>
 
             </form>
