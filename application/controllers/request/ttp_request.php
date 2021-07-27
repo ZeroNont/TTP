@@ -52,16 +52,15 @@ class ttp_request extends MainController
         $this->mreq->Status = 1;
         $data['arr_req'] = $this->mreq->get_all_sup()->result();
         $this->output('consent/v_request', $data);
-    }
+    } //แสดงายการคำขอทั้งหมด สำหรับหัวหน้างานคนนั้นๆ
 
     function show_request_detail($id)
 	{
         $this->load->model('M_ttp_request', 'mreq');
         $data['arr_req'] = $this->mreq->get_by_id($id)->row();
         $data['arr_emp'] = $this->mreq->get_all()->row();
-        // $data['arr_file'] = $this->mreq->get_form_file()->result();
         $this->output('consent/v_request_detail',$data);
-	}
+	} //แสดงรายละเอียดเพิ่มเติมของรายการคำขอ
 
     function reject_form($id)
     {
@@ -76,7 +75,7 @@ class ttp_request extends MainController
         $this->dain->update_form();
 
         redirect('/request/ttp_request/show_request_list');
-    }//function insert friend
+    } //ปฏิเสธแบบฟอร์ม
 
     function update_request_form($id) 
     {
@@ -88,7 +87,7 @@ class ttp_request extends MainController
         $this->mreq->Form_ID = $id;   
         $this->mreq->update_app();
         redirect('/request/ttp_request/show_request_list');
-    }
+    } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติแล้ว
 
 
 

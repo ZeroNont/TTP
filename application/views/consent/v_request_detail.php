@@ -158,8 +158,6 @@ $(document).ready(function() {
                     กรุณากรอกเหตุผล
                 </label>
 
-
-
                 <form method="POST" action="<?php echo site_url().'/request/ttp_request/reject_form/'.$arr_req->Form_ID; ?>">
                     <div class="row">
                         <div class="col-md-12">
@@ -179,7 +177,6 @@ $(document).ready(function() {
             </div>
 
             </form>
-
 
         </div>
     </div>

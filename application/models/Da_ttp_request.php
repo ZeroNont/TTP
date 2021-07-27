@@ -12,22 +12,13 @@ class Da_ttp_request extends ttps_model
         parent::__construct();
     }
 
-    function insert_reason()
-    {
-        $sql = "INSERT INTO ttps_database.approval(reject_reason) 
-                VALUES (?)";
-        $this->db->query($sql, array($this->reject_reason));
-
-    }
-
     function update_reject()
     {
         $sql = "UPDATE ttps_database.approval AS app
                 SET app.reject_reason = ?
                 WHERE app.Form_ID = ? "; 
         $this->db->query($sql, array($this->reject_reason,$this->Form_ID));
-    } 
-
+    } //เพิ่มเหตุผลในการปฏิเสธลงในตาราง approval
 
     function update_form()
     {
@@ -35,7 +26,7 @@ class Da_ttp_request extends ttps_model
                 SET req.Status = ?
                 WHERE req.Form_ID = ? "; 
         $this->db->query($sql, array($this->Status,$this->Form_ID));
-    } 
+    } //อัพเดทสถานะของฟอร์มที่ถูกยกเลิกโดยหัวหน้างาน
 
     
 }
