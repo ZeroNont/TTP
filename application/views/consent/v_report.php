@@ -1,6 +1,6 @@
 <h1>
     Report (รายงานข้อมูล)
-    <button class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</button>
+    <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a>
 </h1>
 <br>
 <div class="card-header" id="card_radius">
@@ -129,12 +129,10 @@
             </div>
         </div>
         <!-- Pending Approval  -->
-
     </div>
 
     <div class="row">
         <!-- <div class="col-xl-1"></div> -->
-
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-header bg-transparent">
@@ -151,41 +149,16 @@
                                 </select>
                             </div>
                         </div>
-
-                        <!-- <div class="col">
-                        <ul class="nav nav-pills justify-content-end">
-                            <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$" data-suffix="k">
-                                <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
-                                    <span class="d-none d-md-block">Month</span>
-                                    <span class="d-md-none">M</span>
-                                </a>
-                            </li>
-                            <li class="nav-item" data-toggle="chart" data-target="#chart-sales-dark" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$" data-suffix="k">
-                                <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                                    <span class="d-none d-md-block">Week</span>
-                                    <span class="d-md-none">W</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div> -->
                     </div>
                 </div>
-
                 <div class="card-body">
-                    <!-- Chart -->
-                    <!-- <div class="chart"> -->
-                    <!-- Chart wrapper -->
                     <canvas id="myChart" class="chart-canvas"></canvas>
-                    <!-- <canvas id="chart-sales-dark" class="chart-canvas"></canvas> -->
-                    <!-- </div> -->
                 </div>
             </div>
         </div>
     </div>
 
     <div class="row">
-
-
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-header border-0">
@@ -202,9 +175,8 @@
                         </div>
 
                     </div>
-                    <!-- <h3 class="mb-0">Light table</h3> -->
                 </div>
-                <div class="table-responsive">
+                <div class="table-responsive" table id='myTable'>
                     <!-- Projects table -->
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
@@ -254,8 +226,38 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
+
+<!-- <script>
+    $('#datepicker').datepicker({
+        uiLibrary: 'bootstrap',
+        format: "yyyy-mm-dd",
+        type: "date"
+    });
+</script>
 
 <script>
+    $('#datepicker2').datepicker({
+        uiLibrary: 'bootstrap',
+        format: "yyyy-mm-dd",
+        type: "date"
+    });
+</script> -->
+
+<script>
+    function ExcelReport() //function สำหรับสร้าง ไฟล์ excel จากตาราง
+    {
+        var sheet_name = "Report"; /* กำหหนดชื่อ sheet ให้กับ excel โดยต้องไม่เกิน 31 ตัวอักษร */
+        var elt = document.getElementById('myTable'); /*กำหนดสร้างไฟล์ excel จาก table element ที่มี id ชื่อว่า myTable*/
+
+        /*------สร้างไฟล์ excel------*/
+        var wb = XLSX.utils.table_to_book(elt, {
+            sheet: sheet_name
+        });
+        XLSX.writeFile(wb, 'SDM&SKD Temporary Tag Permission Report.xlsx'); //Download ไฟล์ excel จากตาราง html โดยใช้ชื่อว่า SDM&SKD Temporary Tag Permission Report.xlsx
+    }
+
     function show_chart(label, data) {
         var bar_charts = document.getElementById("myChart");
         var myChart = new Chart(bar_charts, {
@@ -263,7 +265,7 @@
             data: {
                 labels: label,
                 datasets: [{
-                    label: 'Report',
+                    label: 'Number of requests',
                     data: data,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
