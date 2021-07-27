@@ -16,7 +16,6 @@ $(document).ready(function() {
 
         <div class="card-body ">
 
-
             <div class="pl-lg-4">
                 <div class="row">
                     <div class="col-lg-6">
@@ -86,10 +85,11 @@ $(document).ready(function() {
                             <label class="form-control-label" for="input-country">Layout
                                 (รูปแบบการวาง)</label>
                             <br>
-                            <a href="<?php echo base_url() ?>assets/file/layout/<?php echo $arr_file[0]->Layout_location ?>" download>
+                            <a href="<?php echo base_url() ?>assets/file/layout/<?php echo $arr_req->Layout_location ?>"
+                                download>
                                 <button type="button" class="btn btn-danger" id="button_size">
                                     <i class="fas fa-file-alt text-dark"></i>
-                                    &nbsp;&nbsp;ไฟล์
+                                    &nbsp;&nbsp;File
                                 </button>
                             </a>
                         </div>
@@ -99,11 +99,12 @@ $(document).ready(function() {
                         <div class="form-group">
                             <label class="form-control-label" for="input-country">Plan
                                 (แผนการวาง)</label>
-                                <br>
-                            <a href="<?php echo base_url() ?>assets/file/Plan/<?php echo $arr_file[0]->Layout_location ?>" download>
+                            <br>
+                            <a href="<?php echo base_url() ?>assets/file/Plan/<?php echo $arr_req->Layout_location ?>"
+                                download>
                                 <button type="button" class="btn btn-danger" id="button_size">
                                     <i class="fas fa-file-alt text-dark"></i>
-                                    &nbsp;&nbsp;ไฟล์
+                                    &nbsp;&nbsp;File
                                 </button>
                             </a>
                         </div>
@@ -111,14 +112,14 @@ $(document).ready(function() {
                 </div>
 
             </div>
-
+            <hr>
             <div class="row">
                 <div class="col-lg-4">
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-danger btn-lg float-right" data-toggle="modal"
                         data-target="#Modal_reject">
-                        ไม่อนุมัติ
+                        Reject
                     </button>
 
                 </div>
@@ -128,7 +129,7 @@ $(document).ready(function() {
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-success btn-lg float-right" data-toggle="modal"
                         data-target="#Modal_approve">
-                        อนุมัติ
+                        Approve
                     </button>
 
                 </div>
@@ -144,22 +145,40 @@ $(document).ready(function() {
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-body" align="center">
-                กรุณากรอกเหตุผล
+            <div class="modal-header">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <label for="" class="form-control-label">
+
+                    กรุณากรอกเหตุผล
+                </label>
+
+
+
+                <form method="POST" action="<?php echo site_url().'/request/ttp_request/insert_reason/'; ?>">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" name="reject_reason" class="form-control"
+                                    placeholder="เหตุผลในการปฏิเสธ" require>
+                            </div>
+                        </div>
+                    </div>
             </div>
 
 
-            <form method="POST" action="<?php echo site_url().'/request/ttp_request/insert_reason/'; ?>">
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
 
-                <input type="text" name="reject_reason" class="form-control" placeholder="เหตุผลในการปฏิเสธ" require>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
-
-                    <a href=" <?php echo site_url() . '/request/ttp_request/insert_reason/' ; ?>">
-                        <button type="submit" class="btn btn-success btn-lg float-right">Summit</button>
-                    </a>
-                </div>
+                <a href=" <?php echo site_url() . '/request/ttp_request/insert_reason/' ; ?>">
+                    <button type="submit" class="btn btn-success btn-lg float-right">Submit</button>
+                </a>
+            </div>
 
             </form>
 
@@ -182,14 +201,14 @@ $(document).ready(function() {
                 <h1 class="modal-title" id="ModalLabel">ยืนยันการอนุมัติคำขอ</h1>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">ยกเลิก</button>
+                <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success btn-lg float-right" id="btn_success" data-toggle="modal"
-                    data-target="#successModal"
-                    action="<?php echo site_url() . 'request/ttp_request/update_request_form/'; ?>">
-                    ยืนยัน
-                </button>
+                
+                    <button type="button" class="btn btn-success btn-lg float-right" id="btn_success"
+                        data-toggle="modal" data-target="#successModal">
+                        Submit
+                    </button>
             </div>
 
         </div>
@@ -207,8 +226,8 @@ $(document).ready(function() {
                 <h1> อนุมัติคำขอสำเร็จ </h1>
             </div>
             <div class="modal-footer">
-                <a href="<?php echo site_url() . 'request/ttp_request/show_request_list/' ?>">
-                    <button type="button" class="btn btn-success btn-lg float-right">ตกลง</button>
+            <a href="<?php echo site_url() . 'request/ttp_request/update_request_form/'. $arr_req->Form_ID ; ?>">
+                    <button type="button" class="btn btn-success btn-lg float-right">Agree</button>
                 </a>
             </div>
         </div>

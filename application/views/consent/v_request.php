@@ -32,7 +32,7 @@
                     <thead class="thead-light">
                         <tr>
                             <th scope="col">#</th>
-                                <th scope="col">RUNNING NO.</th>
+                            
                                 <th scope="col">Item</th>
                                 <th scope="col">Schedule</th>
                                 <th scope="col">OFFICER IN CHARGE</th>
@@ -40,44 +40,41 @@
                             </tr>
                     </thead>
 
+                
                         <tbody align="center">
                                         <?php
-                                            for($i=0;$i<count($arr_req);$i++){ ?>
+                                            foreach($arr_req as $index => $row ){ ?>
                                                 <tr>
                                                     
-        
                                                     <!-- column ลำดับ # -->
                                                     <td style='text-align: center;'>
-                                                        <?php echo ($i+1);?>
+                                                        <?php echo ($index+1);?>
                                                     </td>
 
-                                                    <!-- column รหัสกำกับ -->
-                                                    <td>
-                                                        <?php echo $arr_req[$i]->Form_ID;?>
-                                                    </td>
+                                                   
 
                                                     <!-- column สิง่ของ -->
                                                     <td>
-                                                        <?php echo $arr_req[$i]->Item;?>
+                                                        <?php echo $row->Item;?>
                                                     </td>
 
                                                     <!-- column ช่วงเวลาร้องขอ -->
                                                     <td>
                                                        
-                                                        <?php echo $arr_req[$i]->Start_date.' - '.$arr_req[$i]->End_date;?>
+                                                        <?php echo date("d-m-Y",strtotime($row->Start_date)).' - '.date("d-m-Y",strtotime($row->End_date));?>
                                                     </td>
 
                                                     <!-- column ผู้รับผิดชอบ -->
                                                     <td>
-                                                        <?php echo $arr_req[$i]->Empname_th.' '.$arr_req[$i]->Empsurname_th;?>
+                                                        <?php echo $row->Empname_th.' '.$row->Empsurname_th;?>
                                                     </td>
 
                                                     <!-- column ดำเนินการ -->
                                                     <td style='text-align: center;'>
 
                                                         <!-- ปุ่มดำเนินการ -->
-                                                        <a href=" <?php echo site_url() . '/request/ttp_request/show_request_detail/' . $arr_req[$i]->Form_ID; ?>">
-                                                             <button class="btn btn-warning"> <i class="fa fa-pencil"></i> </button>
+                                                        <a href=" <?php echo site_url() . '/request/ttp_request/show_request_detail/' . $row->Form_ID; ?>">
+                                                             <button class="btn btn-primary"> <i class="fa fa-info-circle"></i> </button>
                                                         </a>
 
                                                         
