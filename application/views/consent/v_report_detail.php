@@ -18,9 +18,9 @@
         <b>Plant Name. :</b> <?php echo $Form_data->Plant_name; ?><br><br>
         <b>Reason :</b> <?php echo $Form_data->Reason; ?><br><br>
         <b>Requested date :</b> <?php echo date("d-m-Y", strtotime($Form_data->Requested_date)); ?><br><br>
-        <b>Approval date :</b> <?php echo $Form_data->Approve_date; ?><br><br>
-        <b>Starting date :</b> <?php echo $Form_data->Start_date; ?><br><br>
-        <b>End date :</b> <?php echo $Form_data->End_date; ?><br><br>
+        <b>Approval date :</b> <?php echo date("d-m-Y", strtotime($Form_data->Approve_date)) ?><br><br>
+        <b>Starting date :</b> <?php echo date("d-m-Y", strtotime($Form_data->Start_date)) ?><br><br>
+        <b>End date :</b> <?php echo date("d-m-Y", strtotime($Form_data->End_date)) ?><br><br>
         <b>Approver :</b> <?php echo $Form_data->Empname_engTitle . ' ' . $Form_data->Empname_eng . ' ' . $Form_data->Empsurname_eng; ?><br><br>
         <?php
         if ($Form_data->Status == '4') {

@@ -45,23 +45,25 @@ class ttp_request extends MainController
     }
     // function index()
 
-    public function show_request_list()
+    function show_request_list() 
     {
         $this->load->model('M_ttp_request', 'mreq');
-        $data['arr_req'] = $this->mreq->get_all()->result();
+        $this->mreq->Supervisor_ID = $_SESSION["UsEmp_ID"];
+        $this->mreq->Status = 1;
+        $data['arr_req'] = $this->mreq->get_all_sup()->result();
         $this->output('consent/v_request', $data);
     }
 
-    public function show_request_detail($id)
+    function show_request_detail($id)
 	{
         $this->load->model('M_ttp_request', 'mreq');
         $data['arr_req'] = $this->mreq->get_by_id($id)->row();
         $data['arr_emp'] = $this->mreq->get_all()->row();
-        $data['arr_file'] = $this->mreq->get_form_file()->result();
+        // $data['arr_file'] = $this->mreq->get_form_file()->result();
         $this->output('consent/v_request_detail',$data);
 	}
 
-    public function insert_reason()
+    function insert_reason()
     {
    
         $this->load->model('Da_ttp_request','dain');
@@ -72,6 +74,20 @@ class ttp_request extends MainController
 
         redirect('/request/ttp_request/show_request_list');
     }//function insert friend
+
+    function update_request_form($id) 
+    {
+        $this->load->model('Da_ttp_request', 'dreq');
+        $this->dreq->Status = 2;
+        $this->dreq->Form_ID = $id;   
+        $this->dreq->update_form();
+        $this->load->model('M_ttp_request', 'mreq');
+        $this->mreq->Form_ID = $id;   
+        $this->mreq->update_app();
+        redirect('/request/ttp_request/show_request_list');
+    }
+
+
 
 }
 // 

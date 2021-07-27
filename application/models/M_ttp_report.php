@@ -43,7 +43,8 @@ class M_ttp_report extends Da_ttp_report
                 INNER JOIN dbmc.employee AS emp
                 ON emp.Emp_ID = req.Emp_ID
                 INNER JOIN dbmc.sectioncode AS sec
-                ON sec.Sectioncode = emp.Sectioncode_ID";
+                ON sec.Sectioncode = emp.Sectioncode_ID
+                ORDER BY sec.Sectioncode";
         $query = $this->db->query($sql);
         return $query;
     }
