@@ -17,38 +17,38 @@
 <html>
 
 <head>
-<meta charset="UTF-8" />
+    <meta charset="UTF-8" />
 
-<style>
-.button {
-  background-color:#ff0000;
-  border-radius :20px;
-  color:white;
-  padding: 5px;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
- 
-}
+    <style>
+    .button {
+        background-color: #ff0000;
+        border-radius: 20px;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
 
-table, th, td {
+    }
 
-  text-align:center;
-}
+    table,
+    th,
+    td {
 
-
-</style>
+        text-align: center;
+    }
+    </style>
 </head>
 
 <body>
-    
+
     <div class="main-content" id="panel">
-      
+
         <div class="header pb-6 d-flex align-items-center"
             style="min-height: 100px;  background-size: cover; background-position: center top;">
-            
+
 
         </div>
         <!-- Page content -->
@@ -61,88 +61,122 @@ table, th, td {
                             <div class="row align-items-center">
                                 <thead>
                                     <table style="width:100%">
-                                    <tr>
-                                    <th><h5>#</h5></th> 
-                                    <th><h5>Running No.</h5></th> 
-                                    <th><h5>Item</h5></th>
-                                    <th><h5>Office in Charge</h5></th>
-                                    <th><h5>Schedule</h5></th>
-                                    <th><h5>Status</h5></th>
-                                    <th><h5>Number of times</h5></th>
-                                    <th><h5>Submit a request</h5></th>
-                                    </tr>
-                                   
-                                <thead>
+                                        <tr>
+                                            <th>
+                                                <h5>#</h5>
+                                            </th>
+                                            <th>
+                                                <h5>Running No.</h5>
+                                            </th>
+                                            <th>
+                                                <h5>Item</h5>
+                                            </th>
+                                            <th>
+                                                <h5>Office in Charge</h5>
+                                            </th>
+                                            <th>
+                                                <h5>Schedule</h5>
+                                            </th>
+                                            <th>
+                                                <h5>Status</h5>
+                                            </th>
+                                            <th>
+                                                <h5>Number of times</h5>
+                                            </th>
+                                            <th>
+                                                <h5>Submit a request</h5>
+                                            </th>
+                                        </tr>
+
+                                        <thead>
 
                             </div>
                         </div>
-                        
-                                
-                                    
-                                    <tbody>    
-                                    <tr>
-                                    <?php for ($i = 0; $i < count($arr_renew); $i++) {?>   
-                                        <td style='text-align:center'> 
-                                        <?php if($arr_renew[$i]->Status==4){echo ($i + 1);} else { echo " ";} ?></td>
-                                        
-                                        <td><?php if($arr_renew[$i]->Status==4)
-                                        {echo "HR2021-00".($i+1) ; } 
-                                        else {echo " ";}?></td>
 
-                                        <td><?php if($arr_renew[$i]->Status==4)
-                                        {echo $arr_renew[$i]->Item; } 
-                                        else {echo " ";}?></td>
-                                        
-                                        <td><?php if($arr_renew[$i]->Status==4)
-                                        {echo $arr_renew[$i]->Officer; } 
-                                        else {echo " ";}?></td>
 
-                                        <td><?php if($arr_renew[$i]->Status==4)
-                                        {echo date("d F",strtotime($arr_renew[$i]->Start_date)); 
+
+                        <tbody>
+                            <?php for ($i = 0; $i < count($arr_renew); $i++) { ?>
+                            <tr>
+
+                                <td style='text-align:center'>
+
+                                    echo ($i + 1);
+                                    } else {
+                                    echo " ";
+                                    } ?></td>
+
+                                <td><?php if ($arr_renew[$i]->Status == 4) {
+                                            echo "HR2021-00" . ($i + 1);
+                                        } else {
+                                            echo " ";
+                                        } ?></td>
+
+                                <td><?php if ($arr_renew[$i]->Status == 4) {
+                                            echo $arr_renew[$i]->Item;
+                                        } else {
+                                            echo " ";
+                                        } ?></td>
+
+                                <td><?php if ($arr_renew[$i]->Status == 4) {
+                                            echo $arr_renew[$i]->Officer;
+                                        } else {
+                                            echo " ";
+                                        } ?></td>
+
+                                <td><?php if ($arr_renew[$i]->Status == 4) {
+                                            echo date("d F", strtotime($arr_renew[$i]->Start_date));
                                             echo '-';
-                                            echo date("d F Y",strtotime($arr_renew[$i]->End_date)); } 
-                                        else {echo " ";}?></td>     
+                                            echo date("d F Y", strtotime($arr_renew[$i]->End_date));
+                                        } else {
+                                            echo " ";
+                                        } ?></td>
 
-                                        <td><?php if($arr_renew[$i]->Status==4)
-                                        {  if($arr_renew[$i]->Status==4)
-                                            {echo "อนุมัติ";} else {echo " ";}
-                                        } 
-                                        else {echo " ";}?></td>
+                                <td><?php if ($arr_renew[$i]->Status == 4) {
+                                            if ($arr_renew[$i]->Status == 4) {
+                                                echo "อนุมัติ";
+                                            } else {
+                                                echo " ";
+                                            }
+                                        } else {
+                                            echo " ";
+                                        } ?></td>
 
-                                        <td><?php if($arr_renew[$i]->Status==4)
-                                        {  echo "1/3"; 
-                                        } 
-                                        else {echo " ";}?></td>
-                           
-                                                
-                           
-                                            <!--ปุ่มขอต่ออายุ-->
-                                                
-                                                <td> 
-                                                <a href='<?php if($arr_renew[$i]->Status==4)
-                                                echo site_url() . 'Renewal/Renewal_controller/show_reform/'
-                                                .$arr_renew[$i]->Form_ID?>'>
-                                                
-                                                <button> <i class="ni ni-email-83 text-dark"></i></button>
-                                            
-                                                </a>
-                                                </td>
-                                                
-                                    </tbody>            
-                                               
-                                                    
-                                    </tr>
-                                    <?php } ?>
-                                    </table>
-                               
-                        
+                                <td><?php if ($arr_renew[$i]->Status == 4) {
+                                            echo "1/3";
+                                        } else {
+                                            echo " ";
+                                        } ?></td>
+
+
+
+                                <!--ปุ่มขอต่ออายุ-->
+
+                                <td>
+                                    <a href='<?php if ($arr_renew[$i]->Status == 4)
+                                                        echo site_url() . 'Renewal/Renewal_controller/show_reform/'
+                                                            . $arr_renew[$i]->Form_ID ?>'>
+
+                                        <button> <i class="ni ni-email-83 text-dark"></i></button>
+
+                                    </a>
+                                </td>
+
+                        </tbody>
+
+
+                        </tr>
+                        <?php } ?>
+                        </table>
+
+
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-    
+
     </script>
 </body>
 

@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="card-body ">
-            <form action="<?php echo site_url() . 'licence_form/licence_input/insert'; ?>" method="post"
+            <form action="<?php echo site_url() . 'licence_form/licence_input/edit'; ?>" method="post"
                 enctype="multipart/form-data">
 
                 <div class="pl-lg-4">
@@ -45,6 +45,10 @@
                                     (สิ่งที่ต้องการวาง)</label>
                                 <input type="text" name="Item" class="form-control" require
                                     value="<?php echo $obj_form[0]->Item ?>">
+                                <input type="text" name="form" class="form-control" require
+                                    value="<?php echo $obj_form[0]->Form_ID ?>" hidden>
+                                <input type="text" name="count" class="form-control" require
+                                    value="<?php echo $obj_form[0]->Form_count ?>" hidden>
                             </div>
                         </div>
                         <div class=" col-lg-12 ">

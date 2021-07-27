@@ -71,15 +71,15 @@ class licence_input extends MainController
         $date = date("Y-m-d");
         
         $j = 1;
-        $id = strtotime('now');
+        $id = $_SESSION['UsEmp_ID'];
         $Layout_name =  $_FILES['Layout']['name'];
         $tmp_Layout =  $_FILES['Layout']['tmp_name'];
         $Plan_name =  $_FILES['Plan']['name'];
         $tmp_Plan =  $_FILES['Plan']['tmp_name'];
 
         $this->load->model('Da_ttp_licence', 'ttp');
-        $this->ttp->Emp_ID = $this->input->post('Emp_ID');
-        $i = $this->input->post('Emp_ID');
+        $this->ttp->Emp_ID = $id;
+        // $i = $this->input->post('Emp_ID');
         $this->ttp->Item = $this->input->post('Item');
         $this->ttp->Start_date = $this->input->post('Start_date');
         $this->ttp->End_date = $this->input->post('End_date');
@@ -100,16 +100,62 @@ class licence_input extends MainController
         move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
         $this->ttp->Plan_location = $Plan_name;
         $this->ttp->insert_file();
-        $id = $_SESSION['UsEmp_ID'];
+
         // echo  $id;
-        // $this->load->model('M_ttp_licence', 'ttp');
-        $data['obj_status'] = $this->ttp->get_status($id)->result();
+        $this->load->model('M_ttp_licence', 'get');
+        $data['obj_status'] = $this->get->get_status($id)->result();
         // // print_r($_SESSION['Emp_ID']);
         $this->output('consent/v_check_status', $data);
         // $this->output('consent/v_check_status', $i);
         // redirect('licence_form/licence_input/index');
     }
     // function index()
+    function edit()
+    {
+        $date = date("Y-m-d");
+
+
+        $id = $_SESSION['UsEmp_ID'];
+        $Layout_name =  $_FILES['Layout']['name'];
+        $tmp_Layout =  $_FILES['Layout']['tmp_name'];
+        $Plan_name =  $_FILES['Plan']['name'];
+        $tmp_Plan =  $_FILES['Plan']['tmp_name'];
+
+        $this->load->model('Da_ttp_licence', 'ttp');
+        $this->ttp->Emp_ID = $id;
+        $j =   $this->input->post('count');
+        $k  = $this->input->post('form');
+        // $i = $this->input->post('Emp_ID');
+        $this->ttp->Item = $this->input->post('Item');
+        $this->ttp->Start_date = $this->input->post('Start_date');
+        $this->ttp->End_date = $this->input->post('End_date');
+        $this->ttp->Requested_date = $date;
+        $this->ttp->Reason = $this->input->post('Reason');
+        $this->ttp->Officer = $this->input->post('Officer');
+        $this->ttp->Tell = $this->input->post('Tell');
+        $this->ttp->Supervisor_ID = $this->input->post('Supervisor');
+        $this->ttp->Company_ID = $this->input->post('Company_ID');
+        $this->ttp->Approve_Plant_ID = $this->input->post('Approve_Plant');
+        $this->ttp->Form_count =   $j + 1;
+        // echo $this->input->post('form');
+        // echo $this->input->post('count');
+        $this->ttp->update_form($k);
+        $this->ttp->update_approve($k);
+        move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
+        $this->ttp->Layout_location = $Layout_name;
+        move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
+        $this->ttp->Plan_location = $Plan_name;
+        $this->ttp->Form_ID = $this->input->post('from');
+        $this->ttp->update_file($k);
+
+        // echo  $id;
+        $this->load->model('M_ttp_licence', 'get');
+        $data['obj_status'] = $this->get->get_status($id)->result();
+        // // print_r($_SESSION['Emp_ID']);
+        $this->output('consent/v_check_status', $data);
+        // $this->output('consent/v_check_status', $i);
+        // redirect('licence_form/licence_input/index');
+    }
 
 }
 // 
