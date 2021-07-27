@@ -1,3 +1,12 @@
+<!--
+    M_renewal
+    select to get data
+    @input -
+    @output -
+    @author Nattakorn
+    Create date 2564-07-19
+    Update date 2564-07-27
+-->
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
@@ -10,7 +19,7 @@ class M_renewal extends Da_renewal
         parent::__construct();
     }
 
-
+    //เอาค่าทั้งหมด
     public function get_all()
     {
         $sql = "SELECT *
@@ -21,6 +30,7 @@ class M_renewal extends Da_renewal
         return $query;
     }
 
+    //เอาค่าจากตารางformfile
     public function get_formfile()
     {
         $sql =
@@ -30,6 +40,7 @@ class M_renewal extends Da_renewal
         return $query;
     }
 
+    //เอาค่าจากตารางcompany
     public function get_company()
     {
         $sql =
@@ -38,6 +49,8 @@ class M_renewal extends Da_renewal
         $query = $this->db->query($sql);
         return $query;
     }
+
+    //เอาค่าจากตาราง supervisor 
     public function get_supervisor()
     {
         $sql =
@@ -46,6 +59,7 @@ class M_renewal extends Da_renewal
         $query = $this->db->query($sql);
         return $query;
     }
+    //เอาค่าจากแพลน
     public function get_plan()
     {
         $sql =
@@ -55,6 +69,8 @@ class M_renewal extends Da_renewal
         $query = $this->db->query($sql);
         return $query;
     }
+
+    //เอาคาสเตตัส
     public function get_status()
     {
         $sql =
@@ -67,6 +83,7 @@ class M_renewal extends Da_renewal
         return $query;
     }
 
+    //เอาค่าเฉพาะวันที่
     public function get_bydate($Form_ID)
     {
         $sql =
@@ -79,13 +96,5 @@ class M_renewal extends Da_renewal
     }
 
     
-    //public function get_by_id($bk_id)
-   //{
-        //$sql = "SELECT * 
-               // FROM {$this->db_name}.ossd_book
-             
-				//WHERE bk_id=$bk_id";
-        //$query = $this->db->query($sql);
-        //return $query;
-    //}
+    
 }

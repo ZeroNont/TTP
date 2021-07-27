@@ -1,3 +1,12 @@
+<!--
+    v_renew_form
+    display for add date
+    @input Form_ID
+    @output date chahnge
+    @author Nattakorn
+    Create date 2564-07-19
+    Update date 2564-07-27
+-->
 <div class="col-xl-12 order-xl-1">
     <div class="card">
         <div class="card-header">
@@ -9,7 +18,7 @@
             </div>
         </div>
         <div class="card-body ">
-            <form action="<?php echo site_url() . 'Renewal/Renewal_controller/update_date/'; ?>" method='post'
+            <form action="<?php echo site_url() . 'Renewal/Renewal/update_date/'; ?>" method='post'
                 enctype="multipart/form-data">
 
                 <div class="pl-lg-4">
@@ -110,6 +119,7 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-country">Layout
                                     (รูปแบบการวาง)
+                                    
                                     <input type="text" class="form-control" name="Layout" 
                                     value='<?php echo $arr_formfile[0]->Layout_location?>' disabled>
                                 </label>

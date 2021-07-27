@@ -118,7 +118,7 @@ table, th, td {
                                             <!--ปุ่มขอต่ออายุ-->
                                                 
                                                 <td> <?php if ($arr_renew[$i]->Status == 4) { ?>
-                                                <a href='<?php  echo site_url() . 'Renewal/Renewal_controller/show_reform/'
+                                                <a href='<?php  echo site_url() . 'Renewal/Renewal/show_reform/'
                                                 .$arr_renew[$i]->Form_ID?>'>
                                                 
                                                 <button> <i class="fas fa-envelope"></i></button>

@@ -1,20 +1,28 @@
-
+<!--
+    Renewal_controller
+    display for edit End date
+    @input Form_ID
+    @output -
+    @author Nattakorn
+    Create date 2564-07-19
+    Update date 2564-07-27
+-->
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class Renewal_controller extends MainController
+class Renewal extends MainController
 {
 
-	
+	//โชว์ลิสต์รายการที่แก้ได้
 	function show_renewal()
 	{
 		$this->load->model('M_renewal', 'ttp');
         $data['arr_renew'] = $this->ttp->get_all()->result();
 		$this->output('renewal/v_renewal',$data);
 	}
-	// function index()
 
+	//โชว์หน้าแก้ไขวัน
 	function show_reform($Form_ID)
     {
 		$this->load->model('M_renewal', 'ttp');
@@ -25,8 +33,9 @@ class Renewal_controller extends MainController
         $data['arr_renew'] = $this->ttp->get_bydate($Form_ID)->result();
         $this->output('renewal/v_renew_form', $data);
     
-	} //show_table
+	}
 
+	//อัพเดทวันลงดาต้าเบส
 	function update_date()
 	{
 		
@@ -42,7 +51,7 @@ class Renewal_controller extends MainController
 
 	
 		$this->ttp->update();
-		redirect('/Renewal/Renewal_controller/show_renewal');
+		redirect('/Renewal/Renewal/show_renewal');
 
 		
 	}
