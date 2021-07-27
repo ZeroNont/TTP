@@ -15,14 +15,14 @@
             <div class="form-group">
                 <label class="form-control-label" for="exampleInputName2">Start Date
                     (วันที่เริ่มต้น)</label>
-                <input type="date" class="form-control" min="<?php echo date('Y-m-d'); ?>name=" d_s" id="datepicker" width="270">
+                <input type="date" class="form-control" name="Start_date" id="Start_date" width="270">
             </div>
         </div>
         <div class="col-lg-3">
             <div class="form-group">
                 <label class="form-control-label" for="exampleInputEmail2">End Date
                     (วันที่สิ้นสุด)</label>
-                <input type="date" class="form-control" min="<?php echo date('Y-m-d'); ?>name=" d_e" id="datepicker2" width="270">
+                <input type="date" class="form-control" max="<?php echo date('Y-m-d'); ?>" name="End_date" id="End_date" width="270">
             </div>
         </div>
         <div class="col-lg-3">
@@ -32,7 +32,7 @@
     </div>
 
 
-    <div class="row">
+    <div class="row" id="count_requested">
         <!-- <div class="col-xl-1"></div> -->
 
         <div class="col-xl-4 col-md-6">
@@ -42,14 +42,8 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">All Requests</h5>
-                            <span class="h2 font-weight-bold mb-0">
-                                <?php
-                                $total_request = 0;
-                                for ($i = 0; $i < count($requested); $i++) {
-                                    $total_request += 1;
-                                }
-                                echo $total_request;
-                                ?>
+                            <span class="h2 font-weight-bold mb-0" id="total_request">
+
                             </span>
                         </div>
                         <div class="col-auto">
@@ -74,16 +68,8 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Approved</h5>
-                            <span class="h2 font-weight-bold mb-0">
-                                <?php
-                                $total_approval = 0;
-                                for ($i = 0; $i < count($requested); $i++) {
-                                    if ($requested[$i]->HR_No != null) {
-                                        $total_approval += 1;
-                                    }
-                                }
-                                echo $total_approval;
-                                ?>
+                            <span class="h2 font-weight-bold mb-0" id="total_approval">
+
                             </span>
                         </div>
                         <div class="col-auto">
@@ -108,11 +94,8 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Pending Approval</h5>
-                            <span class="h2 font-weight-bold mb-0">
-                                <?php
-                                $pending_approval = count($requested) - $total_approval;
-                                echo $pending_approval;
-                                ?>
+                            <span class="h2 font-weight-bold mb-0" id="pending_approval">
+
                             </span>
                         </div>
                         <div class="col-auto">
@@ -131,7 +114,7 @@
         <!-- Pending Approval  -->
     </div>
 
-    <div class="row">
+    <div class="row" id="count_graph">
         <!-- <div class="col-xl-1"></div> -->
         <div class="col-xl-12">
             <div class="card">
@@ -158,7 +141,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" id="count_table">
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-header border-0">
@@ -188,34 +171,8 @@
                                 <th scope="col">Details</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <?php
-                            $num = 1;
-                            for ($i = 0; $i < count($requested); $i++) {
-                                if ($requested[$i]->HR_No != null) {
-                            ?>
-                                    <tr>
-                                        <td><?php echo $num++; ?></td>
-                                        <th scope="row"><?php echo $requested[$i]->HR_No ?></th>
-                                        <th scope="row"><?php echo $requested[$i]->Officer ?></th>
-                                        <?php
-                                        if ($requested[$i]->Status == '4') {
-                                            $Status = 'ยังอยู่ในคลัง';
-                                        } else {
-                                            $Status = 'สิ้นสุดการวาง';
-                                        }
-                                        ?>
-                                        <td><?php echo $Status ?></td>
-                                        <td>
-                                            <a href="<?php echo site_url() . 'Report/Report_controller/show_report_detail?Form_ID=' . $requested[$i]->Form_ID; ?>">
-                                                <button type="button" class="btn btn-primary btn-sm" style="background-color: info;">
-                                                    <i class="fas fa-search"></i>
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                            <?php }
-                            } ?>
+                        <tbody id="data_table">
+
                         </tbody>
                     </table>
                 </div>
@@ -246,6 +203,12 @@
 </script> -->
 
 <script>
+    $(document).ready(function() {
+        $("#count_requested").hide();
+        $("#count_graph").hide();
+        $("#count_table").hide();
+    });
+
     function ExcelReport() //function สำหรับสร้าง ไฟล์ excel จากตาราง
     {
         var sheet_name = "Report"; /* กำหหนดชื่อ sheet ให้กับ excel โดยต้องไม่เกิน 31 ตัวอักษร */
@@ -326,6 +289,14 @@
     }
 
     function show_all_data() {
+        var Start_date = document.getElementById('Start_date').value;
+        var End_date = document.getElementById('End_date').value;
+        console.log(Start_date)
+        console.log(End_date)
+
+        var approve = 0;
+        var pending = 0;
+
         const label = [];
         var check = '';
         const data = [];
@@ -336,7 +307,8 @@
             url: "<?php echo base_url() ?>Report/Report_controller/get_report",
             dataType: "JSON",
             data: {
-
+                "Start_date": Start_date,
+                "End_date": End_date
             },
             success: function(data_charts) {
                 console.log(data_charts);
@@ -350,6 +322,11 @@
                         Dep.push(row.dep_id);
                         check = row.Department;
                     }
+                    if (row.Status >= '4') {
+                        approve++;
+                    } else {
+                        pending++;
+                    }
                 });
                 // forEach data_charts
                 label.forEach((row_label, index) => {
@@ -362,8 +339,17 @@
                     count = 0;
                 });
                 // forEach label
+                $("#count_requested").show();
+                $("#count_graph").show();
+                $("#count_table").show();
                 show_chart(label, data);
                 show_label_select(label, Dep);
+                show_table(data_charts);
+                $('#total_request').text(data_charts.length);
+                $('#total_approval').text(approve);
+                $('#pending_approval').text(pending);
+
+
             },
             error: function(res) {
 
@@ -381,5 +367,30 @@
         });
         // forEach label
         $('#Department').append(data_row);
+    }
+
+    function show_table(data_chart) {
+        var data_row = '';
+        data_chart.forEach((row, index) => {
+
+            data_row += '<tr>';
+            data_row += '<td>' + (index + 1) + '</td>';
+            data_row += '<td>' + row.HR_No + '</td>';
+            data_row += '<td>' + row.Officer + '</td>';
+            if (row.Status == '4') {
+                data_row += '<td>ยังอยู่ในคลัง</td>';
+            } else if (row.Status > '4') {
+                data_row += '<td>สิ้นสุดการวาง</td>';
+            } else if (row.Status < '4') {
+                data_row += '<td>รอการอนุมัติ</td>';
+            }
+            data_row += '<td><a href="<?php echo site_url() ?>Report/Report_controller/show_report_detail/Form_ID= ' + row.Form_ID + ' ">'
+            data_row += '<button type="button" class="btn btn-primary btn-sm" style="background-color: info;">'
+            data_row += '<i class="fas fa-search"></i></button></a></td>'
+            data_row += '</tr>';
+        });
+        // forEach label
+        $('#data_table').html(data_row);
+
     }
 </script>

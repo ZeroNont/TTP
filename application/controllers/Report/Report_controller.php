@@ -15,8 +15,10 @@ class Report_controller extends MainController
 
 	function get_report()
 	{
+		$Start_date = $this->input->post('Start_date');
+		$End_date = $this->input->post('End_date');
 		$this->load->model('M_ttp_report', 'ttp');
-		$data = $this->ttp->get_department_to_chart()->result();
+		$data = $this->ttp->get_department_to_chart($Start_date, $End_date)->result();
 		echo json_encode($data);
 	}
 

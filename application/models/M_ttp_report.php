@@ -14,11 +14,11 @@ class M_ttp_report extends Da_ttp_report
     public function get_all_requested_form()
     {
         $sql = "SELECT * 
-                FROM ttps_database.requested_form";
+                FROM ttps_database.requested_form ";
         $query = $this->db->query($sql);
         return $query;
     }
-
+    
     public function get_form_by_id()
     {
         $sql = "SELECT * 
@@ -36,7 +36,7 @@ class M_ttp_report extends Da_ttp_report
         return $query;
     }
 
-    public function get_department_to_chart()
+    public function get_department_to_chart($Start_date, $End_date)
     {
         $sql = "SELECT * 
                 FROM ttps_database.requested_form AS req
@@ -44,6 +44,8 @@ class M_ttp_report extends Da_ttp_report
                 ON emp.Emp_ID = req.Emp_ID
                 INNER JOIN dbmc.sectioncode AS sec
                 ON sec.Sectioncode = emp.Sectioncode_ID
+                WHERE req.Requested_date 
+                BETWEEN '$Start_date' AND '$End_date'
                 ORDER BY sec.Sectioncode";
         $query = $this->db->query($sql);
         return $query;
