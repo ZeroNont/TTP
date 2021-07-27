@@ -43,7 +43,7 @@ class ttp_approve_form extends MainController
     {
         $this->output('consent/v_approve_form');
     }
-    // function index()
+    // function index
 
     function show_approve_form_list() 
     {
@@ -52,7 +52,7 @@ class ttp_approve_form extends MainController
         $this->mreq->Status = 2;
         $data['arr_req'] = $this->mreq->get_all_hr()->result();
         $this->output('consent/v_approve_form', $data);
-    }
+    } //แสดงรายการคำขอทั้งหมดสำหรับhr
 
     function show_approve_form_plant() 
     {
@@ -61,7 +61,7 @@ class ttp_approve_form extends MainController
         $this->mreq->Status = 3;
         $data['arr_req'] = $this->mreq->get_all_plant()->result();
         $this->output('consent/v_approve_form_plant', $data);
-    }
+    } //แสดงรายการคำขอทั้งหมดสำหรับ plant
 
     function show_approve_form_detail($id)
 	{
@@ -70,7 +70,7 @@ class ttp_approve_form extends MainController
         $data['arr_his'] = $this->mreq->get_history_approve($id)->row();
         $data['arr_emp'] = $this->mreq->get_all()->row();
         $this->output('consent/v_approve_form_detail',$data);
-	}
+	} //แสดงรายละเอียดเพิ่มเติมของรายการคำขอ สำหรับ HR
 
     function show_approve_form_plant_detail($id)
 	{
@@ -79,19 +79,35 @@ class ttp_approve_form extends MainController
         $data['arr_his'] = $this->mreq->get_history_approve($id)->row();
         $data['arr_emp'] = $this->mreq->get_all()->row();
         $this->output('consent/v_approve_form_detail_plant',$data);
-	}
+	} //แสดงรายละเอียดเพิ่มเติมของรายการคำขอ สำหรับ Plant
 
-    function insert_reason()
-    {
-   
+    function reject_form_HR()
+    {   
         $this->load->model('Da_ttp_approve_form','dain');
+        $this->dain->reject_reason =  $this->input->post('reject_reason');   
+        $this->dain->Form_ID = $id; 
+        $this->dain->update_reject();
 
-        $this->dain->reject_reason =  $this->input->post('reject_reason');
-        
-        $this->dain->insert();
+        $this->dain->Status = -1;
+        $this->dain->Form_ID = $id;   
+        $this->dain->update_form();
 
         redirect('/approve_form/ttp_approve_form/show_approve_form_list');
-    }//function insert
+    } //ปฏิเสธแบบฟอร์มสำหรับ HR
+
+    function reject_form_Plant()
+    {   
+        $this->load->model('Da_ttp_approve_form','dain');
+        $this->dain->reject_reason =  $this->input->post('reject_reason');   
+        $this->dain->Form_ID = $id; 
+        $this->dain->update_reject();
+
+        $this->dain->Status = -2;
+        $this->dain->Form_ID = $id;   
+        $this->dain->update_form();
+
+        redirect('/approve_form/ttp_approve_form/show_approve_form_list');
+    } //ปฏิเสธแบบฟอร์มสำหรับ Plant
 
     function update_approve_form($id) 
     {
@@ -103,7 +119,7 @@ class ttp_approve_form extends MainController
         $this->mreq->Form_ID = $id;   
         $this->mreq->update_app();
         redirect('/approve_form/ttp_approve_form/show_approve_form_list');
-    }
+    } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย HR
 
     function update_approve_form_plant($id) 
     {
@@ -115,7 +131,7 @@ class ttp_approve_form extends MainController
         $this->mreq->Form_ID = $id;   
         $this->mreq->update_app_plant();
         redirect('/approve_form/ttp_approve_form/show_approve_form_plant');
-    }
+    } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย Plant
 
 
 

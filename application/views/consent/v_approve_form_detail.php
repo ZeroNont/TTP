@@ -173,7 +173,7 @@ $(document).ready(function() {
 
 
 
-                <form method="POST" action="<?php echo site_url().'/approve_form/ttp_approve_form/insert_reason/'; ?>">
+                <form method="POST" action="<?php echo site_url().'/approve_form/ttp_approve_form/reject_form_HR/'.$arr_req->Form_ID; ?>">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -187,10 +187,8 @@ $(document).ready(function() {
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success btn-lg float-right">Submit</button>
 
-                <a href=" <?php echo site_url() . '/approve_form/ttp_approve_form/insert_reason/' ; ?>">
-                    <button type="submit" class="btn btn-success btn-lg float-right">Submit</button>
-                </a>
             </div>
 
             </form>
