@@ -81,7 +81,7 @@ class ttp_approve_form extends MainController
         $this->output('consent/v_approve_form_detail_plant',$data);
 	} //แสดงรายละเอียดเพิ่มเติมของรายการคำขอ สำหรับ Plant
 
-    function reject_form_HR()
+    function reject_form_HR($id)
     {   
         $this->load->model('Da_ttp_approve_form','dain');
         $this->dain->reject_reason =  $this->input->post('reject_reason');   
@@ -95,7 +95,7 @@ class ttp_approve_form extends MainController
         redirect('/approve_form/ttp_approve_form/show_approve_form_list');
     } //ปฏิเสธแบบฟอร์มสำหรับ HR
 
-    function reject_form_Plant()
+    function reject_form_Plant($id)
     {   
         $this->load->model('Da_ttp_approve_form','dain');
         $this->dain->reject_reason =  $this->input->post('reject_reason');   
