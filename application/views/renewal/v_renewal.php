@@ -1,17 +1,11 @@
 <!--
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-
-
-* Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
-
-
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    v_renewal
+    display for edit End date
+    @input Form_ID
+    @output -
+    @author Nattakorn
+    Create date 2564-07-19
+    Update date 2564-07-27
 -->
 <!DOCTYPE html>
 <html>
@@ -83,13 +77,15 @@ table, th, td {
                                 
                                     
                                     <tbody>  
-                                    <?php for ($i = 0; $i < count($arr_renew); $i++) {?> 
+                                    <?php 
+                                     $No=1;
+                                    for ($i = 0; $i < count($arr_renew); $i++) {?> 
                                     <?php if($arr_renew[$i]->Status==4) ;{?>  
                                     <tr>
                                     
                                         <td style='text-align:center'> 
                                         <?php if($arr_renew[$i]->Status==4)
-                                        {echo $i + 1;}?></td>
+                                        {echo $No++;}?></td>
                                         
                                         <td><?php  if($arr_renew[$i]->Status==4)
                                         {echo "HR2021-00". $arr_renew[$i]->Form_ID;}   ?></td>
@@ -101,9 +97,9 @@ table, th, td {
                                         {echo $arr_renew[$i]->Officer;} ?></td>
 
                                         <td><?php if($arr_renew[$i]->Status==4)
-                                        {echo date("d F",strtotime($arr_renew[$i]->Start_date)); 
-                                            echo '-';
-                                            echo date("d F Y",strtotime($arr_renew[$i]->End_date));} 
+                                        {echo date("d-m-Y",strtotime($arr_renew[$i]->Start_date)); 
+                                            echo ' - ';
+                                            echo date("d-m-Y",strtotime($arr_renew[$i]->End_date));} 
                                         ?></td>     
 
                                         <td><?php if($arr_renew[$i]->Status==4)
@@ -125,7 +121,7 @@ table, th, td {
                                                 <a href='<?php  echo site_url() . 'Renewal/Renewal_controller/show_reform/'
                                                 .$arr_renew[$i]->Form_ID?>'>
                                                 
-                                                <button> <i class="ni ni-email-83 text-dark"></i></button>
+                                                <button> <i class="fas fa-envelope"></i></button>
                                             
                                                 </a><?php } ?>
                                                 </td>

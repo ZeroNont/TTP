@@ -29,10 +29,18 @@ class Renewal_controller extends MainController
 
 	function update_date()
 	{
-		$ADD = $this->input->post('Add_date');
-		$this->load->model('Da_renewal', 'ttp');       
-		$this->ttp->End_date =  (strtotime($this->ttp-->End_date)) + (strtotime($this->input->post('Add_date')) );
-		//$this->ttp->End_date = $this->input->post('End_date');
+		
+		$this->load->model('Da_renewal', 'ttp');    
+		$Form_ID = $this->input->post('Form_ID');
+		$set_date = $this->input->post('set_Enddate');
+		$add_date = $this->input->post('Add_date');
+		//บวกวันที่ 
+		$date1 = str_replace('-', '/', $set_date);
+		$Update = date('Y-m-d',strtotime($date1 . "+".$add_date." days"));
+		$this->ttp->End_date = $Update;
+		$this->ttp->Form_ID = $Form_ID;
+
+	
 		$this->ttp->update();
 		redirect('/Renewal/Renewal_controller/show_renewal');
 

@@ -16,7 +16,10 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
-                                
+
+                            <input type="text"  class="form-control"  name="Form_ID" value='<?php echo $arr_renew[0]->Form_ID ?>' hidden>
+                            <input type="text"  class="form-control"  name="set_Enddate" value='<?php echo $arr_renew[0]->End_date ?>' hidden>
+
                                 <!--อัพเดท/เพิ่มวันขออนุญาตวาง-->
                                 <label class="form-control-label" for="input-email">Add Days (กำหนดเวลาที่ต้องการเพิ่ม)
                                 <select class="form-control" name="Add_date" style="text-align:center"  ><br>
@@ -53,7 +56,10 @@
                                 
                                 </select>
                              
-                               
+                               <?php 
+                               $arr_renew[0]->End_date=strtotime(date("Y-m-d", strtotime($arr_renew[0]->End_date)+1) ."days");
+                               echo  $arr_renew[0]->End_date;
+                               ?>
                             </div>
                         </div>
                     </div>
