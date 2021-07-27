@@ -20,6 +20,15 @@ class Da_ttp_request extends ttps_model
 
     }
 
+    function update_reject()
+    {
+        $sql = "UPDATE ttps_database.approval AS app
+                SET app.reject_reason = ?
+                WHERE app.Form_ID = ? "; 
+        $this->db->query($sql, array($this->reject_reason,$this->Form_ID));
+    } 
+
+
     function update_form()
     {
         $sql = "UPDATE ttps_database.requested_form AS req
