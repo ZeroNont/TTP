@@ -24,7 +24,7 @@
                         <?php echo $i + 1 ?>
                     </td>
                     <td>
-                        <?php echo $obj_form[$i]->HR_ID ?>
+                        <?php echo $obj_form[$i]->HR_No ?>
                     </td>
                     <td>
                         <?php echo $obj_form[$i]->Item ?>
