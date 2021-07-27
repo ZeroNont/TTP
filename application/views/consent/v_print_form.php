@@ -35,7 +35,7 @@ DIV.text {
                                         (Running No.)</label>
 
                                     <input type="text" name="Start_date" class="form-control" required
-                                        value="<?php echo $obj_form[0]->HR_ID ?>" disabled>
+                                        value="<?php echo $obj_form[0]->HR_No ?>" disabled>
 
                                 </div>
                             </div>
