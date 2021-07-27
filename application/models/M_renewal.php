@@ -59,7 +59,9 @@ class M_renewal extends Da_renewal
     {
         $sql =
             "SELECT *
-            FROM ttps_database.requested_form WHERE CURDATE() <= End_date  
+            FROM ttps_database.requested_form As stat 
+            WHERE CURDATE() <= End_date  AND stat.Status = 4 
+           
             LIMIT 0,30";
         $query = $this->db->query($sql);
         return $query;
