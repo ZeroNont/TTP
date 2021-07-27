@@ -54,6 +54,15 @@ class ttp_approve_form extends MainController
         $this->output('consent/v_approve_form', $data);
     }
 
+    function show_approve_form_plant() 
+    {
+        $this->load->model('M_ttp_approve_form', 'mreq');
+        $this->mreq->Approve_plant_ID = $_SESSION["UsEmp_ID"];
+        $this->mreq->Status = 3;
+        $data['arr_req'] = $this->mreq->get_all_plant()->result();
+        $this->output('consent/v_approve_form_plant', $data);
+    }
+
     function show_approve_form_detail($id)
 	{
         $this->load->model('M_ttp_approve_form', 'mreq');
@@ -61,6 +70,15 @@ class ttp_approve_form extends MainController
         $data['arr_his'] = $this->mreq->get_history_approve($id)->row();
         $data['arr_emp'] = $this->mreq->get_all()->row();
         $this->output('consent/v_approve_form_detail',$data);
+	}
+
+    function show_approve_form_plant_detail($id)
+	{
+        $this->load->model('M_ttp_approve_form', 'mreq');
+        $data['arr_req'] = $this->mreq->get_by_id($id)->row();
+        $data['arr_his'] = $this->mreq->get_history_approve($id)->row();
+        $data['arr_emp'] = $this->mreq->get_all()->row();
+        $this->output('consent/v_approve_form_detail_plant',$data);
 	}
 
     function insert_reason()
@@ -75,7 +93,7 @@ class ttp_approve_form extends MainController
         redirect('/approve_form/ttp_approve_form/show_approve_form_list');
     }//function insert
 
-    function update_approve_form_form($id) 
+    function update_approve_form($id) 
     {
         $this->load->model('Da_ttp_approve_form', 'dreq');
         $this->dreq->Status = 3;
@@ -85,6 +103,18 @@ class ttp_approve_form extends MainController
         $this->mreq->Form_ID = $id;   
         $this->mreq->update_app();
         redirect('/approve_form/ttp_approve_form/show_approve_form_list');
+    }
+
+    function update_approve_form_plant($id) 
+    {
+        $this->load->model('Da_ttp_approve_form', 'dreq');
+        $this->dreq->Status = 4;
+        $this->dreq->Form_ID = $id;   
+        $this->dreq->update_form();
+        $this->load->model('M_ttp_approve_form', 'mreq');
+        $this->mreq->Form_ID = $id;   
+        $this->mreq->update_app_plant();
+        redirect('/approve_form/ttp_approve_form/show_approve_form_plant');
     }
 
 

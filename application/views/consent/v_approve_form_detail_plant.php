@@ -114,6 +114,7 @@ $(document).ready(function() {
             </div>
             <hr>
 
+            <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
                     <h3>ข้อมูลพิจารณาคำขอ</h3>
@@ -122,6 +123,16 @@ $(document).ready(function() {
                     <h5>สถานะ : อนุมัติ</h5>
 
                 </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <h3>ข้อมูลพิจารณาคำขอ</h3>
+                    <h5>ชื่อ : <?php echo $arr_emp->Empname_th.' '.$arr_emp->Empsurname_th ?></h5>
+                    <h5>ตำแหน่ง : HR</h5>
+                    <h5>สถานะ : อนุมัติ</h5>
+
+                </div>
+            </div>
             </div>
 
 
@@ -240,7 +251,7 @@ $(document).ready(function() {
             </div>
             <div class="modal-footer">
                 <a
-                    href="<?php echo site_url() . 'approve_form/ttp_approve_form/update_approve_form/'. $arr_req->Form_ID ; ?>">
+                    href="<?php echo site_url() . 'approve_form/ttp_approve_form/update_approve_form_plant/'. $arr_req->Form_ID ; ?>">
                     <button type="button" class="btn btn-success btn-lg float-right">Agree</button>
                 </a>
             </div>
