@@ -134,21 +134,7 @@
                               </li>
 
                           </ul>
-                          <!-- Divider -->
-                          <hr class="my-3">
-                          <!-- Heading -->
-                          <h6 class="navbar-heading p-0 text-muted">
-                              <span class="docs-normal">Supervisor</span>
-                          </h6>
-                          <!-- Navigation -->
-                          <ul class="navbar-nav mb-md-3">
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_list/' ?>">
-                                      <i class="ni ni-active-40 text-red"></i>
-                                      <span class="nav-link-text">Approve Form</span>
-                                  </a>
-                              </li>
+                          
 
                           </ul>
                       </div>
