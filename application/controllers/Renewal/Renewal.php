@@ -17,7 +17,7 @@ class Renewal extends MainController
 	//โชว์ลิสต์รายการที่แก้ได้
 	function show_renewal()
 	{
-		$this->load->model('M_renewal', 'ttp');
+		$this->load->model('M_ttp_renewal', 'ttp');
         $data['arr_renew'] = $this->ttp->get_all()->result();
 		$this->output('consent/v_renewal',$data);
 	}
@@ -25,7 +25,7 @@ class Renewal extends MainController
 	//โชว์หน้าแก้ไขวัน
 	function show_reform($Form_ID)
     {
-		$this->load->model('M_renewal', 'ttp');
+		$this->load->model('M_ttp_renewal', 'ttp');
         $data['arr_comp'] = $this->ttp->get_company()->result();
         $data['arr_plan'] = $this->ttp->get_plan()->result();
         $data['arr_supervisor'] = $this->ttp->get_supervisor()->result();
@@ -39,7 +39,7 @@ class Renewal extends MainController
 	function update_date()
 	{
 		
-		$this->load->model('Da_renewal', 'ttp');    
+		$this->load->model('Da_ttp_renewal', 'ttp');    
 		$Form_ID = $this->input->post('Form_ID');
 		$set_date = $this->input->post('set_Enddate');
 		$add_date = $this->input->post('Add_date');
