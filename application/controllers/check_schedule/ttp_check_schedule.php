@@ -1,13 +1,12 @@
-<?php
-/*
-* Ttps_Controller
-* Form Management
-* @input  -   
-* @output -
-* @author Jirayut Saifah
-* @Create Date 2564-7-16
-*/
-?>
+<!--
+    ttp_check_schedule
+    Controller for check schedule module
+    @input -
+    @output -
+    @author Phatchara
+    Create date 
+    Update date 
+-->
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
