@@ -7,8 +7,7 @@
     Create date 2564-07-19
     Update date 2564-07-27
 -->
-<!DOCTYPE html>
-<html>
+
 
 <head>
 <meta charset="UTF-8" />
@@ -57,7 +56,7 @@ table, th, td {
                         <div class="card-header">
                             <div class="row align-items-center">
                                 <thead>
-                                    <table style="width:100%">
+                                    <table style="width:100%" id="renewal_table">
                                     <tr>
                                     <th><h5>#</h5></th> 
                                     <th><h5>Running No.</h5></th> 
@@ -146,7 +145,5 @@ table, th, td {
         </div>
     </div>
     
-    </script>
 </body>
 
-</html>
