@@ -1,3 +1,12 @@
+<!--
+    M_ttp_check_schedule
+    Model for schedule module
+    @input -
+    @output -
+    @author Phatchara
+    Create date 
+    Update date 
+-->
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 

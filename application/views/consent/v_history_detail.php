@@ -1,3 +1,12 @@
+<!--
+    v_history_detail
+    display for detail of history
+    @input -
+    @output -
+    @author Phatchara
+    Create date 
+    Update date 
+-->
 <style>
      #card_radius
     {

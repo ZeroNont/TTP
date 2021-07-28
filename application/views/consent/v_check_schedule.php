@@ -1,10 +1,11 @@
 <!--
-/*
-* v_check_schedule
-* show schedule form requestd
-* @author Phatchara Khongthandee
-* @Create Date 2564-07-16
-*/
+    v_check_schedule
+    display for schedule
+    @input -
+    @output -
+    @author Phatchara
+    Create date 
+    Update date 
 -->
     <!-- CSS -->
 <style>
