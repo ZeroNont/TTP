@@ -97,9 +97,9 @@ table, th, td {
                                         {echo $arr_renew[$i]->Officer;} ?></td>
 
                                         <td><?php if($arr_renew[$i]->Status==4)
-                                        {echo date("d-m-Y",strtotime($arr_renew[$i]->Start_date)); 
+                                        {echo date("d/m/Y",strtotime($arr_renew[$i]->Start_date)); 
                                             echo ' - ';
-                                            echo date("d-m-Y",strtotime($arr_renew[$i]->End_date));} 
+                                            echo date("d/m/Y",strtotime($arr_renew[$i]->End_date));} 
                                         ?></td>     
 
                                         <td><?php if($arr_renew[$i]->Status==4)

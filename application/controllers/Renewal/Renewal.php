@@ -19,7 +19,7 @@ class Renewal extends MainController
 	{
 		$this->load->model('M_renewal', 'ttp');
         $data['arr_renew'] = $this->ttp->get_all()->result();
-		$this->output('renewal/v_renewal',$data);
+		$this->output('consent/v_renewal',$data);
 	}
 
 	//โชว์หน้าแก้ไขวัน
@@ -31,7 +31,7 @@ class Renewal extends MainController
         $data['arr_supervisor'] = $this->ttp->get_supervisor()->result();
         $data['arr_formfile'] = $this->ttp->get_formfile()->result();
         $data['arr_renew'] = $this->ttp->get_bydate($Form_ID)->result();
-        $this->output('renewal/v_renew_form', $data);
+        $this->output('consent/v_renew_form', $data);
     
 	}
 
