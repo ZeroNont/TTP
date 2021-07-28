@@ -74,7 +74,7 @@ function getEmp_edit(i) {
             </div>
 
             <div class="modal-body">
-                <form action="<?php echo site_url() . 'plan_management/plan_input/insert'; ?>" method="post"
+                <form action="<?php echo site_url() . 'Plant_management/Plant_input/insert'; ?>" method="post"
                     enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="focusedinput" class="form-label">Employee ID</label>
@@ -154,7 +154,7 @@ function getEmp_edit(i) {
 
                                     <div class="modal-body">
                                         <form
-                                            action="<?php echo site_url() . 'plan_management/plan_input/edit/' . $obj_plan[$i]->Emp_ID;; ?>"
+                                            action="<?php echo site_url() . 'Plant_management/Plant_input/edit/' . $obj_plan[$i]->Emp_ID;; ?>"
                                             method="post" enctype="multipart/form-data">
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Employee

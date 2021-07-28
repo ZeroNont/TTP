@@ -3,7 +3,7 @@
 * MainCcontroller
 * @input  -
 * @output -
-* @author Kunanya Singmee
+* @author Jiratyut Saifah
 * @Update Date 2563-09-1
 */
 
