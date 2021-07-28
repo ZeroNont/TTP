@@ -1,3 +1,13 @@
+<!-- /*
+* v_report
+* Display report of requests for permission 
+* @input    -
+* @output   -
+* @author   Chakrit
+* @Create Date 2564-07-24
+* @Update Date 2564-07-28
+*/ -->
+
 <h1>
     Report (รายงานข้อมูล)
     <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a>
@@ -304,7 +314,7 @@
         const Dep = [];
         $.ajax({
             type: 'POST',
-            url: "<?php echo base_url() ?>Report/Report_controller/get_report",
+            url: "<?php echo base_url() ?>Report/Report/get_report",
             dataType: "JSON",
             data: {
                 "Start_date": Start_date,
@@ -384,7 +394,7 @@
             } else if (row.Status < '4') {
                 data_row += '<td>รอการอนุมัติ</td>';
             }
-            data_row += '<td><a href="<?php echo site_url() ?>Report/Report_controller/show_report_detail?Form_ID= ' + row.Form_ID + ' ">'
+            data_row += '<td><a href="<?php echo site_url() ?>Report/Report/show_report_detail?Form_ID= ' + row.Form_ID + ' ">'
             data_row += '<button type="button" class="btn btn-primary btn-sm" style="background-color: info;">'
             data_row += '<i class="fas fa-search"></i></button></a></td>'
             data_row += '</tr>';

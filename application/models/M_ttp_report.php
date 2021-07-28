@@ -1,8 +1,23 @@
+<!-- /*
+* ttps_database.requested_form, ttps_database.approval, dbmc.department, ttps_database.plant, dbmc.company, dbmc.employee, dbmc.sectioncode
+* get data of report
+* @author   Chakrit
+* @Create Date 2564-07-25
+*/ -->
+
 <?php
 include_once("Da_ttp_report.php");
 
 class M_ttp_report extends Da_ttp_report
 {
+    /*
+    * get_department
+    * get data department
+    * @input    -
+    * @output   data of department
+    * @author   Chakrit
+    * @Create Date 2564-07-25
+    */
     public function get_department()
     {
         $sql = "SELECT *
@@ -11,6 +26,14 @@ class M_ttp_report extends Da_ttp_report
         return $query;
     }
 
+    /*
+    * get_all_requested_form
+    * get data requested form
+    * @input    -
+    * @output   data of requested_form
+    * @author   Chakrit
+    * @Create Date 2564-07-25
+    */
     public function get_all_requested_form()
     {
         $sql = "SELECT * 
@@ -19,6 +42,14 @@ class M_ttp_report extends Da_ttp_report
         return $query;
     }
     
+    /*
+    * get_form_by_id
+    * get data requested form by Form_ID
+    * @input    -
+    * @output   data of requested_form by Form_ID
+    * @author   Chakrit
+    * @Create Date 2564-07-26
+    */
     public function get_form_by_id()
     {
         $sql = "SELECT * 
@@ -36,6 +67,14 @@ class M_ttp_report extends Da_ttp_report
         return $query;
     }
 
+    /*
+    * get_department_to_chart
+    * get data department to chart
+    * @input    Start date and End date
+    * @output   data of department between Start date and End date
+    * @author   Chakrit
+    * @Create Date 2564-07-27
+    */
     public function get_department_to_chart($Start_date, $End_date)
     {
         $sql = "SELECT * 
