@@ -1,12 +1,11 @@
-<!-- /*
+<?php
+/*
 * Report
 * show and get data of report
 * @author   Chakrit
 * @Create Date 2564-07-24
-* @Update Date 2564-07-27
-*/ -->
-
-<?php
+* @Update Date 2564-07-28
+*/  
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
@@ -22,7 +21,7 @@ class Report extends MainController
 	* @Create Date 2564-07-24
 	* @Update Date 2564-07-27
 	*/
-	function show_report()
+	public function show_report()
 	{
 		$this->load->model('M_ttp_report', 'ttp');
 		$data['requested'] = $this->ttp->get_all_requested_form()->result();
@@ -38,7 +37,7 @@ class Report extends MainController
 	* @Create Date 2564-07-26
 	* @Update Date 2564-07-28
 	*/
-	function get_report()
+	public function get_report()
 	{
 		$Start_date = $this->input->post('Start_date');
 		$End_date = $this->input->post('End_date');
@@ -63,5 +62,20 @@ class Report extends MainController
 		$this->ttp->Form_ID = $Form_ID;
 		$data['Form_data'] = $this->ttp->get_form_by_id()->row();
 		$this->output('consent/v_report_detail', $data);
+	}
+
+	/*
+	* show_report_export_excel
+	* show view export excel
+	* @input    -
+	* @output   -
+	* @author   Chakrit
+	* @Create Date 2564-07-28
+	*/
+	public function show_report_export_excel()
+	{
+		$this->load->model('M_ttp_report', 'ttp');
+		$data['Form_data'] = $this->ttp->get_form_to_excel()->result();
+		$this->output('consent/v_report_export_excel', $data);
 	}
 }

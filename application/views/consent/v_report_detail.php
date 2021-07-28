@@ -9,7 +9,7 @@
 */ -->
 
 <a href="<?php echo site_url() . 'Report/Report/show_report'; ?>" class="btn btn-secondary float-left"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
-<a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a>
+<!-- <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a> -->
 
 <h1>
     &nbsp; Report (รายงานข้อมูล)
@@ -46,9 +46,8 @@
     </h2>
 
     <br>
-    &nbsp;
 
-    <div class="row" id="count_table">
+    <!-- <div class="row" id="count_table">
         <div class="col-xl-12">
             <div class="card">
                 <div class="table-responsive" table id='myTable'>
@@ -99,10 +98,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 
-<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+<!-- <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 <script src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
 
 <script>
@@ -117,4 +116,4 @@
         });
         XLSX.writeFile(wb, 'SDM&SKD Temporary Tag Permission Report.xlsx'); //Download ไฟล์ excel จากตาราง html โดยใช้ชื่อว่า SDM&SKD Temporary Tag Permission Report.xlsx
     }
-</script>
+</script> -->

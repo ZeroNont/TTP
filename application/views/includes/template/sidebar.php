@@ -227,7 +227,8 @@
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo base_url() . 'Report/Report/show_report/' ?>">
+                                  <a class="nav-link" 
+                                  href="<?php echo base_url() . 'Report/Report/show_report/' ?>">
                                       <i class="ni ni-chart-bar-32 text-blue"></i>
                                       <span class="nav-link-text">Report</span>
                                   </a>

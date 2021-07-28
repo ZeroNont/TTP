@@ -1,15 +1,16 @@
-<!-- /*
+<?php
+/*
 * ttps_database.requested_form, ttps_database.approval, dbmc.department, ttps_database.plant, dbmc.company, dbmc.employee, dbmc.sectioncode
 * get data of report
 * @author   Chakrit
 * @Create Date 2564-07-25
-*/ -->
+*/ 
 
-<?php
 include_once("Da_ttp_report.php");
 
 class M_ttp_report extends Da_ttp_report
 {
+    
     /*
     * get_department
     * get data department
@@ -67,6 +68,30 @@ class M_ttp_report extends Da_ttp_report
         return $query;
     }
 
+    /*
+    * get_form_to_excel
+    * get data requested form to excel
+    * @input    -
+    * @output   data of requested form to excel
+    * @author   Chakrit
+    * @Create Date 2564-07-28
+    */
+    public function get_form_to_excel()
+    {
+        $sql = "SELECT * 
+                FROM ttps_database.requested_form AS req
+                INNER JOIN ttps_database.approval AS app
+                ON app.Form_ID = req.Form_ID
+                INNER JOIN ttps_database.plant AS pla
+                ON pla.Emp_ID = app.Approve_plant_ID
+                INNER JOIN dbmc.company AS com
+                ON com.Company_ID = req.Company_ID
+                INNER JOIN dbmc.employee AS emp
+                ON emp.Emp_ID = req.Emp_ID";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+   
     /*
     * get_department_to_chart
     * get data department to chart
