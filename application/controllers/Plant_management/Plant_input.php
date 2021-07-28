@@ -1,8 +1,8 @@
 <?php
 /*
-* Ttps_Controller
-* Form Management
-* @input  -   
+* Plant_input
+* Plant Management
+* @input  Emp_ID,plant_name,plant_No,plant_ID   
 * @output -
 * @author Jirayut Saifah
 * @Create Date 2564-7-22
@@ -12,7 +12,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class plan_input extends MainController
+class Plant_input extends MainController
 {
 
     /**
@@ -33,37 +33,38 @@ class plan_input extends MainController
 
     /*
 	* insert
-	* 
-	* @input 
+	* insert plant data into model
+	* @input Emp_ID,plant_name,plant_No,plant_ID 
 	* @output 
 	* @author 	Jirayut Saifah
 	* @Create Date 2564-7-22
 	*/
-
     function insert()
     {
-        $this->load->model('Da_ttp_plan_list', 'ttp');
+        $this->load->model('Da_ttp_plant_list', 'ttp');
         $this->ttp->Emp_ID = $this->input->post('Emp_ID');
-        $this->ttp->Plant_name = $this->input->post('Plant_name');
-        $this->ttp->Plant_No = $this->input->post('Plant_No');
+        $this->ttp->plant_name = $this->input->post('plant_name');
+        $this->ttp->plant_No = $this->input->post('plant_No');
         $this->ttp->insert();
-        redirect('plan_management/plan_list/index');
+        redirect('Plant_management/Plant_list/index');
     }
+    /*
+	* edit
+	* update plant data into model
+	* @input Emp_ID,plant_name,plant_No,plant_ID 
+	* @output 
+	* @author 	Jirayut Saifah
+	* @Create Date 2564-7-22
+	*/
     function edit()
     {
-        $this->load->model('Da_ttp_plan_list', 'ttp');
+        $this->load->model('Da_ttp_plant_list', 'ttp');
         $this->ttp->Emp_ID = $this->input->post('Emp_ID');
-        $this->ttp->Plant_name = $this->input->post('Plant_name');
-        $this->ttp->Plant_No = $this->input->post('Plant_No');
-        $this->ttp->Plant_ID = $this->input->post('Plant_ID');
-        // echo  $this->input->post('Plant_ID');
-        // echo  $this->input->post('Plant_name');
-        // echo  $this->input->post('Emp_ID');
-        // echo  $this->input->post('Plant_name');
-        // echo  $this->input->post('Plant_No');
-
+        $this->ttp->plant_name = $this->input->post('plant_name');
+        $this->ttp->plant_No = $this->input->post('plant_No');
+        $this->ttp->plant_ID = $this->input->post('plant_ID');
         $this->ttp->update();
-        redirect('plan_management/plan_list/index');
+        redirect('Plant_management/Plant_list/index');
     }
 }
 // 

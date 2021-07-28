@@ -22,14 +22,13 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() . 'licence_form/licence_input/index/' ?>">
+                          <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                               <i class="ni ni-badge text-orange"></i>
                               <span class="nav-link-text">Licence Form</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link"
-                              href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
+                          <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                               <i class="ni ni-single-copy-04 text-primary"></i>
                               <span class="nav-link-text">Renewall Form</span>
                           </a>
@@ -42,13 +41,13 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() . 'check_out/ttp_check_out/index/' ?>">
+                          <a class="nav-link" href="<?php echo base_url() . 'Check_out_form/Check_out_form/index/' ?>">
                               <i class="ni ni-user-run text-default"></i>
                               <span class="nav-link-text">Check out</span>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() . 'check_status/ttp_check_status/index/' ?>">
+                          <a class="nav-link" href="<?php echo base_url() . 'Check_status/Check_status/index/' ?>">
                               <i class="ni ni-tag text-info"></i>
                               <span class="nav-link-text">Status Form</span>
                           </a>
@@ -87,7 +86,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'licence_form/licence_input/index/' ?>">
+                                      href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
                                       <span class="nav-link-text">Licence Form</span>
                                   </a>
@@ -108,14 +107,14 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_out/ttp_check_out/index/' ?>">
+                                      href="<?php echo base_url() . 'Check_out_form/Check_out_form/index/' ?>">
                                       <i class="ni ni-user-run text-default"></i>
                                       <span class="nav-link-text">Check out</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_status/ttp_check_status/index/' ?>">
+                                      href="<?php echo base_url() . 'Check_status/Check_status/index/' ?>">
                                       <i class="ni ni-tag text-info"></i>
                                       <span class="nav-link-text">Status Form</span>
                                   </a>
@@ -171,7 +170,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'licence_form/licence_input/index/' ?>">
+                                      href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
                                       <span class="nav-link-text">Licence Form</span>
                                   </a>
@@ -192,14 +191,14 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_out/ttp_check_out/index/' ?>">
+                                      href="<?php echo base_url() . 'Check_out_form/Check_out_form/index/' ?>">
                                       <i class="ni ni-user-run text-default"></i>
                                       <span class="nav-link-text">Check out</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_status/ttp_check_status/index/' ?>">
+                                      href="<?php echo base_url() . 'Check_status/Check_status/index/' ?>">
                                       <i class="ni ni-tag text-info"></i>
                                       <span class="nav-link-text">Status Form</span>
                                   </a>
@@ -229,15 +228,15 @@
                           <!-- Navigation -->
                           <ul class="navbar-nav mb-md-3">
                               <li class="nav-item">
-                                  <a class="nav-link" 
-                                  href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_list/' ?>">
+                                  <a class="nav-link"
+                                      href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_list/' ?>">
                                       <i class="ni ni-active-40 text-red"></i>
                                       <span class="nav-link-text">Approve Form</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'plan_management/plan_list/index/' ?>">
+                                      href="<?php echo base_url() . 'Plant_management/Plant_list/index/' ?>">
                                       <i class="ni ni-single-02 text-green"></i>
                                       <span class="nav-link-text">Plant Management</span>
                                   </a>
@@ -271,7 +270,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'licence_form/licence_input/index/' ?>">
+                                      href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
                                       <span class="nav-link-text">Licence Form</span>
                                   </a>
@@ -292,14 +291,14 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_out/ttp_check_out/index/' ?>">
+                                      href="<?php echo base_url() . 'Check_out_form/Check_out_form/index/' ?>">
                                       <i class="ni ni-user-run text-default"></i>
                                       <span class="nav-link-text">Check out</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_status/ttp_check_status/index/' ?>">
+                                      href="<?php echo base_url() . 'Check_status/Check_status/index/' ?>">
                                       <i class="ni ni-tag text-info"></i>
                                       <span class="nav-link-text">Status Form</span>
                                   </a>
@@ -331,8 +330,8 @@
                           <!-- Navigation -->
                           <ul class="navbar-nav mb-md-3">
                               <li class="nav-item">
-                                  <a class="nav-link" 
-                                  href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_plant/' ?>">
+                                  <a class="nav-link"
+                                      href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_plant/' ?>">
                                       <i class="ni ni-active-40 text-red"></i>
                                       <span class="nav-link-text">Approve Form</span>
                                   </a>

@@ -3,6 +3,14 @@ include_once("Da_ttp_licence.php");
 
 class M_ttp_licence extends Da_ttp_licence
 {
+
+    // Table Name:ttps_database.requested_form
+    // Describtion:Requested Form
+    // @author:Jirayut
+    // @Create Date:16/07/2021
+
+
+
     public function get_form($id)
     {
         $sql =
@@ -11,6 +19,15 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+
+    // *get_form
+    // *get form form database
+    // *@input Emp_ID
+    // *@output requested form if Emp_ID = $id and Status=4
+    // *@author Jirayut Saifah
+    // *@Create Date 17/07/2021
+
+
     public function get_employee($id)
     {
         $sql =
@@ -19,6 +36,13 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    // *get_employee
+    // *get employee detail form database
+    // *@input Emp_ID
+    // *@output employee detail if Emp_ID = $id 
+    // *@author Jirayut Saifah
+    // *@Create Date 17/07/2021
+
     public function get_position_id($id)
     {
         $sql =
@@ -27,6 +51,13 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    // *get_position_id
+    // *get position detail form database
+    // *@input Emp_ID
+    // *@output position detail if Emp_ID = $id 
+    // *@author Jirayut Saifah
+    // *@Create Date 17/07/2021
+
     public function get_company()
     {
         $sql =
@@ -35,6 +66,13 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    // *get_company
+    // *get company detail form database
+    // *@input -
+    // *@output company detail 
+    // *@author Jirayut Saifah
+    // *@Create Date 17/07/2021
+
     public function get_company_by_id($id)
     {
         $sql =
@@ -43,14 +81,30 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+
+    // *get_company_by_id
+    // *get company detail form database
+    // *@input Form_ID
+    // *@output company detail if Form_ID = $id 
+    // *@author Jirayut Saifah
+    // *@Create Date 18/07/2021
+
     public function get_supervisor()
     {
         $sql =
-        "SELECT *
+            "SELECT *
         FROM dbmc.employee AS emp INNER JOIN dbmc.position AS pos where emp.Position_ID=pos.Position_ID";
         $query = $this->db->query($sql);
         return $query;
     }
+
+    // *get_supervisor
+    // *get supervisor detail form database
+    // *@input -
+    // *@output supervisor detail 
+    // *@author Jirayut Saifah
+    // *@Create Date 18/07/2021
+
     public function get_supervisor_by_id($id)
     {
         $sql =
@@ -59,7 +113,14 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
-    public function get_plan_by_id($id)
+    // *get_supervisor_by_id
+    // *get supervisor detail form database
+    // *@input Form_ID
+    // *@output supervisor detail if Form_ID=$id
+    // *@author Jirayut Saifah
+    // *@Create Date 18/07/2021
+
+    public function get_plant_by_id($id)
     {
         $sql =
             "SELECT *
@@ -67,7 +128,14 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
-    public function get_plan()
+    // *get_plant_by_id
+    // *get plant detail form database
+    // *@input Form_ID
+    // *@output plant detail if Form_ID=$id
+    // *@author Jirayut Saifah
+    // *@Create Date 18/07/2021
+
+    public function get_plant()
     {
         $sql =
             "SELECT *
@@ -76,6 +144,13 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    // *get_plant
+    // *get plant detail form database
+    // *@input Form_ID
+    // *@output plant detail 
+    // *@author Jirayut Saifah
+    // *@Create Date 18/07/2021
+
     public function get_status($id)
     {
         $sql =
@@ -85,6 +160,13 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    // *get_status
+    // *get form datail form database
+    // *@input Emp_ID
+    // *@output Form detail if form status < 5 and form has not expired.
+    // *@author Jirayut Saifah
+    // *@Create Date 19/07/2021
+
     public function get_form_by_id($id)
     {
         $sql =
@@ -93,6 +175,13 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    // *get_form_by_id
+    // *get form datail form database
+    // *@input Form_ID
+    // *@output Form detail if Form_ID is match
+    // *@author Jirayut Saifah
+    // *@Create Date 19/07/2021
+
     public function get_file_by_id($id)
     {
         $sql =
@@ -101,6 +190,13 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    // *get_file_by_id
+    // *get file location  form database
+    // *@input Form_ID
+    // *@output file location if Form_ID is match
+    // *@author Jirayut Saifah
+    // *@Create Date 20/07/2021
+
     public function get_sec()
     {
         $sql =
@@ -109,6 +205,13 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    // *get_sec
+    // *get sectioncode  form database
+    // *@input -
+    // *@output section detail 
+    // *@author Jirayut Saifah
+    // *@Create Date 20/07/2021
+
     public function get_approve()
     {
         $sql =
@@ -117,6 +220,13 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    // *get_approve
+    // *get approve detail  form database
+    // *@input -
+    // *@output approve detail
+    // *@author Jirayut Saifah
+    // *@Create Date 20/07/2021
+
     public function get_HR()
     {
         $sql =
@@ -125,6 +235,13 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    // *get_HR
+    // *get HR detail form database
+    // *@input -
+    // *@output HR detail 
+    // *@author Jirayut Saifah
+    // *@Create Date 20/07/2021
+
     public function get_Supervisor_ID()
     {
         $sql =
@@ -133,13 +250,25 @@ class M_ttp_licence extends Da_ttp_licence
         $query = $this->db->query($sql);
         return $query;
     }
+    // *get_Supervisor_ID
+    // *get Supervisor detail  form database
+    // *@input -
+    // *@output Supervisor detail
+    // *@author Jirayut Saifah
+    // *@Create Date 20/07/2021
+
     public function get_Prepare()
     {
         $sql =
-        "SELECT *
+            "SELECT *
             FROM dbmc.employee AS emp INNER JOIN ttps_database.requested_form AS sec ON emp.Emp_ID = sec.Emp_ID";
         $query = $this->db->query($sql);
         return $query;
     }
-    
+    // *get_Prepare
+    // *get requester detail  form database
+    // *@input -
+    // *@output requester detail 
+    // *@author Jirayut Saifah
+    // *@Create Date 20/07/2021
 }

@@ -1,8 +1,8 @@
 <?php
 /*
-* Ttps_Controller
+* Licence_input
 * Form Management
-* @input  -   
+* @input  Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count   
 * @output -
 * @author Jirayut Saifah
 * @Create Date 2564-7-16
@@ -12,7 +12,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class licence_input extends MainController
+class Licence_input extends MainController
 {
 
     /**
@@ -33,9 +33,9 @@ class licence_input extends MainController
 
     /*
 	* index
-	* 
+	* Show a form to get information 
 	* @input 
-	* @output 
+	* @output employee,plant,company detail
 	* @author 	Jirayut Saifah
 	* @Create Date 2564-7-16
 	*/
@@ -44,13 +44,21 @@ class licence_input extends MainController
         $id = $_SESSION['UsEmp_ID'];
         $this->load->model('M_ttp_licence', 'ttp');
         $data['obj_company'] = $this->ttp->get_company()->result();
-        $data['obj_plan'] = $this->ttp->get_plan()->result();
+        $data['obj_plan'] = $this->ttp->get_plant()->result();
         $data['obj_emp'] = $this->ttp->get_employee($id)->result();
         $data['obj_level'] = $this->ttp->get_position_id($id)->result();
         $data['obj_supervisor'] = $this->ttp->get_supervisor()->result();
         // print_r($data['obj_supervisor']);
         $this->output('consent/v_licence_form', $data);
     }
+    /*
+	* edit_form
+	* show form detail 
+	* @input  Form_ID
+	* @output 
+	* @author 	Jirayut Saifah
+	* @Create Date 2564-7-22
+	*/
     function edit_form($id)
     {
         $this->load->model('M_ttp_licence', 'ttp');
@@ -58,18 +66,25 @@ class licence_input extends MainController
         $data['obj_file'] = $this->ttp->get_file_by_id($id)->result();
         $data['obj_company'] = $this->ttp->get_company()->result();
         $data['obj_com'] = $this->ttp->get_company_by_id($id)->result();
-        $data['obj_plan'] = $this->ttp->get_plan()->result();
+        $data['obj_plan'] = $this->ttp->get_plant()->result();
         $data['obj_level'] = $this->ttp->get_position_id($id)->result();
-        $data['obj_app'] = $this->ttp->get_plan_by_id($id)->result();
+        $data['obj_app'] = $this->ttp->get_plant_by_id($id)->result();
         $data['obj_supervisor'] = $this->ttp->get_supervisor()->result();
         $data['obj_sup'] = $this->ttp->get_supervisor_by_id($id)->result();
         $this->output('consent/v_form_edit', $data);
     }
-    // function index()
+    /*
+	* insert
+	* insert form data into model
+	* @input  Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count
+	* @output 
+	* @author 	Jirayut Saifah
+	* @Create Date 2564-7-16
+	*/
     function insert()
     {
         $date = date("Y-m-d");
-        
+
         $j = 1;
         $id = $_SESSION['UsEmp_ID'];
         $Layout_name =  $_FILES['Layout']['name'];
@@ -109,7 +124,14 @@ class licence_input extends MainController
         // $this->output('consent/v_check_status', $i);
         // redirect('licence_form/licence_input/index');
     }
-    // function index()
+    /*
+	* edit
+	* update form data into model 
+	* @input  Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count
+	* @output 
+	* @author 	Jirayut Saifah
+	* @Create Date 2564-7-22
+	*/
     function edit()
     {
         $date = date("Y-m-d");
@@ -156,6 +178,5 @@ class licence_input extends MainController
         // $this->output('consent/v_check_status', $i);
         // redirect('licence_form/licence_input/index');
     }
-
 }
 // 

@@ -1,18 +1,18 @@
 <?php
 /*
-* Ttps_Controller
-* Form Management
-* @input  -   
-* @output -
+* Plant_list
+* show plant detail to list
+* @input  
+* @output Plant detail
 * @author Jirayut Saifah
-* @Create Date 2564-7-21
+* @Create Date 2564-7-22
 */
 ?>
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class plan_list extends MainController
+class Plant_list extends MainController
 {
 
     /**
@@ -41,9 +41,9 @@ class plan_list extends MainController
 	*/
     function index()
     {
-        $this->load->model('M_ttp_plan_list', 'ttp');
-        $data['obj_plan'] = $this->ttp->get_plan()->result();
-        $this->output('consent/v_plan_list', $data);
+        $this->load->model('M_ttp_plant_list', 'ttp');
+        $data['obj_plan'] = $this->ttp->get_plant()->result();
+        $this->output('consent/v_plant_list', $data);
     }
 }
 // 
