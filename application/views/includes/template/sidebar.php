@@ -93,7 +93,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'Renewal/Renewal_controller/show_renewal/' ?>">
+                                      href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
                                       <span class="nav-link-text">Renewall Form</span>
                                   </a>
@@ -177,7 +177,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'Renewal/Renewal_controller/show_renewal/' ?>">
+                                      href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
                                       <span class="nav-link-text">Renewall Form</span>
                                   </a>
@@ -277,7 +277,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'Renewal/Renewal_controller/show_renewal/' ?>">
+                                      href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
                                       <span class="nav-link-text">Renewall Form</span>
                                   </a>
