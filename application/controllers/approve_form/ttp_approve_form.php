@@ -114,7 +114,9 @@ class ttp_approve_form extends MainController
         $this->load->model('Da_ttp_approve_form', 'dreq');
         $this->dreq->Status = 3;
         $this->dreq->Form_ID = $form_id;   
+        $this->dreq->HR_No = $_SESSION["UsEmp_ID"]; 
         $this->dreq->update_form();
+
         $this->load->model('M_ttp_approve_form', 'mreq');
         $this->mreq->Form_ID = $form_id;  
         $this->mreq->HR_ID = $_SESSION["UsEmp_ID"]; 
