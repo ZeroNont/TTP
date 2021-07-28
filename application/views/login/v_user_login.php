@@ -1,64 +1,69 @@
+<!--v_user_login
+* Display login for user
+* @input User_login and Pass_login
+* @output  -
+* @author Niphat Kuhokciw
+* @Create Date 2564-07-28 -->
 <!DOCTYPE html>
 <html lang="en">
 <style>
-    #bg_login{
+
+    #bg_login
+    {/*blackguard login*/ 
         
         background-image:url("<?php echo base_url()?>pic/bg-login.jpg") ;
         background-attachment: fixed;
         background-position: top center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
-    }
-    .container{
+    }/*end blackguard login*/ 
+    .container
+    {/*container*/
         position: fixed;
         width: 800px;
         height: 500px;
         margin: 15% 35%;
         padding: 10px;
-    }
+    }/*end container*/
+
 </style>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
-     Favicon 
-    <link rel="icon" href="../../assets/img/brand/favicon.png" type="image/png"> -->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" >
-    function login() { //login admin
+    function login() 
+    { //login user
         $.ajax({
             type: 'POST',
-            url: '<?php echo site_url() . 'Login/Login_controller/login' ?>',
+            url: '<?php echo site_url() . 'Login/Login/login' ?>',
             data: {
                 User_login: $('#User_login').val(),
                 Pass_login: $('#Pass_login').val()
             },
-            success: function(data,status) {
-                //console.log(status)
-                //console.log(data.length)
+            success: function(data,status) 
+            {// function success
                 var obj = JSON.parse(data)
-                //console.log(obj.length)
                 if (obj.length != 0){  
-                        setTimeout(function() {
+                        setTimeout(function() 
+                        {
                                 window.location.href =
-                                '<?php echo site_url() . 'Login/Login_controller/show_user_home/' ?>'+obj.Enp_ID
-                        }, 500)
+                                '<?php echo site_url() . 'Login/Login/show_user_home/' ?>'+obj.Enp_ID
+                        }, 500)//function set
                      } //if
                     else{
-                        //console.log('fail')
                         alert('รหัสผ่านผิด กรุณากรอกใหม่อีกครั้ง')
-                        //console.log(status)
                      } //else
-            },
-            error: function(status) {
-                //console.log('fail')
+            },//end success
+            error: function(status) 
+            {//function error
                 alert('รหัสผ่านผิด กรุณากรอกใหม่อีกครั้ง')
-                //console.log(status)
-            }
+            }//end error
         });
         
-    } //end login admin
+    } //end login user
     </script>
 </head>
 
@@ -98,6 +103,7 @@
             </div>
         </div>
     </div>
+    <!---------------------------------------------- End Login --------------------------------------------------->
 </body>
 </html>
 
