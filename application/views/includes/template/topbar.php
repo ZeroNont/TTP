@@ -42,7 +42,7 @@
                               </div>
 
                               <div class="dropdown-divider"></div>
-                              <a href="<?php echo site_url() . 'Login/Login_Controller/logout' ?>" class="dropdown-item"
+                              <a href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
                                   class="dropdown-item">
                                   <i class="ni ni-user-run"></i>
 

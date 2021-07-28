@@ -2,7 +2,16 @@
 include_once("Da_ttp_Emp.php");
 
 class M_ttp_Emp extends Da_ttp_Emp
-{
+{//class M_ttp_emp
+
+/*
+* get_name_emp
+* get name
+* @input  -
+* @output - 
+* @author 
+* @Create 
+*/    
     public function get_name_emp()
     {
         $sql =
@@ -12,8 +21,17 @@ class M_ttp_Emp extends Da_ttp_Emp
         $query = $this->db->query($sql, array($this->Emp_ID));
         return $query;
     }
+
+/*
+* get_emp
+* get Emp_ID in database
+* @input  -
+* @output - 
+* @author Niphat Kuhokciw
+* @Create Date 2564-07-28
+*/
     public function get_emp()
-    {
+    {//get Emp_ID
         $sql = "SELECT * 
             FROM dbmc.employee AS emp
             INNER JOIN dbmc.group_secname AS gsec 
@@ -27,11 +45,5 @@ class M_ttp_Emp extends Da_ttp_Emp
             WHERE emp.Emp_ID=?";
         $query = $this->db->query($sql,array($this->Emp_ID));
         return $query;
-    }
-    // function get_role(){
-    //     $sql = "SELECT User_Role 
-    //     FROM ttps_database.user_login";
-    //     $query = $this->db->query($sql);
-    //     return $query;
-    // }
-}
+    }//end get_emp
+}//end class M_ttp_emp
