@@ -48,7 +48,7 @@ class ttp_approve_form extends MainController
     function show_approve_form_list() 
     {
         $this->load->model('M_ttp_approve_form', 'mreq');
-        $this->mreq->HR_ID = $_SESSION["UsEmp_ID"];
+        // $this->mreq->HR_ID = $_SESSION["UsEmp_ID"];
         $this->mreq->Status = 2;
         $data['arr_req'] = $this->mreq->get_all_hr()->result();
         $this->output('consent/v_approve_form', $data);
@@ -109,14 +109,17 @@ class ttp_approve_form extends MainController
         redirect('/approve_form/ttp_approve_form/show_approve_form_list');
     } //ปฏิเสธแบบฟอร์มสำหรับ Plant
 
-    function update_approve_form($id) 
+    function update_approve_form($form_id) 
     {
         $this->load->model('Da_ttp_approve_form', 'dreq');
         $this->dreq->Status = 3;
-        $this->dreq->Form_ID = $id;   
+        $this->dreq->Form_ID = $form_id;   
+        $this->dreq->HR_No = $_SESSION["UsEmp_ID"]; 
         $this->dreq->update_form();
+
         $this->load->model('M_ttp_approve_form', 'mreq');
-        $this->mreq->Form_ID = $id;   
+        $this->mreq->Form_ID = $form_id;  
+        $this->mreq->HR_ID = $_SESSION["UsEmp_ID"]; 
         $this->mreq->update_app();
         redirect('/approve_form/ttp_approve_form/show_approve_form_list');
     } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย HR

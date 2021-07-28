@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="card-body ">
-            <form action="<?php echo site_url() . 'licence_form/licence_input/insert'; ?>" method="post"
+            <form action="<?php echo site_url() . 'Licence_form/Licence_input/insert'; ?>" method="post"
                 enctype="multipart/form-data">
 
                 <div class="pl-lg-4">

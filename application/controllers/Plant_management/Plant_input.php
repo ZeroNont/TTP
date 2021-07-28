@@ -43,8 +43,8 @@ class Plant_input extends MainController
     {
         $this->load->model('Da_ttp_plant_list', 'ttp');
         $this->ttp->Emp_ID = $this->input->post('Emp_ID');
-        $this->ttp->plant_name = $this->input->post('plant_name');
-        $this->ttp->plant_No = $this->input->post('plant_No');
+        $this->ttp->Plant_name = $this->input->post('Plant_name');
+        $this->ttp->Plant_No = $this->input->post('Plant_No');
         $this->ttp->insert();
         redirect('Plant_management/Plant_list/index');
     }
@@ -60,9 +60,9 @@ class Plant_input extends MainController
     {
         $this->load->model('Da_ttp_plant_list', 'ttp');
         $this->ttp->Emp_ID = $this->input->post('Emp_ID');
-        $this->ttp->plant_name = $this->input->post('plant_name');
-        $this->ttp->plant_No = $this->input->post('plant_No');
-        $this->ttp->plant_ID = $this->input->post('plant_ID');
+        $this->ttp->Plant_name = $this->input->post('Plant_name');
+        $this->ttp->Plant_No = $this->input->post('Plant_No');
+        $this->ttp->Plant_ID = $this->input->post('Plant_ID');
         $this->ttp->update();
         redirect('Plant_management/Plant_list/index');
     }

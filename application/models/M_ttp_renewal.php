@@ -1,5 +1,5 @@
 <!--
-    M_renewal
+    M_ttp_renewal
     select to get data
     @input -
     @output -
@@ -10,8 +10,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-include_once ('Da_renewal.php');
-class M_renewal extends Da_renewal
+include_once ('Da_ttp_renewal.php');
+class M_ttp_renewal extends Da_ttp_renewal
 {
 
     public function __construct()
@@ -19,7 +19,14 @@ class M_renewal extends Da_renewal
         parent::__construct();
     }
 
-    //เอาค่าทั้งหมด
+     /*
+    * getall
+    * select data from database
+    * @input -
+    * @output data output
+    * @author Nattkorn
+    * @Create date 2564-07-19
+    */
     public function get_all()
     {
         $sql = "SELECT *
@@ -30,7 +37,14 @@ class M_renewal extends Da_renewal
         return $query;
     }
 
-    //เอาค่าจากตารางformfile
+    /*
+    * get_formfile
+    * select data from database
+    * @input -
+    * @output data output
+    * @author Nattkorn
+    * @Create date 2564-07-19
+    */
     public function get_formfile()
     {
         $sql =
@@ -40,7 +54,14 @@ class M_renewal extends Da_renewal
         return $query;
     }
 
-    //เอาค่าจากตารางcompany
+    /*
+    * get_company
+    * select data from database
+    * @input -
+    * @output data output
+    * @author Nattkorn
+    * @Create date 2564-07-19
+    */
     public function get_company()
     {
         $sql =
@@ -50,7 +71,14 @@ class M_renewal extends Da_renewal
         return $query;
     }
 
-    //เอาค่าจากตาราง supervisor 
+   /*
+    * get_supervisor
+    * select data from database
+    * @input -
+    * @output data output
+    * @author Nattkorn
+    * @Create date 2564-07-19
+    */
     public function get_supervisor()
     {
         $sql =
@@ -59,7 +87,15 @@ class M_renewal extends Da_renewal
         $query = $this->db->query($sql);
         return $query;
     }
-    //เอาค่าจากแพลน
+    
+    /*
+    * get_plan
+    * select data from database
+    * @input -
+    * @output data output
+    * @author Nattkorn
+    * @Create date 2564-07-19
+    */
     public function get_plan()
     {
         $sql =
@@ -70,7 +106,14 @@ class M_renewal extends Da_renewal
         return $query;
     }
 
-    //เอาคาสเตตัส
+    /*
+    * get_status
+    * select data from database
+    * @input -
+    * @output data output
+    * @author Nattkorn
+    * @Create date 2564-07-19
+    */
     public function get_status()
     {
         $sql =
@@ -83,7 +126,14 @@ class M_renewal extends Da_renewal
         return $query;
     }
 
-    //เอาค่าเฉพาะวันที่
+    /*
+    * get_bydate
+    * select data from database
+    * @input -
+    * @output data output
+    * @author Nattkorn
+    * @Create date 2564-07-19
+    */
     public function get_bydate($Form_ID)
     {
         $sql =

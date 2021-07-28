@@ -1,5 +1,5 @@
 <!--
-    Da_renewal
+    Da_ttp_renewal
     database for renewal
     @input -
     @output -
@@ -11,7 +11,7 @@
 include_once("ttps_model.php");
 
 
-class Da_renewal extends ttps_model
+class Da_ttp_renewal extends ttps_model
 {
     public $End_date;
     function construct()
@@ -19,7 +19,14 @@ class Da_renewal extends ttps_model
         parent::construct();
     }
 
-    //อัพเดทวันลงดาต้าเบส
+    /*
+    * update
+    * update end date to database
+    * @input End_date,Form_ID
+    * @output End_date update
+    * @author Nattkorn
+    * @Create date 2564-07-19
+    */
     function update()
     {
         $sql = "UPDATE ttps_database.requested_form 

@@ -8,7 +8,7 @@
 * @Update Date 2564-07-26
 */ -->
 
-<a href="<?php echo site_url() . 'Report/Report_controller/show_report'; ?>" class="btn btn-secondary float-left"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
+<a href="<?php echo site_url() . 'Report/Report/show_report'; ?>" class="btn btn-secondary float-left"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
 <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a>
 
 <h1>
