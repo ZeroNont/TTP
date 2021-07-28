@@ -61,7 +61,7 @@ class Check_out_form extends MainController
         $this->ttp->Form_ID = $id;
         $this->ttp->Status = $num;
         $this->ttp->check_out();
-        redirect('Check_out/Check_out/index');
+        redirect('Check_out_form/Check_out_form/index');
     }
 }
 // 
