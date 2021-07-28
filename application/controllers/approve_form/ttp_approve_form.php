@@ -117,19 +117,25 @@ class ttp_approve_form extends MainController
         if(sizeof($temp) != 0){
             $HR = substr($temp->HR_No,7);
             $HR_no = intval($HR)+1;
-            if(intval($HR) < 9){
-                $HR_No = "HR".date("Y")."-00".$HR_no;
-            }
-            //if 
-            else if(intval($HR) < 99){
-            $HR_No = "HR".date("Y")."-0".$HR_no;
-            }
-            // else if
-            
-            else if(intval($HR) < 999){
-            $HR_No = "HR".date("Y")."-".$HR_no;
-            }
-            // else if
+            $Year = substr($temp->HR_No,2,4);
+            if($Year == date("Y")){
+                if(intval($HR) < 9){
+                    $HR_No = "HR".date("Y")."-00".$HR_no;
+                }
+                //if 
+                else if(intval($HR) < 99){
+                $HR_No = "HR".date("Y")."-0".$HR_no;
+                }
+                // else if
+                
+                else if(intval($HR) < 999){
+                $HR_No = "HR".date("Y")."-".$HR_no;
+                }
+                // else if
+            }//if Year
+            else{
+                $HR_No = "HR".date("Y")."-001";
+            } //else Year
         }//if size of
         else{
             $HR_No = "HR".date("Y")."-001";

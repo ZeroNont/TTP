@@ -144,7 +144,8 @@
                           <!-- Navigation -->
                           <ul class="navbar-nav mb-md-3">
                               <li class="nav-item">
-                                  <a class="nav-link" href="examples/upgrade.html">
+                                  <a class="nav-link" 
+                                  href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_list/' ?>">
                                       <i class="ni ni-active-40 text-red"></i>
                                       <span class="nav-link-text">Approve Form</span>
                                   </a>
