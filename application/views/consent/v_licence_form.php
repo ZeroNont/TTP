@@ -123,7 +123,7 @@
                                         if ($obj_supervisor[$i]->Position_Level > $obj_level[0]->Position_Level) { ?>
                                     <option value="<?php echo $obj_supervisor[$i]->Emp_ID ?>">
                                         <?php
-                                            echo $obj_supervisor[$i]->Empname_th . " " . $obj_supervisor[$i]->Empsurname_th;
+                                            echo $obj_supervisor[$i]->Empname_eng . " " . $obj_supervisor[$i]->Empsurname_eng;
                                         }
                                             ?>
                                     </option>
@@ -143,7 +143,7 @@
                                     </option>
                                     <?php for ($i = 0; $i < count($obj_plan); $i++) { ?>
                                     <option value="<?php echo $obj_plan[$i]->Emp_ID ?>">
-                                        <?php echo "Plan: " . $obj_plan[$i]->Plant_No . "  :  " . $obj_plan[$i]->Plant_name . " : " . $obj_plan[$i]->Empname_th . " " . $obj_plan[$i]->Empsurname_th ?>
+                                        <?php echo "Plan: " . $obj_plan[$i]->Plant_No . "  :  " . $obj_plan[$i]->Plant_name . " : " . $obj_plan[$i]->Empname_eng . " " . $obj_plan[$i]->Empsurname_eng ?>
                                     </option>
 
                                     <?php } ?>
