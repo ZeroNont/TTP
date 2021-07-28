@@ -47,6 +47,16 @@ class M_ttp_request extends Da_ttp_request
         return $query;
     }
 
+    function get_hr_no()
+    {
+        $sql = "SELECT *
+                FROM ttps_database.requested_form AS req
+                WHERE req.HR_No LIKE 'HR%'
+                ORDER BY req.HR_No DESC LIMIT 1";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
     function update_app()
     {
         $sql = "UPDATE ttps_database.approval AS app

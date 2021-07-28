@@ -64,7 +64,7 @@
 
                                                     <!-- column ผู้รับผิดชอบ -->
                                                     <td>
-                                                        <?php echo $row->Empname_th.' '.$row->Empsurname_th;?>
+                                                        <?php echo $row->Empname_eng.' '.$row->Empsurname_eng;?>
                                                     </td>
 
                                                     <!-- column ดำเนินการ -->

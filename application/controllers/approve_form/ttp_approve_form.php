@@ -111,16 +111,42 @@ class ttp_approve_form extends MainController
 
     function update_approve_form($form_id) 
     {
+        $this->load->model('M_ttp_request','mreq');
+        $data['HR_No'] = $this->mreq->get_hr_no()->row();
+        $temp = $data['HR_No'];
+        if(sizeof($temp) != 0){
+            $HR = substr($temp->HR_No,7);
+            $HR_no = intval($HR)+1;
+            if(intval($HR) < 9){
+                $HR_No = "HR".date("Y")."-00".$HR_no;
+            }
+            //if 
+            else if(intval($HR) < 99){
+            $HR_No = "HR".date("Y")."-0".$HR_no;
+            }
+            // else if
+            
+            else if(intval($HR) < 999){
+            $HR_No = "HR".date("Y")."-".$HR_no;
+            }
+            // else if
+        }//if size of
+        else{
+            $HR_No = "HR".date("Y")."-001";
+        }
+    
+        $this->load->model('M_ttp_approve_form', 'mapp');
+        $this->mapp->HR_ID = $_SESSION["UsEmp_ID"]; 
+        $this->mapp->Form_ID = $form_id;         
+        $this->mapp->update_app();
+        
         $this->load->model('Da_ttp_approve_form', 'dreq');
         $this->dreq->Status = 3;
         $this->dreq->Form_ID = $form_id;   
-        $this->dreq->HR_No = $_SESSION["UsEmp_ID"]; 
+        $this->dreq->HR_No = $HR_No; 
         $this->dreq->update_form();
 
-        $this->load->model('M_ttp_approve_form', 'mreq');
-        $this->mreq->Form_ID = $form_id;  
-        $this->mreq->HR_ID = $_SESSION["UsEmp_ID"]; 
-        $this->mreq->update_app();
+        
         redirect('/approve_form/ttp_approve_form/show_approve_form_list');
     } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย HR
 

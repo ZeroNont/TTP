@@ -65,7 +65,7 @@ $(document).ready(function() {
                             <label class="form-control-label" for="input-address">Officer in Charge
                                 (ผู้รับผิดชอบ)</label>
                             <input class="form-control" type="text" name="Officer" require
-                                value="<?php echo $arr_emp->Empname_th.' '.$arr_emp->Empsurname_th ?>">
+                                value="<?php echo $arr_emp->Empname_eng.' '.$arr_emp->Empsurname_eng ?>">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -117,7 +117,7 @@ $(document).ready(function() {
             <div class="col-lg-6">
                 <div class="form-group">
                     <h3>ข้อมูลพิจารณาคำขอ</h3>
-                    <h5>ชื่อ : <?php echo $arr_emp->Empname_th.' '.$arr_emp->Empsurname_th ?></h5>
+                    <h5>ชื่อ : <?php echo $arr_emp->Empname_eng.' '.$arr_emp->Empsurname_eng ?></h5>
                     <h5>ตำแหน่ง : หัวหน้างาน</h5>
                     <h5>สถานะ : อนุมัติ</h5>
 
