@@ -42,28 +42,28 @@
 
                     <tbody align="center">
                         <?php
-                                            foreach($arr_req as $index => $row ){ ?>
+                        foreach ($arr_req as $index => $row) { ?>
                         <tr>
 
                             <!-- column ลำดับ # -->
                             <td style='text-align: center;'>
-                                <?php echo ($index+1);?>
+                                <?php echo ($index + 1); ?>
                             </td>
 
                             <!-- column สิง่ของ -->
                             <td>
-                                <?php echo $row->Item;?>
+                                <?php echo $row->Item; ?>
                             </td>
 
                             <!-- column ช่วงเวลาร้องขอ -->
                             <td>
 
-                                <?php echo date("d-m-Y",strtotime($row->Start_date)).' - '.date("d-m-Y",strtotime($row->End_date));?>
+                                <?php echo date("d-m-Y", strtotime($row->Start_date)) . ' - ' . date("d-m-Y", strtotime($row->End_date)); ?>
                             </td>
 
                             <!-- column ผู้รับผิดชอบ -->
                             <td>
-                                <?php echo $row->Empname_eng.' '.$row->Empsurname_eng;?>
+                                <?php echo $row->Empname_eng . ' ' . $row->Empsurname_eng; ?>
                             </td>
 
                             <!-- column ดำเนินการ -->
@@ -89,6 +89,11 @@
             </div>
             <!-- Argon Scripts -->
             <!-- Core -->
+            <script>
+            $(document).ready(function() {
+                $('#history_table').DataTable();
+            });
+            </script>
             <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
             <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
             <script src="../../assets/vendor/js-cookie/js.cookie.js"></script>

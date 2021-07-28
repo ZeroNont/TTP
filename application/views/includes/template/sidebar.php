@@ -5,7 +5,7 @@
           <!-- Brand -->
           <div class="sidenav-header  align-items-center">
               <a class="navbar-brand" href="javascript:void(0)">
-                  <img src="../../../../argon/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+                  <img src="../../../argon/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
               </a>
           </div>
           <div class="navbar-inner">
@@ -92,8 +92,7 @@
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
+                                  <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
                                       <span class="nav-link-text">Renewall Form</span>
                                   </a>
@@ -144,8 +143,8 @@
                           <!-- Navigation -->
                           <ul class="navbar-nav mb-md-3">
                               <li class="nav-item">
-                                  <a class="nav-link" 
-                                  href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_list/' ?>">
+                                  <a class="nav-link"
+                                      href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_list/' ?>">
                                       <i class="ni ni-active-40 text-red"></i>
                                       <span class="nav-link-text">Approve Form</span>
                                   </a>
@@ -177,8 +176,7 @@
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
+                                  <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
                                       <span class="nav-link-text">Renewall Form</span>
                                   </a>
@@ -243,8 +241,7 @@
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Report/Report/show_report/' ?>">
+                                  <a class="nav-link" href="<?php echo base_url() . 'Report/Report/show_report/' ?>">
                                       <i class="ni ni-chart-bar-32 text-blue"></i>
                                       <span class="nav-link-text">Report</span>
                                   </a>
@@ -277,8 +274,7 @@
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
+                                  <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
                                       <span class="nav-link-text">Renewall Form</span>
                                   </a>
