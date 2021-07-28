@@ -204,9 +204,9 @@ function getEmp_edit(i) {
         </div>
     </div>
     <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    });
+    // $(document).ready(function() {
+    //     $('#example').DataTable();
+    // });
     </script>
     </script>
     <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
