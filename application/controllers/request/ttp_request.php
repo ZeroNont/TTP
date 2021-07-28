@@ -51,7 +51,7 @@ class ttp_request extends MainController
         $this->mreq->Supervisor_ID = $_SESSION["UsEmp_ID"];
         $this->mreq->Status = 1;
         $data['arr_req'] = $this->mreq->get_all_sup()->result();
-        $this->output('consent/v_request', $data);
+        $this->output('consent/v_request_form', $data);
     } //แสดงายการคำขอทั้งหมด สำหรับหัวหน้างานคนนั้นๆ
 
     function show_request_detail($id)

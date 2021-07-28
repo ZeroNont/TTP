@@ -30,9 +30,9 @@ class M_ttp_approve_form extends Da_ttp_approve_form
                 ON app.Form_ID = form.Form_ID
                 INNER JOIN dbmc.employee AS emp
                 ON form.Emp_ID = emp.Emp_ID 
-                WHERE app.HR_ID = ? AND form.Status = ?";
+                WHERE form.Status = ?";
 
-        $query = $this->db->query($sql,array($this->HR_ID,$this->Status));
+        $query = $this->db->query($sql,array($this->Status));
         return $query;
     }
 
@@ -75,9 +75,9 @@ class M_ttp_approve_form extends Da_ttp_approve_form
     function update_app()
     {
         $sql = "UPDATE ttps_database.approval AS app
-                SET app.HR_date = CURRENT_TIMESTAMP()
+                SET app.HR_date = CURRENT_TIMESTAMP() , app.HR_ID = ?
                 WHERE app.Form_ID = ? "; 
-        $this->db->query($sql, array($this->Form_ID));
+        $this->db->query($sql, array($this->HR_ID,$this->Form_ID));
     } 
 
     function update_app_plant()
