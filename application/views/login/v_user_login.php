@@ -2,7 +2,7 @@
 * Display login for user
 * @input User_login and Pass_login
 * @output  -
-* @author 62160095 Niphat Kuhokciw
+* @author Niphat Kuhokciw
 * @Create Date 2564-07-28 -->
 <!DOCTYPE html>
 <html lang="en">
