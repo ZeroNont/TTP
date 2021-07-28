@@ -89,7 +89,8 @@ table, th, td {
                                         {echo $No++;}?></td>
                                         
                                         <td><?php  if($arr_renew[$i]->Status==4)
-                                        {echo $arr_renew[$i]->Form_ID;}   ?></td>
+                                        echo "HR2021-00".$arr_renew[$i]->Form_ID;
+                                        ?></td>
 
                                         <td><?php if($arr_renew[$i]->Status==4)
                                         { echo $arr_renew[$i]->Item;}?></td>
