@@ -77,6 +77,7 @@ table, th, td {
                                 
                                     
                                     <tbody>  
+                                        
                                     <?php 
                                      $No=1;
                                     for ($i = 0; $i < count($arr_renew); $i++) {?> 
@@ -88,7 +89,7 @@ table, th, td {
                                         {echo $No++;}?></td>
                                         
                                         <td><?php  if($arr_renew[$i]->Status==4)
-                                        {echo "HR2021-00". $arr_renew[$i]->Form_ID;}   ?></td>
+                                        {echo $arr_renew[$i]->Form_ID;}   ?></td>
 
                                         <td><?php if($arr_renew[$i]->Status==4)
                                         { echo $arr_renew[$i]->Item;}?></td>
@@ -97,9 +98,9 @@ table, th, td {
                                         {echo $arr_renew[$i]->Officer;} ?></td>
 
                                         <td><?php if($arr_renew[$i]->Status==4)
-                                        {echo date("d-m-Y",strtotime($arr_renew[$i]->Start_date)); 
+                                        {echo date("d/m/Y",strtotime($arr_renew[$i]->Start_date)); 
                                             echo ' - ';
-                                            echo date("d-m-Y",strtotime($arr_renew[$i]->End_date));} 
+                                            echo date("d/m/Y",strtotime($arr_renew[$i]->End_date));} 
                                         ?></td>     
 
                                         <td><?php if($arr_renew[$i]->Status==4)
