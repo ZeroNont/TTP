@@ -63,7 +63,7 @@
                       </li>
                       <li class="nav-item">
                           <a class="nav-link"
-                              href="<?php echo base_url() . 'request/ttp_request/show_request_list/' ?>">
+                              href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
                               <i class="ni ni-email-83 text-dark"></i>
                               <span class="nav-link-text">Requested</span>
                           </a>
@@ -127,7 +127,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/ttp_request/show_request_list/' ?>">
+                                      href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
                                       <span class="nav-link-text">Requested</span>
                                   </a>
@@ -197,7 +197,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/ttp_request/show_request_list/' ?>">
+                                      href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
                                       <span class="nav-link-text">Requested</span>
                                   </a>
@@ -296,7 +296,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/ttp_request/show_request_list/' ?>">
+                                      href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
                                       <span class="nav-link-text">Requested</span>
                                   </a>
