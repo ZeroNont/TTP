@@ -93,56 +93,58 @@
 
                         <tbody>
 
-                            <?php 
-                                     $No=1;
-                                    for ($i = 0; $i < count($arr_renew); $i++) {?>
-                            <?php if($arr_renew[$i]->Status==4) ;{?>
+                            <?php
+                            $No = 1;
+                            for ($i = 0; $i < count($arr_renew); $i++) { ?>
+                            <?php if ($arr_renew[$i]->Status == 4); { ?>
                             <tr>
 
                                 <td style='text-align:center'>
-                                    <?php if($arr_renew[$i]->Status==4)
-                                        {echo $No++;}?></td>
-<<<<<<< HEAD
+                                    <?php if ($arr_renew[$i]->Status == 4) {
+                                                echo $No++;
+                                            } ?></td>
 
-                                <td><?php  if($arr_renew[$i]->Status==4)
+                                <td><?php if ($arr_renew[$i]->Status == 4)
                                                 echo $arr_renew[$i]->HR_No;
-=======
-                                        
-                                        <td><?php  if($arr_renew[$i]->Status==4)
-                                        echo $arr_renew[$i]->HR_No;
->>>>>>> b4727d3103f6988ddcb8516d4eadc0bbeab4e818
-                                        ?></td>
+                                            ?></td>
 
-                                <td><?php if($arr_renew[$i]->Status==4)
-                                        { echo $arr_renew[$i]->Item;}?></td>
+                                <td><?php if ($arr_renew[$i]->Status == 4) {
+                                                echo $arr_renew[$i]->Item;
+                                            } ?></td>
 
-                                <td><?php if($arr_renew[$i]->Status==4)
-                                        {echo $arr_renew[$i]->Officer;} ?></td>
+                                <td><?php if ($arr_renew[$i]->Status == 4) {
+                                                echo $arr_renew[$i]->Officer;
+                                            } ?></td>
 
-                                <td><?php if($arr_renew[$i]->Status==4)
-                                        {echo date("d/m/Y",strtotime($arr_renew[$i]->Start_date)); 
-                                            echo ' - ';
-                                            echo date("d/m/Y",strtotime($arr_renew[$i]->End_date));} 
-                                        ?></td>
+                                <td><?php if ($arr_renew[$i]->Status == 4) {
+                                                echo date("d/m/Y", strtotime($arr_renew[$i]->Start_date));
+                                                echo ' - ';
+                                                echo date("d/m/Y", strtotime($arr_renew[$i]->End_date));
+                                            }
+                                            ?></td>
 
-                                <td><?php if($arr_renew[$i]->Status==4)
-                                        {  if($arr_renew[$i]->Status==4)
-                                            {echo "อนุมัติ";} else {echo " ";}
-                                        } 
-                                        else {echo " ";}?></td>
+                                <td><?php if ($arr_renew[$i]->Status == 4) {
+                                                if ($arr_renew[$i]->Status == 4) {
+                                                    echo "อนุมัติ";
+                                                } else {
+                                                    echo " ";
+                                                }
+                                            } else {
+                                                echo " ";
+                                            } ?></td>
 
-                                <td><?php if($arr_renew[$i]->Status==4)
-                                        {  echo $arr_renew[$i]->Form_count; 
-                                        } 
-                                       ?></td>
+                                <td><?php if ($arr_renew[$i]->Status == 4) {
+                                                echo $arr_renew[$i]->Form_count;
+                                            }
+                                            ?></td>
 
 
 
                                 <!--ปุ่มขอต่ออายุ-->
 
                                 <td> <?php if ($arr_renew[$i]->Status == 4) { ?>
-                                    <a href='<?php  echo site_url() . 'Renewal/Renewal/show_reform/'
-                                                .$arr_renew[$i]->Form_ID?>'>
+                                    <a href='<?php echo site_url() . 'Renewal/Renewal/show_reform/'
+                                                                . $arr_renew[$i]->Form_ID ?>'>
 
                                         <button> <i class="fas fa-envelope"></i></button>
 

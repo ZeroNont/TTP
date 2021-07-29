@@ -18,7 +18,9 @@ class Renewal extends MainController
 	function show_renewal()
 	{
 		$this->load->model('M_ttp_renewal', 'ttp');
-        $data['arr_renew'] = $this->ttp->get_all()->result();
+		$id = $_SESSION["UsEmp_ID"];
+        $this->ttp->Status = 4;
+        $data['arr_renew'] = $this->ttp->get_all($id)->result();
 		$this->output('consent/v_renewal',$data);
 	}
 
