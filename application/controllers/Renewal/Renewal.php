@@ -50,12 +50,19 @@ class Renewal extends MainController
 		$Update = date('Y-m-d',strtotime($date1 . "+".$add_date." days"));
 		$this->ttp->End_date = $Update;
 		$this->ttp->Form_ID = $Form_ID;
-
+		$num =$this->input->post('Form_count');
+		 $num=$num+1;
 	
+		$this->ttp->Form_count=$num;
+		$this->ttp->update_form();
 		$this->ttp->update();
 		redirect('/Renewal/Renewal/show_renewal');
+	
+		
 
 		
 	}
+
+	
 }
 // 

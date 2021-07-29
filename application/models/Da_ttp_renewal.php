@@ -34,4 +34,12 @@ class Da_ttp_renewal extends ttps_model
         WHERE Form_ID = ?";
         $this->db->query($sql, array($this->End_date, $this->Form_ID));
     }
+
+    public function update_form()
+    {
+        $sql = " UPDATE ttps_database.requested_form
+        SET Form_count = ?
+        WHERE Form_ID= ?";
+        $this->db->query($sql, array($this->Form_count,$this->Form_ID));
+    }
 }
