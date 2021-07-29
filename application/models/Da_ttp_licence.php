@@ -14,9 +14,9 @@ class Da_ttp_licence extends ttps_model
     }
     public function insert_form()
     {
-        $sql = "INSERT INTO ttps_database.requested_form(Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count) 
-                VALUES (?,?,?,?,?,?,?,?,?,?)";
-        $this->db->query($sql, array($this->Emp_ID, $this->Start_date, $this->End_date, $this->Requested_date, $this->Item, $this->Tell, $this->Officer, $this->Reason, $this->Company_ID, $this->Form_count));
+        $sql = "INSERT INTO ttps_database.requested_form(Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count,Status) 
+                VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        $this->db->query($sql, array($this->Emp_ID, $this->Start_date, $this->End_date, $this->Requested_date, $this->Item, $this->Tell, $this->Officer, $this->Reason, $this->Company_ID, $this->Form_count, $this->Status));
     }
     // *insert_form
     // *insert form in database

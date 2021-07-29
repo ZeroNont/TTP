@@ -1,16 +1,18 @@
-<!-- /*
-* v_report
-* Display report of requests for permission 
-* @input    -
-* @output   -
-* @author   Chakrit
-* @Create Date 2564-07-24
-* @Update Date 2564-07-28
-*/ -->
+<!-- 
+    /*
+    * v_report
+    * Display report of requests for permission 
+    * @input    -
+    * @output   -
+    * @author   Chakrit
+    * @Create Date 2564-07-24
+    * @Update Date 2564-07-28
+    */ -->
 
 <h1>
     Report (รายงานข้อมูล)
-    <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a>
+    <a href='<?php echo site_url() . 'Report/Report/show_report_export_excel'; ?>' class="btn btn-primary float-right" id="count_export"><i class="fa fa-download"></i> Export Excel</a>
+    <!-- <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a> -->
 </h1>
 <br>
 <div class="card-header" id="card_radius">
@@ -133,7 +135,7 @@
                         <div class="col-lg-6">
                             <h5 class="h2 text-black mb-0">Graph number of requests for permission</h5>
                         </div>
-                        <div class="col-lg-6" align="right">
+                        <!-- <div class="col-lg-6" align="right">
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">department
                                     (แผนก)</label><br>
@@ -141,7 +143,7 @@
                                     <option value="0">-----------Please select-----------</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="card-body">
@@ -196,27 +198,12 @@
 <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 <script src="https://unpkg.com/file-saver@1.3.3/FileSaver.js"></script>
 
-<!-- <script>
-    $('#datepicker').datepicker({
-        uiLibrary: 'bootstrap',
-        format: "yyyy-mm-dd",
-        type: "date"
-    });
-</script>
-
-<script>
-    $('#datepicker2').datepicker({
-        uiLibrary: 'bootstrap',
-        format: "yyyy-mm-dd",
-        type: "date"
-    });
-</script> -->
-
 <script>
     $(document).ready(function() {
         $("#count_requested").hide();
         $("#count_graph").hide();
         $("#count_table").hide();
+        $("#count_export").hide();
     });
 
     function ExcelReport() //function สำหรับสร้าง ไฟล์ excel จากตาราง
@@ -322,7 +309,10 @@
             },
             success: function(data_charts) {
                 console.log(data_charts);
+                // console.log(status);
+
                 data_charts.forEach((row, index) => {
+                    console.log(row.Form_ID);
                     if (index == 0) {
                         label.push(row.Department);
                         Dep.push(row.dep_id);
@@ -352,20 +342,22 @@
                 $("#count_requested").show();
                 $("#count_graph").show();
                 $("#count_table").show();
+                $("#count_export").show();
+
                 show_chart(label, data);
-                show_label_select(label, Dep);
+                //show_label_select(label, Dep);
                 show_table(data_charts);
-                $('#total_request').text(data_charts.length);
+                $('#total_request').text(approve + pending);
                 $('#total_approval').text(approve);
                 $('#pending_approval').text(pending);
 
+                console.log(label);
 
             },
             error: function(res) {
 
             }
         });
-        console.log(label);
 
     }
 

@@ -75,7 +75,7 @@ body
                         </div>
                         <div  id = "cardbody">
                             
-                            <h2 style = "font-size : 45px;font-family:Helvetica;color:red;">Welcome <?php echo $_SESSION['UsName_EN'] ?></h2>
+                            <h2 style = "font-size : 25.9px;font-family:Helvetica;color:red;">Welcome <?php echo $_SESSION['UsName_EN'] ?></h2>
                             <br>
                             <h4>ปัจจุบัน ทางบริษัท ได้มีการให้พนักงาน </h4>
                             <h4>ทำการวางของในจุดต่างๆ ตามที่จัดไว้</h4>

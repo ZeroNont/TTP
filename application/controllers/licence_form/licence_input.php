@@ -84,7 +84,7 @@ class Licence_input extends MainController
     function insert()
     {
         $date = date("Y-m-d");
-
+        $status = 1;
         $j = 1;
         $id = $_SESSION['UsEmp_ID'];
         $Layout_name =  $_FILES['Layout']['name'];
@@ -106,6 +106,7 @@ class Licence_input extends MainController
         $this->ttp->Company_ID = $this->input->post('Company_ID');
         $this->ttp->Approve_Plant_ID = $this->input->post('Approve_Plant');
         $this->ttp->Form_count = $j;
+        $this->ttp->Status = $status;
         // echo $this->input->post('Emp_ID');
         // echo $this->input->post('Item');
         $this->ttp->insert_form();
