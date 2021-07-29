@@ -56,6 +56,9 @@ class ttp_history extends MainController
 	{
         $this->load->model('M_ttp_history', 'ttp');
         $data['arr_form'] = $this->ttp->get_by_id($id)->row();
+        $data['arr_his'] = $this->ttp->get_history_approve($id)->row();
+        $data['arr_his_hr'] = $this->ttp->get_history_approve_hr($id)->row();
+        $data['arr_his_ap'] = $this->ttp->get_history_approve_plant($id)->row();
         $data['arr_list'] = $this->ttp->get_form_list()->row();
         $data['arr_file'] = $this->ttp->get_form_file($id)->result();
         $this->output('consent/v_history_detail', $data);

@@ -47,6 +47,39 @@ class M_ttp_history extends Da_ttp_history
             return $query;
     }
 
+    function get_history_approve($id)
+    {
+        $sql = "SELECT *
+                FROM ttps_database.approval AS app
+                INNER JOIN dbmc.employee AS emp
+                ON  app.Supervisor_ID = emp.Emp_ID
+                WHERE app.Form_ID = $id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    function get_history_approve_hr($id)
+    {
+        $sql = "SELECT *
+                FROM ttps_database.approval AS app
+                INNER JOIN dbmc.employee AS emp
+                ON  app.HR_ID = emp.Emp_ID
+                WHERE app.Form_ID = $id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+    function get_history_approve_plant($id)
+    {
+        $sql = "SELECT *
+                FROM ttps_database.approval AS app
+                INNER JOIN dbmc.employee AS emp
+                ON  app.Approve_plant_ID = emp.Emp_ID
+                WHERE app.Form_ID = $id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
     public function get_form_list()
     {
         $sql = "SELECT * 

@@ -25,6 +25,9 @@
     {
         text-align: 20px;
     }
+    #button_back{
+        background-color: #adb5bd;
+    }
 
 </style> 
     
@@ -81,7 +84,7 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-address">Officer in Charge
                                         (ผู้รับผิดชอบ)</label>
-                                    <input class="form-control" type="text" name="Officer" require value="<?php echo $arr_form->Officer ?>" disabled>
+                                    <input class="form-control" type="text" name="Officer" require value="<?php echo $arr_list->Empname_eng . " " . $arr_list->Empsurname_eng; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -135,12 +138,12 @@
                 <h3>ข้อมูลผู้พิจารณา</h3>
                                 <div class="row">
                                     <!-- แสดงชื่อหัวหน้า อนุมัติ -->
-                                    <?php if ($arr_form->Status == 1 || $arr_form->Status == 2 || $arr_form->Status == 3  || $arr_form->Status == -3 || $arr_form->Status == -2) { ?>
+                                    <?php if ($arr_form->Status == 1 || $arr_form->Status == 2 || $arr_form->Status == 3  || $arr_form->Status == -3 || $arr_form->Status == -2 || $arr_form->Status = 4) { ?>
                                         <div class="col-6 col-md-4" id="card_align"><span><b>ชื่อผู้อนุมัติ : </b>
-                                            <?php echo $arr_list->Empname_th . " " . $arr_list->Empsurname_th; ?>
+                                            <?php echo $arr_his->Empname_eng . " " . $arr_his->Empsurname_eng; ?>
                                             <br>
                                             <b>ตำแหน่ง : </b>หัวหน้างาน
-                                            <?php //แสดงตำแหน่งหัวหน้าแบบกำหนดเอง หรือดึงจากดาต้า
+                                            <?php //แสดงตำแหน่ง
                                             $newDate = date("d/m/Y", strtotime($arr_list->Supervisor_date)); ?>
                                             <br>
                                             <b>วันที่อนุมัติ : </b>
@@ -148,12 +151,12 @@
                                         </div>
                                     <?php }
                                     //  <!-- แสดงชื่อ HR อนุมัติ -->
-                                    if ($arr_form->Status == 2 || $arr_form->Status == 3 || $arr_form->Status == -3) { ?>
+                                    if ($arr_form->Status == 2 || $arr_form->Status == 3 || $arr_form->Status == -3 || $arr_form->Status = 4) { ?>
                                         <div class="col-6 col-md-4"><span><b>ชื่อผู้อนุมัติ : </b>
-                                                <?php echo $arr_list->Empname_th . " " . $arr_list->Empsurname_th; ?>
+                                                <?php echo $arr_his_hr->Empname_eng . " " . $arr_his_hr->Empsurname_eng; ?>
                                                 <br>
                                             <b>ตำแหน่ง : </b>HR 
-                                            <?php //แสดงตำแหน่งหัวหน้าแบบกำหนดเอง หรือดึงจากดาต้า
+                                            <?php //แสดงตำแหน่ง
                                                 $newDate = date("d/m/Y", strtotime($arr_list->HR_date)); ?>
                                                 <br>
                                             <b>วันที่อนุมัติ : </b>
@@ -161,12 +164,12 @@
                                         </div>
                                         <?php }
                                      //  <!-- แสดงชื่อ Approve Plant อนุมัติ -->
-                                    if ($arr_form->Status == 3) { ?>
-                                       <div class="col-6 col-md-4"><span><b>ชื่อผู้อนุมัติ : 
-                                            <?php echo $arr_list->Empname_th . " " . $arr_list->Empsurname_th; ?>
+                                    if ($arr_form->Status == 3 || $arr_form->Status = 4) { ?>
+                                       <div class="col-6 col-md-4"><span><b>ชื่อผู้อนุมัติ : </b>
+                                            <?php echo $arr_his_ap->Empname_eng . " " . $arr_his_ap->Empsurname_eng; ?>
                                             <br>
-                                            <b>ตำแหน่ง : </b>Approve Plant <br>
-                                            <?php //แสดงตำแหน่งหัวหน้าแบบกำหนดเอง หรือดึงจากดาต้า
+                                            <b>ตำแหน่ง : </b>Approve Plant
+                                            <?php //แสดงตำแหน่ง
                                             $newDate = date("d/m/Y", strtotime($arr_list->Approval_plant_date)); ?>
                                             <br>
                                             <b>วันที่ผู้อนุมัติ : </b>
@@ -176,41 +179,42 @@
                                     // <!-- แสดงชื่อหัวหน้า ปฎิเสธ -->
                                     if ($arr_form->Status == -1 ) { ?>
                                         <div class="col-6 col-md-4"><span><b>ชื่อผู้ปฏิเสธ : </b>
-                                            <?php echo $arr_list->Empname_th . " " . $arr_list->Empsurname_th  ?>
+                                            <?php echo $arr_his->Empname_eng . " " . $arr_his->Empsurname_eng  ?>
                                             <br>
                                             <b>ตำแหน่ง : </b>หัวหน้างาน 
-                                            <?php //แสดงตำแหน่งหัวหน้าแบบกำหนดเอง หรือดึงจากดาต้า
+                                            <?php //แสดงตำแหน่ง
                                                 $newDate = date("d/m/Y", strtotime($arr_list->Supervisor_date)); ?>
                                             <br>
                                             <b>วันที่ปฏิเสธ : </b>
                                                 <?php echo $newDate;  ?> 
                                                 <br>   
                                             <b>เหตุผลที่ปฏิเสธ : </b>
-                                            <?php echo $arr_list->Reason_reject;?></span>
+                                            <?php echo $arr_list->reject_reason;?></span>
                                         </div>
                                     <?php } 
                                     // <!-- แสดงชื่อ HR ปฎิเสธ -->
                                     if ($arr_form->Status == -2 ) { ?>
                                         <div class="col-6 col-md-4"><span><b>ชื่อผู้ปฏิเสธ : </b>
-                                            <?php echo $arr_list->Empname_th . " " . $arr_list->Empsurname_th;  ?>
+                                            <?php echo $arr_his_hr->Empname_eng . " " . $arr_his_hr->Empsurname_eng;  ?>
                                             <br>
                                             <b>ตำแหน่ง : </b>HR 
-                                            <?php //แสดงตำแหน่งหัวหน้าแบบกำหนดเอง หรือดึงจากดาต้า
+                                            <?php //แสดงตำแหน่ง
                                                 $newDate = date("d/m/Y", strtotime($arr_list->HR_date)); ?>
+                                                 <br>
                                             <b>วันที่ปฏิเสธ : </b>
                                                 <?php echo $newDate;  ?>
                                             <br>
                                             <b>เหตุผลที่ปฏิเสธ : </b>
-                                                <?php echo $arr_list->Reason_reject;?></span>
+                                                <?php echo $arr_list->reject_reason;?></span>
                                             </div>
                                             <?php }
                                      // <!-- แสดงชื่อ Approve Plant ปฎิเสธ -->
                                     else if ($arr_form->Status == -3 ) { ?>
                                         <div class="col-6 col-md-4"><span><b>ชื่อผู้ปฏิเสธ : </b>
-                                            <?php echo $arr_list->Empname_th . " " . $arr_list->Empsurname_th  ?>
+                                            <?php echo $arr_his_ap->Empname_eng . " " . $arr_his_ap->Empsurname_eng  ?>
                                             <br>
                                             <b>ตำแหน่ง : </b>Approve Plant <br>
-                                            <?php //แสดงตำแหน่งหัวหน้าแบบกำหนดเอง หรือดึงจากดาต้า
+                                            <?php //แสดงตำแหน่ง
                                                 $newDate = date("d/m/Y", strtotime($arr_list->Approval_plant_date)); ?>
                                             <b>วันที่ปฏิเสธ : </b>
                                                 <?php echo $newDate;  ?>
@@ -225,7 +229,7 @@
         <?php } ?>
 
         <a href="<?php echo base_url().'history/ttp_history/show_history_employee/'.$_SESSION['UsEmp_ID']?>" >  
-                        <center><button type="button" class="btn btn-danger canter" id="button_size">Back</button> </center>
+                        <center><button type="button" class="btn btn-secondary btn-lg canter" id="button_size">Back</button> </center>
                     </a>
             <br>
             <br>
