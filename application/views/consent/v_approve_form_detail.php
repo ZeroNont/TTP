@@ -117,7 +117,7 @@ $(document).ready(function() {
             <div class="col-lg-6">
                 <div class="form-group">
                     <h3>ข้อมูลพิจารณาคำขอ</h3>
-                    <h5>ชื่อ : <?php echo $arr_emp->Empname_eng.' '.$arr_emp->Empsurname_eng ?></h5>
+                    <h5>ชื่อ : <?php echo $arr_his->Empname_eng.' '.$arr_his->Empsurname_eng ?></h5>
                     <h5>ตำแหน่ง : หัวหน้างาน</h5>
                     <h5>สถานะ : อนุมัติ</h5>
 
