@@ -79,7 +79,7 @@ function getEmp_edit(i) {
                     <div class="mb-3">
                         <label for="focusedinput" class="form-label">Employee ID</label>
                         <input type="text" class="form-control" name="Emp_ID" id="Emp_id_modal" placeholder="JS000xxx"
-                            onkeyup="get_Emp()">
+                            onkeyup="get_Emp()" required>
                     </div>
                     <div class="mb-3">
                         <label for="focusedinput" class="form-label">Name</label>
@@ -162,7 +162,7 @@ function getEmp_edit(i) {
                                                 <input type="text" class="form-control"
                                                     value="<?php echo $obj_plan[$i]->Emp_ID ?>"
                                                     id="Emp_id<?php echo $i; ?>"
-                                                    onkeyup="getEmp_edit(<?php echo $i; ?>)" name="Emp_ID">
+                                                    onkeyup="getEmp_edit(<?php echo $i; ?>)" name="Emp_ID" required>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputPassword1" class="form-label">Name</label>
