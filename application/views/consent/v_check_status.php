@@ -33,7 +33,7 @@
                     </td>
                     <td>
                         <?php
-                    if ($obj_status[$i]->Status >= 2 or $obj_status[$i]->Status > 0) {
+                    if ($obj_status[$i]->Status >= 2 or $obj_status[$i]->Status < 0) {
                                 echo "อนุมัติ";
                         } else if ($obj_status[$i]->Status == 0) {
                                 echo "ไม่อนุมัติ";
