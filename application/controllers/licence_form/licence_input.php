@@ -143,7 +143,7 @@ class Licence_input extends MainController
         $tmp_Layout =  $_FILES['Layout']['tmp_name'];
         $Plan_name =  $_FILES['Plan']['name'];
         $tmp_Plan =  $_FILES['Plan']['tmp_name'];
-
+        $num = 1;
         $this->load->model('Da_ttp_licence', 'ttp');
         $this->ttp->Emp_ID = $id;
         $j =   $this->input->post('count');
@@ -162,6 +162,9 @@ class Licence_input extends MainController
         $this->ttp->Form_count =   $j + 1;
         // echo $this->input->post('form');
         // echo $this->input->post('count');
+        $this->ttp->Status = $num;
+        $this->ttp->Form_ID = $this->input->post('form');
+        $this->ttp->status_update($k);
         $this->ttp->update_form($k);
         $this->ttp->update_approve($k);
         move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
