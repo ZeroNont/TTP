@@ -24,13 +24,13 @@
                       <li class="nav-item">
                           <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                               <i class="ni ni-badge text-orange"></i>
-                              <span class="nav-link-text">Licence Form</span>
+                              <span class="nav-link-text">Request Form</span>
                           </a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                               <i class="ni ni-single-copy-04 text-primary"></i>
-                              <span class="nav-link-text">Renewall Form</span>
+                              <span class="nav-link-text">Renew Form</span>
                           </a>
                       </li>
                       <li class="nav-item">
@@ -65,7 +65,7 @@
                           <a class="nav-link"
                               href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
                               <i class="ni ni-email-83 text-dark"></i>
-                              <span class="nav-link-text">Requested</span>
+                              <span class="nav-link-text">Pending Approve</span>
                           </a>
                       </li>
 
@@ -88,13 +88,13 @@
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
-                                      <span class="nav-link-text">Licence Form</span>
+                                      <span class="nav-link-text">Request Form</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
-                                      <span class="nav-link-text">Renewall Form</span>
+                                      <span class="nav-link-text">Renew Form</span>
                                   </a>
                               </li>
                               <li class="nav-item">
@@ -129,7 +129,7 @@
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
-                                      <span class="nav-link-text">Requested</span>
+                                      <span class="nav-link-text">Pending Approve</span>
                                   </a>
                               </li>
 
@@ -158,13 +158,13 @@
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
-                                      <span class="nav-link-text">Licence Form</span>
+                                      <span class="nav-link-text">Request Form</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
-                                      <span class="nav-link-text">Renewall Form</span>
+                                      <span class="nav-link-text">Renew Form</span>
                                   </a>
                               </li>
                               <li class="nav-item">
@@ -199,7 +199,7 @@
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
-                                      <span class="nav-link-text">Requested</span>
+                                      <span class="nav-link-text">Pending Approve</span>
                                   </a>
                               </li>
 
@@ -257,13 +257,13 @@
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
-                                      <span class="nav-link-text">Licence Form</span>
+                                      <span class="nav-link-text">Request Form</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
-                                      <span class="nav-link-text">Renewall Form</span>
+                                      <span class="nav-link-text">Renew Form</span>
                                   </a>
                               </li>
                               <li class="nav-item">
@@ -298,7 +298,7 @@
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
-                                      <span class="nav-link-text">Requested</span>
+                                      <span class="nav-link-text">Pending Approve</span>
                                   </a>
                               </li>
 

@@ -377,7 +377,11 @@
 
             data_row += '<tr>';
             data_row += '<td>' + (index + 1) + '</td>';
-            data_row += '<td>' + row.HR_No + '</td>';
+            if (row.HR_No == '') {
+                data_row += '<td>-</td>';
+            } else {
+                data_row += '<td>' + row.HR_No + '</td>';
+            }
             data_row += '<td>' + row.Officer + '</td>';
             if (row.Status == '4') {
                 data_row += '<td>ยังอยู่ในคลัง</td>';

@@ -68,7 +68,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label class="form-control-label" for="input-city">Tell No.
+                                <label class="form-control-label" for="input-city">Tel No.
                                     (เบอร์โทรศัพท์)</label>
                                 <input type="text" class="form-control" name="Tell" require>
                             </div>
