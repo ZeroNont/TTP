@@ -25,7 +25,6 @@
         margin: 15% 35%;
         padding: 10px;
     }/*end container*/
-
 </style>
 
 <head>
@@ -80,24 +79,24 @@
                     <div class="form-group mb-3">
                         <div class="input-group input-group-merge input-group-alternative">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"></span>
+                                <span class="input-group-text"><img src="<?php echo base_url()?>pic/user.png"width="20" height="20"></span>
                             </div>
-                            <!-- Insert username -->
-                            <input class="form-control" id="User_login" placeholder="ชื่อผู้ใช้" type="text" required>
+                            <input class="form-control" id="User_login" placeholder="  Username" type="text" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group input-group-merge input-group-alternative">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"></span>
+                                <span class="input-group-text"><img src="<?php echo base_url()?>pic/password.png"width="20" height="20"></span>
                             </div>
                             <!-- Insert password -->
-                            <input class="form-control" id="Pass_login" placeholder="รหัสผ่าน" type="password" required>
+                            <input class="form-control" id="Pass_login" placeholder="  Password" type="password" required>
+                            
                         </div>
                     </div>
                     <div class="text-center">
                         <!-- Button login -->
-                        <button type="submit" class="btn btn-danger my-4" onclick='login()'>เข้าสู่ระบบ</button>
+                        <button type="submit" class="btn btn-danger my-4" onclick='login()'>Sign In</button>
                     </div>
                 </div>
             </div>
