@@ -109,7 +109,7 @@ class M_ttp_licence extends Da_ttp_licence
     {
         $sql =
             "SELECT *
-        FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS app  where Form_ID=$id AND emp.Emp_ID=app.Supervisor_ID";
+        FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS app ON emp.Emp_ID = app.Supervisor_ID  WHERE app.Form_ID=$id  ";
         $query = $this->db->query($sql);
         return $query;
     }

@@ -1,18 +1,3 @@
-<script language="javascript">
-function fncSubmit() {
-    if (document.licence.Item.value == "") {
-        alert('Please input Input 1');
-        document.form1.txt1.focus();
-        return false;
-    }
-    if (document.licence.txt2.value == "") {
-        alert('Please input Input 2');
-        document.form1.txt2.focus();
-        return false;
-    }
-    // document.form1.submit();
-}
-</script>
 <h1>
     Permission to Place (การขออนุญาตวางของ)
 </h1><br>
@@ -134,10 +119,6 @@ function fncSubmit() {
                                     disabled />
                                 <input type="text" class="form-control" name="Company_ID"
                                     value="<?php echo $detail[0]->Company_ID ?>" hidden />
-
-
-
-
                             </div>
                         </div>
                     </div>

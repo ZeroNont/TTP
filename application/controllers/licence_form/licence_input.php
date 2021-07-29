@@ -72,7 +72,11 @@ class Licence_input extends MainController
         $data['obj_level'] = $this->ttp->get_position_id($id)->result();
         $data['obj_app'] = $this->ttp->get_plant_by_id($id)->result();
         $data['obj_supervisor'] = $this->ttp->get_supervisor()->result();
+        // echo $id;
         $data['obj_sup'] = $this->ttp->get_supervisor_by_id($id)->result();
+        // print_r($data);
+        $this->load->model('M_ttp_Emp', 'det');
+        $data['detail'] = $this->det->get_emp_detail($id)->result();
         $this->output('consent/v_form_edit', $data);
     }
     /*
@@ -159,7 +163,7 @@ class Licence_input extends MainController
         // $i = $this->input->post('Emp_ID');
         $this->ttp->Item = $this->input->post('Item');
         $this->ttp->Start_date = $this->input->post('Start_date');
-        $this->ttp->End_date = $this->input->post('End_date');
+
         $this->ttp->Requested_date = $date;
         $this->ttp->Reason = $this->input->post('Reason');
         $this->ttp->Officer = $this->input->post('Officer');
@@ -168,10 +172,15 @@ class Licence_input extends MainController
         $this->ttp->Company_ID = $this->input->post('Company_ID');
         $this->ttp->Approve_Plant_ID = $this->input->post('Approve_Plant');
         $this->ttp->Form_count =   $j + 1;
-        // echo $this->input->post('form');
-        // echo $this->input->post('count');
+        $set_date =  $this->input->post('Start_date');
+        $add_date =  $this->input->post('End_date');
+        //บวกวันที่ 
+        $date1 = str_replace('-', '/', $set_date);
+        $Update = date('Y-m-d', strtotime($date1 . "+" . $add_date . " days"));
+        $this->ttp->End_date = $Update;
         $this->ttp->Status = $num;
         $this->ttp->Form_ID = $this->input->post('form');
+        $this->ttp->update_date($k);
         $this->ttp->status_update($k);
         $this->ttp->update_form($k);
         $this->ttp->update_approve($k);
