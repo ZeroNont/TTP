@@ -28,5 +28,13 @@ class Da_ttp_approve_form extends ttps_model
         $this->db->query($sql, array($this->Status,$this->HR_No,$this->Form_ID));
     } //อัพเดทสถานะของฟอร์มที่ถูกยกเลิกโดย HR
 
+    function update_form_plant()
+    {
+        $sql = "UPDATE ttps_database.requested_form AS req
+                SET req.Status = ? 
+                WHERE req.Form_ID = ? "; 
+        $this->db->query($sql, array($this->Status,$this->Form_ID));
+    } //อัพเดทสถานะของฟอร์มที่ถูกยกเลิกโดย Plant
+
     
 }

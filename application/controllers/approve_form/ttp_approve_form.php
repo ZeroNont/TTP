@@ -160,10 +160,11 @@ class ttp_approve_form extends MainController
     {
         $this->load->model('Da_ttp_approve_form', 'dreq');
         $this->dreq->Status = 4;
-        $this->dreq->Form_ID = $id;   
-        $this->dreq->update_form();
+        $this->dreq->Form_ID = $id;    
+        $this->dreq->update_form_plant();
+
         $this->load->model('M_ttp_approve_form', 'mreq');
-        $this->mreq->Form_ID = $id;   
+        $this->mreq->Form_ID = $id;  
         $this->mreq->update_app_plant();
         redirect('/approve_form/ttp_approve_form/show_approve_form_plant');
     } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย Plant
