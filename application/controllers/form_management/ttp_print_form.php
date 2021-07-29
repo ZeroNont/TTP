@@ -47,6 +47,7 @@ class ttp_print_form extends MainController
         $this->print->print_status = $i;
         $this->print->status_print();
         $this->load->model('M_ttp_licence', 'ttp');
+        $data['obj_his'] = $this->ttp->get_history_by_id($id)->result();
         $data['obj_form'] = $this->ttp->get_form_by_id($id)->result();
         $data['obj_dep'] = $this->ttp->get_sec()->result();
         $data['obj_app'] = $this->ttp->get_approve()->result();

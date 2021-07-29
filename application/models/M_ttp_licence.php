@@ -151,6 +151,22 @@ class M_ttp_licence extends Da_ttp_licence
     // *@author Jirayut Saifah
     // *@Create Date 18/07/2021
 
+    public function get_history_by_id($id)
+    {
+        $sql =
+        "SELECT *
+            FROM ttps_database.requested_form AS req INNER JOIN ttps_database.schedule AS sch
+            ON req.Form_ID = sch.Form_ID WHERE req.Form_ID = $id ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    // *get_plant
+    // *get plant detail form database
+    // *@input Form_ID
+    // *@output plant detail 
+    // *@author Jirayut Saifah
+    // *@Create Date 18/07/2021
+
     public function get_status($id)
     {
         $sql =

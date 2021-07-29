@@ -21,6 +21,26 @@ class M_ttp_Emp extends Da_ttp_Emp
         $query = $this->db->query($sql, array($this->Emp_ID));
         return $query;
     }
+    /*
+* get_emp_detail
+* get emp detail in database
+* @input  -
+* @output - 
+* @author Jirayut Saifah
+* @Create Date 2564-07-29
+*/
+    public function get_emp_detail($id)
+    {
+        $sql =
+        "SELECT *
+        FROM dbmc.employee  AS emp INNER JOIN dbmc.company AS com
+        WHERE Emp_ID = $id AND emp.Company_ID=com.Company_ID";
+        $query = $this->db->query(
+            $sql,
+            array()
+        );
+        return $query;
+    }
 
 /*
 * get_emp

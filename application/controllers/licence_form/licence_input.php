@@ -48,6 +48,8 @@ class Licence_input extends MainController
         $data['obj_emp'] = $this->ttp->get_employee($id)->result();
         $data['obj_level'] = $this->ttp->get_position_id($id)->result();
         $data['obj_supervisor'] = $this->ttp->get_supervisor()->result();
+        $this->load->model('M_ttp_Emp', 'det');
+        $data['detail'] = $this->det->get_emp_detail($id)->result();
         // print_r($data['obj_supervisor']);
         $this->output('consent/v_licence_form', $data);
     }
@@ -97,7 +99,7 @@ class Licence_input extends MainController
         // $i = $this->input->post('Emp_ID');
         $this->ttp->Item = $this->input->post('Item');
         $this->ttp->Start_date = $this->input->post('Start_date');
-        $this->ttp->End_date = $this->input->post('End_date');
+
         $this->ttp->Requested_date = $date;
         $this->ttp->Reason = $this->input->post('Reason');
         $this->ttp->Officer = $this->input->post('Officer');
@@ -107,10 +109,16 @@ class Licence_input extends MainController
         $this->ttp->Approve_Plant_ID = $this->input->post('Approve_Plant');
         $this->ttp->Form_count = $j;
         $this->ttp->Status = $status;
-        // echo $this->input->post('Emp_ID');
-        // echo $this->input->post('Item');
+        $set_date =  $this->input->post('Start_date');
+        $add_date =  $this->input->post('End_date');
+        //บวกวันที่ 
+        $date1 = str_replace('-', '/', $set_date);
+        $Update = date('Y-m-d', strtotime($date1 . "+" . $add_date . " days"));
+        $this->ttp->End_date = $Update;
+
         $this->ttp->insert_form();
         $this->ttp->insert_approve();
+        $this->ttp->insert_date();
         move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
         $this->ttp->Layout_location = $Layout_name;
         move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);

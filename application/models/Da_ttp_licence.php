@@ -24,7 +24,18 @@ class Da_ttp_licence extends ttps_model
     // *@output -
     // *@author Jirayut Saifah
     // *@Create Date 17/07/2021
-
+    public function insert_date()
+    {
+        $sql = "INSERT INTO ttps_database.schedule(Start_date,End_date) 
+                VALUES (?,?)";
+        $this->db->query($sql, array($this->Start_date, $this->End_date));
+    }
+    // *insert_date
+    // *insert date in database
+    // *@input Start_date,End_date
+    // *@output -
+    // *@author Jirayut Saifah
+    // *@Create Date 29/07/2021
     public function update_form($id)
     {
         $sql = " UPDATE ttps_database.requested_form

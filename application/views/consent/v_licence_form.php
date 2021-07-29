@@ -1,3 +1,18 @@
+<script language="javascript">
+function fncSubmit() {
+    if (document.licence.Item.value == "") {
+        alert('Please input Input 1');
+        document.form1.txt1.focus();
+        return false;
+    }
+    if (document.licence.txt2.value == "") {
+        alert('Please input Input 2');
+        document.form1.txt2.focus();
+        return false;
+    }
+    // document.form1.submit();
+}
+</script>
 <h1>
     Permission to Place (การขออนุญาตวางของ)
 </h1><br>
@@ -13,7 +28,7 @@
         </div>
         <div class="card-body ">
             <form action="<?php echo site_url() . 'Licence_form/Licence_input/insert'; ?>" method="post"
-                enctype="multipart/form-data">
+                enctype="multipart/form-data" onSubmit="JavaScript:return fncSubmit();" name="licence">
 
                 <div class="pl-lg-4">
                     <div class="row">
@@ -23,16 +38,49 @@
                                     (วันที่เริ่มต้น)</label>
 
                                 <input type="date" name="Start_date" class="form-control"
-                                    min="<?php echo date('Y-m-d'); ?>" require>
+                                    min="<?php echo date('Y-m-d'); ?>" required>
 
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="form-control-label" for="input-email">End Date
-                                    (วันที่สิ้นสุด)</label>
-                                <input type="date" class="form-control" name="End_date"
-                                    min="<?php echo date('Y-m-d'); ?>" require>
+
+                                <!--อัพเดท/เพิ่มวันขออนุญาตวาง-->
+                                <label class="form-control-label" for="input-email">Number of Date
+                                    (จำนวนวันที่ต้องการวาง)
+                                    <select class="form-control" name="End_date" style="text-align:center" required><br>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+
+                                    </select>
                             </div>
                         </div>
                     </div>
@@ -41,7 +89,7 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-first-name">Item
                                     (สิ่งที่ต้องการวาง)</label>
-                                <input type="text" name="Item" class="form-control" require>
+                                <input type="text" name="Item" class="form-control" minlength="1" required />
                                 <input type="text" name="Emp_ID" class="form-control"
                                     value="<?php echo $_SESSION['UsEmp_ID'] ?>" hidden>
                             </div>
@@ -50,7 +98,7 @@
                             <div class=" form-group">
                                 <label class="form-control-label" for="input-last-name">Reason
                                     (เหตุผลในการวาง)</label>
-                                <input type="text" name="Reason" class="form-control" require>
+                                <input type="text" name="Reason" class="form-control" minlength="1" required />
                             </div>
                         </div>
                     </div>
@@ -63,32 +111,33 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-address">Officer in Charge
                                     (ผู้รับผิดชอบ)</label>
-                                <input class="form-control" type="text" name="Officer" require>
+                                <input class="form-control" type="text" name="Officer"
+                                    value="<?php echo $detail[0]->Empname_eng . ' ' . $detail[0]->Empsurname_eng ?>"
+                                    disabled />
+                                <input class="form-control" type="text" name="Officer"
+                                    value="<?php echo $detail[0]->Emp_ID ?>" hidden />
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class=" col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">Tel No.
                                     (เบอร์โทรศัพท์)</label>
-                                <input type="text" class="form-control" name="Tell" require>
+                                <input type="text" class="form-control" name="Tell" maxlength="10" required />
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">Company
-                                    (บริษัท)</label><br>
-                                <select name="Company_ID" id="company" class="form-select"
-                                    aria-label="Default select example">
-                                    <option value="0">-----------Please select-----------</option>
-                                    <?php for ($i = 0; $i < count($obj_company); $i++) { ?>
-                                    <option value="<?php echo $obj_company[$i]->Company_ID ?>">
-                                        <?php echo $obj_company[$i]->Company_name ?></option>
-                                    <?php } ?>
+                                    (บริษัท)</label>
+                                <input type="text" class="form-control"
+                                    value="<?php echo $detail[0]->Company_name . ' (' . $detail[0]->Company_name_th . ')' ?>"
+                                    disabled />
+                                <input type="text" class="form-control" name="Company_ID"
+                                    value="<?php echo $detail[0]->Company_ID ?>" hidden />
 
 
 
 
-                                </select>
                             </div>
                         </div>
                     </div>
@@ -98,14 +147,15 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-country">Layout
                                     (รูปแบบการวาง)</label>
-                                <input type="file" name="Layout" class="form-control">
+                                <input type="file" name="Layout" class="form-control" required />
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="form-control-label" for="input-country">Plan
                                     (แผนการวาง)</label>
-                                <input type="file" name="Plan" class="form-control" placeholder="Postal code">
+                                <input type="file" name="Plan" class="form-control" placeholder="Postal code"
+                                    required />
                             </div>
                         </div>
                     </div>
@@ -115,7 +165,7 @@
                                 <label class="form-control-label" for="input-city">Supervisor
                                     (หัวหน้างาน)</label><br>
                                 <select name="Supervisor" id="Supervisor" class="form-select"
-                                    aria-label="Default select example">
+                                    aria-label="Default select example" required>
                                     <option value="0">-----------Please select-----------</option>
                                     <?php for ($i = 0; $i < count($obj_supervisor); $i++) { ?>
 
@@ -137,7 +187,7 @@
                                 <label class="form-control-label" for="input-city">Approve Plant
                                 </label><br>
                                 <select name="Approve_Plant" id="Approve_Plant" class="form-select"
-                                    aria-label="Default select example">
+                                    aria-label="Default select example" required>
                                     <option value="0">-------------------------Please
                                         select-------------------------
                                     </option>

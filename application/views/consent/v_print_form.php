@@ -147,6 +147,41 @@ DIV.text {
         </div>
     </div>
     </div>
+    <div class="card" id="hid">
+        <div class="card-header">
+            <h2>Renew history (ประวัติการต่ออายุการวางของ)</h2>
+
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Running No.</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">End Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php for ($i = 0; $i < count($obj_his); $i++) { ?>
+                    <tr>
+                        <th scope="row"><?php echo $i + 1 ?></th>
+                        <td><?php echo $obj_his[$i]->HR_No ?></td>
+                        <td><?php
+
+                                $newDate = date("d-m-Y", strtotime($obj_his[$i]->Start_date));
+                                echo $newDate;
+                                ?></td>
+                        <td><?php
+                                $newDate = date("d-m-Y", strtotime($obj_his[$i]->End_date));
+                                echo $newDate;
+                                ?></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 </body>
 
