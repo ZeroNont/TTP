@@ -1,3 +1,16 @@
+<?php
+/*
+* v_request_form_detail
+* View Request Form
+* @input  -
+* @output - 
+* @author Apinya Phadungkit
+* @Create Date 2564-7-18
+* @Update Date 2564-7-28
+*/
+?>
+
+<!-- script ใช้ปิดแจ้งเตือนอันเก่า และแสดงแจ้งเตือนอันใหม่ -->
 <script>
 $(document).ready(function() {
     $("#btn_success").click(function() {
@@ -20,6 +33,7 @@ $(document).ready(function() {
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
+                            <!-- label Start Date -->
                             <label class="form-control-label" for="input-username">Start Date
                                 (วันที่เริ่มต้น)</label>
 
@@ -30,6 +44,7 @@ $(document).ready(function() {
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
+                            <!-- label End Date -->
                             <label class="form-control-label" for="input-email">End Date
                                 (วันที่สิ้นสุด)</label>
                             <input type="date" name="End_date" class="form-control" required
@@ -40,6 +55,7 @@ $(document).ready(function() {
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
+                            <!-- label Item -->
                             <label class="form-control-label" for="input-first-name">Item
                                 (สิ่งที่ต้องการวาง)</label>
                             <input type="text" name="Item" class="form-control" require
@@ -48,6 +64,7 @@ $(document).ready(function() {
                     </div>
                     <div class=" col-lg-12 ">
                         <div class=" form-group">
+                            <!-- label Reason -->
                             <label class="form-control-label" for="input-last-name">Reason
                                 (เหตุผลในการวาง)</label>
                             <input type="text" name="Reason" class="form-control" require
@@ -62,6 +79,7 @@ $(document).ready(function() {
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <!-- label Officer in Charge -->
                             <label class="form-control-label" for="input-address">Officer in Charge
                                 (ผู้รับผิดชอบ)</label>
                             <input class="form-control" type="text" name="Officer" require
@@ -70,6 +88,7 @@ $(document).ready(function() {
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
+                            <!-- label Tell No. -->
                             <label class="form-control-label" for="input-city">Tell No.
                                 (เบอร์โทรศัพท์)</label>
                             <input type="text" class="form-control" name="Tell" require
@@ -82,6 +101,7 @@ $(document).ready(function() {
 
                     <div class="col-lg-6">
                         <div class="form-group">
+                            <!-- label Layout -->
                             <label class="form-control-label" for="input-country">Layout
                                 (รูปแบบการวาง)</label>
                             <br>
@@ -97,6 +117,7 @@ $(document).ready(function() {
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
+                            <!-- label Plan -->
                             <label class="form-control-label" for="input-country">Plan
                                 (แผนการวาง)</label>
                             <br>
@@ -126,7 +147,7 @@ $(document).ready(function() {
 
                 <div class="col-lg-4">
 
-                    <!-- Button trigger modal -->
+                    <!-- ปุ่มยืนยันการอนุมัติ -->
                     <button type="button" class="btn btn-success btn-lg float-right" data-toggle="modal"
                         data-target="#Modal_approve">
                         Approve
@@ -153,12 +174,12 @@ $(document).ready(function() {
             </div>
             <div class="modal-body">
 
+            <!-- label Reject Reason -->
                 <label for="" class="form-control-label">
-
                     กรุณากรอกเหตุผล
                 </label>
 
-                <form method="POST" action="<?php echo site_url().'/request/ttp_request/reject_form/'.$arr_req->Form_ID; ?>">
+                <form method="POST" action="<?php echo site_url().'/request/request_form/reject_form/'.$arr_req->Form_ID; ?>">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -171,8 +192,10 @@ $(document).ready(function() {
 
 
             <div class="modal-footer">
+                <!-- ปุ่มปิดการกรอกเหตุผล -->
                 <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
 
+                <!-- ปุ่มยืนยันการกรอกเหตุผล -->
                 <button type="submit" class="btn btn-success btn-lg float-right">Submit</button>
             </div>
 
@@ -182,7 +205,7 @@ $(document).ready(function() {
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal ยืนยันการอนุมัติคำขอ -->
 <div class="modal fade" id="Modal_approve" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -198,8 +221,7 @@ $(document).ready(function() {
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
 
-                <!-- Button trigger modal -->
-
+                <!-- ปุ่มยืนยันการอนุมัติคำขอ -->
                 <button type="button" class="btn btn-success btn-lg float-right" id="btn_success" data-toggle="modal"
                     data-target="#successModal">
                     Submit
@@ -209,9 +231,9 @@ $(document).ready(function() {
         </div>
     </div>
 </div>
-<!-- end modal -->
+<!-- end modal ยืนยันการอนุมัติคำขอ -->
 
-<!-- Modal -->
+<!-- model แจ้งเจือน อนุมัติคำขอสำเร็จ -->
 <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -221,11 +243,11 @@ $(document).ready(function() {
                 <h1> อนุมัติคำขอสำเร็จ </h1>
             </div>
             <div class="modal-footer">
-                <a href="<?php echo site_url() . 'request/ttp_request/update_request_form/'. $arr_req->Form_ID ; ?>">
+                <a href="<?php echo site_url() . 'request/request_form/update_request_form/'. $arr_req->Form_ID ; ?>">
                     <button type="button" class="btn btn-success btn-lg float-right">Agree</button>
                 </a>
             </div>
         </div>
     </div>
 </div>
-<!-- end modal  -->
+<!-- end modal แจ้งเจือน อนุมัติคำขอสำเร็จ -->

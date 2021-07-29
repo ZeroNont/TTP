@@ -33,9 +33,9 @@
                     </td>
                     <td>
                         <?php
-                            if ($obj_status[$i]->Status >= 1 or $obj_status[$i]->Status <= -2) {
+                    if ($obj_status[$i]->Status >= 2 or $obj_status[$i]->Status > 0) {
                                 echo "อนุมัติ";
-                            } else if ($obj_status[$i]->Status == -1) {
+                        } else if ($obj_status[$i]->Status == 0) {
                                 echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
@@ -45,9 +45,9 @@
                     </td>
                     <td>
                         <?php
-                            if ($obj_status[$i]->Status >= 2 or $obj_status[$i]->Status <= -3) {
+                    if ($obj_status[$i]->Status >= 3 or $obj_status[$i]->Status <= -2) {
                                 echo "อนุมัติ";
-                            } else if ($obj_status[$i]->Status == -2) {
+                        } else if ($obj_status[$i]->Status == -1) {
                                 echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
@@ -57,9 +57,9 @@
                     </td>
                     <td>
                         <?php
-                            if ($obj_status[$i]->Status >= 3) {
+                    if ($obj_status[$i]->Status >= 4) {
                                 echo "อนุมัติ";
-                            } else if ($obj_status[$i]->Status == -3) {
+                        } else if ($obj_status[$i]->Status == -2) {
                                 echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
