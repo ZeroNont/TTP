@@ -27,11 +27,11 @@ class M_ttp_renewal extends Da_ttp_renewal
     * @author Nattkorn
     * @Create date 2564-07-19
     */
-    public function get_all()
+    public function get_all($id)
     {
         $sql = "SELECT *
-                FROM ttps_database.requested_form
-                ORDER BY Requested_date ASC ";
+                FROM ttps_database.requested_form As emp
+                WHERE emp.Emp_ID = $id";
 
         $query = $this->db->query($sql);
         return $query;
