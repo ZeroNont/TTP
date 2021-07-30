@@ -1,11 +1,9 @@
 <!--
     M_ttp_history
     Model for history module
-    @input -
-    @output -
-    @author Phatchara
-    Create date 
-    Update date 
+    @author Phatchara and Pontakon
+    Create date 18/7/2564   
+    Update date 26/7/2564
 -->
 <?php
 include_once("Da_ttp_history.php");
@@ -16,7 +14,16 @@ class M_ttp_history extends Da_ttp_history
     {
         parent::__construct();
     }
-
+    /*
+	* get_all
+	* คืนค่าใบคำขอทั้งหมด
+	* @input 	-
+	* @output 	ข้อมูลตารางใบคำขอ
+	* @author 	Phatchara  
+	* @Create   Date 18/7/2564   
+	* @author   Pontakon
+	* @Update   Date 26/7/2564
+	*/
     public function get_all()
     {
         $sql = "SELECT *
@@ -28,7 +35,16 @@ class M_ttp_history extends Da_ttp_history
         return $query;
     }
     
-
+    /*
+	* get_by_id
+	* คืนค่าใบคำขอที่ตรงกับ $id(เลขใบคำขอ)
+	* @input 	เลขใบคำขอ
+	* @output 	ข้อมูลตารางใบคำขอ
+	* @author 	Phatchara  
+	* @Create   Date 18/7/2564   
+	* @author   Pontakon
+	* @Update   Date 26/7/2564
+	*/
 
     public function get_employee($id)
     {
@@ -40,7 +56,16 @@ class M_ttp_history extends Da_ttp_history
         return $query;
     }
 
-
+/*
+	* get_history_em
+	* คืนค่าใบคำขอที่ตรงกับ $id(เลขพนักงาน)
+	* @input 	เลขพนักงาน
+	* @output 	ข้อมูลตารางใบคำขอ
+	* @author 	Phatchara  
+	* @Create   Date 18/7/2564   
+	* @author   Pontakon
+	* @Update   Date 26/7/2564
+	*/
     public function get_by_id($id)
     {
             $sql = "SELECT *
@@ -50,7 +75,16 @@ class M_ttp_history extends Da_ttp_history
             return $query;
 
     }
-
+/*
+	* get_history_em
+	* คืนค่าใบคำขอที่ตรงกับ $id(เลขพนักงาน)
+	* @input 	เลขพนักงาน
+	* @output 	ข้อมูลตารางใบคำขอ
+	* @author 	Phatchara  
+	* @Create   Date 18/7/2564   
+	* @author   Pontakon
+	* @Update   Date 26/7/2564
+	*/
     public function get_history_em($id)
     {
             $sql = "SELECT * 
@@ -59,7 +93,16 @@ class M_ttp_history extends Da_ttp_history
             $query = $this->db->query($sql);
             return $query;
     }
-
+/*
+	* get_history_approve
+	* คืนค่าใบคำขอที่ตรงกับ $id(เลขพนักงาน)
+	* @input 	เลขพนักงาน
+	* @output 	ข้อมูลตารางใบคำขอ
+	* @author 	Phatchara  
+	* @Create   Date 18/7/2564   
+	* @author   Pontakon
+	* @Update   Date 26/7/2564
+	*/
     function get_history_approve($id)
     {
         $sql = "SELECT *
@@ -70,7 +113,16 @@ class M_ttp_history extends Da_ttp_history
         $query = $this->db->query($sql);
         return $query;
     }
-
+/*
+	* get_history_approve_hr
+	* คืนค่าใบคำขอที่ตรงกับ $id(เลขพนักงาน)
+	* @input 	เลขพนักงาน
+	* @output 	ข้อมูลตารางใบคำขอ
+	* @author 	Phatchara  
+	* @Create   Date 18/7/2564   
+	* @author   Pontakon
+	* @Update   Date 26/7/2564
+	*/
     function get_history_approve_hr($id)
     {
         $sql = "SELECT *
@@ -81,7 +133,16 @@ class M_ttp_history extends Da_ttp_history
         $query = $this->db->query($sql);
         return $query;
     }
-
+/*
+	* get_history_approve_plant
+	* คืนค่าใบคำขอที่ตรงกับ $id(เลขพนักงาน)
+	* @input 	เลขพนักงาน
+	* @output 	ข้อมูลตารางใบคำขอ
+	* @author 	Phatchara  
+	* @Create   Date 18/7/2564   
+	* @author   Pontakon
+	* @Update   Date 26/7/2564
+	*/
     function get_history_approve_plant($id)
     {
         $sql = "SELECT *
@@ -92,7 +153,16 @@ class M_ttp_history extends Da_ttp_history
         $query = $this->db->query($sql);
         return $query;
     }
-
+/*
+	* get_form_list
+	* คืนค่าใบคำขอ
+	* @input 	-
+	* @output 	ข้อมูลตารางใบคำขอ
+	* @author 	Phatchara  
+	* @Create   Date 18/7/2564   
+	* @author   Pontakon
+	* @Update   Date 26/7/2564
+	*/
     public function get_form_list()
     {
         $sql = "SELECT * 
@@ -104,7 +174,16 @@ class M_ttp_history extends Da_ttp_history
         $query = $this->db->query($sql);
         return $query;
     }
-
+/*
+	* get_form_file
+	* คืนค่าตาราง ไฟล์
+	* @input 	เลขใบคำขอ
+	* @output 	ข้อมูลตาราง ไฟล์
+	* @author 	Phatchara  
+	* @Create   Date 18/7/2564   
+	* @author   Pontakon
+	* @Update   Date 26/7/2564
+	*/
     public function get_form_file($id)
     {
         $sql = "SELECT * 

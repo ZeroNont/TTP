@@ -35,7 +35,7 @@
                       </li>
                       <li class="nav-item">
                           <a class="nav-link"
-                              href="<?php echo base_url() . 'check_schedule/ttp_check_schedule/show_check_schedule/' ?>">
+                              href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                               <i class="ni ni-calendar-grid-58 text-yellow"></i>
                               <span class="nav-link-text">Check Schedule</span>
                           </a>
@@ -56,7 +56,7 @@
 
                       <li class="nav-item">
                           <a class="nav-link"
-                              href="<?php echo base_url() . 'history/ttp_history/show_history_employee/' ?>">
+                              href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
                               <i class="ni ni-time-alarm text-pink"></i>
                               <span class="nav-link-text">History Form</span>
                           </a>
@@ -99,7 +99,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_schedule/ttp_check_schedule/show_check_schedule/' ?>">
+                                      href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                                       <i class="ni ni-calendar-grid-58 text-yellow"></i>
                                       <span class="nav-link-text">Check Schedule</span>
                                   </a>
@@ -120,7 +120,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'history/ttp_history/show_history_employee/' ?>">
+                                      href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
                                       <i class="ni ni-time-alarm text-pink"></i>
                                       <span class="nav-link-text">History Form</span>
                                   </a>
@@ -169,7 +169,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_schedule/ttp_check_schedule/show_check_schedule/' ?>">
+                                      href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                                       <i class="ni ni-calendar-grid-58 text-yellow"></i>
                                       <span class="nav-link-text">Check Schedule</span>
                                   </a>
@@ -190,7 +190,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'history/ttp_history/show_history_employee/' ?>">
+                                      href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
                                       <i class="ni ni-time-alarm text-pink"></i>
                                       <span class="nav-link-text">History Form</span>
                                   </a>
@@ -268,7 +268,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_schedule/ttp_check_schedule/show_check_schedule/' ?>">
+                                      href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                                       <i class="ni ni-calendar-grid-58 text-yellow"></i>
                                       <span class="nav-link-text">Check Schedule</span>
                                   </a>
@@ -289,7 +289,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'history/ttp_history/show_history_employee/' ?>">
+                                      href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
                                       <i class="ni ni-time-alarm text-pink"></i>
                                       <span class="nav-link-text">History Form</span>
                                   </a>

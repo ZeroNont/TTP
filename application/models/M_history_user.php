@@ -1,7 +1,7 @@
 <?php
-include_once("Da_history_user.php");
+include_once("Da_ttp_history_user.php");
 
-class M_history_user extends Da_history_user
+class M_history_user extends Da_ttp_history_user
 {
     public function __construct()
     {
