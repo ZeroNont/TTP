@@ -84,12 +84,12 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-address">Officer in Charge
                                         (ผู้รับผิดชอบ)</label>
-                                    <input class="form-control" type="text" name="Officer" require value="<?php echo $arr_list->Empname_eng . " " . $arr_list->Empsurname_eng; ?>" disabled>
+                                    <input class="form-control" type="text" name="Officer" require value="<?php echo $arr_emp[0]->Empname_eng . " " . $arr_emp[0]->Empsurname_eng; ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-city">Tell No.
+                                    <label class="form-control-label" for="input-city">Tel No.
                                         (เบอร์โทรศัพท์)</label>
                                     <input type="text" class="form-control" name="Tell" require value="<?php echo $arr_form->Tell ?>" disabled>
                                 </div>
@@ -133,12 +133,12 @@
     </div>
 
 <!-- ========== ข้อมูลผู้พิจารณา ========== -->
-        <?php if ($arr_form->Status != 0) { ?>
+        <?php if ($arr_form->Status != 1) { ?>
             <div class="card-body">            
                 <h3>ข้อมูลผู้พิจารณา</h3>
                                 <div class="row">
                                     <!-- แสดงชื่อหัวหน้า อนุมัติ -->
-                                    <?php if ($arr_form->Status == 1 || $arr_form->Status == 2 || $arr_form->Status == 3  || $arr_form->Status == -3 || $arr_form->Status == -2 || $arr_form->Status = 4) { ?>
+                                    <?php if ($arr_form->Status == 2 || $arr_form->Status == 3 || $arr_form->Status == 4  || $arr_form->Status == -2 || $arr_form->Status == -1 ) { ?>
                                         <div class="col-6 col-md-4" id="card_align"><span><b>ชื่อผู้อนุมัติ : </b>
                                             <?php echo $arr_his->Empname_eng . " " . $arr_his->Empsurname_eng; ?>
                                             <br>
@@ -151,7 +151,7 @@
                                         </div>
                                     <?php }
                                     //  <!-- แสดงชื่อ HR อนุมัติ -->
-                                    if ($arr_form->Status == 2 || $arr_form->Status == 3 || $arr_form->Status == -3 || $arr_form->Status = 4) { ?>
+                                    if ( $arr_form->Status == 3 || $arr_form->Status == -2 || $arr_form->Status == 4) { ?>
                                         <div class="col-6 col-md-4"><span><b>ชื่อผู้อนุมัติ : </b>
                                                 <?php echo $arr_his_hr->Empname_eng . " " . $arr_his_hr->Empsurname_eng; ?>
                                                 <br>
@@ -164,7 +164,7 @@
                                         </div>
                                         <?php }
                                      //  <!-- แสดงชื่อ Approve Plant อนุมัติ -->
-                                    if ($arr_form->Status == 3 || $arr_form->Status = 4) { ?>
+                                    if ( $arr_form->Status == 4) { ?>
                                        <div class="col-6 col-md-4"><span><b>ชื่อผู้อนุมัติ : </b>
                                             <?php echo $arr_his_ap->Empname_eng . " " . $arr_his_ap->Empsurname_eng; ?>
                                             <br>
@@ -177,7 +177,7 @@
                                         </div>
                                     <?php }
                                     // <!-- แสดงชื่อหัวหน้า ปฎิเสธ -->
-                                    if ($arr_form->Status == -1 ) { ?>
+                                    if ($arr_form->Status == 0 ) { ?>
                                         <div class="col-6 col-md-4"><span><b>ชื่อผู้ปฏิเสธ : </b>
                                             <?php echo $arr_his->Empname_eng . " " . $arr_his->Empsurname_eng  ?>
                                             <br>
@@ -193,7 +193,7 @@
                                         </div>
                                     <?php } 
                                     // <!-- แสดงชื่อ HR ปฎิเสธ -->
-                                    if ($arr_form->Status == -2 ) { ?>
+                                    if ($arr_form->Status == -1 ) { ?>
                                         <div class="col-6 col-md-4"><span><b>ชื่อผู้ปฏิเสธ : </b>
                                             <?php echo $arr_his_hr->Empname_eng . " " . $arr_his_hr->Empsurname_eng;  ?>
                                             <br>
@@ -209,7 +209,7 @@
                                             </div>
                                             <?php }
                                      // <!-- แสดงชื่อ Approve Plant ปฎิเสธ -->
-                                    else if ($arr_form->Status == -3 ) { ?>
+                                    else if ($arr_form->Status == -2 ) { ?>
                                         <div class="col-6 col-md-4"><span><b>ชื่อผู้ปฏิเสธ : </b>
                                             <?php echo $arr_his_ap->Empname_eng . " " . $arr_his_ap->Empsurname_eng  ?>
                                             <br>

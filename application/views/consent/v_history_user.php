@@ -77,7 +77,7 @@
                         <?php echo $startDate." - ".$endDate ?></td>
                         </td>
                         <td>
-                            <?php echo $em_form[$i]->Officer ?></td>
+                            <?php echo $arr_emp[0]->Empname_eng.' '.$arr_emp[0]->Empsurname_eng ?></td>
                         </td>
                         <!-- column ดำเนินการ -->
                         <td style='text-align: center;'>

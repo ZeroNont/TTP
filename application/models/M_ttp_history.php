@@ -28,6 +28,19 @@ class M_ttp_history extends Da_ttp_history
         return $query;
     }
     
+
+
+    public function get_employee($id)
+    {
+        $sql = "SELECT *
+        FROM dbmc.employee
+        WHERE $id = employee.Emp_ID";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
+
     public function get_by_id($id)
     {
             $sql = "SELECT *
