@@ -57,7 +57,7 @@
                 <?php $StartDate = $arr_schedule[$i]->Start_date;
                     $EndDate =  $arr_schedule[$i]->End_date;
                     $today_date = date("Y-m-d");
-                    $totalDate = ((strtotime($EndDate) - strtotime($StartDate)) / (60 * 60 * 24)) + 1;
+                    $totalDate = ((strtotime($EndDate) - strtotime($StartDate)) / (60 * 60 * 24));
                     $ExpDate = (strtotime($EndDate) - strtotime($today_date)) / (60 * 60 * 24); ?>
                 <?php if ($EndDate > $today_date) { ?>
                 <tr>
