@@ -68,16 +68,16 @@
                                             <?php echo $arr_schedule[$i]->Item ?>
                                         </td>
                                         <td>
-                                            <?php echo $arr_schedule[$i]->Officer ?>
+                                            <?php echo $arr_emp[0]->Empname_eng.' '.$arr_emp[0]->Empsurname_eng ?>
                                         </td>
                                         <td>
                                         <!-- แสดงแสดงจำนวนวันที่วางของ -->
                                             <?php if ($StartDate != $today_date) { ?>
-                                                    <?php echo $totalDate?> วัน
+                                                    <?php echo $totalDate?> day
                                             <?php }
                                         //<!-- แสดงแสดงจำนวนวันที่เหลือ -->
                                             if ($StartDate == $today_date) { ?>
-                                                <?php echo $ExpDate;?> วัน
+                                                <?php echo $ExpDate;?> day
                                             <?php }?>
                                         </td>
                                     <td>

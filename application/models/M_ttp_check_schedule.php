@@ -38,4 +38,15 @@ class M_ttp_check_schedule extends Da_ttp_check_schedule
         $query = $this->db->query($sql);
         return $query;
     }
+
+    
+    public function get_employee($id)
+    {
+        $sql = "SELECT *
+        FROM dbmc.employee
+        WHERE $id = employee.Emp_ID";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
 }

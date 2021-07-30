@@ -49,12 +49,15 @@ class ttp_history extends MainController
         $id = $_SESSION['UsEmp_ID'];
         $this->load->model('M_ttp_history', 'ttp');
         $data['em_form'] = $this->ttp->get_history_em($id)->result();
+        $data['arr_emp'] = $this->ttp->get_employee($id)->result();
         $this->output('consent/v_history_user', $data);
     }// function show_history_em()
 
     public function show_history_detail($id)
 	{
+        $id_emp = $_SESSION['UsEmp_ID'];
         $this->load->model('M_ttp_history', 'ttp');
+        $data['arr_emp'] = $this->ttp->get_employee($id_emp)->result();
         $data['arr_form'] = $this->ttp->get_by_id($id)->row();
         $data['arr_his'] = $this->ttp->get_history_approve($id)->row();
         $data['arr_his_hr'] = $this->ttp->get_history_approve_hr($id)->row();
