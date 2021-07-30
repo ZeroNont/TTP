@@ -7,8 +7,7 @@
 * @Create Date 2564-07-28
 */ -->
 
-<a href="<?php echo site_url() . 'Report/Report/show_report'; ?>" class="btn btn-secondary float-left"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
-<a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a>
+<a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-secondary btn-lg canter float-right"><i class="fa fa-download"></i> Export Excel</a>
 
 <h1>
     &nbsp; Report (รายงานข้อมูล)
@@ -28,18 +27,18 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Running No.</th>
                                 <th scope="col">Company</th>
-                                <th scope="col">Requester</th>
-                                <th scope="col">Plant No.</th>
+                                <th scope="col">Running No.</th>
+                                <th scope="col">User name</th>
                                 <th scope="col">Plant Name.</th>
+                                <th scope="col">Area</th>
                                 <th scope="col">Reason</th>
                                 <th scope="col">Requested date</th>
-                                <th scope="col">Approval date</th>
                                 <th scope="col">Starting date</th>
                                 <th scope="col">End date</th>
-                                <th scope="col">Approver</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">Approved by</th>
+                                <th scope="col">Permission Status</th>
+                                <th scope="col">Tag Status</th>
                             </tr>
                         </thead>
                         <tbody id="data_table">
@@ -49,27 +48,32 @@
                             ?>
                                 <tr>
                                     <td><?php echo $num++; ?></td>
-                                    <td><?php echo $Form_data[$i]->HR_No; ?></td>
                                     <td><?php echo $Form_data[$i]->Company_name . ' ' . "(" .  $Form_data[$i]->Company_name_th . ")" ?></td>
+                                    <td><?php echo $Form_data[$i]->HR_No; ?></td>
                                     <td><?php echo $Form_data[$i]->Officer; ?></td>
-                                    <td><?php echo $Form_data[$i]->Plant_No; ?></td>
                                     <td><?php echo $Form_data[$i]->Plant_name; ?></td>
+                                    <td><?php echo $Form_data[$i]->Plant_No; ?></td>
                                     <td><?php echo $Form_data[$i]->Reason; ?></td>
                                     <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->Requested_date)); ?></td>
-                                    <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->Approve_date)) ?></td>
                                     <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->Start_date)) ?></td>
                                     <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->End_date)) ?></td>
                                     <td><?php echo $Form_data[$i]->Empname_engTitle . ' ' . $Form_data[$i]->Empname_eng . ' ' . $Form_data[$i]->Empsurname_eng; ?></td>
                                     <?php
-                                    if ($Form_data[$i]->Status == '4') {
-                                        $Status = 'ยังอยู่ในคลัง';
-                                    } else if ($Form_data[$i]->Status > '4') {
-                                        $Status = 'สิ้นสุดการวาง';
+                                    if ($Form_data[$i]->Status >= '4') {
+                                        $Permission_Status = 'Approve';
                                     } else if ($Form_data[$i]->Status < '4') {
-                                        $Status = 'รอการอนุมัติ';
+                                        $Permission_Status = 'Pending for check';
                                     }
                                     ?>
-                                    <td><?php echo $Status; ?></td>
+                                    <td><?php echo $Permission_Status; ?></td>
+                                    <?php
+                                    if ($Form_data[$i]->Status == '4') {
+                                        $Tag_Status = 'Wating for remove';
+                                    } else if ($Form_data[$i]->Status > '4') {
+                                        $Tag_Status = 'Completed';
+                                    }
+                                    ?>
+                                    <td><?php echo $Tag_Status; ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -78,6 +82,8 @@
             </div>
         </div>
     </div>
+<center><a href="<?php echo site_url() . 'Report/Report/show_report'; ?>" class="btn btn-secondary float-center"><i class="fas fa-arrow-alt-circle-left"></i> Back</a></center>
+
 </div>
 
 <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>

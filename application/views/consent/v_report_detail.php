@@ -8,11 +8,10 @@
 * @Update Date 2564-07-26
 */ -->
 
-<a href="<?php echo site_url() . 'Report/Report/show_report'; ?>" class="btn btn-secondary float-left"><i class="fas fa-arrow-alt-circle-left"></i> Back</a>
 <!-- <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a> -->
 
 <h1>
-    &nbsp; Report (รายงานข้อมูล)
+    &nbsp; Report Detail (รายละเอียดรายงานข้อมูล)
 </h1>
 <br>
 <div class="card-header">
@@ -99,6 +98,7 @@
             </div>
         </div>
     </div> -->
+<center><a href="<?php echo site_url() . 'Report/Report/show_report'; ?>" class="btn btn-secondary float-center"><i class="fas fa-arrow-alt-circle-left"></i> Back</a></center>
 </div>
 
 <!-- <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
