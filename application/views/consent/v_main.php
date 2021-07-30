@@ -86,7 +86,7 @@ body
 
                             <!--ปุ่มเพิ่มคำขอ-->
                             <a href='<?php echo site_url() . '/licence_form/licence_input/index/' ?>'>
-                            <button type="submit" class="btn btn-success btn-lg float-left">Start Form</button>
+                            <button class="btn btn-primary" type="button">Start Form</button>
                                 <!--เหลือเอากดลิ้งไปหน้าอื่น-->
                             </a>
                         </div>
