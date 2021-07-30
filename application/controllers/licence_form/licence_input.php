@@ -51,6 +51,8 @@ class Licence_input extends MainController
         $this->load->model('M_ttp_Emp', 'det');
         $data['detail'] = $this->det->get_emp_detail($id)->result();
         // print_r($data['obj_supervisor']);
+        // print_r($data['detail']);
+        // echo $data['detail'][0]->Emp_ID;
         $this->output('consent/v_licence_form', $data);
     }
     /*
@@ -122,7 +124,8 @@ class Licence_input extends MainController
 
         $this->ttp->insert_form();
         $this->ttp->insert_approve();
-        $this->ttp->insert_date();
+
+
         move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
         $this->ttp->Layout_location = $Layout_name;
         move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
@@ -133,6 +136,12 @@ class Licence_input extends MainController
         $this->load->model('M_ttp_licence', 'get');
         $data['obj_status'] = $this->get->get_status($id)->result();
         // // print_r($_SESSION['Emp_ID']);
+        $data['form'] = $this->get->get_form_id()->result();
+        $form_id = $data['form'][0]->Form_ID;
+        $this->ttp->Form_ID = $data['form'][0]->Form_ID;
+        $this->ttp->End_date = $data['form'][0]->End_date;
+        $this->ttp->Start_date = $data['form'][0]->Start_date;
+        $this->ttp->insert_date($form_id);
         $this->output('consent/v_check_status', $data);
         // $this->output('consent/v_check_status', $i);
         // redirect('licence_form/licence_input/index');

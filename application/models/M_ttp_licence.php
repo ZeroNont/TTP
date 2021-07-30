@@ -26,7 +26,22 @@ class M_ttp_licence extends Da_ttp_licence
     // *@output requested form if Emp_ID = $id and Status=4
     // *@author Jirayut Saifah
     // *@Create Date 17/07/2021
+    public function get_form_id()
+    {
+        $sql =
+        "SELECT *
+            FROM ttps_database.requested_form ORDER BY Form_ID DESC
+LIMIT 1  ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
 
+    // *get_form_id
+    // *get form data form database
+    // *@input Emp_ID
+    // *@output last requested form 
+    // *@author Jirayut Saifah
+    // *@Create Date 17/07/2021
 
     public function get_employee($id)
     {
