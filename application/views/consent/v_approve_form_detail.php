@@ -23,7 +23,7 @@ $(document).ready(function() {
                             <label class="form-control-label" for="input-username">Start Date
                                 (วันที่เริ่มต้น)</label>
 
-                            <input type="date" name="Start_date" class="form-control" required
+                            <input type="date" name="Start_date" class="form-control" disabled
                                 value="<?php echo $arr_req->Start_date ?>">
 
                         </div>
@@ -32,7 +32,7 @@ $(document).ready(function() {
                         <div class="form-group">
                             <label class="form-control-label" for="input-email">End Date
                                 (วันที่สิ้นสุด)</label>
-                            <input type="date" name="End_date" class="form-control" required
+                            <input type="date" name="End_date" class="form-control" disabled
                                 value="<?php echo $arr_req->End_date ?>">
                         </div>
                     </div>
@@ -42,15 +42,15 @@ $(document).ready(function() {
                         <div class="form-group">
                             <label class="form-control-label" for="input-first-name">Item
                                 (สิ่งที่ต้องการวาง)</label>
-                            <input type="text" name="Item" class="form-control" require
-                                value="<?php echo $arr_req->Item ?>">
+                            <input type="text" name="Item" class="form-control" disabled
+                                value="<?php echo $arr_req->Item ?>" >
                         </div>
                     </div>
                     <div class=" col-lg-12 ">
                         <div class=" form-group">
                             <label class="form-control-label" for="input-last-name">Reason
                                 (เหตุผลในการวาง)</label>
-                            <input type="text" name="Reason" class="form-control" require
+                            <input type="text" name="Reason" class="form-control" disabled
                                 value="<?php echo $arr_req->Reason ?>">
                         </div>
                     </div>
@@ -64,7 +64,7 @@ $(document).ready(function() {
                         <div class="form-group">
                             <label class="form-control-label" for="input-address">Officer in Charge
                                 (ผู้รับผิดชอบ)</label>
-                            <input class="form-control" type="text" name="Officer" require
+                            <input class="form-control" type="text" name="Officer" disabled
                                 value="<?php echo $arr_user->Empname_eng.' '.$arr_user->Empsurname_eng ?>">
                         </div>
                     </div>
@@ -72,7 +72,7 @@ $(document).ready(function() {
                         <div class="form-group">
                             <label class="form-control-label" for="input-city">Tell No.
                                 (เบอร์โทรศัพท์)</label>
-                            <input type="text" class="form-control" name="Tell" require
+                            <input type="text" class="form-control" name="Tell" disabled
                                 value="<?php echo $arr_req->Tell ?>">
                         </div>
                     </div>
