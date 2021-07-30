@@ -37,6 +37,14 @@ class M_ttp_renewal extends Da_ttp_renewal
         return $query;
     }
 
+    public function get_schedule($id)
+    {
+        $sql = "SELECT *
+                FROM ttps_database.schedule  ";
+
+        $query = $this->db->query($sql);
+        return $query;
+    }
     /*
     * get_formfile
     * select data from database

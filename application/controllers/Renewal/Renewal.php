@@ -19,8 +19,9 @@ class Renewal extends MainController
 	{
 		$this->load->model('M_ttp_renewal', 'ttp');
 		$id = $_SESSION["UsEmp_ID"];
-        $this->ttp->Status = 4;
+       // $this->ttp->Status = 4;
         $data['arr_renew'] = $this->ttp->get_all($id)->result();
+		$data['arr_schedule'] = $this->ttp->get_schedule($id)->result();
 		$this->output('consent/v_renewal',$data);
 	}
 
@@ -51,11 +52,24 @@ class Renewal extends MainController
 		$this->ttp->End_date = $Update;
 		$this->ttp->Form_ID = $Form_ID;
 		$num =$this->input->post('Form_count');
+		$status = $this->input->post('Status');
 		 $num=$num+1;
+		 $status = 1;
+		// $this->ttp->Emp_ID;
 	
 		$this->ttp->Form_count=$num;
+		$this->ttp->Status=$status;
 		$this->ttp->update_form();
+		$this->ttp->update_status();
 		$this->ttp->update();
+		
+		
+		$new_startdate=$this->ttp->End_date;
+		$this->ttp->Start_date=$set_date;
+		$this->ttp->End_date=$new_startdate;
+		$this->ttp->Form_ID=$Form_ID;
+		$this->ttp->insert_schedule();
+		//$this->ttp->update_sec();
 		redirect('/Renewal/Renewal/show_renewal');
 	
 		

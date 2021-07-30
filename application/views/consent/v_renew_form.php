@@ -29,6 +29,7 @@
                             <input type="text"  class="form-control"  name="Form_ID" value='<?php echo $arr_renew[0]->Form_ID ?>' hidden>
                             <input type="text"  class="form-control"  name="set_Enddate" value='<?php echo $arr_renew[0]->End_date ?>' hidden>
                             <input type="text"  class="form-control"  name="Form_count" value='<?php echo $arr_renew[0]->Form_count ?>' hidden>
+                            <input type="text"  class="form-control"  name="Status" value='<?php echo $arr_renew[0]->Status ?>' hidden>
                                 <!--อัพเดท/เพิ่มวันขออนุญาตวาง-->
                                 <label class="form-control-label" for="input-email">Add Days (กำหนดเวลาที่ต้องการเพิ่ม)
                                 <select class="form-control" name="Add_date" style="text-align:center"  ><br>
