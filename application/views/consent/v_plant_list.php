@@ -117,7 +117,7 @@ function getEmp_edit(i) {
                     <th>Plan No.</th>
                     <th>Plan Name</th>
                     <th>Name</th>
-                    <th>Edit</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

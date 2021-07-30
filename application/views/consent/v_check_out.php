@@ -41,7 +41,7 @@
                     <th>Item</th>
                     <th>Schedule</th>
                     <th>Officer</th>
-                    <th>Check Out</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
