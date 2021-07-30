@@ -1,3 +1,12 @@
+<!--
+    v_print_form
+    display detail of form before print 
+    @input -
+    @output -
+    @author Jirayut Saifah
+    Create 25/7/2564 
+    Update date 
+-->
 <style>
 DIV.text {
     min-height: 10em;

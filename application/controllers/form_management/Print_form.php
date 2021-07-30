@@ -1,7 +1,7 @@
 <?php
 /*
-* Ttps_Controller
-* Form Management
+* Print_form
+* Print_form
 * @input  -   
 * @output -
 * @author Jirayut Saifah
@@ -12,7 +12,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class ttp_print_form extends MainController
+class Print_form extends MainController
 {
 
     /**
@@ -32,14 +32,14 @@ class ttp_print_form extends MainController
      */
 
     /*
-	* index
+	* print_detail
 	* 
-	* @input 
-	* @output 
+	* @input Form_ID
+	* @output Form_detail and schedul
 	* @author 	Jirayut Saifah
 	* @Create Date 2564-7-24
 	*/
-    function print_form($id)
+    function print_detail($id)
     {
         $i = 1;
         $this->load->model('Da_ttp_licence', 'print');

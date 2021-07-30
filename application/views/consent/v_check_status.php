@@ -1,3 +1,12 @@
+<!--
+    v_check_status
+    display form status 
+    @input -
+    @output -
+    @author Jirayut Saifah
+    Create 25/7/2564 
+    Update date 
+-->
 <h1>
     Check status (ตรวจสอบสถานะคำร้องขอ)
 
@@ -33,9 +42,9 @@
                     </td>
                     <td>
                         <?php
-                    if ($obj_status[$i]->Status >= 2 or $obj_status[$i]->Status < 0) {
+                            if ($obj_status[$i]->Status >= 2 or $obj_status[$i]->Status < 0) {
                                 echo "อนุมัติ";
-                        } else if ($obj_status[$i]->Status == 0) {
+                            } else if ($obj_status[$i]->Status == 0) {
                                 echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
@@ -45,9 +54,9 @@
                     </td>
                     <td>
                         <?php
-                    if ($obj_status[$i]->Status >= 3 or $obj_status[$i]->Status <= -2) {
+                            if ($obj_status[$i]->Status >= 3 or $obj_status[$i]->Status <= -2) {
                                 echo "อนุมัติ";
-                        } else if ($obj_status[$i]->Status == -1) {
+                            } else if ($obj_status[$i]->Status == -1) {
                                 echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
@@ -57,9 +66,9 @@
                     </td>
                     <td>
                         <?php
-                    if ($obj_status[$i]->Status >= 4) {
+                            if ($obj_status[$i]->Status >= 4) {
                                 echo "อนุมัติ";
-                        } else if ($obj_status[$i]->Status == -2) {
+                            } else if ($obj_status[$i]->Status == -2) {
                                 echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
@@ -103,7 +112,7 @@
                         <?php } ?>
                         <?php if ($obj_status[$i]->Status == 4) { ?>
                         <a
-                            href="<?php echo site_url() . 'form_management/ttp_print_form/print_form/' . $obj_status[$i]->Form_ID; ?>">
+                            href="<?php echo site_url() . 'form_management/Print_form/print_detail/' . $obj_status[$i]->Form_ID; ?>">
                             <img src="<?php echo site_url() . '/assets/file/icon/printing.png' ?>" width="30">
                         </a>
                         <?php } else { ?>
