@@ -1,3 +1,15 @@
+<?php
+/*
+* v_approve_form_plant
+* View Approve Form Plant
+* @input  -
+* @output - 
+* @author Apinya Phadungkit
+* @Create Date 2564-7-18
+* @Update Date 2564-7-28
+*/
+?>
+
 <!DOCTYPE html>
 <html>
 <!-- CSS -->
@@ -71,7 +83,7 @@
 
                                 <!-- ปุ่มดำเนินการ -->
                                 <a
-                                    href=" <?php echo site_url() . '/approve_form/ttp_approve_form/show_approve_form_plant_detail/' . $row->Form_ID; ?>">
+                                    href=" <?php echo site_url() . '/approve_form/Approve_form/show_approve_form_plant_detail/' . $row->Form_ID; ?>">
                                     <button class="btn btn-primary"> <i class="fa fa-info-circle"></i> </button>
                                 </a>
 

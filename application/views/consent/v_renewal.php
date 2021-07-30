@@ -1,3 +1,12 @@
+<!--
+    v_renewal
+    display for edit End date
+    @input Form_ID
+    @output -
+    @author Nattakorn
+    Create date 2564-07-19
+    Update date 2564-07-27
+-->
 <style>
 table 
 {
@@ -69,7 +78,7 @@ table
                                
                                                 <!--ปุ่มขอต่ออายุ-->
                                                     
-                                                    <td> <?php if ($arr_renew[$i]->Status == 4 ) { ?>
+                                                    <td> <?php if ($arr_renew[$i]->Status == 4  ) { ?>
                                                     <a href='<?php  echo site_url() . 'Renewal/Renewal/show_reform/'
                                                     .$arr_renew[$i]->Form_ID?>'>
                                                     

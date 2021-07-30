@@ -1,17 +1,17 @@
 <!--
-    ttp_check_schedule
+    Check_schedule
     Controller for check schedule module
     @input -
     @output -
-    @author Phatchara
-    Create date 
-    Update date 
+    @author Phatchara and Pontakon 
+    Create date 18/7/2564 
+    Update date 25/7/2564
 -->
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class ttp_check_schedule extends MainController
+class Check_schedule extends MainController
 {
 
     /**
@@ -31,14 +31,15 @@ class ttp_check_schedule extends MainController
      */
 
     /*
-	* 
-	* 
-	* @input 
-	* @output 
-	* @author 	Phatchara Khongthandee
-	* @Create Date 2564-7-19
+	* show_check_schedule
+	* แสดงหน้าจอ v_check_schedule
+	* @input  -
+	* @output  หน้าจอระยะเวลาใบคำขอ
+	* @author 	Phatchara Khongthandee   
+	* @Create Date 19/7/2564 
+    * @author   Pontakon Mujit
+    * @Update Date 25/7/2564
 	*/
- 
     function show_check_schedule()
     {
         $id = $_SESSION['UsEmp_ID'];

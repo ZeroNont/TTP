@@ -34,7 +34,14 @@ class Da_ttp_renewal extends ttps_model
         WHERE Form_ID = ?";
         $this->db->query($sql, array($this->End_date, $this->Form_ID));
     }
-
+/*
+    * update_form
+    * update Form_count
+    * @input -
+    * @output -
+    * @author Nattkorn
+    * @Create date 2564-07-19
+    */
     public function update_form()
     {
         $sql = " UPDATE ttps_database.requested_form as up
@@ -42,7 +49,14 @@ class Da_ttp_renewal extends ttps_model
         WHERE Form_ID= ?";
         $this->db->query($sql, array($this->Form_count,$this->Form_ID));
     }
-
+    /*
+    * update_status
+    * update Status
+    * @input -
+    * @output -
+    * @author Nattkorn
+    * @Create date 2564-07-19
+    */
     public function update_status()
     {
         $sql = " UPDATE ttps_database.requested_form as up
@@ -50,7 +64,14 @@ class Da_ttp_renewal extends ttps_model
         WHERE Form_ID= ?";
         $this->db->query($sql, array($this->Status,$this->Form_ID));
     }
-
+    /*
+    * insert_schedule
+    * insert data to schedule table
+    * @input -
+    * @output -
+    * @author Nattkorn
+    * @Create date 2564-07-19
+    */
     public function insert_schedule()
     {
         $sql = "INSERT INTO ttps_database.schedule(Form_ID,Start_date,End_date) 

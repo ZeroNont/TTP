@@ -1,17 +1,17 @@
 <!--
-    ttp_history
+    History
     Controller for history schedule module
     @input -
     @output -
-    @author Phatchara
-    Create date 
-    Update date 
+    @author Phatchara  and Pontakon 
+    Create date 18/7/2564  
+    Update date 26/7/2564
 -->
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class ttp_history extends MainController
+class History extends MainController
 {
 
     /**
@@ -30,20 +30,21 @@ class ttp_history extends MainController
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
 
-    /*
-	* show_history_em
-	* 
-	* @input 
-	* @output 
-	* @author 	Phatchara Khongthandee
-	* @Create Date 2564-7-19
-	*/
- 
+
     function index()
     {
         $this->output('consent/v_history_user');
     }
-    // function index()
+    
+        /*
+	* show_history_employee
+	* เรียกหน้าจอ v_history_user
+	* @input 	-
+	* @output 	หน้าจอประวัติใบคำขอ
+	* @author 	Phatchara  Khongthandee
+	* @Create   Date 18/7/2564   
+	* @Update   Date 26/7/2564
+	*/
     
     function show_history_employee(){
         $id = $_SESSION['UsEmp_ID'];
@@ -52,7 +53,16 @@ class ttp_history extends MainController
         $data['arr_emp'] = $this->ttp->get_employee($id)->result();
         $this->output('consent/v_history_user', $data);
     }// function show_history_em()
-
+        /*
+	* show_history_employee
+	* เรียกหน้าจอ show_history_detail
+	* @input 	เลขใบคำขอ
+	* @output 	หน้าจอรายละเอียดประวัติใบคำขอ
+	* @author 	Phatchara  Khongthandee
+	* @Create   Date 18/7/2564   
+    * @author 	Pontakon Munjit
+	* @Update   Date 26/7/2564
+	*/
     public function show_history_detail($id)
 	{
         $id_emp = $_SESSION['UsEmp_ID'];

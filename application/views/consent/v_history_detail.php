@@ -1,11 +1,13 @@
 <!--
     v_history_detail
     display for detail of history
-    @input -
-    @output -
-    @author Phatchara
-    Create date 
-    Update date 
+    @author Phatchara and Pontakon
+    Create date 22/7/2564   
+    Update date 25/7/2564
+    Update date 26/7/2564
+    Update date 27/7/2564
+    Update date 28/7/2564
+    Update date 30/7/2564
 -->
 <style>
      #card_radius
@@ -172,7 +174,7 @@
                                             <?php //แสดงตำแหน่ง
                                             $newDate = date("d/m/Y", strtotime($arr_list->Approval_plant_date)); ?>
                                             <br>
-                                            <b>วันที่ผู้อนุมัติ : </b>
+                                            <b>วันที่อนุมัติ : </b>
                                             <?php echo $newDate;  ?><br></span>
                                         </div>
                                     <?php }
@@ -228,7 +230,7 @@
             <br>
         <?php } ?>
 
-        <a href="<?php echo base_url().'history/ttp_history/show_history_employee/'.$_SESSION['UsEmp_ID']?>" >  
+        <a href="<?php echo base_url().'history/History/show_history_employee/'.$_SESSION['UsEmp_ID']?>" >  
                         <center><button type="button" class="btn btn-secondary btn-lg canter" id="button_size">Back</button> </center>
                     </a>
             <br>

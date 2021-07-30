@@ -14,18 +14,32 @@ require_once(dirname(__FILE__) . "/../MainController.php");
 class Renewal extends MainController
 {
 
-	//โชว์ลิสต์รายการที่แก้ได้
+	/*
+	* show_renewal
+	* show list of request form
+	* @input -
+	* @output list of request form
+	* @author 	Nattakorn
+	* @Create Date 2564-7-19
+	*/
 	function show_renewal()
 	{
 		$this->load->model('M_ttp_renewal', 'ttp');
 		$id = $_SESSION["UsEmp_ID"];
        // $this->ttp->Status = 4;
         $data['arr_renew'] = $this->ttp->get_all($id)->result();
-		$data['arr_schedule'] = $this->ttp->get_schedule($id)->result();
+		$data['arr_sec'] = $this->ttp->get_schedule($id)->result();
 		$this->output('consent/v_renewal',$data);
 	}
 
-	//โชว์หน้าแก้ไขวัน
+	/*
+	* show_reform
+	* show page of edit renew date
+	* @input Add_date
+	* @output End_date update
+	* @author 	Nattakorn
+	* @Create Date 2564-7-19
+	*/
 	function show_reform($Form_ID)
     {
 		$this->load->model('M_ttp_renewal', 'ttp');
@@ -38,7 +52,14 @@ class Renewal extends MainController
     
 	}
 
-	//อัพเดทวันลงดาต้าเบส
+	/*
+	* update_date
+	* change date from database
+	* @input Add_date
+	* @output End_date update
+	* @author 	Nattakorn
+	* @Create Date 2564-7-19
+	*/
 	function update_date()
 	{
 		
@@ -59,11 +80,11 @@ class Renewal extends MainController
 	
 		$this->ttp->Form_count=$num;
 		$this->ttp->Status=$status;
-		$this->ttp->update_form();
-		$this->ttp->update_status();
-		$this->ttp->update();
+		$this->ttp->update_form(); //+1ให้กับฟอร์มที่ID ตรงกัน
+		$this->ttp->update_status(); //ขอวันเสร็จเปลี่ยนสถานะ
+		$this->ttp->update(); //อัพเดทวันที่
 		
-		
+		//เก็บประวัติการต่ออายุในแต่ละครั้ง
 		$new_startdate=$this->ttp->End_date;
 		$this->ttp->Start_date=$set_date;
 		$this->ttp->End_date=$new_startdate;

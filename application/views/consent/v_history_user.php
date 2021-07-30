@@ -1,11 +1,13 @@
 <!--
     v_history_user
     display history list
-    @input Form_ID
-    @output -
-    @author Phatchara
-    Create date 
-    Update date 
+    @author Phatchara and Pontakon
+    Create date 22/7/2564   
+    Update date 25/7/2564
+    Update date 26/7/2564
+    Update date 27/7/2564
+    Update date 28/7/2564
+    Update date 30/7/2564
 -->
 
 <!-- CSS -->
@@ -82,7 +84,7 @@
                         <!-- column ดำเนินการ -->
                         <td style='text-align: center;'>
                             <!-- ปุ่มดำเนินการ -->
-                            <a href=" <?php echo site_url() . '/history/ttp_history/show_history_detail/' . $em_form[$i]->Form_ID; ?>">
+                            <a href=" <?php echo site_url() . '/history/History/show_history_detail/' . $em_form[$i]->Form_ID; ?>">
                             <button type="button" class="btn btn-primary btn-sm" style="background-color: info;"> 
                                 <i class="fas fa-search"></i>
                             </button>

@@ -16,7 +16,7 @@
                     if ($id == 1) { ?>
                   <ul class="navbar-nav">
                       <li class="nav-item ">
-                          <a class="nav-link " href="<?php echo site_url() . 'Main/Main_controller/show_main/' ?>">
+                          <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
                               <i class="ni ni-tv-2 text-primary"></i>
                               <span class="nav-link-text">Home</span>
                           </a>
@@ -35,7 +35,7 @@
                       </li>
                       <li class="nav-item">
                           <a class="nav-link"
-                              href="<?php echo base_url() . 'check_schedule/ttp_check_schedule/show_check_schedule/' ?>">
+                              href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                               <i class="ni ni-calendar-grid-58 text-yellow"></i>
                               <span class="nav-link-text">Check Schedule</span>
                           </a>
@@ -56,14 +56,14 @@
 
                       <li class="nav-item">
                           <a class="nav-link"
-                              href="<?php echo base_url() . 'history/ttp_history/show_history_employee/' ?>">
+                              href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
                               <i class="ni ni-time-alarm text-pink"></i>
                               <span class="nav-link-text">History Form</span>
                           </a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link"
-                              href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
+                              href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                               <i class="ni ni-email-83 text-dark"></i>
                               <span class="nav-link-text">Pending Approve</span>
                           </a>
@@ -79,7 +79,7 @@
                           <ul class="navbar-nav">
                               <li class="nav-item">
                                   <a class="nav-link "
-                                      href="<?php echo site_url() . 'Main/Main_controller/show_main/' ?>">
+                                      href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
@@ -99,7 +99,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_schedule/ttp_check_schedule/show_check_schedule/' ?>">
+                                      href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                                       <i class="ni ni-calendar-grid-58 text-yellow"></i>
                                       <span class="nav-link-text">Check Schedule</span>
                                   </a>
@@ -120,14 +120,14 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'history/ttp_history/show_history_employee/' ?>">
+                                      href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
                                       <i class="ni ni-time-alarm text-pink"></i>
                                       <span class="nav-link-text">History Form</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
+                                      href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
                                       <span class="nav-link-text">Pending Approve</span>
                                   </a>
@@ -149,7 +149,7 @@
                           <ul class="navbar-nav">
                               <li class="nav-item">
                                   <a class="nav-link "
-                                      href="<?php echo site_url() . 'Main/Main_controller/show_main/' ?>">
+                                      href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
@@ -169,7 +169,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_schedule/ttp_check_schedule/show_check_schedule/' ?>">
+                                      href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                                       <i class="ni ni-calendar-grid-58 text-yellow"></i>
                                       <span class="nav-link-text">Check Schedule</span>
                                   </a>
@@ -190,14 +190,14 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'history/ttp_history/show_history_employee/' ?>">
+                                      href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
                                       <i class="ni ni-time-alarm text-pink"></i>
                                       <span class="nav-link-text">History Form</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
+                                      href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
                                       <span class="nav-link-text">Pending Approve</span>
                                   </a>
@@ -214,7 +214,7 @@
                           <ul class="navbar-nav mb-md-3">
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_list/' ?>">
+                                      href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?>">
                                       <i class="ni ni-active-40 text-red"></i>
                                       <span class="nav-link-text">Approve Form</span>
                                   </a>
@@ -248,7 +248,7 @@
                           <ul class="navbar-nav">
                               <li class="nav-item">
                                   <a class="nav-link "
-                                      href="<?php echo site_url() . 'Main/Main_controller/show_main/' ?>">
+                                      href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
@@ -268,7 +268,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_schedule/ttp_check_schedule/show_check_schedule/' ?>">
+                                      href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                                       <i class="ni ni-calendar-grid-58 text-yellow"></i>
                                       <span class="nav-link-text">Check Schedule</span>
                                   </a>
@@ -289,14 +289,14 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'history/ttp_history/show_history_employee/' ?>">
+                                      href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
                                       <i class="ni ni-time-alarm text-pink"></i>
                                       <span class="nav-link-text">History Form</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
+                                      href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
                                       <span class="nav-link-text">Pending Approve</span>
                                   </a>
@@ -315,7 +315,7 @@
                           <ul class="navbar-nav mb-md-3">
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_plant/' ?>">
+                                      href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?>">
                                       <i class="ni ni-active-40 text-red"></i>
                                       <span class="nav-link-text">Approve Form</span>
                                   </a>

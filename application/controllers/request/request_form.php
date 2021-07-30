@@ -14,7 +14,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class request_form extends MainController
+class Request_form extends MainController
 {
 
     /**
@@ -76,6 +76,7 @@ class request_form extends MainController
         $this->load->model('M_ttp_request', 'mreq');
         $data['arr_req'] = $this->mreq->get_by_id($id)->row();
         $data['arr_emp'] = $this->mreq->get_all()->row();
+        $data['arr_user'] = $this->mreq->get_history_user($id)->row();
         $this->output('consent/v_request_form_detail',$data);
 	} //show request detail แสดงรายละเอียดเพิ่มเติมของรายการคำขอ
 
@@ -99,7 +100,7 @@ class request_form extends MainController
         $this->dain->Form_ID = $id;   
         $this->dain->update_form();
 
-        redirect('/request/request_form/show_request_form_list');
+        redirect('/request/Request_form/show_request_form_list');
     } //reject form ใช้ในการปฏิเสธแบบฟอร์ม
 
     /*
@@ -119,7 +120,7 @@ class request_form extends MainController
         $this->load->model('M_ttp_request', 'mreq');
         $this->mreq->Form_ID = $id;   
         $this->mreq->update_app();
-        redirect('/request/request_form/show_request_form_list');
+        redirect('/request/Request_form/show_request_form_list');
     } //update request form เปลี่ยนสถานะของคำขอที่ถูกอนุมัติแล้ว ให้มี Status = 2
 
 }

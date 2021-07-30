@@ -198,7 +198,7 @@
                                      <!-- column ดำเนินการ -->
                                     <td style='text-align: center;'>
                                       <!-- ปุ่มดำเนินการ -->
-                                            <a href=" <?php echo site_url() . '/history/ttp_history/show_history_detail/' . $hr_form[$i]->Form_ID; ?>">
+                                            <a href=" <?php echo site_url() . '/history/History/show_history_detail/' . $hr_form[$i]->Form_ID; ?>">
                                                 <button class="btn btn-warning"> <i class="fa fa-pencil"></i> </button>
                                             </a>
                                     </td>
