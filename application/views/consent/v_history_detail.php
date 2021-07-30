@@ -89,7 +89,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-city">Tell No.
+                                    <label class="form-control-label" for="input-city">Tel No.
                                         (เบอร์โทรศัพท์)</label>
                                     <input type="text" class="form-control" name="Tell" require value="<?php echo $arr_form->Tell ?>" disabled>
                                 </div>
