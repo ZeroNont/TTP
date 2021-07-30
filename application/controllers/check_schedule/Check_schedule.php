@@ -7,6 +7,7 @@
     Create date 18/7/2564 
     Update date 25/7/2564
 -->
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
