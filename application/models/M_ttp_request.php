@@ -124,5 +124,16 @@ class M_ttp_request extends Da_ttp_request
                 WHERE app.Form_ID = ? "; 
         $this->db->query($sql, array($this->Form_ID));
     } //update_app อัพเดทข้อมูลในตาราง approval
+
+    function get_history_user($id)
+    {
+        $sql = "SELECT *
+                FROM ttps_database.requested_form AS req
+                INNER JOIN dbmc.employee AS emp
+                ON  req.Emp_ID = emp.Emp_ID
+                WHERE req.Form_ID = $id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
     
 }
