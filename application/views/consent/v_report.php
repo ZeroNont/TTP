@@ -11,7 +11,7 @@
 
 <h1>
     Report (รายงานข้อมูล)
-    <a href='<?php echo site_url() . 'Report/Report/show_report_export_excel'; ?>' class="btn btn-primary float-right" id="count_export"><i class="fa fa-download"></i> Export Excel</a>
+    <a href='<?php echo site_url() . 'Report/Report/show_report_export_excel'; ?>' class="btn btn-secondary btn-lg canter float-right" id="count_export"><i class="fa fa-download"></i> Export Excel</a>
     <!-- <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a> -->
 </h1>
 <br>
@@ -39,7 +39,7 @@
         </div>
         <div class="col-lg-3">
             <br>
-            <button onclick='show_all_data()' class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+            <button onclick='show_all_data()' class="btn btn-primary btn-lg canter"><i class="fas fa-search"></i> Search</button>
         </div>
     </div>
 
