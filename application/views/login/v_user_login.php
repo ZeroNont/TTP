@@ -53,12 +53,12 @@
                         }, 500)//function set
                      } //if
                     else{
-                        alert('รหัสผ่านผิด กรุณากรอกใหม่อีกครั้ง')
+                        alert('You entered incorrect information.')
                      } //else
             },//end success
             error: function(status) 
             {//function error
-                alert('รหัสผ่านผิด กรุณากรอกใหม่อีกครั้ง')
+                alert('You entered incorrect information.')
             }//end error
         });
         
