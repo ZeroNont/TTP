@@ -68,6 +68,7 @@ class ttp_approve_form extends MainController
         $this->load->model('M_ttp_approve_form', 'mreq');
         $data['arr_req'] = $this->mreq->get_by_id($id)->row();
         $data['arr_his'] = $this->mreq->get_history_approve($id)->row();
+        $data['arr_user'] = $this->mreq->get_history_user($id)->row();
         $data['arr_emp'] = $this->mreq->get_all()->row();
         $this->output('consent/v_approve_form_detail',$data);
 	} //แสดงรายละเอียดเพิ่มเติมของรายการคำขอ สำหรับ HR
@@ -78,6 +79,7 @@ class ttp_approve_form extends MainController
         $data['arr_req'] = $this->mreq->get_by_id($id)->row();
         $data['arr_his'] = $this->mreq->get_history_approve($id)->row();
         $data['arr_his_hr'] = $this->mreq->get_history_approve_hr($id)->row();
+        $data['arr_user'] = $this->mreq->get_history_user($id)->row();
         $data['arr_emp'] = $this->mreq->get_all()->row();
         $this->output('consent/v_approve_form_detail_plant',$data);
 	} //แสดงรายละเอียดเพิ่มเติมของรายการคำขอ สำหรับ Plant

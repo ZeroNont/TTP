@@ -65,7 +65,7 @@ $(document).ready(function() {
                             <label class="form-control-label" for="input-address">Officer in Charge
                                 (ผู้รับผิดชอบ)</label>
                             <input class="form-control" type="text" name="Officer" require
-                                value="<?php echo $arr_emp->Empname_eng.' '.$arr_emp->Empsurname_eng ?>">
+                                value="<?php echo $arr_user->Empname_eng.' '.$arr_user->Empsurname_eng ?>">
                         </div>
                     </div>
                     <div class="col-lg-6">
