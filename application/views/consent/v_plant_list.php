@@ -87,11 +87,11 @@ function getEmp_edit(i) {
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Plant No.</label>
-                        <input type="text" class="form-control" name="Plant_No">
+                        <input type="text" class="form-control" name="Plant_No" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Plant Name</label>
-                        <input type="text" class="form-control" name="Plant_name">
+                        <input type="text" class="form-control" name="Plant_name" required>
                     </div>
                     <button type="submit" class="btn btn-success float-right">Submit</button>
                     <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Cancle</button>
@@ -162,7 +162,7 @@ function getEmp_edit(i) {
                                                 <input type="text" class="form-control"
                                                     value="<?php echo $obj_plan[$i]->Emp_ID ?>"
                                                     id="Emp_id<?php echo $i; ?>"
-                                                    onkeyup="getEmp_edit(<?php echo $i; ?>)" name="Emp_ID" required>
+                                                    onkeyup="getEmp_edit(<?php echo $i; ?>)" name="Emp_ID">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputPassword1" class="form-label">Name</label>
