@@ -37,9 +37,33 @@ class Da_ttp_renewal extends ttps_model
 
     public function update_form()
     {
-        $sql = " UPDATE ttps_database.requested_form
-        SET Form_count = ?
+        $sql = " UPDATE ttps_database.requested_form as up
+        SET up.Form_count = ?
         WHERE Form_ID= ?";
         $this->db->query($sql, array($this->Form_count,$this->Form_ID));
     }
+
+    public function update_status()
+    {
+        $sql = " UPDATE ttps_database.requested_form as up
+        SET up.Status = ?
+        WHERE Form_ID= ?";
+        $this->db->query($sql, array($this->Status,$this->Form_ID));
+    }
+
+    public function insert_schedule()
+    {
+        $sql = "INSERT INTO ttps_database.schedule(Form_ID,Start_date,End_date) 
+                VALUES (?,?,?)";
+        $this->db->query($sql, array($this->Form_ID,$this->Start_date, $this->End_date));
+    }
+
+/*
+        public function update_sec()
+        {
+            $sql = " UPDATE ttps_database.schedule 
+            SET Start_date = ? AND End_date = ?
+            WHERE Form_ID= ?";
+            $this->db->query($sql, array($this->Start_date,$this->End_date,$this->Form_ID));
+        */
 }
