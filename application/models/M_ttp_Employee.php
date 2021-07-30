@@ -1,17 +1,17 @@
 <?php
-include_once("Da_ttp_Emp.php");
+include_once("Da_ttp_Employee.php");
 
-class M_ttp_Emp extends Da_ttp_Emp
-{//class M_ttp_emp
+class M_ttp_Employee extends Da_ttp_Employee
+{ //class M_ttp_Employee
 
-/*
+    /*
 * get_name_emp
 * get name
 * @input  -
 * @output - 
 * @author 
 * @Create 
-*/    
+*/
     public function get_name_emp()
     {
         $sql =
@@ -32,7 +32,7 @@ class M_ttp_Emp extends Da_ttp_Emp
     public function get_emp_detail($id)
     {
         $sql =
-        "SELECT *
+            "SELECT *
         FROM dbmc.employee  AS emp INNER JOIN dbmc.company AS com
         WHERE Emp_ID = $id AND emp.Company_ID=com.Company_ID";
         $query = $this->db->query(
@@ -42,7 +42,7 @@ class M_ttp_Emp extends Da_ttp_Emp
         return $query;
     }
 
-/*
+    /*
 * get_emp
 * get Emp_ID in database
 * @input  -
@@ -51,7 +51,7 @@ class M_ttp_Emp extends Da_ttp_Emp
 * @Create Date 2564-07-28
 */
     public function get_emp()
-    {//get Emp_ID
+    { //get Emp_ID
         $sql = "SELECT * 
             FROM dbmc.employee AS emp
             INNER JOIN dbmc.group_secname AS gsec 
@@ -63,7 +63,7 @@ class M_ttp_Emp extends Da_ttp_Emp
             INNER JOIN ttps_database.user_login AS ulog
             ON emp.Emp_ID = ulog.Enp_ID
             WHERE emp.Emp_ID=?";
-        $query = $this->db->query($sql,array($this->Emp_ID));
+        $query = $this->db->query($sql, array($this->Emp_ID));
         return $query;
-    }//end get_emp
+    } //end get_emp
 }//end class M_ttp_emp

@@ -1,3 +1,12 @@
+<!--
+    v_check_out
+    check out Item
+    @input -
+    @output -
+    @author Jirayut Saifah
+    Create 25/7/2564 
+    Update date 
+-->
 <!DOCTYPE html>
 <html>
 <style>
@@ -32,7 +41,7 @@
                     <th>Item</th>
                     <th>Schedule</th>
                     <th>Officer</th>
-                    <th>Check Out</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -96,11 +105,11 @@
         <div>
         </div>
     </div>
-    <!-- <script>
+    <script>
     $(document).ready(function() {
         $('#example').DataTable();
     });
-    </script> -->
+    </script>
     <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/vendor/js-cookie/js.cookie.js"></script>

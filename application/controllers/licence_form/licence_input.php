@@ -48,7 +48,7 @@ class Licence_input extends MainController
         $data['obj_emp'] = $this->ttp->get_employee($id)->result();
         $data['obj_level'] = $this->ttp->get_position_id($id)->result();
         $data['obj_supervisor'] = $this->ttp->get_supervisor()->result();
-        $this->load->model('M_ttp_Emp', 'det');
+        $this->load->model('M_ttp_Employee', 'det');
         $data['detail'] = $this->det->get_emp_detail($id)->result();
         // print_r($data['obj_supervisor']);
         // print_r($data['detail']);
@@ -65,19 +65,21 @@ class Licence_input extends MainController
 	*/
     function edit_form($id)
     {
+        $k = $_SESSION['UsEmp_ID'];
         $this->load->model('M_ttp_licence', 'ttp');
         $data['obj_form'] = $this->ttp->get_form_by_id($id)->result();
         $data['obj_file'] = $this->ttp->get_file_by_id($id)->result();
         $data['obj_company'] = $this->ttp->get_company()->result();
         $data['obj_com'] = $this->ttp->get_company_by_id($id)->result();
         $data['obj_plan'] = $this->ttp->get_plant()->result();
-        $data['obj_level'] = $this->ttp->get_position_id($id)->result();
+        $data['obj_level'] = $this->ttp->get_position_id($k)->result();
         $data['obj_app'] = $this->ttp->get_plant_by_id($id)->result();
         $data['obj_supervisor'] = $this->ttp->get_supervisor()->result();
         // echo $id;
+        // print_r($data['obj_level']);
         $data['obj_sup'] = $this->ttp->get_supervisor_by_id($id)->result();
         // print_r($data);
-        $this->load->model('M_ttp_Emp', 'det');
+        $this->load->model('M_ttp_Employee', 'det');
         $data['detail'] = $this->det->get_emp_detail($id)->result();
         $this->output('consent/v_form_edit', $data);
     }

@@ -1,3 +1,12 @@
+<!--
+    v_check_status
+    display form status 
+    @input -
+    @output -
+    @author Jirayut Saifah
+    Create 25/7/2564 
+    Update date 
+-->
 <h1>
     Check status (ตรวจสอบสถานะคำร้องขอ)
 
@@ -18,57 +27,57 @@
                     <th>Remaining Time</th>
                     <th>Number of Edits</th>
                     <th>Printing Status</th>
-                    <th>Tool</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <?php for ($i = 0; $i < count($obj_status); $i++) { ?>
-                <tr>
-                    <td>
-                        <?php echo $i + 1 ?>
-                    </td>
+                    <tr>
+                        <td>
+                            <?php echo $i + 1 ?>
+                        </td>
 
-                    <td>
-                        <?php echo $obj_status[$i]->Item ?>
-                    </td>
-                    <td>
-                        <?php
-                    if ($obj_status[$i]->Status >= 2 or $obj_status[$i]->Status < 0) {
+                        <td>
+                            <?php echo $obj_status[$i]->Item ?>
+                        </td>
+                        <td>
+                            <?php
+                            if ($obj_status[$i]->Status >= 2 or $obj_status[$i]->Status < 0) {
                                 echo "อนุมัติ";
-                        } else if ($obj_status[$i]->Status == 0) {
+                            } else if ($obj_status[$i]->Status == 0) {
                                 echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
                             }
 
                             ?>
-                    </td>
-                    <td>
-                        <?php
-                    if ($obj_status[$i]->Status >= 3 or $obj_status[$i]->Status <= -2) {
+                        </td>
+                        <td>
+                            <?php
+                            if ($obj_status[$i]->Status >= 3 or $obj_status[$i]->Status <= -2) {
                                 echo "อนุมัติ";
-                        } else if ($obj_status[$i]->Status == -1) {
+                            } else if ($obj_status[$i]->Status == -1) {
                                 echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
                             }
 
                             ?>
-                    </td>
-                    <td>
-                        <?php
-                    if ($obj_status[$i]->Status >= 4) {
+                        </td>
+                        <td>
+                            <?php
+                            if ($obj_status[$i]->Status >= 4) {
                                 echo "อนุมัติ";
-                        } else if ($obj_status[$i]->Status == -2) {
+                            } else if ($obj_status[$i]->Status == -2) {
                                 echo "ไม่อนุมัติ";
                             } else {
                                 echo "-";
                             }
 
                             ?>
-                    </td>
-                    <td>
-                        <?php
+                        </td>
+                        <td>
+                            <?php
                             $str =  (strtotime($obj_status[$i]->End_date)) - strtotime(date("M d Y "));
                             $str = floor($str / 3600 / 24);
                             if ($str <= 5) {
@@ -78,50 +87,48 @@
                             }
                             // echo $str;
                             ?>
-                    </td>
-                    <td>
-                        <?php echo $obj_status[$i]->Form_count ?>
-                    </td>
+                        </td>
+                        <td>
+                            <?php echo $obj_status[$i]->Form_count ?>
+                        </td>
 
-                    <td>
-                        <?php if ($obj_status[$i]->print_status == 1) { ?>
+                        <td>
+                            <?php if ($obj_status[$i]->print_status == 1) { ?>
 
-                        <img src="<?php echo site_url() . '/assets/file/icon/check.png' ?>" width="30">
-                        <?php } else { ?>
-                        <img src="<?php echo site_url() . '/assets/file/icon/remove.png' ?>" width="30">
-                        <?php } ?>
-                    </td>
+                                <img src="<?php echo site_url() . '/assets/file/icon/check.png' ?>" width="30">
+                            <?php } else { ?>
+                                <img src="<?php echo site_url() . '/assets/file/icon/remove.png' ?>" width="30">
+                            <?php } ?>
+                        </td>
 
-                    <td>
-                        <?php if ($obj_status[$i]->Status < 0) { ?>
-                        <a
-                            href="<?php echo site_url() . 'licence_form/licence_input/edit_form/' . $obj_status[$i]->Form_ID; ?>">
-                            <img src="<?php echo site_url() . '/assets/file/icon/edit.png' ?>" width="30">
-                        </a>
-                        <?php } else { ?>
-                        <img src="<?php echo site_url() . '/assets/file/icon/edit_2.png' ?>" width="30">
-                        <?php } ?>
-                        <?php if ($obj_status[$i]->Status == 4) { ?>
-                        <a
-                            href="<?php echo site_url() . 'form_management/ttp_print_form/print_form/' . $obj_status[$i]->Form_ID; ?>">
-                            <img src="<?php echo site_url() . '/assets/file/icon/printing.png' ?>" width="30">
-                        </a>
-                        <?php } else { ?>
-                        <img src="<?php echo site_url() . '/assets/file/icon/print_2.png' ?>" width="30">
-                        <?php } ?>
-                    </td>
-                </tr>
+                        <td>
+                            <?php if ($obj_status[$i]->Status < 0) { ?>
+                                <a href="<?php echo site_url() . 'licence_form/licence_input/edit_form/' . $obj_status[$i]->Form_ID; ?>">
+                                    <img src="<?php echo site_url() . '/assets/file/icon/edit.png' ?>" width="30">
+                                </a>
+                            <?php } else { ?>
+                                <img src="<?php echo site_url() . '/assets/file/icon/edit_2.png' ?>" width="30">
+                            <?php } ?>
+                            <?php if ($obj_status[$i]->Status == 4) { ?>
+                                <a href="<?php echo site_url() . 'form_management/Print_form/print_detail/' . $obj_status[$i]->Form_ID; ?>">
+                                    <img src="<?php echo site_url() . '/assets/file/icon/printing.png' ?>" width="30">
+                                </a>
+                            <?php } else { ?>
+                                <img src="<?php echo site_url() . '/assets/file/icon/print_2.png' ?>" width="30">
+                            <?php } ?>
+                        </td>
+                    </tr>
                 <?php  } ?>
             </tbody>
         </table>
         <div>
         </div>
     </div>
-    <!-- <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    });
-    </script> -->
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
     </script>
     <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

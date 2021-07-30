@@ -1,9 +1,9 @@
 <?php
 /*
-* Ttps_Controller
-* Form Management
+* Employee
+* Employee detail
 * @input  -   
-* @output -
+* @output Employee detail
 * @author Jirayut Saifah
 * @Create Date 2564-7-23
 */
@@ -12,7 +12,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class ttp_Emp extends MainController
+class Employee extends MainController
 {
 
     /**
@@ -32,21 +32,22 @@ class ttp_Emp extends MainController
      */
 
     /*
-	* index
-	* 
-	* @input 
-	* @output 
-	* @author 	Jirayut Saifah
+	* search_by_employee_idindex
+	* search employee detail by emp_id
+	* @input emp_id
+	* @output employee detail
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-23
 	*/
-   function search_by_employee_id(){
+    function search_by_employee_id()
+    {
 
         $Emp_id = $this->input->post('Emp_id');
-       $this->load->model('M_ttp_Emp','emp');
+        $this->load->model('M_ttp_Employee', 'emp');
         $this->emp->Emp_ID = $Emp_id;
         $data = $this->emp->get_name_emp()->result();
 
-       echo json_encode($data);
-   }
+        echo json_encode($data);
+    }
 }
 // 

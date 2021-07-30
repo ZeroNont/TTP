@@ -1,6 +1,12 @@
-<!-- ตารางรายการคำขอ -->
-<!-- Table Requestd form -->
-<!-- <div class="card" id="card_radius"> -->
+<!--
+    v_plant_list
+    display all approve plant
+    @input -
+    @output -
+    @author Jirayut Saifah
+    Create 25/7/2564 
+    Update date 
+-->
 <script>
 function get_Emp() {
     Emp_id = document.getElementById('Emp_id_modal').value;
@@ -8,7 +14,7 @@ function get_Emp() {
     console.log(Emp_id)
     $.ajax({
         type: "POST",
-        url: "<?php echo base_url(); ?>ttp_Emp/ttp_Emp/search_by_employee_id",
+        url: "<?php echo base_url(); ?>ttp_Emp/Employee/search_by_employee_id",
         data: {
             "Emp_id": Emp_id
         },
@@ -33,7 +39,7 @@ function getEmp_edit(i) {
     console.log(Emp_id)
     $.ajax({
         type: "POST",
-        url: "<?php echo base_url(); ?>ttp_Emp/ttp_Emp/search_by_employee_id",
+        url: "<?php echo base_url(); ?>ttp_Emp/Employee/search_by_employee_id",
         data: {
             "Emp_id": Emp_id
         },
@@ -111,7 +117,7 @@ function getEmp_edit(i) {
                     <th>Plan No.</th>
                     <th>Plan Name</th>
                     <th>Name</th>
-                    <th>Edit</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -154,7 +160,7 @@ function getEmp_edit(i) {
 
                                     <div class="modal-body">
                                         <form
-                                            action="<?php echo site_url() . 'Plant_management/Plant_input/edit/' . $obj_plan[$i]->Emp_ID;; ?>"
+                                            action="<?php echo site_url() . 'Plant_management/Plant_input/edit/' . $obj_plan[$i]->Emp_ID; ?>"
                                             method="post" enctype="multipart/form-data">
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Employee
@@ -204,9 +210,9 @@ function getEmp_edit(i) {
         </div>
     </div>
     <script>
-    // $(document).ready(function() {
-    //     $('#example').DataTable();
-    // });
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
     </script>
     </script>
     <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
