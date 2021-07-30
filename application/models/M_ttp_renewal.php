@@ -37,6 +37,14 @@ class M_ttp_renewal extends Da_ttp_renewal
         return $query;
     }
 
+    /*
+    * get_schedule
+    * get data from table schedule
+    * @input -
+    * @output -
+    * @author Nattakorn
+    * @Create date 2564-07-19
+    */
     public function get_schedule($id)
     {
         $sql = "SELECT *
