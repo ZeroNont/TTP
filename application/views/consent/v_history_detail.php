@@ -26,7 +26,7 @@
     #button_UPsize
     {
         
-        width: 200px;
+        width: 100px;
     }
 
 </style> 
@@ -229,9 +229,8 @@
         <?php } ?>
 
         <a href="<?php echo base_url().'history/History/show_history_employee/'.$_SESSION['UsEmp_ID']?>" >  
-                        <center><button type="button" class="btn btn-secondary btn-lg canter" id="button_UPsize">Back</button> </center>
+                        <center><button type="button" class="btn btn-secondary btn-lg canter" id='button_UPsize'  ><i class="fas fa-arrow-alt-circle-left"></i>Back</button> </center>
                     </a>
             <br>
             <br>
-            
     
