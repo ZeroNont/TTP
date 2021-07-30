@@ -1,3 +1,15 @@
+<?php
+/*
+* v_approve_form_detail_plant
+* View Approve Form Detail Plant
+* @input  -
+* @output - 
+* @author Apinya Phadungkit
+* @Create Date 2564-7-18
+* @Update Date 2564-7-28
+*/
+?>
+
 <script>
 $(document).ready(function() {
     $("#btn_success").click(function() {
