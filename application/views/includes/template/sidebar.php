@@ -16,7 +16,7 @@
                     if ($id == 1) { ?>
                   <ul class="navbar-nav">
                       <li class="nav-item ">
-                          <a class="nav-link " href="<?php echo site_url() . 'Main/Main_controller/show_main/' ?>">
+                          <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
                               <i class="ni ni-tv-2 text-primary"></i>
                               <span class="nav-link-text">Home</span>
                           </a>
@@ -79,7 +79,7 @@
                           <ul class="navbar-nav">
                               <li class="nav-item">
                                   <a class="nav-link "
-                                      href="<?php echo site_url() . 'Main/Main_controller/show_main/' ?>">
+                                      href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
@@ -149,7 +149,7 @@
                           <ul class="navbar-nav">
                               <li class="nav-item">
                                   <a class="nav-link "
-                                      href="<?php echo site_url() . 'Main/Main_controller/show_main/' ?>">
+                                      href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
@@ -248,7 +248,7 @@
                           <ul class="navbar-nav">
                               <li class="nav-item">
                                   <a class="nav-link "
-                                      href="<?php echo site_url() . 'Main/Main_controller/show_main/' ?>">
+                                      href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
