@@ -151,7 +151,7 @@
                                         </div>
                                     <?php }
                                     //  <!-- แสดงชื่อ HR อนุมัติ -->
-                                    if ( $arr_form->Status == 3 || $arr_form->Status == -2 || $arr_form->Status = 4) { ?>
+                                    if ( $arr_form->Status == 3 || $arr_form->Status == -2 || $arr_form->Status == 4) { ?>
                                         <div class="col-6 col-md-4"><span><b>ชื่อผู้อนุมัติ : </b>
                                                 <?php echo $arr_his_hr->Empname_eng . " " . $arr_his_hr->Empsurname_eng; ?>
                                                 <br>
@@ -164,7 +164,7 @@
                                         </div>
                                         <?php }
                                      //  <!-- แสดงชื่อ Approve Plant อนุมัติ -->
-                                    if ( $arr_form->Status = 4) { ?>
+                                    if ( $arr_form->Status == 4) { ?>
                                        <div class="col-6 col-md-4"><span><b>ชื่อผู้อนุมัติ : </b>
                                             <?php echo $arr_his_ap->Empname_eng . " " . $arr_his_ap->Empsurname_eng; ?>
                                             <br>
