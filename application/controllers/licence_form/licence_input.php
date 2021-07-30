@@ -79,7 +79,7 @@ class Licence_input extends MainController
         // print_r($data['obj_level']);
         $data['obj_sup'] = $this->ttp->get_supervisor_by_id($id)->result();
         // print_r($data);
-        $this->load->model('M_ttp_Emp', 'det');
+        $this->load->model('M_ttp_Employee', 'det');
         $data['detail'] = $this->det->get_emp_detail($id)->result();
         $this->output('consent/v_form_edit', $data);
     }
