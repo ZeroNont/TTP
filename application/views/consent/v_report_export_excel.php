@@ -49,7 +49,11 @@
                                 <tr>
                                     <td><?php echo $num++; ?></td>
                                     <td><?php echo $Form_data[$i]->Company_name . ' ' . "(" .  $Form_data[$i]->Company_name_th . ")" ?></td>
-                                    <td><?php echo $Form_data[$i]->HR_No; ?></td>
+                                    <?php if ($Form_data[$i]->HR_No == '') { ?>
+                                        <td><?php echo '-'; ?></td>
+                                    <?php } else { ?>
+                                        <td><?php echo $Form_data[$i]->HR_No; ?></td>
+                                    <?php } ?>
                                     <td><?php echo $Form_data[$i]->Officer; ?></td>
                                     <td><?php echo $Form_data[$i]->Plant_name; ?></td>
                                     <td><?php echo $Form_data[$i]->Plant_No; ?></td>
@@ -82,7 +86,7 @@
             </div>
         </div>
     </div>
-<center><a href="<?php echo site_url() . 'Report/Report/show_report'; ?>" class="btn btn-secondary float-center"><i class="fas fa-arrow-alt-circle-left"></i> Back</a></center>
+    <center><a href="<?php echo site_url() . 'Report/Report/show_report'; ?>" class="btn btn-secondary float-center"><i class="fas fa-arrow-alt-circle-left"></i> Back</a></center>
 
 </div>
 
