@@ -100,7 +100,7 @@ class Request_form extends MainController
         $this->dain->Form_ID = $id;   
         $this->dain->update_form();
 
-        redirect('/request/request_form/show_request_form_list');
+        redirect('/request/Request_form/show_request_form_list');
     } //reject form ใช้ในการปฏิเสธแบบฟอร์ม
 
     /*
@@ -120,7 +120,7 @@ class Request_form extends MainController
         $this->load->model('M_ttp_request', 'mreq');
         $this->mreq->Form_ID = $id;   
         $this->mreq->update_app();
-        redirect('/request/request_form/show_request_form_list');
+        redirect('/request/Request_form/show_request_form_list');
     } //update request form เปลี่ยนสถานะของคำขอที่ถูกอนุมัติแล้ว ให้มี Status = 2
 
 }

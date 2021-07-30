@@ -135,7 +135,7 @@ class Approve_form extends MainController
         $this->dain->Form_ID = $id;   
         $this->dain->update_form();
 
-        redirect('/approve_form/ttp_approve_form/show_approve_form_list');
+        redirect('/approve_form/Approve_form/show_approve_form_list');
     } //ปฏิเสธแบบฟอร์มสำหรับ HR
 
      /*
@@ -157,7 +157,7 @@ class Approve_form extends MainController
         $this->dain->Form_ID = $id;   
         $this->dain->update_form();
 
-        redirect('/approve_form/ttp_approve_form/show_approve_form_list');
+        redirect('/approve_form/Approve_form/show_approve_form_list');
     } //ปฏิเสธแบบฟอร์มสำหรับ Plant
 
     /*
@@ -212,7 +212,7 @@ class Approve_form extends MainController
         $this->dreq->HR_No = $HR_No; 
         $this->dreq->update_form();
         
-        redirect('/approve_form/ttp_approve_form/show_approve_form_list');
+        redirect('/approve_form/Approve_form/show_approve_form_list');
     } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย HR
 
     /*
@@ -233,7 +233,7 @@ class Approve_form extends MainController
         $this->load->model('M_ttp_approve_form', 'mreq');
         $this->mreq->Form_ID = $id;  
         $this->mreq->update_app_plant();
-        redirect('/approve_form/ttp_approve_form/show_approve_form_plant');
+        redirect('/approve_form/Approve_form/show_approve_form_plant');
     } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย Plant
 
 }
