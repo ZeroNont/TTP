@@ -18,17 +18,15 @@
     {
         padding: 1.5rem;
     }
-    #button_size
-    {
-        border-radius: 24px;
-        width: 200px;
-    }
+
     #card_align
     {
         text-align: 20px;
     }
-    #button_back{
-        background-color: #adb5bd;
+    #button_UPsize
+    {
+        
+        width: 200px;
     }
 
 </style> 
@@ -106,9 +104,9 @@
                                         (รูปแบบการวาง)</label>
                                         <br>
                                         <a href="<?php echo base_url()?>assets/file/layout/<?php echo $arr_file[0]->Layout_location ?>" download> 
-                                                <button type="button" class="btn btn-danger" id="button_size">
-                                                    <i class="fas fa-file-alt text-dark"></i>
-                                                    &nbsp;&nbsp;ไฟล์
+                                        <button type="button" class="btn btn-danger" id="button_size">
+                                    <i class="fas fa-file-alt text-dark"></i>
+                                                    &nbsp;&nbsp;File
                                                 </button> </a>
                                 </div>
                             </div>
@@ -120,7 +118,7 @@
                                         <a href="<?php echo base_url()?>assets/file/Plan/<?php echo $arr_file[0]->Plan_location ?>" download>  
                                                 <button type="button" class="btn btn-danger" id="button_size">
                                                     <i class="fas fa-file-alt text-dark"></i>
-                                                        &nbsp;&nbsp;ไฟล์
+                                                        &nbsp;&nbsp;File
                                                 </button> 
                                         </a>
                                 </div>
@@ -231,7 +229,7 @@
         <?php } ?>
 
         <a href="<?php echo base_url().'history/History/show_history_employee/'.$_SESSION['UsEmp_ID']?>" >  
-                        <center><button type="button" class="btn btn-secondary btn-lg canter" id="button_size">Back</button> </center>
+                        <center><button type="button" class="btn btn-secondary btn-lg canter" id="button_UPsize">Back</button> </center>
                     </a>
             <br>
             <br>
