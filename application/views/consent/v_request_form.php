@@ -82,7 +82,7 @@
 
                                 <!-- ปุ่มดำเนินการ -->
                                 <a
-                                    href=" <?php echo site_url() . 'request/request_form/show_request_form_detail/' . $row->Form_ID; ?>">
+                                    href=" <?php echo site_url() . 'request/Request_form/show_request_form_detail/' . $row->Form_ID; ?>">
                                     <button class="btn btn-primary"> <i class="fa fa-info-circle"></i> </button>
                                 </a>
 

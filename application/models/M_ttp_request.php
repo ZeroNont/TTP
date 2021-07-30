@@ -125,6 +125,14 @@ class M_ttp_request extends Da_ttp_request
         $this->db->query($sql, array($this->Form_ID));
     } //update_app อัพเดทข้อมูลในตาราง approval
 
+    /*
+    * Function get_history_user
+    * @input  $id
+    * @output -
+    * @author Apinya Phadungkit
+    * @Create Date 2564-7-18
+    * @Update Date 2564-7-28
+    */
     function get_history_user($id)
     {
         $sql = "SELECT *
@@ -134,6 +142,6 @@ class M_ttp_request extends Da_ttp_request
                 WHERE req.Form_ID = $id";
         $query = $this->db->query($sql);
         return $query;
-    }
+    } //get_history_user ใช้ดูประวัติว่าผู้ใช้งานคนไหนเป็นผู้ร้องขอแบบฟอร์ม
     
 }

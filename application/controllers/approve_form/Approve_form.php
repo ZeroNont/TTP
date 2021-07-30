@@ -12,7 +12,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class ttp_approve_form extends MainController
+class Approve_form extends MainController
 {
 
     /**
@@ -45,6 +45,14 @@ class ttp_approve_form extends MainController
     }
     // function index
 
+    /*
+    * Function show_approve_form_list
+    * @input  -  
+    * @output show v_approve_form.php
+    * @author Apinya Phadungkit
+    * @Create Date 2564-7-18
+    * @Update Date 2564-7-28
+    */
     function show_approve_form_list() 
     {
         $this->load->model('M_ttp_approve_form', 'mreq');
@@ -54,6 +62,14 @@ class ttp_approve_form extends MainController
         $this->output('consent/v_approve_form', $data);
     } //แสดงรายการคำขอทั้งหมดสำหรับhr
 
+    /*
+    * Function show_approve_form_plant
+    * @input  -  
+    * @output show v_approve_form_plant.php
+    * @author Apinya Phadungkit
+    * @Create Date 2564-7-18
+    * @Update Date 2564-7-28
+    */
     function show_approve_form_plant() 
     {
         $this->load->model('M_ttp_approve_form', 'mreq');
@@ -63,6 +79,14 @@ class ttp_approve_form extends MainController
         $this->output('consent/v_approve_form_plant', $data);
     } //แสดงรายการคำขอทั้งหมดสำหรับ plant
 
+    /*
+    * Function show_approve_form_detail
+    * @input  $id 
+    * @output show v_approve_form_detail.php
+    * @author Apinya Phadungkit
+    * @Create Date 2564-7-18
+    * @Update Date 2564-7-28
+    */
     function show_approve_form_detail($id)
 	{
         $this->load->model('M_ttp_approve_form', 'mreq');
@@ -73,6 +97,14 @@ class ttp_approve_form extends MainController
         $this->output('consent/v_approve_form_detail',$data);
 	} //แสดงรายละเอียดเพิ่มเติมของรายการคำขอ สำหรับ HR
 
+    /*
+    * Function show_approve_form_plant_detail
+    * @input  $id 
+    * @output show v_approve_form_detail_plant.php
+    * @author Apinya Phadungkit
+    * @Create Date 2564-7-18
+    * @Update Date 2564-7-28
+    */
     function show_approve_form_plant_detail($id)
 	{
         $this->load->model('M_ttp_approve_form', 'mreq');
@@ -84,6 +116,14 @@ class ttp_approve_form extends MainController
         $this->output('consent/v_approve_form_detail_plant',$data);
 	} //แสดงรายละเอียดเพิ่มเติมของรายการคำขอ สำหรับ Plant
 
+    /*
+    * Function reject_form_HR
+    * @input  $id 
+    * @output -
+    * @author Apinya Phadungkit
+    * @Create Date 2564-7-18
+    * @Update Date 2564-7-28
+    */
     function reject_form_HR($id)
     {   
         $this->load->model('Da_ttp_approve_form','dain');
@@ -98,6 +138,14 @@ class ttp_approve_form extends MainController
         redirect('/approve_form/ttp_approve_form/show_approve_form_list');
     } //ปฏิเสธแบบฟอร์มสำหรับ HR
 
+     /*
+    * Function reject_form_Plant
+    * @input  $id 
+    * @output -
+    * @author Apinya Phadungkit
+    * @Create Date 2564-7-18
+    * @Update Date 2564-7-28
+    */
     function reject_form_Plant($id)
     {   
         $this->load->model('Da_ttp_approve_form','dain');
@@ -112,6 +160,14 @@ class ttp_approve_form extends MainController
         redirect('/approve_form/ttp_approve_form/show_approve_form_list');
     } //ปฏิเสธแบบฟอร์มสำหรับ Plant
 
+    /*
+    * Function update_approve_form
+    * @input  $form_id
+    * @output -
+    * @author Apinya Phadungkit
+    * @Create Date 2564-7-18
+    * @Update Date 2564-7-28
+    */
     function update_approve_form($form_id) 
     {
         $this->load->model('M_ttp_request','mreq');
@@ -149,16 +205,24 @@ class ttp_approve_form extends MainController
         $this->mapp->Form_ID = $form_id;         
         $this->mapp->update_app();
         
+        //อัพเดท status ในตาราง requested_form ให้เป็น 3
         $this->load->model('Da_ttp_approve_form', 'dreq');
         $this->dreq->Status = 3;
         $this->dreq->Form_ID = $form_id;   
         $this->dreq->HR_No = $HR_No; 
         $this->dreq->update_form();
-
         
         redirect('/approve_form/ttp_approve_form/show_approve_form_list');
     } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย HR
 
+    /*
+    * Function update_approve_form_plant
+    * @input  $id
+    * @output -
+    * @author Apinya Phadungkit
+    * @Create Date 2564-7-18
+    * @Update Date 2564-7-28
+    */
     function update_approve_form_plant($id) 
     {
         $this->load->model('Da_ttp_approve_form', 'dreq');
@@ -171,8 +235,6 @@ class ttp_approve_form extends MainController
         $this->mreq->update_app_plant();
         redirect('/approve_form/ttp_approve_form/show_approve_form_plant');
     } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย Plant
-
-
 
 }
 // 

@@ -185,7 +185,7 @@ $(document).ready(function() {
 
 
                 <form method="POST"
-                    action="<?php echo site_url().'/approve_form/ttp_approve_form/reject_form_Plant/'.$arr_req->Form_ID; ?>">
+                    action="<?php echo site_url().'/approve_form/Approve_form/reject_form_Plant/'.$arr_req->Form_ID; ?>">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -252,7 +252,7 @@ $(document).ready(function() {
             </div>
             <div class="modal-footer">
                 <a
-                    href="<?php echo site_url() . 'approve_form/ttp_approve_form/update_approve_form_plant/'. $arr_req->Form_ID ; ?>">
+                    href="<?php echo site_url() . 'approve_form/Approve_form/update_approve_form_plant/'. $arr_req->Form_ID ; ?>">
                     <button type="button" class="btn btn-success btn-lg float-right">Agree</button>
                 </a>
             </div>

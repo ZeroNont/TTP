@@ -14,7 +14,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class request_form extends MainController
+class Request_form extends MainController
 {
 
     /**

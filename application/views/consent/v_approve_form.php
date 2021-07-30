@@ -69,7 +69,7 @@
 
                                 <!-- ปุ่มดำเนินการ -->
                                 <a
-                                    href=" <?php echo site_url() . '/approve_form/ttp_approve_form/show_approve_form_detail/' . $row->Form_ID; ?>">
+                                    href=" <?php echo site_url() . '/approve_form/Approve_form/show_approve_form_detail/' . $row->Form_ID; ?>">
                                     <button class="btn btn-primary"> <i class="fa fa-info-circle"></i> </button>
                                 </a>
 

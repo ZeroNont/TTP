@@ -63,7 +63,7 @@
                       </li>
                       <li class="nav-item">
                           <a class="nav-link"
-                              href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
+                              href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                               <i class="ni ni-email-83 text-dark"></i>
                               <span class="nav-link-text">Pending Approve</span>
                           </a>
@@ -127,7 +127,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
+                                      href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
                                       <span class="nav-link-text">Pending Approve</span>
                                   </a>
@@ -197,7 +197,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
+                                      href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
                                       <span class="nav-link-text">Pending Approve</span>
                                   </a>
@@ -214,7 +214,7 @@
                           <ul class="navbar-nav mb-md-3">
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_list/' ?>">
+                                      href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?>">
                                       <i class="ni ni-active-40 text-red"></i>
                                       <span class="nav-link-text">Approve Form</span>
                                   </a>
@@ -296,7 +296,7 @@
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/request_form/show_request_form_list/' ?>">
+                                      href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                                       <i class="ni ni-email-83 text-dark"></i>
                                       <span class="nav-link-text">Pending Approve</span>
                                   </a>
@@ -315,7 +315,7 @@
                           <ul class="navbar-nav mb-md-3">
                               <li class="nav-item">
                                   <a class="nav-link"
-                                      href="<?php echo base_url() . 'approve_form/ttp_approve_form/show_approve_form_plant/' ?>">
+                                      href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?>">
                                       <i class="ni ni-active-40 text-red"></i>
                                       <span class="nav-link-text">Approve Form</span>
                                   </a>

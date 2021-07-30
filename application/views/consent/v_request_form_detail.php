@@ -179,7 +179,7 @@ $(document).ready(function() {
                     กรุณากรอกเหตุผล
                 </label>
 
-                <form method="POST" action="<?php echo site_url().'/request/request_form/reject_form/'.$arr_req->Form_ID; ?>">
+                <form method="POST" action="<?php echo site_url().'/request/Request_form/reject_form/'.$arr_req->Form_ID; ?>">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -243,7 +243,7 @@ $(document).ready(function() {
                 <h1> อนุมัติคำขอสำเร็จ </h1>
             </div>
             <div class="modal-footer">
-                <a href="<?php echo site_url() . 'request/request_form/update_request_form/'. $arr_req->Form_ID ; ?>">
+                <a href="<?php echo site_url() . 'request/Request_form/update_request_form/'. $arr_req->Form_ID ; ?>">
                     <button type="button" class="btn btn-success btn-lg float-right">Agree</button>
                 </a>
             </div>
