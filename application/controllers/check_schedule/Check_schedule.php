@@ -46,6 +46,7 @@ class Check_schedule extends MainController
         $this->load->model('M_ttp_check_schedule', 'ttp');
         $data['arr_schedule'] = $this->ttp->get_by_id($id)->result();
         $data['arr_emp'] = $this->ttp->get_employee($id)->result();
+        $data['arr_form'] = $this->ttp->get_form_list($id)->result();
         $this->output('consent/v_check_schedule', $data);
     }// function show_check_schedule()()
 

@@ -73,4 +73,26 @@ class M_ttp_check_schedule extends Da_ttp_check_schedule
         $query = $this->db->query($sql);
         return $query;
     }
+    /*
+	* get_form_list
+	* คืนค่าใบคำขอที่มี  $id(รหัสพนักงาน) ตรงกัน
+	* @input 	-
+	* @output 	ข้อมูลตารางใบคำขอ
+	* @author 	Phatchara  
+	* @Create   Date 18/7/2564   
+	* @author   Pontakon
+	* @Update   Date 26/7/2564
+	*/
+    public function get_form_list($id)
+    {
+        $sql = "SELECT * 
+        FROM ttps_database.requested_form AS req
+        INNER JOIN dbmc.employee AS emp
+        ON  req.Emp_ID = emp.Emp_ID 
+        INNER JOIN ttps_database.approval 
+        ON  req.Form_ID = approval.Form_ID
+        WHERE req.Emp_ID= $id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
 }

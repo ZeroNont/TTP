@@ -59,7 +59,7 @@
                     $today_date = date("Y-m-d");
                     $totalDate = ((strtotime($EndDate) - strtotime($StartDate)) / (60 * 60 * 24));
                     $ExpDate = (strtotime($EndDate) - strtotime($today_date)) / (60 * 60 * 24); ?>
-                <?php if ($EndDate > $today_date) { ?>
+                <?php if ($EndDate > $today_date  && $arr_form[$i]->Status != 5) { ?>
                 <tr>
                     <td class="text-center">
                         <?php echo ($i + 1); ?>
