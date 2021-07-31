@@ -228,11 +228,11 @@ LIMIT 1  ";
     // *@author Jirayut Saifah
     // *@Create Date 20/07/2021
 
-    public function get_sec()
+    public function get_sec($k)
     {
         $sql =
             "SELECT *
-            FROM dbmc.employee AS emp INNER JOIN dbmc.sectioncode AS sec ON emp.Sectioncode_ID = sec.Sectioncode ";
+            FROM dbmc.employee AS emp INNER JOIN dbmc.sectioncode AS sec ON emp.Sectioncode_ID = sec.Sectioncode WHERE Emp_ID=$k ";
         $query = $this->db->query($sql);
         return $query;
     }

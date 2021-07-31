@@ -52,8 +52,9 @@ DIV.text {
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-email">แผนก
                                         (Department)</label>
-                                    <input type="text" name="End_date" class="form-control" required
-                                        value="<?php if ($obj_form[0]->Emp_ID == $obj_dep[0]->Emp_ID) echo $obj_dep[0]->Department ?>"
+                                    <input type="text" name="End_date" class="form-control" required value="<?php if ($obj_form[0]->Emp_ID == $obj_dep[0]->Emp_ID) {
+                                                                                                                echo $obj_dep[0]->Department;
+                                                                                                            }  ?>"
                                         disabled>
                                 </div>
                             </div>
