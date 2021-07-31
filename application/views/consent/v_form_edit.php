@@ -149,7 +149,7 @@
                                     download>
                                     <button type="button" class="btn btn-danger" id="button_size">
                                         <i class="fas fa-file-alt text-dark"></i>
-                                        &nbsp;&nbsp;Plan
+                                        &nbsp;&nbsp;Layout
                                     </button>
                                 </a>
 
@@ -168,7 +168,7 @@
                                     download>
                                     <button type="button" class="btn btn-danger" id="button_size">
                                         <i class="fas fa-file-alt text-dark"></i>
-                                        &nbsp;&nbsp;Layout
+                                        &nbsp;&nbsp;Plan
                                     </button>
                                 </a>
 
