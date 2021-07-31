@@ -91,6 +91,8 @@ class Licence_input extends MainController
 	* @author 	Jirayut Saifah
 	* @Create Date 2564-7-16
 	*/
+
+
     function insert()
     {
         $date = date("Y-m-d");
