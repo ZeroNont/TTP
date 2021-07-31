@@ -87,7 +87,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger"
-                                            data-dismiss="modal">Cancle</button>
+                                            data-dismiss="modal">Cancel</button>
                                         <a
                                             href="<?php echo site_url() . 'Check_out_form/Check_out_form/check_out/' . $obj_form[$i]->Form_ID; ?>">
                                             <button type="button" class="btn btn-success">Confirm</button>
