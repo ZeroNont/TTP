@@ -62,15 +62,15 @@
                         <?php echo ($i + 1); ?> </td>
                     </td>
                     <td>
-                        <?php echo $em_form[$i]->Form_ID ?></td>
+                        <?php echo $em_form[$i]->req_form_id ?></td>
                     </td>
                     <td>
-                        <?php echo $em_form[$i]->Item ?></td>
+                        <?php echo $em_form[$i]->req_item ?></td>
                     </td>
                     <td>
                         <?php
-                            $startDate = date("d/m/Y", strtotime($em_form[$i]->Start_date));
-                            $endDate  = date("d/m/Y", strtotime($em_form[$i]->End_date)); ?>
+                            $startDate = date("d/m/Y", strtotime($em_form[$i]->req_start_date));
+                            $endDate  = date("d/m/Y", strtotime($em_form[$i]->req_end_date)); ?>
                         <?php echo $startDate . " - " . $endDate ?></td>
                     </td>
                     <td>
@@ -80,7 +80,7 @@
                     <td style='text-align: center;'>
                         <!-- ปุ่มดำเนินการ -->
                         <a
-                            href=" <?php echo site_url() . '/history/History/show_history_detail/' . $em_form[$i]->Form_ID; ?>">
+                            href=" <?php echo site_url() . '/history/History/show_history_detail/' . $em_form[$i]->req_form_id; ?>">
                             <button type="button" class="btn btn-primary btn-sm" style="background-color: info;">
                                 <i class="fas fa-search"></i>
                             </button>

@@ -112,7 +112,7 @@ $(document).ready(function() {
                             <label class="form-control-label" for="input-country">Plan
                                 (แผนการวาง)</label>
                             <br>
-                            <a href="<?php echo base_url() ?>assets/file/Plan/<?php echo $arr_req->Layout_location ?>"
+                            <a href="<?php echo base_url() ?>assets/file/Plan/<?php echo $arr_req->Plan_location ?>"
                                 download>
                                 <button type="button" class="btn btn-danger" id="button_size">
                                     <i class="fas fa-file-alt text-dark"></i>

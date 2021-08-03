@@ -29,7 +29,7 @@ class M_ttp_history extends Da_ttp_history
         $sql = "SELECT *
                 FROM ttps_database.requested_form AS requested
                 INNER JOIN dbmc.employee AS emp
-                ON requested.Emp_ID = emp.Emp_ID";
+                ON requested.req_emp_id = emp.Emp_ID";
 
         $query = $this->db->query($sql);
         return $query;
@@ -57,7 +57,7 @@ class M_ttp_history extends Da_ttp_history
     }
 
 /*
-	* get_history_em
+	* get_by_id
 	* คืนค่าใบคำขอที่ตรงกับ $id(เลขพนักงาน)
 	* @input 	เลขพนักงาน
 	* @output 	ข้อมูลตารางใบคำขอ
@@ -70,7 +70,7 @@ class M_ttp_history extends Da_ttp_history
     {
             $sql = "SELECT *
                     FROM ttps_database.requested_form AS requested
-                    WHERE requested.Form_ID = $id";
+                    WHERE requested.req_form_ID = $id";
             $query = $this->db->query($sql);
             return $query;
 
@@ -89,7 +89,7 @@ class M_ttp_history extends Da_ttp_history
     {
             $sql = "SELECT * 
                     FROM ttps_database.requested_form AS requested
-                    WHERE requested.Emp_ID = $id";
+                    WHERE requested.req_emp_id = $id";
             $query = $this->db->query($sql);
             return $query;
     }
@@ -108,8 +108,8 @@ class M_ttp_history extends Da_ttp_history
         $sql = "SELECT *
                 FROM ttps_database.approval AS app
                 INNER JOIN dbmc.employee AS emp
-                ON  app.Supervisor_ID = emp.Emp_ID
-                WHERE app.Form_ID = $id";
+                ON  app.app_supervisor_id = emp.Emp_ID
+                WHERE app.app_form_ID = $id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -128,8 +128,8 @@ class M_ttp_history extends Da_ttp_history
         $sql = "SELECT *
                 FROM ttps_database.approval AS app
                 INNER JOIN dbmc.employee AS emp
-                ON  app.HR_ID = emp.Emp_ID
-                WHERE app.Form_ID = $id";
+                ON  app.app_hr_ID = emp.Emp_ID
+                WHERE app.app_form_ID = $id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -148,8 +148,8 @@ class M_ttp_history extends Da_ttp_history
         $sql = "SELECT *
                 FROM ttps_database.approval AS app
                 INNER JOIN dbmc.employee AS emp
-                ON  app.Approve_plant_ID = emp.Emp_ID
-                WHERE app.Form_ID = $id";
+                ON  app.app_approve_plant_ID = emp.Emp_ID
+                WHERE app.app_form_ID = $id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -168,9 +168,9 @@ class M_ttp_history extends Da_ttp_history
         $sql = "SELECT * 
         FROM ttps_database.requested_form AS req
         INNER JOIN dbmc.employee AS emp
-        ON  req.Emp_ID = emp.Emp_ID 
+        ON  req.req_emp_id = emp.Emp_ID 
         INNER JOIN ttps_database.approval 
-        ON  req.Form_ID = approval.Form_ID ";
+        ON  req.req_form_id = approval.app_form_id ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -188,7 +188,7 @@ class M_ttp_history extends Da_ttp_history
     {
         $sql = "SELECT * 
                 FROM ttps_database.form_file
-                where $id = form_file.Form_ID ";
+                where $id = form_file.fil_form_id ";
         $query = $this->db->query($sql);
         return $query;
     }
