@@ -62,10 +62,10 @@
                         <?php echo ($i + 1); ?> </td>
                     </td>
                     <td>
-                        <?php echo $em_form[$i]->app_form_id ?></td>
+                        <?php echo $em_form[$i]->req_form_id ?></td>
                     </td>
                     <td>
-                        <?php echo $em_form[$i]->req_Item ?></td>
+                        <?php echo $em_form[$i]->req_item ?></td>
                     </td>
                     <td>
                         <?php

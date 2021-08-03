@@ -108,7 +108,7 @@ class M_ttp_history extends Da_ttp_history
         $sql = "SELECT *
                 FROM ttps_database.approval AS app
                 INNER JOIN dbmc.employee AS emp
-                ON  app.Supervisor_ID = emp.Emp_ID
+                ON  app.app_supervisor_id = emp.Emp_ID
                 WHERE app.app_form_ID = $id";
         $query = $this->db->query($sql);
         return $query;

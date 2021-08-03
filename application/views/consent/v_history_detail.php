@@ -64,7 +64,7 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-first-name">Item
                                         (สิ่งที่ต้องการวาง)</label>
-                                    <input type="text" name="Item" class="form-control" require value="<?php echo $arr_form->req_Item ?>" disabled>
+                                    <input type="text" name="Item" class="form-control" require value="<?php echo $arr_form->req_item ?>" disabled>
                                 </div>
                             </div>
                             <div class=" col-lg-12 ">
