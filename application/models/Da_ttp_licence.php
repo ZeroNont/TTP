@@ -14,9 +14,9 @@ class Da_ttp_licence extends ttps_model
     }
     public function insert_form()
     {
-        $sql = "INSERT INTO ttps_database.requested_form(Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count,Status) 
+        $sql = "INSERT INTO ttps_database.requested_form(req_emp_id,req_start_date,req_end_date,req_requested_date,req_item,req_tel,req_officer,req_reason,req_company_id,req_form_count,req_status) 
                 VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-        $this->db->query($sql, array($this->Emp_ID, $this->Start_date, $this->End_date, $this->Requested_date, $this->Item, $this->Tell, $this->Officer, $this->Reason, $this->Company_ID, $this->Form_count, $this->Status));
+        $this->db->query($sql, array($this->req_emp_id, $this->req_start_date, $this->req_end_date, $this->req_requested_date, $this->req_item, $this->req_tel, $this->req_officer, $this->req_reason, $this->req_company_id, $this->req_form_count, $this->req_status));
     }
     // *insert_form
     // *insert form in database
@@ -26,9 +26,9 @@ class Da_ttp_licence extends ttps_model
     // *@Create Date 17/07/2021
     public function insert_date()
     {
-        $sql = "INSERT INTO ttps_database.schedule(Form_ID,Start_date,End_date) 
+        $sql = "INSERT INTO ttps_database.schedule(sch_form_id,sch_start_date,sch_end_date) 
                 VALUES (?,?,?)";
-        $this->db->query($sql, array($this->Form_ID, $this->Start_date, $this->End_date));
+        $this->db->query($sql, array($this->sch_form_id, $this->sch_start_date, $this->sch_end_date));
     }
     // *insert_date
     // *insert date in database
@@ -39,9 +39,9 @@ class Da_ttp_licence extends ttps_model
     public function update_form($id)
     {
         $sql = " UPDATE ttps_database.requested_form
-        SET Emp_ID=?,Start_date=?,End_date=?,Requested_date=?,Item=?,Tell=?,Officer=?,Reason=?,Company_ID=?,Form_count=?
-        WHERE Form_ID=$id;";
-        $this->db->query($sql, array($this->Emp_ID, $this->Start_date, $this->End_date, $this->Requested_date, $this->Item, $this->Tell, $this->Officer, $this->Reason, $this->Company_ID, $this->Form_count));
+        SET req_emp_id=?,req_start_date=?,req_end_date=?,req_requested_date=?,req_item=?,req_tel=?,req_officer=?,req_reason=?,req_company_id=?,req_form_count=?
+        WHERE req_form_id=$id;";
+        $this->db->query($sql, array($this->req_emp_id, $this->req_start_date, $this->req_end_date, $this->req_requested_date, $this->req_item, $this->req_tel, $this->req_officer, $this->req_reason, $this->req_company_id, $this->req_form_count));
     }
     // *update_form
     // *update form to database
@@ -52,9 +52,9 @@ class Da_ttp_licence extends ttps_model
     public function update_date($id)
     {
         $sql = " UPDATE ttps_database.schedule
-        SET Start_date=?,End_date=?
-        WHERE Form_ID=$id;";
-        $this->db->query($sql, array($this->Start_date, $this->End_date));
+        SET sch_start_date=?,sch_end_date=?
+        WHERE sch_form_id=$id;";
+        $this->db->query($sql, array($this->sch_start_date, $this->sch_end_date));
     }
     // *update_form
     // *update form to database
@@ -64,9 +64,9 @@ class Da_ttp_licence extends ttps_model
     // *@Create Date 18/07/2021
     public function insert_approve()
     {
-        $sql = "INSERT INTO ttps_database.approval(Supervisor_ID,Approve_Plant_ID) 
+        $sql = "INSERT INTO ttps_database.approval(app_supervisor_id,app_approve_plant_id) 
                 VALUES (?,?)";
-        $this->db->query($sql, array($this->Supervisor_ID, $this->Approve_Plant_ID));
+        $this->db->query($sql, array($this->app_supervisor_id, $this->app_approve_plant_id));
     }
     // *insert_approve
     // *insert approval in database
@@ -78,9 +78,9 @@ class Da_ttp_licence extends ttps_model
     public function update_approve($id)
     {
         $sql = " UPDATE ttps_database.approval
-        SET Supervisor_ID=?,Approve_Plant_ID=?
-        WHERE Form_ID=$id;";
-        $this->db->query($sql, array($this->Supervisor_ID, $this->Approve_Plant_ID));
+        SET app_supervisor_id=?,app_approve_plant_id=?
+        WHERE app_form_id=$id;";
+        $this->db->query($sql, array($this->app_supervisor_id, $this->app_approve_plant_id));
     }
     // *update_approve
     // *update approve to database
@@ -91,10 +91,10 @@ class Da_ttp_licence extends ttps_model
 
     public function insert_file()
     {
-        $sql = "INSERT INTO ttps_database.form_file(Layout_location,Plan_location) 
+        $sql = "INSERT INTO ttps_database.form_file(fil_layout_location,fil_plan_location) 
                 VALUES (?,?)";
 
-        $this->db->query($sql, array($this->Layout_location, $this->Plan_location));
+        $this->db->query($sql, array($this->fil_layout_location, $this->fil_plan_location));
     }
     // *insert_file
     // *insert file in database
@@ -106,9 +106,9 @@ class Da_ttp_licence extends ttps_model
     public function update_file($id)
     {
         $sql = " UPDATE ttps_database.form_file
-        SET Layout_location=?,Plan_location=?
-        WHERE Form_ID=$id;";
-        $this->db->query($sql, array($this->Layout_location, $this->Plan_location));
+        SET fil_layout_location=?,fil_plan_location=?
+        WHERE fil_form_id=$id;";
+        $this->db->query($sql, array($this->fil_layout_location, $this->fil_plan_location));
     }
     // *update_file
     // *update file to database
@@ -119,10 +119,11 @@ class Da_ttp_licence extends ttps_model
 
     public function check_out()
     {
-        $sql = " UPDATE ttps_database.requested_form
-        SET Status=?
-        WHERE Form_ID=?;";
-        $this->db->query($sql, array($this->Status, $this->Form_ID));
+        $sql =
+            " UPDATE ttps_database.requested_form
+        SET req_status=?
+        WHERE req_form_id=?;";
+        $this->db->query($sql, array($this->req_status, $this->req_form_id));
     }
     // *check_out
     // *update status in database
@@ -133,17 +134,19 @@ class Da_ttp_licence extends ttps_model
 
     public function status_print()
     {
-        $sql = " UPDATE ttps_database.requested_form
-        SET print_status=?
-        WHERE Form_ID=?;";
-        $this->db->query($sql, array($this->print_status, $this->Form_ID));
+        $sql =
+            " UPDATE ttps_database.requested_form
+        SET req_print_status=?
+        WHERE req_form_id=?;";
+        $this->db->query($sql, array($this->req_print_status, $this->req_form_id));
     }
-    public function status_update()
+    public function status_update($k)
     {
-        $sql = " UPDATE ttps_database.requested_form
-        SET Status=?
-        WHERE Form_ID=?";
-        $this->db->query($sql, array($this->Status, $this->Form_ID));
+        $sql =
+            " UPDATE ttps_database.requested_form
+        SET req_status=1
+        WHERE req_form_id=$k ";
+        $this->db->query($sql, array($this->req_status, $this->req_form_id));
     }
     // *status_print
     // *update status in database

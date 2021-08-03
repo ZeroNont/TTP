@@ -21,7 +21,8 @@
             </div>
         </div>
         <div class="card-body ">
-            <form action="<?php echo site_url() . 'Licence_form/Licence_input/insert'; ?>" method="post" enctype="multipart/form-data" onSubmit="JavaScript:return fncSubmit();" name="licence">
+            <form action="<?php echo site_url() . 'Licence_form/Licence_input/insert'; ?>" method="post"
+                enctype="multipart/form-data" onSubmit="JavaScript:return fncSubmit();" name="licence">
 
                 <div class="pl-lg-4">
                     <div class="row">
@@ -30,7 +31,8 @@
                                 <label class="form-control-label" for="input-username">Start Date
                                     (วันที่เริ่มต้น)</label>
 
-                                <input type="date" name="Start_date" class="form-control" min="<?php echo date('Y-m-d'); ?>" required>
+                                <input type="date" name="Start_date" class="form-control"
+                                    min="<?php echo date('Y-m-d'); ?>" required>
 
                             </div>
                         </div>
@@ -82,7 +84,8 @@
                                 <label class="form-control-label" for="input-first-name">Item
                                     (สิ่งที่ต้องการวาง)</label>
                                 <input type="text" name="Item" class="form-control" minlength="1" required />
-                                <input type="text" name="Emp_ID" class="form-control" value="<?php echo $_SESSION['UsEmp_ID'] ?>" hidden>
+                                <input type="text" name="Emp_ID" class="form-control"
+                                    value="<?php echo $_SESSION['UsEmp_ID'] ?>" hidden>
                             </div>
                         </div>
                         <div class=" col-lg-12 ">
@@ -102,8 +105,11 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-address">Officer in Charge
                                     (ผู้รับผิดชอบ)</label>
-                                <input class="form-control" type="text" name="Officer" value="<?php echo $detail[0]->Empname_eng . ' ' . $detail[0]->Empsurname_eng ?>" disabled />
-                                <input class="form-control" type="text" name="Officer" value="<?php echo $detail[0]->Emp_ID ?>" hidden />
+                                <input class="form-control" type="text" name="Officer"
+                                    value="<?php echo $detail[0]->Empname_eng . ' ' . $detail[0]->Empsurname_eng ?>"
+                                    disabled />
+                                <input class="form-control" type="text" name="Officer"
+                                    value="<?php echo $detail[0]->Emp_ID ?>" hidden />
                             </div>
                         </div>
                         <div class=" col-lg-4">
@@ -117,8 +123,11 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">Company
                                     (บริษัท)</label>
-                                <input type="text" class="form-control" value="<?php echo $detail[0]->Company_name . ' (' . $detail[0]->Company_name_th . ')' ?>" disabled />
-                                <input type="text" class="form-control" name="Company_ID" value="<?php echo $detail[0]->Company_ID ?>" hidden />
+                                <input type="text" class="form-control"
+                                    value="<?php echo $detail[0]->Company_name . ' (' . $detail[0]->Company_name_th . ')' ?>"
+                                    disabled />
+                                <input type="text" class="form-control" name="Company_ID"
+                                    value="<?php echo $detail[0]->Company_ID ?>" hidden />
                             </div>
                         </div>
                     </div>
@@ -135,7 +144,8 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-country">Plan
                                     (แผนการวาง)</label>
-                                <input type="file" name="Plan" class="form-control" placeholder="Postal code" required />
+                                <input type="file" name="Plan" class="form-control" placeholder="Postal code"
+                                    required />
                             </div>
                         </div>
                     </div>
@@ -144,21 +154,22 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">Supervisor
                                     (หัวหน้างาน)</label><br>
-                                <select name="Supervisor" id="Supervisor" class="form-select" aria-label="Default select example" required>
+                                <select name="Supervisor" id="Supervisor" class="form-select"
+                                    aria-label="Default select example" required>
                                     <option value="0">-----------Please select-----------</option>
                                     <?php for ($i = 0; $i < count($obj_supervisor); $i++) { ?>
 
-                                        <?php
+                                    <?php
                                         if ($obj_supervisor[$i]->Position_Level > $obj_level[0]->Position_Level) { ?>
-                                            <option value="<?php echo $obj_supervisor[$i]->Emp_ID ?>">
-                                            <?php
+                                    <option value="<?php echo $obj_supervisor[$i]->Emp_ID ?>">
+                                        <?php
                                             // echo $obj_supervisor[$i]->Position_Level;
                                             // echo $obj_level[0]->Position_Level;
                                             echo $obj_supervisor[$i]->Empname_eng . " " . $obj_supervisor[$i]->Empsurname_eng;
                                         }
                                             ?>
-                                            </option>
-                                        <?php } ?>
+                                    </option>
+                                    <?php } ?>
 
                                 </select>
                             </div>
@@ -167,14 +178,15 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">Approve Plant
                                 </label><br>
-                                <select name="Approve_Plant" id="Approve_Plant" class="form-select" aria-label="Default select example" required>
+                                <select name="Approve_Plant" id="Approve_Plant" class="form-select"
+                                    aria-label="Default select example" required>
                                     <option value="0">-------------------------Please
                                         select-------------------------
                                     </option>
                                     <?php for ($i = 0; $i < count($obj_plan); $i++) { ?>
-                                        <option value="<?php echo $obj_plan[$i]->Emp_ID ?>">
-                                            <?php echo "Plan: " . $obj_plan[$i]->Plant_No . "  :  " . $obj_plan[$i]->Plant_name . " : " . $obj_plan[$i]->Empname_eng . " " . $obj_plan[$i]->Empsurname_eng ?>
-                                        </option>
+                                    <option value="<?php echo $obj_plan[$i]->pla_emp_id ?>">
+                                        <?php echo "Plan: " . $obj_plan[$i]->pla_plant_no . "  :  " . $obj_plan[$i]->pla_plant_name . " : " . $obj_plan[$i]->Empname_eng . " " . $obj_plan[$i]->Empsurname_eng ?>
+                                    </option>
 
                                     <?php } ?>
 

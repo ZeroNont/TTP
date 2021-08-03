@@ -44,13 +44,14 @@ class Print_form extends MainController
         $i = 1;
         $k = $_SESSION['UsEmp_ID'];
         $this->load->model('Da_ttp_licence', 'print');
-        $this->print->Form_ID = $id;
-        $this->print->print_status = $i;
+        $this->print->req_form_id = $id;
+        $this->print->req_print_status = $i;
         $this->print->status_print();
         $this->load->model('M_ttp_licence', 'ttp');
         $data['obj_his'] = $this->ttp->get_history_by_id($id)->result();
         $data['obj_form'] = $this->ttp->get_form_by_id($id)->result();
         $data['obj_dep'] = $this->ttp->get_sec($k)->result();
+        $data['obj_name'] = $this->ttp->get_name($k)->result();
         $data['obj_app'] = $this->ttp->get_approve()->result();
         $data['obj_hr'] = $this->ttp->get_HR()->result();
         $data['obj_sup'] = $this->ttp->get_Supervisor_ID()->result();

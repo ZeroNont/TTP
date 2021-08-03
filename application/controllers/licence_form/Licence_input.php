@@ -2,7 +2,7 @@
 /*
 * Licence_input
 * Form Management
-* @input  Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count   
+* @input  Emp_ID,req_start_date,End_date,Requested_date,req_item,req_tel,req_officer,req_reason,req_company_id,req_form_count   
 * @output -
 * @author Jirayut Saifah
 * @Create Date 2564-7-16
@@ -88,7 +88,7 @@ class Licence_input extends MainController
     /*
 	* insert
 	* insert form data into model
-	* @input  Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count
+	* @input  Emp_ID,req_start_date,End_date,Requested_date,req_item,req_tel,req_officer,req_reason,req_company_id,req_form_count
 	* @output 
 	* @author 	Jirayut Saifah
 	* @Create Date 2564-7-16
@@ -107,35 +107,35 @@ class Licence_input extends MainController
         $tmp_Plan =  $_FILES['Plan']['tmp_name'];
 
         $this->load->model('Da_ttp_licence', 'ttp');
-        $this->ttp->Emp_ID = $id;
+        $this->ttp->req_emp_id = $id;
         // $i = $this->input->post('Emp_ID');
-        $this->ttp->Item = $this->input->post('Item');
-        $this->ttp->Start_date = $this->input->post('Start_date');
+        $this->ttp->req_item = $this->input->post('Item');
+        $this->ttp->req_start_date = $this->input->post('Start_date');
 
-        $this->ttp->Requested_date = $date;
-        $this->ttp->Reason = $this->input->post('Reason');
-        $this->ttp->Officer = $this->input->post('Officer');
-        $this->ttp->Tell = $this->input->post('Tell');
-        $this->ttp->Supervisor_ID = $this->input->post('Supervisor');
-        $this->ttp->Company_ID = $this->input->post('Company_ID');
-        $this->ttp->Approve_Plant_ID = $this->input->post('Approve_Plant');
-        $this->ttp->Form_count = $j;
-        $this->ttp->Status = $status;
+        $this->ttp->req_requested_date = $date;
+        $this->ttp->req_reason = $this->input->post('Reason');
+        $this->ttp->req_officer = $this->input->post('Officer');
+        $this->ttp->req_tel = $this->input->post('Tell');
+        $this->ttp->app_supervisor_id = $this->input->post('Supervisor');
+        $this->ttp->req_company_id = $this->input->post('Company_ID');
+        $this->ttp->app_approve_plant_id = $this->input->post('Approve_Plant');
+        $this->ttp->req_form_count = $j;
+        $this->ttp->req_status = $status;
         $set_date =  $this->input->post('Start_date');
         $add_date =  $this->input->post('End_date');
         //บวกวันที่ 
         $date1 = str_replace('-', '/', $set_date);
         $Update = date('Y-m-d', strtotime($date1 . "+" . $add_date . " days"));
-        $this->ttp->End_date = $Update;
+        $this->ttp->req_end_date = $Update;
 
         $this->ttp->insert_form();
         $this->ttp->insert_approve();
 
 
         move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
-        $this->ttp->Layout_location = $Layout_name;
+        $this->ttp->fil_layout_location = $Layout_name;
         move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
-        $this->ttp->Plan_location = $Plan_name;
+        $this->ttp->fil_plan_location = $Plan_name;
         $this->ttp->insert_file();
 
         // echo  $id;
@@ -143,10 +143,10 @@ class Licence_input extends MainController
         $data['obj_status'] = $this->get->get_status($id)->result();
         // // print_r($_SESSION['Emp_ID']);
         $data['form'] = $this->get->get_form_id()->result();
-        $form_id = $data['form'][0]->Form_ID;
-        $this->ttp->Form_ID = $data['form'][0]->Form_ID;
-        $this->ttp->End_date = $data['form'][0]->End_date;
-        $this->ttp->Start_date = $data['form'][0]->Start_date;
+        $form_id = $data['form'][0]->req_form_id;
+        $this->ttp->sch_form_id = $data['form'][0]->req_form_id;
+        $this->ttp->sch_end_date = $data['form'][0]->req_end_date;
+        $this->ttp->sch_start_date = $data['form'][0]->req_start_date;
         $this->ttp->insert_date($form_id);
         $this->output('consent/v_check_status', $data);
         // $this->output('consent/v_check_status', $i);
@@ -155,7 +155,7 @@ class Licence_input extends MainController
     /*
 	* edit
 	* update form data into model 
-	* @input  Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count
+	* @input  Emp_ID,req_start_date,End_date,Requested_date,req_item,req_tel,req_officer,req_reason,req_company_id,req_form_count
 	* @output 
 	* @author 	Jirayut Saifah
 	* @Create Date 2564-7-22
@@ -172,38 +172,40 @@ class Licence_input extends MainController
         $tmp_Plan =  $_FILES['Plan']['tmp_name'];
         $num = 1;
         $this->load->model('Da_ttp_licence', 'ttp');
-        $this->ttp->Emp_ID = $id;
+        $this->ttp->req_emp_id = $id;
         $j =   $this->input->post('count');
         $k  = $this->input->post('form');
         // $i = $this->input->post('Emp_ID');
-        $this->ttp->Item = $this->input->post('Item');
-        $this->ttp->Start_date = $this->input->post('Start_date');
-
-        $this->ttp->Requested_date = $date;
-        $this->ttp->Reason = $this->input->post('Reason');
-        $this->ttp->Officer = $this->input->post('Officer');
-        $this->ttp->Tell = $this->input->post('Tell');
-        $this->ttp->Supervisor_ID = $this->input->post('Supervisor');
-        $this->ttp->Company_ID = $this->input->post('Company_ID');
-        $this->ttp->Approve_Plant_ID = $this->input->post('Approve_Plant');
-        $this->ttp->Form_count =   $j + 1;
+        $this->ttp->req_item = $this->input->post('Item');
+        $this->ttp->req_start_date = $this->input->post('Start_date');
+        $this->ttp->sch_start_date = $this->input->post('Start_date');
+        // echo    $this->input->post('form');
+        $this->ttp->req_requested_date = $date;
+        $this->ttp->req_reason = $this->input->post('Reason');
+        $this->ttp->req_officer = $_SESSION['UsEmp_ID'];
+        $this->ttp->req_tel = $this->input->post('Tell');
+        $this->ttp->app_supervisor_id = $this->input->post('Supervisor');
+        $this->ttp->req_company_id = $this->input->post('Company_ID');
+        $this->ttp->app_approve_plant_id = $this->input->post('Approve_Plant');
+        $this->ttp->req_form_count =   $j + 1;
         $set_date =  $this->input->post('Start_date');
         $add_date =  $this->input->post('End_date');
         //บวกวันที่ 
         $date1 = str_replace('-', '/', $set_date);
         $Update = date('Y-m-d', strtotime($date1 . "+" . $add_date . " days"));
-        $this->ttp->End_date = $Update;
-        $this->ttp->Status = $num;
-        $this->ttp->Form_ID = $this->input->post('form');
+        $this->ttp->req_end_date = $Update;
+        $this->ttp->sch_end_date = $Update;
+        $this->ttp->req_status = 1;
+        $this->ttp->req_form_id = $this->input->post('form');
         $this->ttp->update_date($k);
         $this->ttp->status_update($k);
         $this->ttp->update_form($k);
         $this->ttp->update_approve($k);
         move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
-        $this->ttp->Layout_location = $Layout_name;
+        $this->ttp->fil_layout_location = $Layout_name;
         move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
-        $this->ttp->Plan_location = $Plan_name;
-        $this->ttp->Form_ID = $this->input->post('from');
+        $this->ttp->fil_plan_location = $Plan_name;
+        $this->ttp->fil_form_id = $this->input->post('from');
         $this->ttp->update_file($k);
 
         // echo  $id;
