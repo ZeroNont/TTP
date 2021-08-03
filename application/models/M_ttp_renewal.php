@@ -31,7 +31,7 @@ class M_ttp_renewal extends Da_ttp_renewal
     {
         $sql = "SELECT *
                 FROM ttps_database.requested_form As emp
-                WHERE emp.Emp_ID = $id AND emp.Form_count <= 3";
+                WHERE emp.req_emp_id = $id AND emp.req_form_count <= 3";
 
         $query = $this->db->query($sql);
         return $query;
@@ -117,7 +117,7 @@ class M_ttp_renewal extends Da_ttp_renewal
         $sql =
             "SELECT *
             FROM ttps_database.plant AS pla INNER JOIN dbmc.employee AS emp
-            ON pla.Emp_ID = emp.Emp_ID ";
+            ON pla.pla_emp_id = emp.Emp_ID ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -135,7 +135,7 @@ class M_ttp_renewal extends Da_ttp_renewal
         $sql =
             "SELECT *
             FROM ttps_database.requested_form As stat 
-            WHERE CURDATE() <= End_date  AND stat.Status = 4 
+            WHERE CURDATE() <= req_end_date  AND stat.req_status = 4 
            
             LIMIT 0,30";
         $query = $this->db->query($sql);
@@ -156,7 +156,7 @@ class M_ttp_renewal extends Da_ttp_renewal
             "SELECT * 
                 FROM  ttps_database.requested_form
                 
-                WHERE  Form_ID=$Form_ID ";
+                WHERE  req_form_id=$Form_ID ";
         $query = $this->db->query($sql);
         return $query;
     }

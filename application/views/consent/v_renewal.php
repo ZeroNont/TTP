@@ -28,7 +28,7 @@ table {
                     <th>Item</th>
                     <th>Office in charge</th>
                     <th>Schedule</th>
-                    <th>Status</th>
+                    <th>req_status</th>
                     <th>Number of times</th>
                     <th>Submit request</th>
 
@@ -39,35 +39,35 @@ table {
                 <?php
                 $No = 1;
                 for ($i = 0; $i < count($arr_renew); $i++) { ?>
-                <?php if ($arr_renew[$i]->Status == 4); { ?>
+                <?php if ($arr_renew[$i]->req_status == 4); { ?>
                 <tr>
 
                     <td style='text-align:center'>
-                        <?php if ($arr_renew[$i]->Status == 4) {
+                        <?php if ($arr_renew[$i]->req_status == 4) {
                                     echo $No++;
                                 } ?></td>
 
-                    <td><?php if ($arr_renew[$i]->Status == 4)
-                                    echo $arr_renew[$i]->HR_No;
+                    <td><?php if ($arr_renew[$i]->req_status == 4)
+                                    echo $arr_renew[$i]->req_hr_no;
                                 ?></td>
 
-                    <td><?php if ($arr_renew[$i]->Status == 4) {
-                                    echo $arr_renew[$i]->Item;
+                    <td><?php if ($arr_renew[$i]->req_status == 4) {
+                                    echo $arr_renew[$i]->req_item;
                                 } ?></td>
 
-                    <td><?php if ($arr_renew[$i]->Status == 4) {
-                                    echo $arr_renew[$i]->Officer;
+                    <td><?php if ($arr_renew[$i]->req_status == 4) {
+                                    echo $arr_renew[$i]->req_officer;
                                 } ?></td>
 
-                    <td><?php if ($arr_renew[$i]->Status == 4) {
-                                    echo date("d/m/Y", strtotime($arr_renew[$i]->Start_date));
+                    <td><?php if ($arr_renew[$i]->req_status == 4) {
+                                    echo date("d/m/Y", strtotime($arr_renew[$i]->req_start_date));
                                     echo ' - ';
-                                    echo date("d/m/Y", strtotime($arr_renew[$i]->End_date));
+                                    echo date("d/m/Y", strtotime($arr_renew[$i]->req_end_date));
                                 }
                                 ?></td>
 
-                    <td><?php if ($arr_renew[$i]->Status == 4) {
-                                    if ($arr_renew[$i]->Status == 4) {
+                    <td><?php if ($arr_renew[$i]->req_status == 4) {
+                                    if ($arr_renew[$i]->req_status == 4) {
                                         echo "อนุมัติ";
                                     } else {
                                         echo " ";
@@ -76,8 +76,8 @@ table {
                                     echo " ";
                                 } ?></td>
 
-                    <td><?php if ($arr_renew[$i]->Status == 4) {
-                                    echo $arr_renew[$i]->Form_count . "/3";
+                    <td><?php if ($arr_renew[$i]->req_status == 4) {
+                                    echo $arr_renew[$i]->req_form_count . "/3";
                                 }
                                 ?></td>
 
@@ -85,9 +85,9 @@ table {
 
                     <!--ปุ่มขอต่ออายุ-->
 
-                    <td> <?php if ($arr_renew[$i]->Status == 4) { ?>
+                    <td> <?php if ($arr_renew[$i]->req_status == 4) { ?>
                         <a href='<?php echo site_url() . 'Renewal/Renewal/show_reform/'
-                                                    . $arr_renew[$i]->Form_ID ?>'>
+                                                    . $arr_renew[$i]->req_form_id ?>'>
 
                             <button> <i class="fas fa-envelope"></i></button> </a><?php } ?>
                     </td>
