@@ -56,15 +56,15 @@ class M_ttp_report extends Da_ttp_report
         $sql = "SELECT * 
                 FROM ttps_database.requested_form AS req
                 INNER JOIN ttps_database.approval AS app
-                ON app.Form_ID = req.Form_ID
+                ON app.app_form_id = req.req_form_id
                 INNER JOIN ttps_database.plant AS pla
-                ON pla.Emp_ID = app.Approve_plant_ID
+                ON pla.pla_emp_id = app.app_approve_plant_id
                 INNER JOIN dbmc.company AS com
-                ON com.Company_ID = req.Company_ID
+                ON com.Company_ID = req.req_company_id
                 INNER JOIN dbmc.employee AS emp
-                ON emp.Emp_ID = req.Emp_ID
-                WHERE req.Form_ID = ?";
-        $query = $this->db->query($sql, array($this->Form_ID));
+                ON emp.Emp_ID = req.req_emp_id
+                WHERE req.req_form_id = ?";
+        $query = $this->db->query($sql, array($this->req_form_id));
         return $query;
     }
 
@@ -81,13 +81,13 @@ class M_ttp_report extends Da_ttp_report
         $sql = "SELECT * 
                 FROM ttps_database.requested_form AS req
                 INNER JOIN ttps_database.approval AS app
-                ON app.Form_ID = req.Form_ID
+                ON app.app_form_id = req.req_form_id
                 INNER JOIN ttps_database.plant AS pla
-                ON pla.Emp_ID = app.Approve_plant_ID
+                ON pla.pla_emp_id = app.app_approve_plant_id
                 INNER JOIN dbmc.company AS com
-                ON com.Company_ID = req.Company_ID
+                ON com.Company_ID = req.req_company_id
                 INNER JOIN dbmc.employee AS emp
-                ON emp.Emp_ID = req.Emp_ID";
+                ON emp.Emp_ID = req.req_emp_id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -105,10 +105,10 @@ class M_ttp_report extends Da_ttp_report
         $sql = "SELECT * 
                 FROM ttps_database.requested_form AS req
                 INNER JOIN dbmc.employee AS emp
-                ON emp.Emp_ID = req.Emp_ID
+                ON emp.Emp_ID = req.req_emp_id
                 INNER JOIN dbmc.sectioncode AS sec
                 ON sec.Sectioncode = emp.Sectioncode_ID
-                WHERE req.Requested_date 
+                WHERE req.req_requested_date 
                 BETWEEN '$Start_date' AND '$End_date'
                 ORDER BY sec.Sectioncode";
         $query = $this->db->query($sql);

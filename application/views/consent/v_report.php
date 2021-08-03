@@ -312,7 +312,7 @@
                 // console.log(status);
 
                 data_charts.forEach((row, index) => {
-                    console.log(row.Form_ID);
+                    console.log(row.req_form_id);
                     if (index == 0) {
                         label.push(row.Department);
                         Dep.push(row.dep_id);
@@ -322,7 +322,7 @@
                         Dep.push(row.dep_id);
                         check = row.Department;
                     }
-                    if (row.Status >= '4') {
+                    if (row.req_status >= '4') {
                         approve++;
                     } else {
                         pending++;
@@ -377,20 +377,20 @@
 
             data_row += '<tr>';
             data_row += '<td>' + (index + 1) + '</td>';
-            if (row.HR_No == '') {
+            if (row.req_hr_no == '') {
                 data_row += '<td>-</td>';
             } else {
-                data_row += '<td>' + row.HR_No + '</td>';
+                data_row += '<td>' + row.req_hr_no + '</td>';
             }
-            data_row += '<td>' + row.Officer + '</td>';
-            if (row.Status == '4') {
+            data_row += '<td>' + row.Empname_eng +''+ row.Empsurname_eng + '</td>';
+            if (row.req_status == '4') {
                 data_row += '<td>ยังอยู่ในคลัง</td>';
-            } else if (row.Status > '4') {
+            } else if (row.req_status > '4') {
                 data_row += '<td>สิ้นสุดการวาง</td>';
-            } else if (row.Status < '4') {
+            } else if (row.req_status < '4') {
                 data_row += '<td>รอการอนุมัติ</td>';
             }
-            data_row += '<td><a href="<?php echo site_url() ?>Report/Report/show_report_detail?Form_ID= ' + row.Form_ID + ' ">'
+            data_row += '<td><a href="<?php echo site_url() ?>Report/Report/show_report_detail?req_form_id= ' + row.req_form_id + ' ">'
             data_row += '<button type="button" class="btn btn-primary btn-sm" style="background-color: info;">'
             data_row += '<i class="fas fa-search"></i></button></a></td>'
             data_row += '</tr>';
