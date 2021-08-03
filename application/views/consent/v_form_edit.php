@@ -33,7 +33,7 @@
 
                                 <input type="date" name="Start_date" class="form-control"
                                     min="<?php echo date('Y-m-d'); ?>" require
-                                    value="<?php echo $obj_form[0]->Start_date ?>">
+                                    value="<?php echo $obj_form[0]->req_start_date ?>">
 
                             </div>
                         </div>
@@ -85,11 +85,11 @@
                                 <label class="form-control-label" for="input-first-name">Item
                                     (สิ่งที่ต้องการวาง)</label>
                                 <input type="text" name="Item" class="form-control" require
-                                    value="<?php echo $obj_form[0]->Item ?>">
+                                    value="<?php echo $obj_form[0]->req_item ?>">
                                 <input type="text" name="form" class="form-control" require
-                                    value="<?php echo $obj_form[0]->Form_ID ?>" hidden>
+                                    value="<?php echo $obj_form[0]->req_form_id ?>" hidden>
                                 <input type="text" name="count" class="form-control" require
-                                    value="<?php echo $obj_form[0]->Form_count ?>" hidden>
+                                    value="<?php echo $obj_form[0]->req_form_count ?>" hidden>
                             </div>
                         </div>
                         <div class=" col-lg-12 ">
@@ -97,7 +97,7 @@
                                 <label class="form-control-label" for="input-last-name">Reason
                                     (เหตุผลในการวาง)</label>
                                 <input type="text" name="Reason" class="form-control" require
-                                    value="<?php echo $obj_form[0]->Reason ?>">
+                                    value="<?php echo $obj_form[0]->req_reason ?>">
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                                 <label class="form-control-label" for="input-city">Tel No.
                                     (เบอร์โทรศัพท์)</label>
                                 <input type="text" class="form-control" name="Tell" require
-                                    value="<?php echo $obj_form[0]->Tell ?>">
+                                    value="<?php echo $obj_form[0]->req_tel ?>">
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -144,8 +144,8 @@
                                 <label class="form-control-label" for="input-country">Layout
                                     (รูปแบบการวาง)</label>
                                 <input type="file" name="Layout" class="form-control"
-                                    value="<?php echo $obj_file[0]->Layout_location ?>">
-                                <a href="<?php echo base_url() ?>assets/file/layout/<?php echo $obj_file[0]->Layout_location ?>"
+                                    value="<?php echo $obj_file[0]->fil_layout_location ?>">
+                                <a href="<?php echo base_url() ?>assets/file/layout/<?php echo $obj_file[0]->fil_layout_location ?>"
                                     download>
                                     <button type="button" class="btn btn-danger" id="button_size">
                                         <i class="fas fa-file-alt text-dark"></i>
@@ -163,8 +163,8 @@
                                 <label class="form-control-label" for="input-country">Plan
                                     (แผนการวาง)</label>
                                 <input type="file" name="Plan" class="form-control"
-                                    value="<?php echo $obj_file[0]->Plan_location ?>">
-                                <a href="<?php echo base_url() ?>assets/file/plan/<?php echo $obj_file[0]->Plan_location ?>"
+                                    value="<?php echo $obj_file[0]->fil_plan_location ?>">
+                                <a href="<?php echo base_url() ?>assets/file/plan/<?php echo $obj_file[0]->fil_plan_location ?>"
                                     download>
                                     <button type="button" class="btn btn-danger" id="button_size">
                                         <i class="fas fa-file-alt text-dark"></i>
@@ -208,13 +208,13 @@
                                 <select name="Approve_Plant" id="Approve_Plant" class="form-select"
                                     aria-label="Default select example">
                                     <option value="<?php echo $obj_app[0]->Emp_ID ?>">
-                                        <?php echo "Plan: " . $obj_app[0]->Plant_No . "  :  " . $obj_app[0]->Plant_name . " : " . $obj_app[0]->Empname_eng . " " . $obj_app[0]->Empsurname_eng ?>
+                                        <?php echo "Plan: " . $obj_app[0]->pla_plant_no . "  :  " . $obj_app[0]->pla_plant_name . " : " . $obj_app[0]->Empname_eng . " " . $obj_app[0]->Empsurname_eng ?>
                                     </option>
                                     <?php for ($i = 0; $i < count($obj_plan); $i++) {
-                                        if ($obj_plan[$i]->Plant_ID != $obj_app[0]->Plant_ID) {
+                                        if ($obj_plan[$i]->pla_plant_id != $obj_app[0]->pla_plant_id) {
                                     ?>
                                     <option value="<?php echo $obj_plan[$i]->Emp_ID ?>">
-                                        <?php echo "Plan: " . $obj_plan[$i]->Plant_No . "  :  " . $obj_plan[$i]->Plant_name . " : " . $obj_plan[$i]->Empname_eng . " " . $obj_plan[$i]->Empsurname_eng ?>
+                                        <?php echo "Plan: " . $obj_plan[$i]->pla_plant_no . "  :  " . $obj_plan[$i]->pla_plant_name . " : " . $obj_plan[$i]->Empname_eng . " " . $obj_plan[$i]->Empsurname_eng ?>
                                     </option>
 
                                     <?php }

@@ -51,20 +51,20 @@
                         <?php echo $i + 1 ?>
                     </td>
                     <td>
-                        <?php echo $obj_form[$i]->HR_No ?>
+                        <?php echo $obj_form[$i]->req_hr_no ?>
                     </td>
                     <td>
-                        <?php echo $obj_form[$i]->Item ?>
+                        <?php echo $obj_form[$i]->req_item ?>
                     </td>
                     <td>
                         <?php
-                            $Start_date = $obj_form[$i]->Start_date;
-                            $End_date = $obj_form[$i]->End_date;
+                            $Start_date = $obj_form[$i]->req_start_date;
+                            $End_date = $obj_form[$i]->req_end_date;
                             $newDate = date("d-m-Y", strtotime($Start_date)) . ' - ' . date("d-m-Y", strtotime($End_date));
                             echo $newDate  ?>
                     </td>
                     <td>
-                        <?php echo $obj_form[$i]->Officer ?>
+                        <?php echo $obj_form[$i]->req_officer ?>
                     </td>
                     <td>
                         <!-- Button trigger modal -->
@@ -89,7 +89,7 @@
                                         <button type="button" class="btn btn-danger"
                                             data-dismiss="modal">Cancel</button>
                                         <a
-                                            href="<?php echo site_url() . 'Check_out_form/Check_out_form/check_out/' . $obj_form[$i]->Form_ID; ?>">
+                                            href="<?php echo site_url() . 'Check_out_form/Check_out_form/check_out/' . $obj_form[$i]->req_form_id; ?>">
                                             <button type="button" class="btn btn-success">Confirm</button>
                                         </a>
 

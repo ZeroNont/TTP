@@ -24,9 +24,9 @@ class Da_ttp_plant_list extends ttps_model
     }
     public function insert()
     {
-        $sql = "INSERT INTO ttps_database.plant(Emp_ID,Plant_name,Plant_No) 
+        $sql = "INSERT INTO ttps_database.plant(pla_emp_id,pla_plant_name,pla_plant_no) 
                 VALUES (?,?,?)";
-        $this->db->query($sql, array($this->Emp_ID, $this->Plant_name, $this->Plant_No));
+        $this->db->query($sql, array($this->pla_emp_id, $this->pla_plant_name, $this->pla_plant_no));
     }
     // *insert
     // *insert approve plant in database
@@ -36,10 +36,11 @@ class Da_ttp_plant_list extends ttps_model
     // *@Create Date 20/07/2021
     public function update()
     {
-        $sql = "UPDATE ttps_database.plant 
-        SET Emp_ID=?,Plant_name=?,Plant_No=?
-        WHERE Plant_ID=?;";
-        $this->db->query($sql, array($this->Emp_ID, $this->Plant_name, $this->Plant_No, $this->Plant_ID));
+        $sql =
+            "UPDATE ttps_database.plant 
+        SET pla_emp_id=?,pla_plant_name=?,pla_plant_no=?
+        WHERE pla_plant_id=?;";
+        $this->db->query($sql, array($this->pla_emp_id, $this->pla_plant_name, $this->pla_plant_no, $this->pla_plant_id));
     }
     // *update
     // *update approve plant in database

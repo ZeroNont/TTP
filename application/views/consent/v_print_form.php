@@ -44,7 +44,7 @@ DIV.text {
                                         (Running No.)</label>
 
                                     <input type="text" name="Start_date" class="form-control" required
-                                        value="<?php echo $obj_form[0]->HR_No ?>" disabled>
+                                        value="<?php echo $obj_form[0]->req_hr_no ?>" disabled>
 
                                 </div>
                             </div>
@@ -52,7 +52,7 @@ DIV.text {
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-email">แผนก
                                         (Department)</label>
-                                    <input type="text" name="End_date" class="form-control" required value="<?php if ($obj_form[0]->Emp_ID == $obj_dep[0]->Emp_ID) {
+                                    <input type="text" name="End_date" class="form-control" required value="<?php if ($obj_form[0]->req_emp_id == $obj_dep[0]->Emp_ID) {
                                                                                                                 echo $obj_dep[0]->Department;
                                                                                                             }  ?>"
                                         disabled>
@@ -65,7 +65,8 @@ DIV.text {
                                     <label class="form-control-label" for="input-first-name">ผู้รับผิดชอบ
                                         (Responsibility)</label>
                                     <input type="text" name="Item" class="form-control" require
-                                        value="<?php echo $obj_form[0]->Officer ?>" disabled>
+                                        value="<?php echo $obj_name[0]->Empname_eng . '' . $obj_name[0]->Empsurname_eng ?>"
+                                        disabled>
                                 </div>
                             </div>
                             <div class=" col-lg-6 ">
@@ -73,7 +74,7 @@ DIV.text {
                                     <label class="form-control-label" for="input-last-name">เบอร์ติดต่อ
                                         (Ext./Mobile Phone)</label>
                                     <input type="text" name="Reason" class="form-control" require
-                                        value="<?php echo $obj_form[0]->Tell ?>" disabled>
+                                        value="<?php echo $obj_form[0]->req_tel ?>" disabled>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +89,7 @@ DIV.text {
                                     <label class="form-control-label" for="input-address">ชื่อ อุปกรณ์
                                         (Equipment name)</label>
                                     <input class="form-control" type="text" name="Officer" require
-                                        value="<?php echo $obj_form[0]->Item ?>" disabled>
+                                        value="<?php echo $obj_form[0]->req_item ?>" disabled>
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -96,7 +97,7 @@ DIV.text {
                                     <label class="form-control-label" for="input-city">เหตุผลในการวาง
                                         (The reason in putting)</label>
                                     <input type="text" class="form-control" name="Tell" require
-                                        value="<?php echo $obj_form[0]->Reason ?>" disabled>
+                                        value="<?php echo $obj_form[0]->req_reason ?>" disabled>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +108,7 @@ DIV.text {
                                         (Starting Date)</label>
 
                                     <input type="date" name="Start_date" class="form-control" required
-                                        value="<?php echo $obj_form[0]->Start_date ?>" disabled>
+                                        value="<?php echo $obj_form[0]->req_start_date ?>" disabled>
 
 
                                 </div>
@@ -117,7 +118,7 @@ DIV.text {
                                     <label class="form-control-label" for="input-email">วันที่สิ้นสุด
                                         (End Date)</label>
                                     <input type="date" name="End_date" class="form-control" required
-                                        value="<?php echo $obj_form[0]->End_date ?>" disabled>
+                                        value="<?php echo $obj_form[0]->req_end_date ?>" disabled>
                                 </div>
                             </div>
 
@@ -135,7 +136,7 @@ DIV.text {
                             </tr>
                             <tr>
                                 <td><input type="text" class="form-control"
-                                        value="<?php echo $obj_form[0]->Form_count ?>">
+                                        value="<?php echo $obj_form[0]->req_form_count ?>">
                                 </td>
                                 <td><input type="text" class="form-control"
                                         value="<?php echo $obj_pre[0]->Empname_eng . '  ' . $obj_pre[0]->Empsurname_eng ?>">
@@ -176,14 +177,14 @@ DIV.text {
                     <?php for ($i = 0; $i < count($obj_his); $i++) { ?>
                     <tr>
                         <th scope="row"><?php echo $i + 1 ?></th>
-                        <td><?php echo $obj_his[$i]->HR_No ?></td>
+                        <td><?php echo $obj_his[$i]->req_hr_no ?></td>
                         <td><?php
 
-                                $newDate = date("d-m-Y", strtotime($obj_his[$i]->Start_date));
+                                $newDate = date("d-m-Y", strtotime($obj_his[$i]->req_start_date));
                                 echo $newDate;
                                 ?></td>
                         <td><?php
-                                $newDate = date("d-m-Y", strtotime($obj_his[$i]->End_date));
+                                $newDate = date("d-m-Y", strtotime($obj_his[$i]->req_end_date));
                                 echo $newDate;
                                 ?></td>
                     </tr>

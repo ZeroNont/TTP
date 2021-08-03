@@ -127,10 +127,10 @@ function getEmp_edit(i) {
                         <?php echo $i + 1 ?>
                     </td>
                     <td>
-                        <?php echo $obj_plan[$i]->Plant_No ?>
+                        <?php echo $obj_plan[$i]->pla_plant_no ?>
                     </td>
                     <td>
-                        <?php echo $obj_plan[$i]->Plant_name ?>
+                        <?php echo $obj_plan[$i]->pla_plant_name ?>
                     </td>
                     <td>
                         <?php echo $obj_plan[$i]->Empname_eng . '            ' . $obj_plan[$i]->Empsurname_eng ?>
@@ -166,9 +166,9 @@ function getEmp_edit(i) {
                                                 <label for="exampleInputEmail1" class="form-label">Employee
                                                     ID</label>
                                                 <input type="text" class="form-control"
-                                                    value="<?php echo $obj_plan[$i]->Emp_ID ?>"
+                                                    value="<?php echo $obj_plan[$i]->pla_emp_id ?>"
                                                     id="Emp_id<?php echo $i; ?>"
-                                                    onkeyup="getEmp_edit(<?php echo $i; ?>)" name="Emp_ID">
+                                                    onkeyup="getEmp_edit(<?php echo $i; ?>)" name="Emp_ID" required>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputPassword1" class="form-label">Name</label>
@@ -180,17 +180,18 @@ function getEmp_edit(i) {
                                                 <label for="exampleInputPassword1" class="form-label">Plant
                                                     No.</label>
                                                 <input type="text" class="form-control"
-                                                    value="<?php echo $obj_plan[$i]->Plant_No ?>" name="Plant_No">
+                                                    value="<?php echo $obj_plan[$i]->pla_plant_no ?>" name="Plant_No"
+                                                    required>
                                                 <input type="text" class="form-control"
-                                                    value="<?php echo $obj_plan[$i]->Plant_ID ?>" name="Plant_ID"
+                                                    value="<?php echo $obj_plan[$i]->pla_plant_id ?>" name="Plant_ID"
                                                     hidden>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputPassword1" class="form-label">Plant
                                                     Name</label>
                                                 <input type="text" class="form-control"
-                                                    value="<?php echo $obj_plan[$i]->Plant_name ?>" id="province_auto"
-                                                    name="Plant_name">
+                                                    value="<?php echo $obj_plan[$i]->pla_plant_name ?>"
+                                                    id="province_auto" name="Plant_name" required>
                                             </div>
                                             <button type="submit" class="btn btn-success float-right">Submit</button>
                                             <button type="button" class="btn btn-danger float-right"

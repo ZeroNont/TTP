@@ -15,7 +15,7 @@ class M_ttp_licence extends Da_ttp_licence
     {
         $sql =
             "SELECT *
-            FROM ttps_database.requested_form Where Emp_ID=$id AND Status=4 ";
+            FROM ttps_database.requested_form Where req_emp_id=$id AND req_status=4 ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -30,7 +30,7 @@ class M_ttp_licence extends Da_ttp_licence
     {
         $sql =
         "SELECT *
-            FROM ttps_database.requested_form ORDER BY Form_ID DESC
+            FROM ttps_database.requested_form ORDER BY req_form_id DESC
 LIMIT 1  ";
         $query = $this->db->query($sql);
         return $query;
@@ -92,7 +92,7 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-            FROM dbmc.company AS com INNER JOIN ttps_database.requested_form AS req ON req.Company_ID=com.Company_ID WHERE req.Form_ID=$id ";
+            FROM dbmc.company AS com INNER JOIN ttps_database.requested_form AS req ON req.req_company_id=com.Company_ID WHERE req.req_form_id=$id ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -124,7 +124,7 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-        FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS app ON emp.Emp_ID = app.Supervisor_ID  WHERE app.Form_ID=$id  ";
+        FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS app ON emp.Emp_ID = app.app_supervisor_id  WHERE app.app_form_id=$id  ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -139,7 +139,7 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-       FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS app INNER JOIN ttps_database.plant  where Form_ID=$id AND emp.Emp_ID=app.Approve_plant_ID";
+       FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS app INNER JOIN ttps_database.plant  where app.app_form_id=$id AND emp.Emp_ID=app.app_approve_plant_id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -155,7 +155,7 @@ LIMIT 1  ";
         $sql =
             "SELECT *
             FROM ttps_database.plant AS pla INNER JOIN dbmc.employee AS emp
-            ON pla.Emp_ID = emp.Emp_ID ";
+            ON pla.pla_emp_id = emp.Emp_ID ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -171,7 +171,7 @@ LIMIT 1  ";
         $sql =
         "SELECT *
             FROM ttps_database.requested_form AS req INNER JOIN ttps_database.schedule AS sch
-            ON req.Form_ID = sch.Form_ID WHERE req.Form_ID = $id ";
+            ON req.req_form_id = sch.sch_form_id WHERE req.req_form_id = $id ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -186,7 +186,7 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-            FROM ttps_database.requested_form req WHERE req.Emp_ID=$id AND req.Status < 5 AND req.Form_count <= 3  AND CURDATE() <= End_date 
+            FROM ttps_database.requested_form req WHERE req.req_emp_id=$id AND req.req_status < 5 AND req.req_form_count <= 3  AND CURDATE() <= req.req_end_date 
             LIMIT 0,30  ";
         $query = $this->db->query($sql);
         return $query;
@@ -202,7 +202,7 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-            FROM ttps_database.requested_form Where Form_ID=$id ";
+            FROM ttps_database.requested_form Where req_form_id=$id ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -217,7 +217,7 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-            FROM ttps_database.form_file Where Form_ID=$id ";
+            FROM ttps_database.form_file Where fil_form_id=$id ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -247,7 +247,7 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-            FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS sec ON emp.Emp_ID = sec.Approve_plant_ID ";
+            FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS sec ON emp.Emp_ID = sec.app_approve_plant_id ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -262,7 +262,7 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-            FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS sec ON emp.Emp_ID = sec.HR_ID ";
+            FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS sec ON emp.Emp_ID = sec.app_hr_id ";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -277,7 +277,7 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-            FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS sec ON emp.Emp_ID = sec.Supervisor_ID";
+            FROM dbmc.employee AS emp INNER JOIN ttps_database.approval AS sec ON emp.Emp_ID = sec.app_supervisor_id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -291,8 +291,8 @@ LIMIT 1  ";
     public function get_Prepare()
     {
         $sql =
-            "SELECT *
-            FROM dbmc.employee AS emp INNER JOIN ttps_database.requested_form AS sec ON emp.Emp_ID = sec.Emp_ID";
+        "SELECT *
+            FROM dbmc.employee AS emp INNER JOIN ttps_database.requested_form AS sec ON emp.Emp_ID = sec.req_emp_id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -300,6 +300,20 @@ LIMIT 1  ";
     // *get requester detail  form database
     // *@input -
     // *@output requester detail 
+    // *@author Jirayut Saifah
+    // *@Create Date 20/07/2021
+    public function get_name($k)
+    {
+        $sql =
+            "SELECT *
+            FROM dbmc.employee AS emp INNER JOIN ttps_database.requested_form AS sec ON emp.Emp_ID = sec.req_emp_id WHERE sec.req_emp_id=$k";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    // *get_name
+    // *get name Responsibility  form database
+    // *@input -
+    // *@output Responsibility 
     // *@author Jirayut Saifah
     // *@Create Date 20/07/2021
 }

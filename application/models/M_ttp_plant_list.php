@@ -14,7 +14,7 @@ class M_ttp_plant_list extends Da_ttp_plant_list
             "SELECT * 
                 FROM  ttps_database.plant AS pla 
                 INNER JOIN dbmc.employee AS emp
-                ON  pla.Emp_ID = emp.Emp_ID ";
+                ON  pla.pla_emp_id = emp.Emp_ID ";
         $query = $this->db->query($sql);
         return $query;
     }
