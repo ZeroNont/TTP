@@ -50,7 +50,7 @@ class M_ttp_check_schedule extends Da_ttp_check_schedule
     {
         $sql = "SELECT *
                 FROM ttps_database.requested_form AS requested
-                WHERE requested.Emp_ID = $id";
+                WHERE requested.req_emp_id = $id";
         $query = $this->db->query($sql);
         return $query;
     }
@@ -88,10 +88,10 @@ class M_ttp_check_schedule extends Da_ttp_check_schedule
         $sql = "SELECT * 
         FROM ttps_database.requested_form AS req
         INNER JOIN dbmc.employee AS emp
-        ON  req.Emp_ID = emp.Emp_ID 
+        ON  req.req_emp_id = emp.Emp_ID 
         INNER JOIN ttps_database.approval 
-        ON  req.Form_ID = approval.Form_ID
-        WHERE req.Emp_ID= $id";
+        ON  req.req_form_id = approval.app_form_id
+        WHERE req.req_emp_id = $id";
         $query = $this->db->query($sql);
         return $query;
     }

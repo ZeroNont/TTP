@@ -54,21 +54,21 @@
             </thead>
             <tbody class="list">
                 <?php for ($i = 0; $i < count($arr_schedule); $i++) { ?>
-                <?php $StartDate = $arr_schedule[$i]->Start_date;
-                    $EndDate =  $arr_schedule[$i]->End_date;
+                <?php $StartDate = $arr_schedule[$i]->req_start_date;
+                    $EndDate =  $arr_schedule[$i]->	req_end_date;
                     $today_date = date("Y-m-d");
                     $totalDate = ((strtotime($EndDate) - strtotime($StartDate)) / (60 * 60 * 24));
                     $ExpDate = (strtotime($EndDate) - strtotime($today_date)) / (60 * 60 * 24); ?>
-                <?php if ($EndDate > $today_date  && $arr_form[$i]->Status != 5) { ?>
+                <?php if ($EndDate > $today_date  && $arr_form[$i]->req_status != 5) { ?>
                 <tr>
                     <td class="text-center">
                         <?php echo ($i + 1); ?>
                     </td>
                     <td>
-                        <?php echo $arr_schedule[$i]->Form_ID ?>
+                        <?php echo $arr_schedule[$i]->req_form_id ?>
                     </td>
                     <td>
-                        <?php echo $arr_schedule[$i]->Item ?>
+                        <?php echo $arr_schedule[$i]->req_item ?>
                     </td>
                     <td>
                         <?php echo $arr_emp[0]->Empname_eng . ' ' . $arr_emp[0]->Empsurname_eng ?>
@@ -84,7 +84,7 @@
                         <?php } ?>
                     </td>
                     <td>
-                        <?php $endDate  = date("d/m/Y", strtotime($arr_schedule[$i]->End_date)); ?>
+                        <?php $endDate  = date("d/m/Y", strtotime($arr_schedule[$i]->req_end_date)); ?>
                         <?php echo $endDate; ?>
                     </td>
                 </tr>
