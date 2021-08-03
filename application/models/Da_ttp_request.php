@@ -18,7 +18,7 @@ include_once ('ttps_model.php');
 
 class Da_ttp_request extends ttps_model
 {
-    public $reject_reason; //ตัวแปรเพื่อมารับค่า เหตุผลที่ปฏิเสธแบบฟอร์มคำขออนุญาต
+    public $app_reject_reason; //ตัวแปรเพื่อมารับค่า เหตุผลที่ปฏิเสธแบบฟอร์มคำขออนุญาต
     
     /*
     * Function __construct
@@ -44,9 +44,9 @@ class Da_ttp_request extends ttps_model
     function update_reject()
     {
         $sql = "UPDATE ttps_database.approval AS app
-                SET app.reject_reason = ?
-                WHERE app.Form_ID = ? "; 
-        $this->db->query($sql, array($this->reject_reason,$this->Form_ID));
+                SET app.app_reject_reason = ?
+                WHERE app.app_form_id = ? "; 
+        $this->db->query($sql, array($this->app_reject_reason,$this->app_form_id));
     } //update_reject เพิ่มเหตุผลในการปฏิเสธลงในตาราง approval
 
     /*
@@ -60,9 +60,9 @@ class Da_ttp_request extends ttps_model
     function update_form()
     {
         $sql = "UPDATE ttps_database.requested_form AS req
-                SET req.Status = ?
-                WHERE req.Form_ID = ? "; 
-        $this->db->query($sql, array($this->Status,$this->Form_ID));
+                SET req.req_status = ?
+                WHERE req.req_form_id = ? "; 
+        $this->db->query($sql, array($this->req_status,$this->req_form_id));
     } //update_form อัพเดทสถานะของฟอร์มที่ถูกยกเลิกโดยหัวหน้างาน
 
     

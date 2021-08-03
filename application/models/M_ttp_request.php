@@ -44,7 +44,7 @@ class M_ttp_request extends Da_ttp_request
         $sql = "SELECT *
                 FROM ttps_database.requested_form
                 INNER JOIN dbmc.employee 
-                ON  requested_form.Emp_ID = employee.Emp_ID ";
+                ON  requested_form.req_emp_id = employee.Emp_ID ";
 
         $query = $this->db->query($sql);
         return $query;
@@ -63,12 +63,12 @@ class M_ttp_request extends Da_ttp_request
         $sql = "SELECT *
                 FROM ttps_database.requested_form AS form
                 INNER JOIN ttps_database.approval AS app
-                ON app.Form_ID = form.Form_ID
+                ON app.app_form_id = form.req_form_id
                 INNER JOIN dbmc.employee AS emp
-                ON form.Emp_ID = emp.Emp_ID 
-                WHERE app.Supervisor_ID = ? AND form.Status = ?";
+                ON form.req_emp_id = emp.Emp_ID 
+                WHERE app.app_supervisor_id = ? AND form.req_status = ?";
 
-        $query = $this->db->query($sql,array($this->Supervisor_ID,$this->Status));
+        $query = $this->db->query($sql,array($this->app_supervisor_id,$this->req_status));
         return $query;
     }//get_all_sup ดึงข้อมูลที่อยู่ในตาราง requested_form ที่join กับตาราง approval และตาราง employee
 
@@ -85,8 +85,8 @@ class M_ttp_request extends Da_ttp_request
         $sql = "SELECT *
                 FROM ttps_database.requested_form AS req
                 INNER JOIN ttps_database.form_file AS form
-                ON  req.Form_ID = form.Form_ID
-                WHERE req.Form_ID = $id";
+                ON  req.req_form_id = form.fil_form_id
+                WHERE req.req_form_id = $id";
         $query = $this->db->query($sql);
         return $query;
     }//get_by_id ดึงข้อมูลที่อยู่ในตาราง requested_form ที่join กับตาราง form_file โดยที่ Form_ID ต้องทีค่าเท่ากับค่าในตัวแปร id ที่ถูกส่งมา
@@ -103,8 +103,8 @@ class M_ttp_request extends Da_ttp_request
     {
         $sql = "SELECT *
                 FROM ttps_database.requested_form AS req
-                WHERE req.HR_No LIKE 'HR%'
-                ORDER BY req.HR_No DESC LIMIT 1";
+                WHERE req.req_hr_no LIKE 'HR%'
+                ORDER BY req.req_hr_no DESC LIMIT 1";
         $query = $this->db->query($sql);
         return $query;
     }//get_hr_no ดึงข้อมูล HR_No ที่อยู่ในตาราง requested_form
@@ -120,9 +120,9 @@ class M_ttp_request extends Da_ttp_request
     function update_app()
     {
         $sql = "UPDATE ttps_database.approval AS app
-                SET app.Supervisor_date = CURRENT_TIMESTAMP()
-                WHERE app.Form_ID = ? "; 
-        $this->db->query($sql, array($this->Form_ID));
+                SET app.app_supervisor_date = CURRENT_TIMESTAMP()
+                WHERE app.app_form_id = ? "; 
+        $this->db->query($sql, array($this->app_form_id));
     } //update_app อัพเดทข้อมูลในตาราง approval
 
     /*
@@ -138,8 +138,8 @@ class M_ttp_request extends Da_ttp_request
         $sql = "SELECT *
                 FROM ttps_database.requested_form AS req
                 INNER JOIN dbmc.employee AS emp
-                ON  req.Emp_ID = emp.Emp_ID
-                WHERE req.Form_ID = $id";
+                ON  req.req_emp_id = emp.Emp_ID
+                WHERE req.req_form_id = $id";
         $query = $this->db->query($sql);
         return $query;
     } //get_history_user ใช้ดูประวัติว่าผู้ใช้งานคนไหนเป็นผู้ร้องขอแบบฟอร์ม

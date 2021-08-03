@@ -38,7 +38,7 @@ $(document).ready(function() {
                                 (วันที่เริ่มต้น)</label>
 
                             <input type="date" name="Start_date" class="form-control" disabled
-                                value="<?php echo $arr_req->Start_date ?>">
+                                value="<?php echo $arr_req->req_start_date ?>">
 
                         </div>
                     </div>
@@ -48,7 +48,7 @@ $(document).ready(function() {
                             <label class="form-control-label" for="input-email">End Date
                                 (วันที่สิ้นสุด)</label>
                             <input type="date" name="End_date" class="form-control" disabled
-                                value="<?php echo $arr_req->End_date ?>">
+                                value="<?php echo $arr_req->req_end_date ?>">
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@ $(document).ready(function() {
                             <label class="form-control-label" for="input-first-name">Item
                                 (สิ่งที่ต้องการวาง)</label>
                             <input type="text" name="Item" class="form-control" disabled
-                                value="<?php echo $arr_req->Item ?>">
+                                value="<?php echo $arr_req->req_item ?>">
                         </div>
                     </div>
                     <div class=" col-lg-12 ">
@@ -68,7 +68,7 @@ $(document).ready(function() {
                             <label class="form-control-label" for="input-last-name">Reason
                                 (เหตุผลในการวาง)</label>
                             <input type="text" name="Reason" class="form-control" disabled
-                                value="<?php echo $arr_req->Reason ?>">
+                                value="<?php echo $arr_req->req_reason ?>">
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ $(document).ready(function() {
                             <label class="form-control-label" for="input-city">Tel No.
                                 (เบอร์โทรศัพท์)</label>
                             <input type="text" class="form-control" name="Tell" disabled
-                                value="<?php echo $arr_req->Tell ?>">
+                                value="<?php echo $arr_req->req_tel ?>">
                         </div>
                     </div>
 
@@ -105,7 +105,7 @@ $(document).ready(function() {
                             <label class="form-control-label" for="input-country">Layout
                                 (รูปแบบการวาง)</label>
                             <br>
-                            <a href="<?php echo base_url() ?>assets/file/layout/<?php echo $arr_req->Layout_location ?>"
+                            <a href="<?php echo base_url() ?>assets/file/layout/<?php echo $arr_req->fil_layout_location ?>"
                                 download>
                                 <button type="button" class="btn btn-danger" id="button_size">
                                     <i class="fas fa-file-alt text-dark"></i>
@@ -121,7 +121,7 @@ $(document).ready(function() {
                             <label class="form-control-label" for="input-country">Plan
                                 (แผนการวาง)</label>
                             <br>
-                            <a href="<?php echo base_url() ?>assets/file/Plan/<?php echo $arr_req->Plan_location ?>"
+                            <a href="<?php echo base_url() ?>assets/file/Plan/<?php echo $arr_req->fil_plan_location ?>"
                                 download>
                                 <button type="button" class="btn btn-danger" id="button_size">
                                     <i class="fas fa-file-alt text-dark"></i>
@@ -179,11 +179,11 @@ $(document).ready(function() {
                     กรุณากรอกเหตุผล
                 </label>
 
-                <form method="POST" action="<?php echo site_url().'/request/Request_form/reject_form/'.$arr_req->Form_ID; ?>">
+                <form method="POST" action="<?php echo site_url().'/request/Request_form/reject_form/'.$arr_req->req_form_id; ?>">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <input type="text" name="reject_reason" class="form-control"
+                                <input type="text" name="app_reject_reason" class="form-control"
                                     placeholder="เหตุผลในการปฏิเสธ" require>
                             </div>
                         </div>
@@ -243,7 +243,7 @@ $(document).ready(function() {
                 <h1> อนุมัติคำขอสำเร็จ </h1>
             </div>
             <div class="modal-footer">
-                <a href="<?php echo site_url() . 'request/Request_form/update_request_form/'. $arr_req->Form_ID ; ?>">
+                <a href="<?php echo site_url() . 'request/Request_form/update_request_form/'. $arr_req->req_form_id ; ?>">
                     <button type="button" class="btn btn-success btn-lg float-right">Agree</button>
                 </a>
             </div>

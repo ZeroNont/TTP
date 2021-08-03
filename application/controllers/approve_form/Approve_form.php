@@ -56,8 +56,7 @@ class Approve_form extends MainController
     function show_approve_form_list() 
     {
         $this->load->model('M_ttp_approve_form', 'mreq');
-        // $this->mreq->HR_ID = $_SESSION["UsEmp_ID"];
-        $this->mreq->Status = 2;
+        $this->mreq->req_status = 2;
         $data['arr_req'] = $this->mreq->get_all_hr()->result();
         $this->output('consent/v_approve_form', $data);
     } //แสดงรายการคำขอทั้งหมดสำหรับhr
@@ -73,8 +72,8 @@ class Approve_form extends MainController
     function show_approve_form_plant() 
     {
         $this->load->model('M_ttp_approve_form', 'mreq');
-        $this->mreq->Approve_plant_ID = $_SESSION["UsEmp_ID"];
-        $this->mreq->Status = 3;
+        $this->mreq->app_approve_plant_id = $_SESSION["UsEmp_ID"];
+        $this->mreq->req_status = 3;
         $data['arr_req'] = $this->mreq->get_all_plant()->result();
         $this->output('consent/v_approve_form_plant', $data);
     } //แสดงรายการคำขอทั้งหมดสำหรับ plant
@@ -127,12 +126,12 @@ class Approve_form extends MainController
     function reject_form_HR($id)
     {   
         $this->load->model('Da_ttp_approve_form','dain');
-        $this->dain->reject_reason =  $this->input->post('reject_reason');   
-        $this->dain->Form_ID = $id; 
+        $this->dain->app_reject_reason =  $this->input->post('app_reject_reason');   
+        $this->dain->app_form_id = $id; 
         $this->dain->update_reject();
 
-        $this->dain->Status = -1;
-        $this->dain->Form_ID = $id;   
+        $this->dain->req_status = -1;
+        $this->dain->req_form_id = $id;   
         $this->dain->update_form();
 
         redirect('/approve_form/Approve_form/show_approve_form_list');
@@ -149,12 +148,12 @@ class Approve_form extends MainController
     function reject_form_Plant($id)
     {   
         $this->load->model('Da_ttp_approve_form','dain');
-        $this->dain->reject_reason =  $this->input->post('reject_reason');   
-        $this->dain->Form_ID = $id; 
+        $this->dain->app_reject_reason =  $this->input->post('app_reject_reason');   
+        $this->dain->app_form_id = $id; 
         $this->dain->update_reject();
 
-        $this->dain->Status = -2;
-        $this->dain->Form_ID = $id;   
+        $this->dain->req_status = -2;
+        $this->dain->req_form_id = $id;   
         $this->dain->update_form();
 
         redirect('/approve_form/Approve_form/show_approve_form_list');
@@ -201,15 +200,15 @@ class Approve_form extends MainController
         }
     
         $this->load->model('M_ttp_approve_form', 'mapp');
-        $this->mapp->HR_ID = $_SESSION["UsEmp_ID"]; 
-        $this->mapp->Form_ID = $form_id;         
+        $this->mapp->app_hr_id = $_SESSION["UsEmp_ID"]; 
+        $this->mapp->app_form_id = $form_id;         
         $this->mapp->update_app();
         
         //อัพเดท status ในตาราง requested_form ให้เป็น 3
         $this->load->model('Da_ttp_approve_form', 'dreq');
-        $this->dreq->Status = 3;
-        $this->dreq->Form_ID = $form_id;   
-        $this->dreq->HR_No = $HR_No; 
+        $this->dreq->req_status = 3;
+        $this->dreq->req_form_id = $form_id;   
+        $this->dreq->req_hr_no = $HR_No; 
         $this->dreq->update_form();
         
         redirect('/approve_form/Approve_form/show_approve_form_list');
@@ -226,12 +225,12 @@ class Approve_form extends MainController
     function update_approve_form_plant($id) 
     {
         $this->load->model('Da_ttp_approve_form', 'dreq');
-        $this->dreq->Status = 4;
-        $this->dreq->Form_ID = $id;    
+        $this->dreq->req_status = 4;
+        $this->dreq->req_form_id = $id;    
         $this->dreq->update_form_plant();
 
         $this->load->model('M_ttp_approve_form', 'mreq');
-        $this->mreq->Form_ID = $id;  
+        $this->mreq->app_form_id = $id;  
         $this->mreq->update_app_plant();
         redirect('/approve_form/Approve_form/show_approve_form_plant');
     } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย Plant
