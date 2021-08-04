@@ -26,10 +26,10 @@
                         <div class="col-lg-6">
                             <div class="form-group">
 
-                            <input type="text"  class="form-control"  name="Form_ID" value='<?php echo $arr_renew[0]->Form_ID ?>' hidden>
-                            <input type="text"  class="form-control"  name="set_Enddate" value='<?php echo $arr_renew[0]->End_date ?>' hidden>
-                            <input type="text"  class="form-control"  name="Form_count" value='<?php echo $arr_renew[0]->Form_count ?>' hidden>
-                            <input type="text"  class="form-control"  name="Status" value='<?php echo $arr_renew[0]->Status ?>' hidden>
+                            <input type="text"  class="form-control"  name="Form_ID" value='<?php echo $arr_renew[0]->req_form_id?>' hidden>
+                            <input type="text"  class="form-control"  name="set_Enddate" value='<?php echo $arr_renew[0]->req_end_date ?>' hidden>
+                            <input type="text"  class="form-control"  name="Form_count" value='<?php echo $arr_renew[0]->req_form_count ?>' hidden>
+                            <input type="text"  class="form-control"  name="Status" value='<?php echo $arr_renew[0]->req_status ?>' hidden>
                                 <!--อัพเดท/เพิ่มวันขออนุญาตวาง-->
                                 <label class="form-control-label" for="input-email">Add Days (กำหนดเวลาที่ต้องการเพิ่ม)
                                 <select class="form-control" name="Add_date" style="text-align:center"  ><br>
@@ -67,8 +67,8 @@
                                 </select>
                              
                                <?php 
-                               $arr_renew[0]->End_date=strtotime(date("Y-m-d", strtotime($arr_renew[0]->End_date)+1) ."days");
-                               echo  $arr_renew[0]->End_date;
+                               $arr_renew[0]->req_end_date=strtotime(date("Y-m-d", strtotime($arr_renew[0]->req_end_date)+1) ."days");
+                               echo  $arr_renew[0]->req_end_date;
                                ?>
                             </div>
                         </div>
@@ -78,14 +78,14 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-first-name">Item
                                     (สิ่งที่ต้องการวาง)</label>
-                                <input type="text" name="Item" class="form-control"   value='<?php echo $arr_renew[0]->Item ?>' disabled>
+                                <input type="text" name="Item" class="form-control"   value='<?php echo $arr_renew[0]->req_item ?>' disabled>
                             </div>
                         </div>
                         <div class=" col-lg-12 ">
                             <div class=" form-group">
                                 <label class="form-control-label" for="input-last-name" >Reason
                                     (เหตุผลในการวาง)</label>
-                                <input type="text" name="Reason" class="form-control" value='<?php echo $arr_renew[0]->Reason?>'disabled>
+                                <input type="text" name="Reason" class="form-control" value='<?php echo $arr_renew[0]->req_reason?>'disabled>
                             </div>
                         </div>
                     </div>
@@ -98,14 +98,14 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-address">Officer in Charge
                                     (ผู้รับผิดชอบ)</label>
-                                <input class="form-control" type="text" name="Officer" value='<?php echo $arr_renew[0]->Officer?>' disabled>
+                                <input class="form-control" type="text" name="Officer" value='<?php echo $arr_renew[0]->req_officer?>' disabled>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">Tell No.
                                     (เบอร์โทรศัพท์)</label>
-                                <input type="text" class="form-control" name="Tell" value='<?php echo $arr_renew[0]->Tell?>' disabled>
+                                <input type="text" class="form-control" name="Tell" value='<?php echo $arr_renew[0]->req_tel?>' disabled>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -122,7 +122,7 @@
                                     (รูปแบบการวาง)
                                     
                                     <input type="text" class="form-control" name="Layout" 
-                                    value='<?php echo $arr_formfile[0]->Layout_location?>' disabled>
+                                    value='<?php echo $arr_formfile[0]->fil_layout_location?>' disabled>
                                 </label>
                                     
                             </div>
@@ -132,7 +132,7 @@
                                 <label class="form-control-label" for="input-country">Plan
                                     (แผนการวาง)
                                     <input type="text" class="form-control" name="Plan" 
-                                    value='<?php echo $arr_formfile[0]->Plan_location?>' disabled>
+                                    value='<?php echo $arr_formfile[0]->fil_plan_location?>' disabled>
                                 </label>
                                    
                             </div>
@@ -153,7 +153,7 @@
                                 <label class="form-control-label" for="input-city">Approve Plant
                                 </label><br>
                                 
-                                <input type="text" class="form-control" name="Plant" value='<?php echo $arr_plan[0]->Plant_name?>' disabled>
+                                <input type="text" class="form-control" name="Plant" value='<?php echo $arr_plan[0]->pla_plant_name?>' disabled>
                             </div>
                         </div>
                     </div>

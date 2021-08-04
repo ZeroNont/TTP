@@ -49,31 +49,31 @@
                                 <tr>
                                     <td><?php echo $num++; ?></td>
                                     <td><?php echo $Form_data[$i]->Company_name . ' ' . "(" .  $Form_data[$i]->Company_name_th . ")" ?></td>
-                                    <?php if ($Form_data[$i]->HR_No == '') { ?>
+                                    <?php if ($Form_data[$i]->req_hr_no == '') { ?>
                                         <td><?php echo '-'; ?></td>
                                     <?php } else { ?>
-                                        <td><?php echo $Form_data[$i]->HR_No; ?></td>
+                                        <td><?php echo $Form_data[$i]->req_hr_no; ?></td>
                                     <?php } ?>
-                                    <td><?php echo $Form_data[$i]->Officer; ?></td>
-                                    <td><?php echo $Form_data[$i]->Plant_name; ?></td>
-                                    <td><?php echo $Form_data[$i]->Plant_No; ?></td>
-                                    <td><?php echo $Form_data[$i]->Reason; ?></td>
-                                    <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->Requested_date)); ?></td>
-                                    <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->Start_date)) ?></td>
-                                    <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->End_date)) ?></td>
+                                    <td><?php echo $Form_data[$i]->req_officer; ?></td>
+                                    <td><?php echo $Form_data[$i]->pla_plant_name; ?></td>
+                                    <td><?php echo $Form_data[$i]->pla_plant_no; ?></td>
+                                    <td><?php echo $Form_data[$i]->req_reason; ?></td>
+                                    <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->req_requested_date)); ?></td>
+                                    <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->req_start_date)) ?></td>
+                                    <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->req_end_date)) ?></td>
                                     <td><?php echo $Form_data[$i]->Empname_engTitle . ' ' . $Form_data[$i]->Empname_eng . ' ' . $Form_data[$i]->Empsurname_eng; ?></td>
                                     <?php
-                                    if ($Form_data[$i]->Status >= '4') {
+                                    if ($Form_data[$i]->req_status >= '4') {
                                         $Permission_Status = 'Approve';
-                                    } else if ($Form_data[$i]->Status < '4') {
+                                    } else if ($Form_data[$i]->req_status < '4') {
                                         $Permission_Status = 'Pending for check';
                                     }
                                     ?>
                                     <td><?php echo $Permission_Status; ?></td>
                                     <?php
-                                    if ($Form_data[$i]->Status == '4') {
+                                    if ($Form_data[$i]->req_status == '4') {
                                         $Tag_Status = 'Wating for remove';
-                                    } else if ($Form_data[$i]->Status > '4') {
+                                    } else if ($Form_data[$i]->req_status > '4') {
                                         $Tag_Status = 'Completed';
                                     }
                                     ?>

@@ -70,25 +70,25 @@ class Renewal extends MainController
 		//บวกวันที่ 
 		$date1 = str_replace('-', '/', $set_date);
 		$Update = date('Y-m-d',strtotime($date1 . "+".$add_date." days"));
-		$this->ttp->End_date = $Update;
-		$this->ttp->Form_ID = $Form_ID;
+		$this->ttp->req_end_date = $Update;
+		$this->ttp->req_form_id = $Form_ID;
 		$num =$this->input->post('Form_count');
 		$status = $this->input->post('Status');
 		 $num=$num+1;
 		 $status = 1;
 		// $this->ttp->Emp_ID;
 	
-		$this->ttp->Form_count=$num;
-		$this->ttp->Status=$status;
+		$this->ttp->req_form_count=$num;
+		$this->ttp->req_status=$status;
 		$this->ttp->update_form(); //+1ให้กับฟอร์มที่ID ตรงกัน
 		$this->ttp->update_status(); //ขอวันเสร็จเปลี่ยนสถานะ
 		$this->ttp->update(); //อัพเดทวันที่
 		
 		//เก็บประวัติการต่ออายุในแต่ละครั้ง
-		$new_startdate=$this->ttp->End_date;
-		$this->ttp->Start_date=$set_date;
-		$this->ttp->End_date=$new_startdate;
-		$this->ttp->Form_ID=$Form_ID;
+		$new_startdate=$this->ttp->req_end_date;
+		$this->ttp->sch_start_date=$set_date;
+		$this->ttp->sch_end_date=$new_startdate;
+		$this->ttp->sch_form_id=$Form_ID;
 		$this->ttp->insert_schedule();
 		//$this->ttp->update_sec();
 		redirect('/Renewal/Renewal/show_renewal');

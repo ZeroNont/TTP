@@ -62,13 +62,13 @@
 
                             <!-- column สิง่ของ -->
                             <td>
-                                <?php echo $row->Item; ?>
+                                <?php echo $row->req_item; ?>
                             </td>
 
                             <!-- column ช่วงเวลาร้องขอ -->
                             <td>
 
-                                <?php echo date("d-m-Y", strtotime($row->Start_date)) . ' - ' . date("d-m-Y", strtotime($row->End_date)); ?>
+                                <?php echo date("d-m-Y", strtotime($row->req_start_date)) . ' - ' . date("d-m-Y", strtotime($row->req_end_date)); ?>
                             </td>
 
                             <!-- column ผู้รับผิดชอบ -->
@@ -81,7 +81,7 @@
 
                                 <!-- ปุ่มดำเนินการ -->
                                 <a
-                                    href=" <?php echo site_url() . '/approve_form/Approve_form/show_approve_form_detail/' . $row->Form_ID; ?>">
+                                    href=" <?php echo site_url() . '/approve_form/Approve_form/show_approve_form_detail/' . $row->req_form_id; ?>">
                                     <button class="btn btn-primary"> <i class="fa fa-info-circle"></i> </button>
                                 </a>
 

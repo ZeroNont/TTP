@@ -57,8 +57,8 @@ class Request_form extends MainController
     function show_request_form_list() 
     {
         $this->load->model('M_ttp_request', 'mreq');
-        $this->mreq->Supervisor_ID = $_SESSION["UsEmp_ID"];
-        $this->mreq->Status = 1;
+        $this->mreq->app_supervisor_id = $_SESSION["UsEmp_ID"];
+        $this->mreq->req_status = 1;
         $data['arr_req'] = $this->mreq->get_all_sup()->result();
         $this->output('consent/v_request_form', $data);
     } //show request list แสดงายการคำขอทั้งหมด สำหรับหัวหน้างานคนนั้นๆ
@@ -91,13 +91,13 @@ class Request_form extends MainController
     function reject_form($id)
     {
         $this->load->model('Da_ttp_request','dain');
-        $this->dain->reject_reason =  $this->input->post('reject_reason');  
-        $this->dain->Form_ID = $id; 
+        $this->dain->app_reject_reason =  $this->input->post('app_reject_reason');  
+        $this->dain->app_form_id = $id; 
         $this->dain->update_reject();
 
         // ปฏิเสธแล้วให้ Status = 0
-        $this->dain->Status = 0;
-        $this->dain->Form_ID = $id;   
+        $this->dain->req_status = 0;
+        $this->dain->req_form_id = $id;   
         $this->dain->update_form();
 
         redirect('/request/Request_form/show_request_form_list');
@@ -114,11 +114,12 @@ class Request_form extends MainController
     function update_request_form($id) 
     {
         $this->load->model('Da_ttp_request', 'dreq');
-        $this->dreq->Status = 2;
-        $this->dreq->Form_ID = $id;   
+        $this->dreq->req_status = 2;
+        $this->dreq->req_form_id = $id;   
         $this->dreq->update_form();
+
         $this->load->model('M_ttp_request', 'mreq');
-        $this->mreq->Form_ID = $id;   
+        $this->mreq->app_form_id = $id;   
         $this->mreq->update_app();
         redirect('/request/Request_form/show_request_form_list');
     } //update request form เปลี่ยนสถานะของคำขอที่ถูกอนุมัติแล้ว ให้มี Status = 2

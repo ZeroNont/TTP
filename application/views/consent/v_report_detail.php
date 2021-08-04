@@ -16,28 +16,33 @@
 <br>
 <div class="card-header">
     <h1 style="text-align:center">
-        Running No. <?php echo $Form_data->HR_No; ?>
+        Running No.
+        <?php if ($Form_data->req_hr_no == '') { ?>
+            <td><?php echo '-'; ?></td>
+        <?php } else { ?>
+            <td><?php echo $Form_data->req_hr_no; ?></td>
+        <?php } ?>
         <br>
         ------------------------------------------------------------------------------------------
     </h1>
     <br>
     <h2 style="text-align:left">
         <b>Company :</b> <?php echo $Form_data->Company_name . ' ' . "(" .  $Form_data->Company_name_th . ")" ?><br><br>
-        <b>Requester :</b> <?php echo $Form_data->Officer; ?><br><br>
-        <b>Plant No. :</b> <?php echo $Form_data->Plant_No; ?><br><br>
-        <b>Plant Name. :</b> <?php echo $Form_data->Plant_name; ?><br><br>
-        <b>Reason :</b> <?php echo $Form_data->Reason; ?><br><br>
-        <b>Requested date :</b> <?php echo date("d-m-Y", strtotime($Form_data->Requested_date)); ?><br><br>
-        <b>Approval date :</b> <?php echo date("d-m-Y", strtotime($Form_data->Approve_date)) ?><br><br>
-        <b>Starting date :</b> <?php echo date("d-m-Y", strtotime($Form_data->Start_date)) ?><br><br>
-        <b>End date :</b> <?php echo date("d-m-Y", strtotime($Form_data->End_date)) ?><br><br>
+        <b>Requester :</b> <?php echo $Form_data->req_officer; ?><br><br>
+        <b>Plant No. :</b> <?php echo $Form_data->pla_plant_no; ?><br><br>
+        <b>Plant Name. :</b> <?php echo $Form_data->pla_plant_name; ?><br><br>
+        <b>Reason :</b> <?php echo $Form_data->req_reason; ?><br><br>
+        <b>Requested date :</b> <?php echo date("d-m-Y", strtotime($Form_data->req_requested_date)); ?><br><br>
+        <b>Approval date :</b> <?php echo date("d-m-Y", strtotime($Form_data->req_approve_date)) ?><br><br>
+        <b>Starting date :</b> <?php echo date("d-m-Y", strtotime($Form_data->req_start_date)) ?><br><br>
+        <b>End date :</b> <?php echo date("d-m-Y", strtotime($Form_data->req_end_date)) ?><br><br>
         <b>Approver :</b> <?php echo $Form_data->Empname_engTitle . ' ' . $Form_data->Empname_eng . ' ' . $Form_data->Empsurname_eng; ?><br><br>
         <?php
-        if ($Form_data->Status == '4') {
+        if ($Form_data->req_status == '4') {
             $Status = 'ยังอยู่ในคลัง';
-        } else if ($Form_data->Status > '4') {
+        } else if ($Form_data->req_status > '4') {
             $Status = 'สิ้นสุดการวาง';
-        } else if ($Form_data->Status < '4') {
+        } else if ($Form_data->req_status < '4') {
             $Status = 'รอการอนุมัติ';
         }
         ?>
@@ -98,7 +103,7 @@
             </div>
         </div>
     </div> -->
-<center><a href="<?php echo site_url() . 'Report/Report/show_report'; ?>" class="btn btn-secondary float-center"><i class="fas fa-arrow-alt-circle-left"></i> Back</a></center>
+    <center><a href="<?php echo site_url() . 'Report/Report/show_report'; ?>" class="btn btn-secondary float-center"><i class="fas fa-arrow-alt-circle-left"></i> Back</a></center>
 </div>
 
 <!-- <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>

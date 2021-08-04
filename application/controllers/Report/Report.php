@@ -57,9 +57,9 @@ class Report extends MainController
 	*/
 	public function show_report_detail()
 	{
-		$Form_ID = $this->input->get('Form_ID');
+		$req_form_id = $this->input->get('req_form_id');
 		$this->load->model('M_ttp_report', 'ttp');
-		$this->ttp->Form_ID = $Form_ID;
+		$this->ttp->req_form_id = $req_form_id;
 		$data['Form_data'] = $this->ttp->get_form_by_id()->row();
 		$this->output('consent/v_report_detail', $data);
 	}
