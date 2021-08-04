@@ -204,7 +204,7 @@ $(document).ready(function() {
                         <div class="col-md-12">
                             <div class="form-group">
                                 <input type="text" name="app_reject_reason" class="form-control"
-                                    placeholder="เหตุผลในการปฏิเสธ" require>
+                                    placeholder="เหตุผลในการปฏิเสธ" required>
                             </div>
                         </div>
                     </div>
@@ -212,7 +212,7 @@ $(document).ready(function() {
 
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Cancel</button>
 
 
                 <button type="submit" class="btn btn-success btn-lg float-right">Submit</button>
@@ -240,7 +240,7 @@ $(document).ready(function() {
                 <h1 class="modal-title" id="ModalLabel">ยืนยันการอนุมัติคำขอ</h1>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Cancel</button>
 
                 <!-- Button trigger modal -->
 
