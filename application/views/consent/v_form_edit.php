@@ -32,7 +32,7 @@
                                     (วันที่เริ่มต้น)</label>
 
                                 <input type="date" name="Start_date" class="form-control"
-                                    min="<?php echo date('Y-m-d'); ?>" require
+                                    min="<?php echo date('Y-m-d'); ?>" required
                                     value="<?php echo $obj_form[0]->req_start_date ?>">
 
                             </div>
@@ -84,11 +84,11 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-first-name">Item
                                     (สิ่งที่ต้องการวาง)</label>
-                                <input type="text" name="Item" class="form-control" require
+                                <input type="text" name="Item" class="form-control" required
                                     value="<?php echo $obj_form[0]->req_item ?>">
-                                <input type="text" name="form" class="form-control" require
+                                <input type="text" name="form" class="form-control" required
                                     value="<?php echo $obj_form[0]->req_form_id ?>" hidden>
-                                <input type="text" name="count" class="form-control" require
+                                <input type="text" name="count" class="form-control" required
                                     value="<?php echo $obj_form[0]->req_form_count ?>" hidden>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                             <div class=" form-group">
                                 <label class="form-control-label" for="input-last-name">Reason
                                     (เหตุผลในการวาง)</label>
-                                <input type="text" name="Reason" class="form-control" require
+                                <input type="text" name="Reason" class="form-control" required
                                     value="<?php echo $obj_form[0]->req_reason ?>">
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">Tel No.
                                     (เบอร์โทรศัพท์)</label>
-                                <input type="text" class="form-control" name="Tell" require
+                                <input type="text" class="form-control" name="Tell" requiredd
                                     value="<?php echo $obj_form[0]->req_tel ?>">
                             </div>
                         </div>
