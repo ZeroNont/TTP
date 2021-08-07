@@ -186,7 +186,7 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-            FROM ttps_database.requested_form req WHERE req.req_emp_id=$id AND req.req_status < 5 AND req.req_form_count <= 3  AND CURDATE() <= req.req_end_date 
+            FROM ttps_database.requested_form req WHERE req.req_emp_id=$id AND req.req_status < 5 AND req.req_form_count <= 4  AND CURDATE() <= req.req_end_date 
             LIMIT 0,30  ";
         $query = $this->db->query($sql);
         return $query;
