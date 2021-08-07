@@ -77,7 +77,7 @@ table {
                                 } ?></td>
 
                     <td><?php if ($arr_renew[$i]->req_status == 4) {
-                                    echo $arr_renew[$i]->req_form_count . "/3";
+                                    echo $arr_renew[$i]->req_form_count . "/4";
                                 }
                                 ?></td>
 
