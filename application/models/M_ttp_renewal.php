@@ -10,7 +10,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-include_once ('Da_ttp_renewal.php');
+include_once('Da_ttp_renewal.php');
 class M_ttp_renewal extends Da_ttp_renewal
 {
 
@@ -19,7 +19,7 @@ class M_ttp_renewal extends Da_ttp_renewal
         parent::__construct();
     }
 
-     /*
+    /*
     * getall
     * select data from database
     * @input -
@@ -64,7 +64,7 @@ class M_ttp_renewal extends Da_ttp_renewal
     public function get_formfile()
     {
         $sql =
-        "SELECT *
+            "SELECT *
             FROM ttps_database.form_file";
         $query = $this->db->query($sql);
         return $query;
@@ -81,13 +81,13 @@ class M_ttp_renewal extends Da_ttp_renewal
     public function get_company()
     {
         $sql =
-        "SELECT *
+            "SELECT *
             FROM dbmc.company";
         $query = $this->db->query($sql);
         return $query;
     }
 
-   /*
+    /*
     * get_supervisor
     * select data from database
     * @input -
@@ -98,12 +98,12 @@ class M_ttp_renewal extends Da_ttp_renewal
     public function get_supervisor()
     {
         $sql =
-        "SELECT *
+            "SELECT *
         FROM dbmc.employee";
         $query = $this->db->query($sql);
         return $query;
     }
-    
+
     /*
     * get_plan
     * select data from database
@@ -155,12 +155,8 @@ class M_ttp_renewal extends Da_ttp_renewal
         $sql =
             "SELECT * 
                 FROM  ttps_database.requested_form
-                
                 WHERE  req_form_id=$Form_ID ";
         $query = $this->db->query($sql);
         return $query;
     }
-
-    
-    
 }
