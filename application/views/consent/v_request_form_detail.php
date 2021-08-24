@@ -150,7 +150,7 @@ $(document).ready(function() {
                     <!-- ปุ่มยืนยันการอนุมัติ -->
                     <button type="button" class="btn btn-success btn-lg float-right" data-toggle="modal"
                         data-target="#Modal_approve">
-                        Approve
+                        Confirm
                     </button>
 
                 </div>
