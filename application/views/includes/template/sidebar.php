@@ -24,26 +24,26 @@
                       <li class="nav-item">
                           <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                               <i class="ni ni-badge text-orange"></i>
-                              <span class="nav-link-text">Request Form</span>
+                              <span class="nav-link-text">Request Tag</span>
                           </a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                               <i class="ni ni-single-copy-04 text-primary"></i>
-                              <span class="nav-link-text">Renew Form</span>
+                              <span class="nav-link-text">Renew Tag</span>
                           </a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link"
                               href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                               <i class="ni ni-calendar-grid-58 text-yellow"></i>
-                              <span class="nav-link-text">Check Schedule</span>
+                              <span class="nav-link-text">Check expire date</span>
                           </a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="<?php echo base_url() . 'Check_out_form/Check_out_form/index/' ?>">
                               <i class="ni ni-user-run text-default"></i>
-                              <span class="nav-link-text">Check out</span>
+                              <span class="nav-link-text">Request complete</span>
                           </a>
                       </li>
                       <li class="nav-item">
@@ -69,10 +69,9 @@
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link"
-                              href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
-                                  class="dropdown-item">
-                                  <i class="ni ni-user-run"></i>
+                          <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>"
+                              class="dropdown-item" class="dropdown-item">
+                              <i class="ni ni-user-run"></i>
                               <span class="nav-link-text">Logout</span>
                           </a>
                       </li>
@@ -85,8 +84,7 @@
                           <!-- Nav items -->
                           <ul class="navbar-nav">
                               <li class="nav-item">
-                                  <a class="nav-link "
-                                      href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
+                                  <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
@@ -95,27 +93,27 @@
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
-                                      <span class="nav-link-text">Request Form</span>
+                                      <span class="nav-link-text">Request Tag</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
-                                      <span class="nav-link-text">Renew Form</span>
+                                      <span class="nav-link-text">Renew Tag</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                                       <i class="ni ni-calendar-grid-58 text-yellow"></i>
-                                      <span class="nav-link-text">Check Schedule</span>
+                                      <span class="nav-link-text">Check expire date</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'Check_out_form/Check_out_form/index/' ?>">
                                       <i class="ni ni-user-run text-default"></i>
-                                      <span class="nav-link-text">Check out</span>
+                                      <span class="nav-link-text">Request complete</span>
                                   </a>
                               </li>
                               <li class="nav-item">
@@ -140,15 +138,14 @@
                                   </a>
                               </li>
                               <li class="nav-item">
-                          <a class="nav-link"
-                              href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
-                                  class="dropdown-item">
-                                  <i class="ni ni-user-run"></i>
-                              <span class="nav-link-text">Logout</span>
-                          </a>
-                      </li>
+                                  <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>"
+                                      class="dropdown-item" class="dropdown-item">
+                                      <i class="ni ni-user-run"></i>
+                                      <span class="nav-link-text">Logout</span>
+                                  </a>
+                              </li>
                           </ul>
-                          
+
 
                           </ul>
                       </div>
@@ -162,8 +159,7 @@
                           <!-- Nav items -->
                           <ul class="navbar-nav">
                               <li class="nav-item">
-                                  <a class="nav-link "
-                                      href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
+                                  <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
@@ -172,27 +168,27 @@
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
-                                      <span class="nav-link-text">Request Form</span>
+                                      <span class="nav-link-text">Request Tag</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
-                                      <span class="nav-link-text">Renew Form</span>
+                                      <span class="nav-link-text">Renew Tag</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                                       <i class="ni ni-calendar-grid-58 text-yellow"></i>
-                                      <span class="nav-link-text">Check Schedule</span>
+                                      <span class="nav-link-text">Check expire date</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'Check_out_form/Check_out_form/index/' ?>">
                                       <i class="ni ni-user-run text-default"></i>
-                                      <span class="nav-link-text">Check out</span>
+                                      <span class="nav-link-text">Request complete</span>
                                   </a>
                               </li>
                               <li class="nav-item">
@@ -241,20 +237,18 @@
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" 
-                                  href="<?php echo base_url() . 'Report/Report/show_report/' ?>">
+                                  <a class="nav-link" href="<?php echo base_url() . 'Report/Report/show_report/' ?>">
                                       <i class="ni ni-chart-bar-32 text-blue"></i>
                                       <span class="nav-link-text">Report</span>
                                   </a>
                               </li>
                               <li class="nav-item">
-                          <a class="nav-link"
-                              href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
-                                  class="dropdown-item">
-                                  <i class="ni ni-user-run"></i>
-                              <span class="nav-link-text">Logout</span>
-                          </a>
-                      </li>
+                                  <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>"
+                                      class="dropdown-item" class="dropdown-item">
+                                      <i class="ni ni-user-run"></i>
+                                      <span class="nav-link-text">Logout</span>
+                                  </a>
+                              </li>
 
                           </ul>
                       </div>
@@ -269,8 +263,7 @@
                           <!-- Nav items -->
                           <ul class="navbar-nav">
                               <li class="nav-item">
-                                  <a class="nav-link "
-                                      href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
+                                  <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
@@ -279,27 +272,27 @@
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
-                                      <span class="nav-link-text">Request Form</span>
+                                      <span class="nav-link-text">Request Tag</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                                       <i class="ni ni-single-copy-04 text-primary"></i>
-                                      <span class="nav-link-text">Renew Form</span>
+                                      <span class="nav-link-text">Renew Tag</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                                       <i class="ni ni-calendar-grid-58 text-yellow"></i>
-                                      <span class="nav-link-text">Check Schedule</span>
+                                      <span class="nav-link-text">Check expire date</span>
                                   </a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link"
                                       href="<?php echo base_url() . 'Check_out_form/Check_out_form/index/' ?>">
                                       <i class="ni ni-user-run text-default"></i>
-                                      <span class="nav-link-text">Check out</span>
+                                      <span class="nav-link-text">Request complete</span>
                                   </a>
                               </li>
                               <li class="nav-item">
@@ -343,13 +336,12 @@
                                   </a>
                               </li>
                               <li class="nav-item">
-                          <a class="nav-link"
-                              href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
-                                  class="dropdown-item">
-                                  <i class="ni ni-user-run"></i>
-                              <span class="nav-link-text">Logout</span>
-                          </a>
-                      </li>
+                                  <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>"
+                                      class="dropdown-item" class="dropdown-item">
+                                      <i class="ni ni-user-run"></i>
+                                      <span class="nav-link-text">Logout</span>
+                                  </a>
+                              </li>
 
 
                           </ul>
