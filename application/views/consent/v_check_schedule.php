@@ -38,7 +38,7 @@
 </style>
 
 <!-- Table Requestd form -->
-<h1>Check Schedule (ระยะเวลาการวางของ)</h1>
+<h1>Check expire date (ระยะเวลาการวางของ)</h1>
 <div class="card-header" id="card_radius">
     <div class="table-responsive">
         <table class="table align-items-center" id="history_table">

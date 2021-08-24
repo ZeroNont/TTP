@@ -144,7 +144,7 @@
                                             <br>
                                             <b>ตำแหน่ง : </b>หัวหน้างาน
                                             <?php //แสดงตำแหน่ง
-                                            $newDate = date("d/m/Y", strtotime($arr_list->app_supervisor_date)); ?>
+                                            $newDate = date("d/m/Y", strtotime($arr_his->app_supervisor_date)); ?>
                                             <br>
                                             <b>วันที่อนุมัติ : </b>
                                             <?php echo $newDate;  ?><br></span>
@@ -157,7 +157,7 @@
                                                 <br>
                                             <b>ตำแหน่ง : </b>HR 
                                             <?php //แสดงตำแหน่ง
-                                                $newDate = date("d/m/Y", strtotime($arr_list->app_hr_date)); ?>
+                                                $newDate = date("d/m/Y", strtotime($arr_his_hr->app_hr_date)); ?>
                                                 <br>
                                             <b>วันที่อนุมัติ : </b>
                                                 <?php echo $newDate;  ?><br></span>
@@ -170,7 +170,7 @@
                                             <br>
                                             <b>ตำแหน่ง : </b>Approve Plant
                                             <?php //แสดงตำแหน่ง
-                                            $newDate = date("d/m/Y", strtotime($arr_list->app_approval_plant_date)); ?>
+                                            $newDate = date("d/m/Y", strtotime($arr_his_ap->app_approval_plant_date)); ?>
                                             <br>
                                             <b>วันที่อนุมัติ : </b>
                                             <?php echo $newDate;  ?><br></span>
@@ -183,13 +183,13 @@
                                             <br>
                                             <b>ตำแหน่ง : </b>หัวหน้างาน 
                                             <?php //แสดงตำแหน่ง
-                                                $newDate = date("d/m/Y", strtotime($arr_list->app_supervisor_date)); ?>
+                                                $newDate = date("d/m/Y", strtotime($arr_his->app_supervisor_date)); ?>
                                             <br>
                                             <b>วันที่ปฏิเสธ : </b>
                                                 <?php echo $newDate;  ?> 
                                                 <br>   
                                             <b>เหตุผลที่ปฏิเสธ : </b>
-                                            <?php echo $arr_list->app_reject_reason;?></span>
+                                            <?php echo $arr_his->app_reject_reason;?></span>
                                         </div>
                                     <?php } 
                                     // <!-- แสดงชื่อ HR ปฎิเสธ -->
@@ -199,13 +199,13 @@
                                             <br>
                                             <b>ตำแหน่ง : </b>HR 
                                             <?php //แสดงตำแหน่ง
-                                                $newDate = date("d/m/Y", strtotime($arr_list->app_hr_date)); ?>
+                                                $newDate = date("d/m/Y", strtotime($arr_his_hr->app_hr_date)); ?>
                                                  <br>
                                             <b>วันที่ปฏิเสธ : </b>
                                                 <?php echo $newDate;  ?>
                                             <br>
                                             <b>เหตุผลที่ปฏิเสธ : </b>
-                                                <?php echo $arr_list->app_reject_reason;?></span>
+                                                <?php echo $arr_his_hr->app_reject_reason;?></span>
                                             </div>
                                             <?php }
                                      // <!-- แสดงชื่อ Approve Plant ปฎิเสธ -->
@@ -215,12 +215,12 @@
                                             <br>
                                             <b>ตำแหน่ง : </b>Approve Plant <br>
                                             <?php //แสดงตำแหน่ง
-                                                $newDate = date("d/m/Y", strtotime($arr_list->app_approval_plant_date)); ?>
+                                                $newDate = date("d/m/Y", strtotime($arr_his_ap->app_approval_plant_date)); ?>
                                             <b>วันที่ปฏิเสธ : </b>
                                                 <?php echo $newDate;  ?>
                                             <br>
                                             <b>เหตุผลที่ปฏิเสธ : </b>
-                                            <?php echo $arr_list->app_reject_reason;?></span>
+                                            <?php echo $arr_his_ap->app_reject_reason;?></span>
                                         </div>
                                         <?php } ?>
                                     </div>
