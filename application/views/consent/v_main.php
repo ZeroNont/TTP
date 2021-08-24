@@ -34,7 +34,7 @@
 
     #bg_home {
 
-        background-image: url("<?php echo base_url() ?>pic/pic-home.jpg");
+        background-image: url("<?php echo base_url() ?>/pic/pic-home.jpg");
         background-attachment: fixed;
         background-position: top center;
         background-repeat: no-repeat;
@@ -78,7 +78,7 @@
                 </div>
                 <div id="cardbody">
 
-                    <!-- <h2 style = "font-size : 25.9px;font-family:Helvetica;color:red;">Welcome <?php echo $_SESSION['UsName_EN'] ?></h2> -->
+                    <!-- <h2 style = "font-size : 25.9px;font-family:Helvetica;color:white;">Welcome <?php echo $_SESSION['UsName_EN'] ?></h2> -->
 
                     <!--ปุ่มเพิ่มคำขอ-->
                     <a href='<?php echo site_url() . '/licence_form/licence_input/index/' ?>'>
