@@ -75,14 +75,7 @@ body
                         </div>
                         <div  id = "cardbody">
                             
-                            <h2 style = "font-size : 25.9px;font-family:Helvetica;color:red;">Welcome <?php echo $_SESSION['UsName_EN'] ?></h2>
-                            <br>
-                            <h4>ปัจจุบัน ทางบริษัท ได้มีการให้พนักงาน </h4>
-                            <h4>ทำการวางของในจุดต่างๆ ตามที่จัดไว้</h4>
-                            <h4>ทำให้ต้องมีการขออนุญาตวางของในพื้นที่</h4>
-                            <h4>โรงงานชั่วคราวเพื่อให้มีพื้นที่จัดเก็บของชั่วคราว</h4>
-                            <h4>ในการรอการจัดการจัดจุดวางของให้เหมาะสม</h4>
-                          
+                            <!-- <h2 style = "font-size : 25.9px;font-family:Helvetica;color:red;">Welcome <?php echo $_SESSION['UsName_EN'] ?></h2> -->
 
                             <!--ปุ่มเพิ่มคำขอ-->
                             <a href='<?php echo site_url() . '/licence_form/licence_input/index/' ?>'>

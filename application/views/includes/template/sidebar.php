@@ -68,7 +68,14 @@
                               <span class="nav-link-text">Pending Approve</span>
                           </a>
                       </li>
-
+                      <li class="nav-item">
+                          <a class="nav-link"
+                              href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
+                                  class="dropdown-item">
+                                  <i class="ni ni-user-run"></i>
+                              <span class="nav-link-text">Logout</span>
+                          </a>
+                      </li>
                   </ul>
                   <?php } else if ($id == 2) { ?>
 
@@ -132,7 +139,14 @@
                                       <span class="nav-link-text">Pending Approve</span>
                                   </a>
                               </li>
-
+                              <li class="nav-item">
+                          <a class="nav-link"
+                              href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
+                                  class="dropdown-item">
+                                  <i class="ni ni-user-run"></i>
+                              <span class="nav-link-text">Logout</span>
+                          </a>
+                      </li>
                           </ul>
                           
 
@@ -233,6 +247,14 @@
                                       <span class="nav-link-text">Report</span>
                                   </a>
                               </li>
+                              <li class="nav-item">
+                          <a class="nav-link"
+                              href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
+                                  class="dropdown-item">
+                                  <i class="ni ni-user-run"></i>
+                              <span class="nav-link-text">Logout</span>
+                          </a>
+                      </li>
 
                           </ul>
                       </div>
@@ -320,6 +342,14 @@
                                       <span class="nav-link-text">Approve Form</span>
                                   </a>
                               </li>
+                              <li class="nav-item">
+                          <a class="nav-link"
+                              href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
+                                  class="dropdown-item">
+                                  <i class="ni ni-user-run"></i>
+                              <span class="nav-link-text">Logout</span>
+                          </a>
+                      </li>
 
 
                           </ul>

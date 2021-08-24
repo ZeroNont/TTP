@@ -25,30 +25,19 @@
 
                   </ul>
                   <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
-                      <li class="nav-item dropdown">
-                          <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                              aria-expanded="false">
                               <div class="media align-items-center">
 
                                   <div class="media-body  ml-2  d-none d-lg-block">
-                                      <span
-                                          class="mb-0 text-sm  font-weight-bold"><?php echo $_SESSION['UsName_EN'] ?></span>
+                                    <h2 style = "font-size : 16px;font-family:Helvetica;color:white;"><?php echo $_SESSION['UsName_EN'] ?></h2>
                                   </div>
                               </div>
-                          </a>
-                          <div class="dropdown-menu  dropdown-menu-right ">
-                              <div class="dropdown-header noti-title">
-                                  <h6 class="text-overflow m-0">Welcome!</h6>
-                              </div>
-
-                              <div class="dropdown-divider"></div>
-                              <a href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
+                               <li class="nav-item">
+                          <a class="nav-link"
+                              href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
                                   class="dropdown-item">
                                   <i class="ni ni-user-run"></i>
-
-                                  <span>Logout</span>
-                              </a>
-                          </div>
+                              <span class="nav-link-text">Logout</span>
+                          </a>
                       </li>
                   </ul>
               </div>
