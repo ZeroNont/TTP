@@ -41,8 +41,8 @@
                             <div class="form-group">
 
                                 <!--อัพเดท/เพิ่มวันขออนุญาตวาง-->
-                                <label class="form-control-label" for="input-email">Number of Date
-                                    (จำนวนวันที่ต้องการวาง)
+                                <label class="form-control-label" for="input-email">Specify the end date.
+                                    (ระบุวันสิ้นสุดวันที่)
                                     <select class="form-control" name="End_date" style="text-align:center" required><br>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
