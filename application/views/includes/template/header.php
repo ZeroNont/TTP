@@ -22,6 +22,8 @@
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
     <title>Temporary Tag Permission System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Favicon -->
     <link rel="icon" href="<?php echo base_url(); ?>argon/assets/img/brand/denso.jpg" type="image/png">
     <!-- Fonts -->
