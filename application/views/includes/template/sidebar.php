@@ -37,7 +37,7 @@
                           <a class="nav-link"
                               href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
                               <i class="ni ni-calendar-grid-58 text-yellow"></i>
-                              <span class="nav-link-text">Check Schedule</span>
+                              <span class="nav-link-text">Check expire date</span>
                           </a>
                       </li>
                       <li class="nav-item">
