@@ -8,7 +8,7 @@
                   <img src="../../../argon/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
               </a>
           </div>
-          <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;"><?php echo $_SESSION['UsName_EN'] ?></h2>
+          <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">Welcome!<br><?php echo $_SESSION['UsName_EN'] ?></h2>
           <div class="navbar-inner">
               <!-- Collapse -->
               <div class="collapse navbar-collapse" id="sidenav-collapse-main">
@@ -16,12 +16,6 @@
                   <?php $id = $_SESSION['Usrole'];
                     if ($id == 1) { ?>
                       <ul class="navbar-nav">
-                          <li class="nav-item ">
-                              <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
-                                  <i class="ni ni-tv-2 text-primary"></i>
-                                  <span class="nav-link-text">Home</span>
-                              </a>
-                          </li>
                           <li class="nav-item">
                               <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                   <i class="ni ni-badge text-orange"></i>
@@ -89,12 +83,6 @@
                           <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                               <!-- Nav items -->
                               <ul class="navbar-nav">
-                                  <li class="nav-item">
-                                      <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
-                                          <i class="ni ni-tv-2 text-primary"></i>
-                                          <span class="nav-link-text">Home</span>
-                                      </a>
-                                  </li>
                                   <li class="nav-item">
                                       <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                           <i class="ni ni-badge text-orange"></i>
@@ -166,12 +154,6 @@
                           <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                               <!-- Nav items -->
                               <ul class="navbar-nav">
-                                  <li class="nav-item">
-                                      <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
-                                          <i class="ni ni-tv-2 text-primary"></i>
-                                          <span class="nav-link-text">Home</span>
-                                      </a>
-                                  </li>
                                   <li class="nav-item">
                                       <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                           <i class="ni ni-badge text-orange"></i>
@@ -270,12 +252,6 @@
                           <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                               <!-- Nav items -->
                               <ul class="navbar-nav">
-                                  <li class="nav-item">
-                                      <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
-                                          <i class="ni ni-tv-2 text-primary"></i>
-                                          <span class="nav-link-text">Home</span>
-                                      </a>
-                                  </li>
                                   <li class="nav-item">
                                       <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                           <i class="ni ni-badge text-orange"></i>
