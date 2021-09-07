@@ -92,13 +92,13 @@ class Login extends MainController
     {// check role
         if (!empty($this->session->userdata('UsEmp_ID'))) {
 			if($_SESSION['Usrole']==1){
-            	redirect('Check_status/Check_status/index', 'refresh');
+            	redirect('Check_status/Check_status/home', 'refresh');
 			}else if($_SESSION['Usrole']==2){
-				redirect('Check_status/Check_status/index', 'refresh');
+				redirect('Check_status/Check_status/home', 'refresh');
 			}else if($_SESSION['Usrole']==3){
-				redirect('Check_status/Check_status/index', 'refresh');
+				redirect('Check_status/Check_status/home', 'refresh');
 			}else if($_SESSION['Usrole']==4){
-				redirect('Check_status/Check_status/index', 'refresh');
+				redirect('Check_status/Check_status/home', 'refresh');
 			}
         }
         // if

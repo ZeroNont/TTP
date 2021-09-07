@@ -1,7 +1,7 @@
   <h1>
-      Home
-
+      Home (หน้าแรก)
   </h1>
+  <br>
   <div class="card">
       <div class="table-responsive">
           <table class="table align-items-center table-flush" id="example">
