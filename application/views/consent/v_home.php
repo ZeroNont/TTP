@@ -16,25 +16,31 @@
                   </tr>
               </thead>
               <tbody class="list">
-                  <?php for ($i = 0; count($obj_status); $i++) { ?>
+                  <?php for ($i = 0; $i < count($obj_status); $i++) {
+                        $j = $i + 1; ?>
                   <tr>
                       <th scope="row">
                           <div class="media align-items-center">
                               <div class="media-body">
-                                  <span class="name mb-0 text-sm"><?php echo $i + 1;  ?></span>
+                                  <span class="name mb-0 text-sm"><?php echo $j;  ?></span>
                               </div>
                           </div>
                       </th>
                       <td class="budget">
-                          <span class="name mb-0 text-sm"><?php echo $obj_status[$i]->req_hr_no ?></span>
+                          <?php if ($obj_status[$i]->req_hr_no != '') { ?>
+                          <span class="name mb-0 text-sm"><?php echo $obj_status[$i]->req_hr_no  ?></span>
+                          <?php } else { ?>
+                          <span class="name mb-0 text-sm">-</span>
+                          <?php } ?>
                       </td>
                       <td>
                           <span class="name mb-0 text-sm"><?php echo $obj_status[$i]->req_item ?></span>
                       </td>
                       <td>
-                          <span
-                              class="name mb-0 text-sm"><?php echo $obj_status[$i]->req_start_date . '-' . $obj_status[$i]->req_end_date ?></span>
-                      </td>
+                          <?php
+                                $startDate = date("d/m/Y", strtotime($obj_status[$i]->req_start_date));
+                                $endDate  = date("d/m/Y", strtotime($obj_status[$i]->req_end_date)); ?>
+                          <?php echo $startDate . " - " . $endDate ?></td>
                       <td>
                           <?php if ($obj_status[$i]->req_status > 0) { ?>
                           <span class="badge badge-dot mr-4">
