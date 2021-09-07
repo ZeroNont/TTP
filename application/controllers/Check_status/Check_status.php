@@ -49,5 +49,15 @@ class Check_status extends MainController
         // // print_r($_SESSION['Emp_ID']);
         $this->output('consent/v_check_status', $data);
     }
+    function home()
+    {
+        // echo $_SESSION['UsEmp_ID'];
+        $id = $_SESSION['UsEmp_ID'];
+        // echo  $id;
+        $this->load->model('M_ttp_licence', 'ttp');
+        $data['obj_status'] = $this->ttp->get_status($id)->result();
+        // // print_r($_SESSION['Emp_ID']);
+        $this->output('consent/v_home', $data);
+    }
 }
 // 

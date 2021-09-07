@@ -8,7 +8,8 @@
                   <img src="../../../argon/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
               </a>
           </div>
-          <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;"><?php echo $_SESSION['UsName_EN'] ?></h2>
+          <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
+              <?php echo $_SESSION['UsName_EN'] ?></h2>
           <div class="navbar-inner">
               <!-- Collapse -->
               <div class="collapse navbar-collapse" id="sidenav-collapse-main">
@@ -17,7 +18,7 @@
                     if ($id == 1) { ?>
                       <ul class="navbar-nav">
                           <li class="nav-item ">
-                              <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
+                              <a class="nav-link " href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
                                   <i class="ni ni-tv-2 text-primary"></i>
                                   <span class="nav-link-text">Home</span>
                               </a>
@@ -90,7 +91,7 @@
                               <!-- Nav items -->
                               <ul class="navbar-nav">
                                   <li class="nav-item">
-                                      <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
+                                      <a class="nav-link " href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
                                           <i class="ni ni-tv-2 text-primary"></i>
                                           <span class="nav-link-text">Home</span>
                                       </a>
@@ -167,7 +168,7 @@
                               <!-- Nav items -->
                               <ul class="navbar-nav">
                                   <li class="nav-item">
-                                      <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
+                                      <a class="nav-link " href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
                                           <i class="ni ni-tv-2 text-primary"></i>
                                           <span class="nav-link-text">Home</span>
                                       </a>
@@ -271,7 +272,7 @@
                               <!-- Nav items -->
                               <ul class="navbar-nav">
                                   <li class="nav-item">
-                                      <a class="nav-link " href="<?php echo site_url() . 'Main/Main/show_main/' ?>">
+                                      <a class="nav-link " href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
                                           <i class="ni ni-tv-2 text-primary"></i>
                                           <span class="nav-link-text">Home</span>
                                       </a>
