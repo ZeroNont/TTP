@@ -25,12 +25,7 @@
 
                   </ul>
                   <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
-                              <div class="media align-items-center">
-
-                                  <div class="media-body  ml-2  d-none d-lg-block">
-                                    <h2 style = "font-size : 16px;font-family:Helvetica;color:white;"><?php echo $_SESSION['UsName_EN'] ?></h2>
-                                  </div>
-                              </div>
+                             
                                <li class="nav-item">
                           <a class="nav-link"
                               href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item"
