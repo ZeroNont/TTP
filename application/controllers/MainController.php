@@ -53,16 +53,16 @@ class MainController extends CI_Controller
 			$data['arr_req_supervisor'] = sizeof( $this->mreq->get_all_sup()->result() );
 			$this->load->view('includes/template/sidebar',$data);
 		}else if($_SESSION["Usrole"]==3){
-			$this->load->model('M_ttp_approve_form', 'mreq');
-			$this->mreq->app_hr_id = $_SESSION["UsEmp_ID"];
-			$this->mreq->req_status = 2;
-			$data['arr_req_hr'] = sizeof( $this->mreq->get_all_hr()->result() );
+			$this->load->model('M_ttp_approve_form', 'req');
+			$this->req->app_hr_id = $_SESSION["UsEmp_ID"];
+			$this->req->req_status = 2;
+			$data['arr_req_hr'] = sizeof($this->req->get_all_hr()->result());
 			$this->load->view('includes/template/sidebar',$data);
 		}else if($_SESSION["Usrole"]==4){
-			$this->load->model('M_ttp_approve_form', 'mreq');
-			$this->mreq->app_approve_plant_id = $_SESSION["UsEmp_ID"];
-			$this->mreq->req_status = 3;
-			$data['arr_req_plant'] = sizeof( $this->mreq->get_all_plant()->result() );
+			$this->load->model('M_ttp_approve_form', 'req');
+			$this->req->app_approve_plant_id = $_SESSION["UsEmp_ID"];
+			$this->req->req_status = 3;
+			$data['arr_req_plant'] = sizeof($this->req->get_all_plant()->result());
 			$this->load->view('includes/template/sidebar',$data);
 		}
 		else{
