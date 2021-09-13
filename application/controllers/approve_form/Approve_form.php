@@ -193,7 +193,7 @@ class Approve_form extends MainController
             }//if Year
             else{
                 $HR_No = "HR".date("Y")."-001";
-            } //else Year
+            }//else Year
         }//if size of
         else{
             $HR_No = "HR".date("Y")."-001";
