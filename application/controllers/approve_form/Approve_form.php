@@ -172,10 +172,10 @@ class Approve_form extends MainController
         $this->load->model('M_ttp_request','mreq');
         $data['HR_No'] = $this->mreq->get_hr_no()->row();
         $temp = $data['HR_No'];
-        if(sizeof($temp) != 0){
-            $HR = substr($temp->HR_No,7);
+        if(sizeof($data['HR_No']) != 0){
+            $HR = substr($temp->req_hr_no,7);
             $HR_no = intval($HR)+1;
-            $Year = substr($temp->HR_No,2,4);
+            $Year = substr($temp->req_hr_no,2,4);
             if($Year == date("Y")){
                 if(intval($HR) < 9){
                     $HR_No = "HR".date("Y")."-00".$HR_no;

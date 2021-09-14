@@ -31,7 +31,9 @@
                 </tr>
             </thead>
             <tbody>
-                <?php for ($i = 0; $i < count($obj_status); $i++) { ?>
+                
+            <?php 
+             for ($i = 0; $i < count($obj_status); $i++) { ?>
                 <tr>
                     <td>
                         <?php echo $i + 1 ?>
