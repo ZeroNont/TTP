@@ -26,10 +26,10 @@ class Renewal extends MainController
 	{
 		$this->load->model('M_ttp_renewal', 'ttp');
 		$id = $_SESSION["UsEmp_ID"];
-       // $this->ttp->Status = 4;
-        $data['arr_renew'] = $this->ttp->get_all($id)->result();
+		// $this->ttp->Status = 4;
+		$data['arr_renew'] = $this->ttp->get_all($id)->result();
 		$data['arr_sec'] = $this->ttp->get_schedule($id)->result();
-		$this->output('consent/v_renewal',$data);
+		$this->output('consent/v_renewal', $data);
 	}
 
 	/*
@@ -41,15 +41,14 @@ class Renewal extends MainController
 	* @Create Date 2564-7-19
 	*/
 	function show_reform($Form_ID)
-    {
+	{
 		$this->load->model('M_ttp_renewal', 'ttp');
-        $data['arr_comp'] = $this->ttp->get_company()->result();
-        $data['arr_plan'] = $this->ttp->get_plan()->result();
-        $data['arr_supervisor'] = $this->ttp->get_supervisor()->result();
-        $data['arr_formfile'] = $this->ttp->get_formfile()->result();
-        $data['arr_renew'] = $this->ttp->get_bydate($Form_ID)->result();
-        $this->output('consent/v_renew_form', $data);
-    
+		$data['arr_comp'] = $this->ttp->get_company()->result();
+		$data['arr_plan'] = $this->ttp->get_plan()->result();
+		$data['arr_supervisor'] = $this->ttp->get_supervisor()->result();
+		$data['arr_formfile'] = $this->ttp->get_formfile()->result();
+		$data['arr_renew'] = $this->ttp->get_bydate($Form_ID)->result();
+		$this->output('consent/v_renew_form', $data);
 	}
 
 	/*
@@ -62,42 +61,36 @@ class Renewal extends MainController
 	*/
 	function update_date()
 	{
-		
-		$this->load->model('Da_ttp_renewal', 'ttp');    
+
+		$this->load->model('Da_ttp_renewal', 'ttp');
 		$Form_ID = $this->input->post('Form_ID');
-		$set_date = $this->input->post('set_Enddate');
-		$add_date = $this->input->post('Add_date');
+		$set_date = $this->input->post('date_review');
+		//$add_date = $this->input->post('Add_date');
 		//บวกวันที่ 
 		$date1 = str_replace('-', '/', $set_date);
-		$Update = date('Y-m-d',strtotime($date1 . "+".$add_date." days"));
-		$this->ttp->req_end_date = $Update;
+		//$Update = date('Y-m-d',strtotime($date1 . "+".$add_date." days"));
+		$this->ttp->req_end_date = $set_date;
 		$this->ttp->req_form_id = $Form_ID;
-		$num =$this->input->post('Form_count');
+		$num = $this->input->post('Form_count');
 		$status = $this->input->post('Status');
-		 $num=$num+1;
-		 $status = 1;
+		$num = $num + 1;
+		$status = 1;
 		// $this->ttp->Emp_ID;
-	
-		$this->ttp->req_form_count=$num;
-		$this->ttp->req_status=$status;
+
+		$this->ttp->req_form_count = $num;
+		$this->ttp->req_status = $status;
 		$this->ttp->update_form(); //+1ให้กับฟอร์มที่ID ตรงกัน
 		$this->ttp->update_status(); //ขอวันเสร็จเปลี่ยนสถานะ
 		$this->ttp->update(); //อัพเดทวันที่
-		
+
 		//เก็บประวัติการต่ออายุในแต่ละครั้ง
-		$new_startdate=$this->ttp->req_end_date;
-		$this->ttp->sch_start_date=$set_date;
-		$this->ttp->sch_end_date=$new_startdate;
-		$this->ttp->sch_form_id=$Form_ID;
+		$new_startdate = $this->ttp->req_end_date;
+		$this->ttp->sch_start_date = $set_date;
+		$this->ttp->sch_end_date = $new_startdate;
+		$this->ttp->sch_form_id = $Form_ID;
 		$this->ttp->insert_schedule();
 		//$this->ttp->update_sec();
 		redirect('/Renewal/Renewal/show_renewal');
-	
-		
-
-		
 	}
-
-	
 }
 // 
