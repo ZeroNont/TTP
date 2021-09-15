@@ -42,7 +42,7 @@
                                 $endDate  = date("d/m/Y", strtotime($obj_status[$i]->req_end_date)); ?>
                           <?php echo $startDate . " - " . $endDate ?></td>
                       <td>
-                          <?php if ($obj_status[$i]->req_status > 0) { ?>
+                          <?php if ($obj_status[$i]->req_status > 0 && $obj_status[$i]->req_status < 4) { ?>
                           <span class="badge badge-dot mr-4">
                               <i class="bg-warning"></i>
                               <span class="status">pending</span>
