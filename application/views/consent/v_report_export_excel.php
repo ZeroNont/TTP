@@ -75,6 +75,8 @@
                                         $Tag_Status = 'Wating for remove';
                                     } else if ($Form_data[$i]->req_status > '4') {
                                         $Tag_Status = 'Completed';
+                                    } else if ($Form_data[$i]->req_status < '4') {
+                                        $Tag_Status = '-';
                                     }
                                     ?>
                                     <td><?php echo $Tag_Status; ?></td>
