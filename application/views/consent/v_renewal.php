@@ -47,45 +47,43 @@ table {
                                 echo $No++;
                             } ?></td>
 
-                    <td><?php if 
-                                echo $arr_renew[$i]->req_hr_no;
+                    <td><?php
+                            echo $arr_renew[$i]->req_hr_no;
                             ?></td>
 
-                    <td><?php {
-                                echo $arr_renew[$i]->req_item;
-                            } ?></td>
-
-                    <td><?php{
-                                echo $arr_renew[$i]->req_officer;
-                            } ?></td>
-
-                    <td><?php {
-                                echo date("d/m/Y", strtotime($arr_renew[$i]->req_start_date));
-                                echo ' - ';
-                                echo date("d/m/Y", strtotime($arr_renew[$i]->req_end_date));
-                            }
+                    <td><?php
+                            echo $arr_renew[$i]->req_item;
                             ?></td>
 
-                    <td><?php  {
-                                if ($arr_renew[$i]->req_status == 4) {
-                                    echo "อนุมัติ";
-                                } else {
-                                    echo " ";
-                                }
+                    <td><?php
+                            echo $arr_renew[$i]->req_officer;
+                            ?></td>
+
+                    <td><?php
+                            echo date("d/m/Y", strtotime($arr_renew[$i]->req_start_date));
+                            echo ' - ';
+                            echo date("d/m/Y", strtotime($arr_renew[$i]->req_end_date));
+
+                            ?></td>
+
+                    <td><?php
+                            if ($arr_renew[$i]->req_status == 4) {
+                                echo "อนุมัติ";
                             } else {
                                 echo " ";
-                            } ?></td>
-
-                    <td><?php {
-                                echo $arr_renew[$i]->req_form_count . "/4";
                             }
+                            ?></td>
+
+                    <td><?php
+                            echo $arr_renew[$i]->req_form_count . "/4";
+
                             ?></td>
 
 
 
                     <!--ปุ่มขอต่ออายุ-->
 
-                    <td> { ?>
+                    <td> <?php { ?>
                         <a href='<?php echo site_url() . 'Renewal/Renewal/show_reform/'
                                                 . $arr_renew[$i]->req_form_id ?>'>
 
