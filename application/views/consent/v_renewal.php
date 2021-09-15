@@ -39,55 +39,55 @@ table {
                 <?php
                 $No = 1;
                 for ($i = 0; $i < count($arr_renew); $i++) { ?>
-                <?php if ($arr_renew[$i]->req_status == 4); { ?>
+
                 <tr>
 
                     <td style='text-align:center'>
-                        <?php if ($arr_renew[$i]->req_status == 4) {
-                                    echo $No++;
-                                } ?></td>
+                        <?php {
+                                echo $No++;
+                            } ?></td>
 
-                    <td><?php if ($arr_renew[$i]->req_status == 4)
-                                    echo $arr_renew[$i]->req_hr_no;
-                                ?></td>
+                    <td><?php if 
+                                echo $arr_renew[$i]->req_hr_no;
+                            ?></td>
 
-                    <td><?php if ($arr_renew[$i]->req_status == 4) {
-                                    echo $arr_renew[$i]->req_item;
-                                } ?></td>
+                    <td><?php {
+                                echo $arr_renew[$i]->req_item;
+                            } ?></td>
 
-                    <td><?php if ($arr_renew[$i]->req_status == 4) {
-                                    echo $arr_renew[$i]->req_officer;
-                                } ?></td>
+                    <td><?php{
+                                echo $arr_renew[$i]->req_officer;
+                            } ?></td>
 
-                    <td><?php if ($arr_renew[$i]->req_status == 4) {
-                                    echo date("d/m/Y", strtotime($arr_renew[$i]->req_start_date));
-                                    echo ' - ';
-                                    echo date("d/m/Y", strtotime($arr_renew[$i]->req_end_date));
-                                }
-                                ?></td>
+                    <td><?php {
+                                echo date("d/m/Y", strtotime($arr_renew[$i]->req_start_date));
+                                echo ' - ';
+                                echo date("d/m/Y", strtotime($arr_renew[$i]->req_end_date));
+                            }
+                            ?></td>
 
-                    <td><?php if ($arr_renew[$i]->req_status == 4) {
-                                    if ($arr_renew[$i]->req_status == 4) {
-                                        echo "อนุมัติ";
-                                    } else {
-                                        echo " ";
-                                    }
+                    <td><?php  {
+                                if ($arr_renew[$i]->req_status == 4) {
+                                    echo "อนุมัติ";
                                 } else {
                                     echo " ";
-                                } ?></td>
-
-                    <td><?php if ($arr_renew[$i]->req_status == 4) {
-                                    echo $arr_renew[$i]->req_form_count . "/4";
                                 }
-                                ?></td>
+                            } else {
+                                echo " ";
+                            } ?></td>
+
+                    <td><?php {
+                                echo $arr_renew[$i]->req_form_count . "/4";
+                            }
+                            ?></td>
 
 
 
                     <!--ปุ่มขอต่ออายุ-->
 
-                    <td> <?php if ($arr_renew[$i]->req_status == 4) { ?>
+                    <td> { ?>
                         <a href='<?php echo site_url() . 'Renewal/Renewal/show_reform/'
-                                                    . $arr_renew[$i]->req_form_id ?>'>
+                                                . $arr_renew[$i]->req_form_id ?>'>
 
                             <button> <i class="fas fa-envelope"></i></button> </a><?php } ?>
                     </td>
@@ -99,7 +99,7 @@ table {
             </tr>
 
             <?php } ?>
-            <?php } ?>
+
         </table>
         <div>
         </div>
