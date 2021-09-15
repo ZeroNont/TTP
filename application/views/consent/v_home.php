@@ -52,7 +52,7 @@
                               <i class="bg-danger"></i>
                               <span class="status">disapproved</span>
                           </span>
-                          <?php } else if ($obj_status[$i]->req_status == 4) { ?>
+                          <?php } else if ($obj_status[$i]->req_status >= 4) { ?>
                           <span class="badge badge-dot mr-4">
                               <i class="bg-success"></i>
                               <span class="status">approved</span>
