@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="form-control-label" for="input-username">expiration date
+                                <label class="form-control-label" for="input-username">Expiration Date
                                     (วันที่สิ้นสุด)</label>
 
                                 <input type="date" name="End_date" class="form-control"
