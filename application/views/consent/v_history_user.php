@@ -12,33 +12,33 @@
 
 <!-- CSS -->
 <style>
-#history_table td,
-#history_table th {
-    padding: 8px;
-    text-align: center;
-}
+    #history_table td,
+    #history_table th {
+        padding: 8px;
+        text-align: center;
+    }
 
-#history_table tr:nth-child(even) {
-    background-color: #e9ecef;
-}
+    #history_table tr:nth-child(even) {
+        background-color: #e9ecef;
+    }
 
-#history_table tr:hover {
-    background-color: #adb5bd;
-}
+    #history_table tr:hover {
+        background-color: #adb5bd;
+    }
 
-#card_radius {
-    margin-left: 14px;
-    margin-right: 15px;
-    border-radius: 20px;
-    width: auto;
-    min-height: 300px;
-}
+    #card_radius {
+        margin-left: 14px;
+        margin-right: 15px;
+        border-radius: 20px;
+        width: auto;
+        min-height: 300px;
+    }
 
-#history_table {
-    width: 98%;
-    margin-top: 20px;
-    margin-left: 10px;
-}
+    #history_table {
+        width: 98%;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
 </style>
 <h1>History Form (ประวัติคำขอวางของ)</h1>
 <!-- Table Requestd form -->
@@ -57,45 +57,47 @@
             </thead>
             <tbody class="list">
                 <?php for ($i = 0; $i < count($em_form); $i++) { ?>
-                <tr>
-                    <td class="text-center">
-                        <?php echo ($i + 1); ?> </td>
-                    </td>
-                    <td>
-                        <?php echo $em_form[$i]->req_form_id ?></td>
-                    </td>
-                    <td>
-                        <?php echo $em_form[$i]->req_item ?></td>
-                    </td>
-                    <td>
-                        <?php
+                    <tr>
+                        <td class="text-center">
+                            <?php echo ($i + 1); ?> </td>
+                        </td>
+                        <?php if ($em_form[$i]->req_hr_no == '') { ?>
+                            <td><?php echo '-'; ?></td>
+                        <?php } else { ?>
+                            <td><?php echo $em_form[$i]->req_hr_no; ?></td>
+                        <?php } ?>
+                        </td>
+                        <td>
+                            <?php echo $em_form[$i]->req_item ?></td>
+                        </td>
+                        <td>
+                            <?php
                             $startDate = date("d/m/Y", strtotime($em_form[$i]->req_start_date));
                             $endDate  = date("d/m/Y", strtotime($em_form[$i]->req_end_date)); ?>
-                        <?php echo $startDate . " - " . $endDate ?></td>
-                    </td>
-                    <td>
-                        <?php echo $arr_emp[0]->Empname_eng . ' ' . $arr_emp[0]->Empsurname_eng ?></td>
-                    </td>
-                    <!-- column ดำเนินการ -->
-                    <td style='text-align: center;'>
-                        <!-- ปุ่มดำเนินการ -->
-                        <a
-                            href=" <?php echo site_url() . '/history/History/show_history_detail/' . $em_form[$i]->req_form_id; ?>">
-                            <button type="button" class="btn btn-primary btn-sm" style="background-color: info;">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </a>
-                    </td>
-                </tr>
+                            <?php echo $startDate . " - " . $endDate ?></td>
+                        </td>
+                        <td>
+                            <?php echo $arr_emp[0]->Empname_eng . ' ' . $arr_emp[0]->Empsurname_eng ?></td>
+                        </td>
+                        <!-- column ดำเนินการ -->
+                        <td style='text-align: center;'>
+                            <!-- ปุ่มดำเนินการ -->
+                            <a href=" <?php echo site_url() . '/history/History/show_history_detail/' . $em_form[$i]->req_form_id; ?>">
+                                <button type="button" class="btn btn-primary btn-sm" style="background-color: info;">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
                 <?php } ?>
             </tbody>
         </table>
     </div>
 </div>
 <script>
-$(document).ready(function() {
-    $('#history_table').DataTable();
-});
+    $(document).ready(function() {
+        $('#history_table').DataTable();
+    });
 </script>
 <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
 <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
