@@ -65,7 +65,7 @@
                     <?php if ($EndDate > $today_date  && $arr_form[$i]->req_status == 4) { ?>
                         <tr>
                             <td class="text-center">
-                                <?php echo ($num + 1); ?>
+                                <?php echo $num++; ?>
                             </td>
                             <td>
                                 <?php echo $arr_schedule[$i]->req_hr_no ?>
