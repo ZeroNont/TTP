@@ -38,8 +38,12 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
+                                <label class="form-control-label" for="input-username">expiration date
+                                    (วันที่สิ้นสุด)</label>
 
-                                <!--อัพเดท/เพิ่มวันขออนุญาตวาง-->
+                                <input type="date" name="End_date" class="form-control"
+                                    min="<?php echo date('Y-m-d'); ?>" required>
+                                <!-- อัพเดท/เพิ่มวันขออนุญาตวาง
                                 <label class="form-control-label" for="input-email">Specify the end date.
                                     (ระบุวันสิ้นสุดวันที่)
                                     <select class="form-control" name="End_date" style="text-align:center" required><br>
@@ -74,7 +78,7 @@
                                         <option value="29">29</option>
                                         <option value="30">30</option>
 
-                                    </select>
+                                    </select> -->
                             </div>
                         </div>
                     </div>

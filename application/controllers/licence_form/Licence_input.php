@@ -126,7 +126,7 @@ class Licence_input extends MainController
         //บวกวันที่ 
         $date1 = str_replace('-', '/', $set_date);
         $Update = date('Y-m-d', strtotime($date1 . "+" . $add_date . " days"));
-        $this->ttp->req_end_date = $Update;
+        $this->ttp->req_end_date = $add_date;
 
         $this->ttp->insert_form();
         $this->ttp->insert_approve();
@@ -193,8 +193,8 @@ class Licence_input extends MainController
         //บวกวันที่ 
         $date1 = str_replace('-', '/', $set_date);
         $Update = date('Y-m-d', strtotime($date1 . "+" . $add_date . " days"));
-        $this->ttp->req_end_date = $Update;
-        $this->ttp->sch_end_date = $Update;
+        $this->ttp->req_end_date = $add_date;
+        $this->ttp->sch_end_date = $add_date;
         $this->ttp->req_status = 1;
         $this->ttp->req_form_id = $this->input->post('form');
         $this->ttp->update_date($k);
