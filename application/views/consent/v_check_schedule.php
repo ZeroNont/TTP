@@ -54,7 +54,7 @@
             </thead>
             <tbody class="list">
                 <?php
-                $num = 0;
+                $num = 1;
                 for ($i = 0; $i < count($arr_schedule); $i++) {
                 ?>
                     <?php $StartDate = $arr_schedule[$i]->req_start_date;
