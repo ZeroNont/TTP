@@ -32,7 +32,7 @@ class M_ttp_renewal extends Da_ttp_renewal
         $sql = "SELECT *
                 FROM ttps_database.requested_form As emp
 
-                WHERE emp.req_emp_id = $id AND emp.req_form_count <= 4 AND emp.req_status = 4  ";
+                WHERE emp.req_emp_id = $id AND emp.req_renew_count <= 4 AND emp.req_status = 4  ";
 
         $query = $this->db->query($sql);
         return $query;
