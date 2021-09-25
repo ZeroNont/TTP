@@ -35,8 +35,7 @@
 <body>
     <!-- ตารางรายการคำขอ -->
     <!-- Table Requestd form -->
-    <div class="card">
-        <div class="card-header">
+    
             <div class="table-responsive">
                 <table class="table align-items-center" id="history_table">
                     <thead class="thead-light">
@@ -95,8 +94,7 @@
                     </tbody>
                 </table>
 
-                <div>
-                </div>
+                
             </div>
         </div>
 
