@@ -9,10 +9,11 @@
 */ -->
 
 <!-- <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a> -->
-
+<div class="card">
 <h1>
     &nbsp; Report Detail (รายละเอียดรายงานข้อมูล)
 </h1>
+<div class="card-body">
 <br>
 <div class="card-header">
     <h1 style="text-align:center">

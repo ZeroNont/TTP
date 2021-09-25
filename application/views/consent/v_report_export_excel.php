@@ -8,10 +8,11 @@
 */ -->
 
 <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-secondary btn-lg canter float-right"><i class="fa fa-download"></i> Export Excel</a>
-
+<div class="card">
 <h1>
     &nbsp; Report (รายงานข้อมูล)
 </h1>
+<div class="card-body">
 <br>
 <div class="card-header">
     <h1 style="text-align:center">

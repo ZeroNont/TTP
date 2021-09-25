@@ -16,10 +16,12 @@ DIV.text {
 </style>
 
 <body>
+<div class="card">
     <h1 id="hid">
         Print Form (พิมพ์ใบขออนุญาตวางของ)
 
     </h1>
+    <div class="card-body">
     <div class="container">
         <button id="hid" onclick="window.print();" class="btn btn-primary float-right"> print </button>
         <div class="card">
