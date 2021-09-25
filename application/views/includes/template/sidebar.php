@@ -5,7 +5,7 @@
           <!-- Brand -->
           <div class="sidenav-header  align-items-center">
               <a class="navbar-brand" href="javascript:void(0)">
-                  <img src="<?php echo site_url() .'/argon/assets/img/brand/blue.png'?>" class="navbar-brand-img" alt="..."> 
+                  <img src="<?php echo site_url() . '/argon/assets/img/brand/blue.png' ?>" class="navbar-brand-img" alt="...">
               </a>
           </div>
           <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
@@ -16,20 +16,20 @@
                   <!-- Nav items -->
                   <?php $id = $_SESSION['Usrole'];
                     if ($id == 1) { ?>
-                  <ul class="navbar-nav">
-                      <li class="nav-item ">
-                          <a class="nav-link " href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
-                              <i class="ni ni-tv-2 text-primary"></i>
-                              <span class="nav-link-text">Home</span>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
-                              <i class="ni ni-badge text-orange"></i>
-                              <span class="nav-link-text">Request Tag</span>
-                          </a>
-                      </li>
-                      <li class="nav-item">
+                      <ul class="navbar-nav">
+                          <li class="nav-item ">
+                              <a class="nav-link " href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
+                                  <i class="ni ni-tv-2 text-primary"></i>
+                                  <span class="nav-link-text">Home</span>
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
+                                  <i class="ni ni-badge text-orange"></i>
+                                  <span class="nav-link-text">Request Tag</span>
+                              </a>
+                          </li>
+                          <!-- <li class="nav-item">
                           <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
                               <i class="ni ni-single-copy-04 text-primary"></i>
                               <span class="nav-link-text">Renew Tag</span>
@@ -53,118 +53,78 @@
                               <i class="ni ni-tag text-info"></i>
                               <span class="nav-link-text">Status Form</span>
                           </a>
-                      </li>
+                      </li> -->
 
 
-                      <li class="nav-item">
-                          <a class="nav-link"
-                              href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
-                              <i class="ni ni-time-alarm text-pink"></i>
-                              <span class="nav-link-text">History Form</span>
-                          </a>
-                      </li>
-                      <?php if ($arr_req != 0) { ?>
-                      <li class="nav-item">
-                          <a class="nav-link"
-                              href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?> ">
-                              <i class="ni ni-email-83 text-dark"></i>
-                              <span class="nav-link-text">Pending Approve&nbsp;<span
-                                      class="w3-badge"><?php echo $arr_req ?></span></span>
-                          </a>
-                      </li>
-                      <?php } else { ?>
-                      <li class="nav-item">
-                          <a class="nav-link"
-                              href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?> ">
-                              <i class="ni ni-email-83 text-dark"></i>
-                              <span class="nav-link-text">Pending Approve</span>
-                          </a>
-                      </li>
-                      <?php } ?>
-                      <li class="nav-item">
-                          <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>"
-                              class="dropdown-item" class="dropdown-item">
-                              <i class="ni ni-user-run"></i>
-                              <span class="nav-link-text">Logout</span>
-                          </a>
-                      </li>
-                  </ul>
+                          <li class="nav-item">
+                              <a class="nav-link" href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
+                                  <i class="ni ni-time-alarm text-yellow"></i>
+                                  <span class="nav-link-text">History Form</span>
+                              </a>
+                          </li>
+                          <?php if ($arr_req != 0) { ?>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?> ">
+                                      <i class="ni ni-email-83 text-primary"></i>
+                                      <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req ?></span></span>
+                                  </a>
+                              </li>
+                          <?php } else { ?>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?> ">
+                                      <i class="ni ni-email-83 text-primary"></i>
+                                      <span class="nav-link-text">Pending Approve</span>
+                                  </a>
+                              </li>
+                          <?php } ?>
+                          <li class="nav-item">
+                              <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item" class="dropdown-item">
+                                  <i class="ni ni-user-run"></i>
+                                  <span class="nav-link-text">Logout</span>
+                              </a>
+                          </li>
+                      </ul>
                   <?php } else if ($id == 2) { ?>
 
-                  <div class="navbar-inner">
                       <!-- Collapse -->
                       <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                           <!-- Nav items -->
                           <ul class="navbar-nav">
                               <li class="nav-item">
-                                  <a class="nav-link "
-                                      href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
+                                  <a class="nav-link " href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
+                                  <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
                                       <span class="nav-link-text">Request Tag</span>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
-                                      <i class="ni ni-single-copy-04 text-primary"></i>
-                                      <span class="nav-link-text">Renew Tag</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
-                                      <i class="ni ni-calendar-grid-58 text-yellow"></i>
-                                      <span class="nav-link-text">Check expire date</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Check_out_form/Check_out_form/index/' ?>">
-                                      <i class="ni ni-user-run text-default"></i>
-                                      <span class="nav-link-text">Request complete</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Check_status/Check_status/index/' ?>">
-                                      <i class="ni ni-tag text-info"></i>
-                                      <span class="nav-link-text">Status Form</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
-                                      <i class="ni ni-time-alarm text-pink"></i>
+                                  <a class="nav-link" href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
+                                      <i class="ni ni-time-alarm text-yellow"></i>
                                       <span class="nav-link-text">History Form</span>
                                   </a>
                               </li>
                               <?php if ($arr_req_supervisor != 0) { ?>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
-                                      <i class="ni ni-email-83 text-dark"></i>
-                                      <span class="nav-link-text">Pending Approve<span
-                                              class="w3-badge"><?php echo $arr_req_supervisor ?></span></span>
-                                  </a>
-                              </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
+                                          <i class="ni ni-email-83 text-primary"></i>
+                                          <span class="nav-link-text">Pending Approve<span class="w3-badge"><?php echo $arr_req_supervisor ?></span></span>
+                                      </a>
+                                  </li>
                               <?php } else { ?>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?> ">
-                                      <i class="ni ni-email-83 text-dark"></i>
-                                      <span class="nav-link-text">Pending Approve</span>
-                                  </a>
-                              </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?> ">
+                                          <i class="ni ni-email-83 text-primary"></i>
+                                          <span class="nav-link-text">Pending Approve</span>
+                                      </a>
+                                  </li>
                               <?php } ?>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>"
-                                      class="dropdown-item" class="dropdown-item">
+                                  <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item" class="dropdown-item">
                                       <i class="ni ni-user-run"></i>
                                       <span class="nav-link-text">Logout</span>
                                   </a>
@@ -174,68 +134,29 @@
 
                           </ul>
                       </div>
-                  </div>
 
                   <?php } else if ($id == 3) { ?>
 
-                  <div class="navbar-inner">
                       <!-- Collapse -->
                       <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                           <!-- Nav items -->
                           <ul class="navbar-nav">
                               <li class="nav-item">
-                                  <a class="nav-link "
-                                      href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
+                                  <a class="nav-link " href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
+                                  <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
                                       <span class="nav-link-text">Request Tag</span>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
-                                      <i class="ni ni-single-copy-04 text-primary"></i>
-                                      <span class="nav-link-text">Renew Tag</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
-                                      <i class="ni ni-calendar-grid-58 text-yellow"></i>
-                                      <span class="nav-link-text">Check expire date</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Check_out_form/Check_out_form/index/' ?>">
-                                      <i class="ni ni-user-run text-default"></i>
-                                      <span class="nav-link-text">Request complete</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Check_status/Check_status/index/' ?>">
-                                      <i class="ni ni-tag text-info"></i>
-                                      <span class="nav-link-text">Status Form</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
-                                      <i class="ni ni-time-alarm text-pink"></i>
+                                  <a class="nav-link" href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
+                                      <i class="ni ni-time-alarm text-yellow"></i>
                                       <span class="nav-link-text">History Form</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
-                                      <i class="ni ni-email-83 text-dark"></i>
-                                      <span class="nav-link-text">Pending Approve</span>
                                   </a>
                               </li>
 
@@ -249,26 +170,22 @@
                           <!-- Navigation -->
                           <ul class="navbar-nav mb-md-3">
                               <?php if ($arr_req_hr != 0) { ?>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?>">
-                                      <i class="ni ni-active-40 text-red"></i>
-                                      <span class="nav-link-text">Approve Form&nbsp;<span
-                                              class="w3-badge"><?php echo $arr_req_hr ?></span></span>
-                                  </a>
-                              </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?>">
+                                          <i class="ni ni-active-40 text-red"></i>
+                                          <span class="nav-link-text">Approve Form&nbsp;<span class="w3-badge"><?php echo $arr_req_hr ?></span></span>
+                                      </a>
+                                  </li>
                               <?php } else { ?>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?> ">
-                                      <i class="ni ni-active-40 text-red"></i>
-                                      <span class="nav-link-text">Approve Form</span>
-                                  </a>
-                              </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?> ">
+                                          <i class="ni ni-active-40 text-red"></i>
+                                          <span class="nav-link-text">Approve Form</span>
+                                      </a>
+                                  </li>
                               <?php } ?>
                               <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Plant_management/Plant_list/index/' ?>">
+                                  <a class="nav-link" href="<?php echo base_url() . 'Plant_management/Plant_list/index/' ?>">
                                       <i class="ni ni-single-02 text-green"></i>
                                       <span class="nav-link-text">Plant Management</span>
                                   </a>
@@ -280,8 +197,7 @@
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>"
-                                      class="dropdown-item" class="dropdown-item">
+                                  <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item" class="dropdown-item">
                                       <i class="ni ni-user-run"></i>
                                       <span class="nav-link-text">Logout</span>
                                   </a>
@@ -289,69 +205,29 @@
 
                           </ul>
                       </div>
-                  </div>
 
 
                   <?php } else if ($id == 4) { ?>
-
-                  <div class="navbar-inner">
                       <!-- Collapse -->
                       <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                           <!-- Nav items -->
                           <ul class="navbar-nav">
                               <li class="nav-item">
-                                  <a class="nav-link "
-                                      href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
+                                  <a class="nav-link " href="<?php echo site_url() . 'Check_status/Check_status/home' ?>">
                                       <i class="ni ni-tv-2 text-primary"></i>
                                       <span class="nav-link-text">Home</span>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
+                                  <a class="nav-link" href="<?php echo base_url() . 'Licence_form/Licence_input/index/' ?>">
                                       <i class="ni ni-badge text-orange"></i>
                                       <span class="nav-link-text">Request Tag</span>
                                   </a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo base_url() . 'Renewal/Renewal/show_renewal/' ?>">
-                                      <i class="ni ni-single-copy-04 text-primary"></i>
-                                      <span class="nav-link-text">Renew Tag</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'check_schedule/Check_schedule/show_check_schedule/' ?>">
-                                      <i class="ni ni-calendar-grid-58 text-yellow"></i>
-                                      <span class="nav-link-text">Check expire date</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Check_out_form/Check_out_form/index/' ?>">
-                                      <i class="ni ni-user-run text-default"></i>
-                                      <span class="nav-link-text">Request complete</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'Check_status/Check_status/index/' ?>">
-                                      <i class="ni ni-tag text-info"></i>
-                                      <span class="nav-link-text">Status Form</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
-                                      <i class="ni ni-time-alarm text-pink"></i>
+                                  <a class="nav-link" href="<?php echo base_url() . 'history/History/show_history_employee/' ?>">
+                                      <i class="ni ni-time-alarm text-yellow"></i>
                                       <span class="nav-link-text">History Form</span>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
-                                      <i class="ni ni-email-83 text-dark"></i>
-                                      <span class="nav-link-text">Pending Approve</span>
                                   </a>
                               </li>
 
@@ -363,30 +239,25 @@
                               <span class="docs-normal">Approve Plant</span>
                           </h6>
 
-
                           <!-- Navigation -->
                           <ul class="navbar-nav mb-md-3">
                               <?php if ($arr_req_plant != 0) { ?>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?>">
-                                      <i class="ni ni-active-40 text-red"></i>
-                                      <span class="nav-link-text">Approve Form&nbsp;<span
-                                              class="w3-badge"><?php echo $arr_req_plant ?></span></span>
-                                  </a>
-                              </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?>">
+                                          <i class="ni ni-active-40 text-red"></i>
+                                          <span class="nav-link-text">Approve Form&nbsp;<span class="w3-badge"><?php echo $arr_req_plant ?></span></span>
+                                      </a>
+                                  </li>
                               <?php } else { ?>
-                              <li class="nav-item">
-                                  <a class="nav-link"
-                                      href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?> ">
-                                      <i class="ni ni-active-40 text-red"></i>
-                                      <span class="nav-link-text">Approve Form</span>
-                                  </a>
-                              </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?> ">
+                                          <i class="ni ni-active-40 text-red"></i>
+                                          <span class="nav-link-text">Approve Form</span>
+                                      </a>
+                                  </li>
                               <?php } ?>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>"
-                                      class="dropdown-item" class="dropdown-item">
+                                  <a class="nav-link" href="<?php echo site_url() . 'Login/Login/logout' ?>" class="dropdown-item" class="dropdown-item">
                                       <i class="ni ni-user-run"></i>
                                       <span class="nav-link-text">Logout</span>
                                   </a>
@@ -395,7 +266,6 @@
 
                           </ul>
                       </div>
-                  </div>
                   <?php } ?>
                   <!-- Divider -->
 
