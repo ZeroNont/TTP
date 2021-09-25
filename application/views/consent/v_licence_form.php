@@ -19,14 +19,7 @@
 <div class="card-body ">
 <div class="col-xl-12 order-xl-1">
     <div class="card">
-        <div class="card-header">
-            <div class="row align-items-center">
-                <div class="col-8">
-                    <h3 class="mb-0">Requestd Form ( แบบฟอร์มขออนุญาต )</h3>
-                </div>
-
-            </div>
-        </div>
+     
         <div class="card-body ">
             <form action="<?php echo site_url() . 'Licence_form/Licence_input/insert'; ?>" method="post"
                 enctype="multipart/form-data" onSubmit="JavaScript:return fncSubmit();" name="licence">
