@@ -38,8 +38,8 @@
                                 <label class="form-control-label" for="input-email">Add Days (กำหนดเวลาที่ต้องการเพิ่ม)
                                     <input type="date" value="<?php echo $arr_renew[0]->req_end_date ?>"
                                         min="<?php echo $arr_renew[0]->req_end_date ?>"
-                                        max="<?php echo date('Y-m-d') ?>+30" class="form-control" name="date_review"
-                                        id="date_review" required>
+                                        max="<?php echo $arr_renew[0]->req_end_date ?>+30" class="form-control"
+                                        name="date_review" id="date_review" required>
 
                                     <?php
                                     $arr_renew[0]->req_end_date = strtotime(date("Y-m-d", strtotime($arr_renew[0]->req_end_date) + 1) . "days");

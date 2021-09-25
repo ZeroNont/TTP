@@ -56,7 +56,7 @@ table {
                             ?></td>
 
                     <td><?php
-                            echo $arr_renew[$i]->req_officer;
+                            //echo $arr_renew[$i]->req_officer;
                             ?></td>
 
                     <td><?php
@@ -87,7 +87,7 @@ table {
                         <a href='<?php echo site_url() . 'Renewal/Renewal/show_reform/'
                                                 . $arr_renew[$i]->req_form_id ?>'>
 
-                            <button> <i class="fas fa-envelope"></i></button> </a><?php } ?>
+                            <button class="btn btn-success btn-sm"> <i class="fas fa-edit"></i></button> </a><?php } ?>
                     </td>
 
 

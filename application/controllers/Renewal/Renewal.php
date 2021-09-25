@@ -65,9 +65,10 @@ class Renewal extends MainController
 		$this->load->model('Da_ttp_renewal', 'ttp');
 		$Form_ID = $this->input->post('Form_ID');
 		$set_date = $this->input->post('date_review');
+		$new_startdate = $this->input->post('set_Enddate');
 		//$add_date = $this->input->post('Add_date');
 		//บวกวันที่ 
-		$date1 = str_replace('-', '/', $set_date);
+		//$date1 = str_replace('-', '/', $set_date);
 		//$Update = date('Y-m-d',strtotime($date1 . "+".$add_date." days"));
 		$this->ttp->req_end_date = $set_date;
 		$this->ttp->req_form_id = $Form_ID;
@@ -84,9 +85,9 @@ class Renewal extends MainController
 		$this->ttp->update(); //อัพเดทวันที่
 
 		//เก็บประวัติการต่ออายุในแต่ละครั้ง
-		$new_startdate = $this->ttp->req_end_date;
-		$this->ttp->sch_start_date = $set_date;
-		$this->ttp->sch_end_date = $new_startdate;
+
+		$this->ttp->sch_start_date = $new_startdate;
+		$this->ttp->sch_end_date = $set_date;
 		$this->ttp->sch_form_id = $Form_ID;
 		$this->ttp->insert_schedule();
 		//$this->ttp->update_sec();
