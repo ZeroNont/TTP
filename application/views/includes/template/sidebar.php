@@ -5,7 +5,7 @@
           <!-- Brand -->
           <div class="sidenav-header  align-items-center">
               <a class="navbar-brand" href="javascript:void(0)">
-                  <img src="../../../argon/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+                  <img src="<?php echo site_url() .'/argon/assets/img/brand/blue.png'?>" class="navbar-brand-img" alt="..."> 
               </a>
           </div>
           <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
