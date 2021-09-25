@@ -12,11 +12,13 @@ table {
     text-align: center;
 }
 </style>
+<div class="card">
+<div class="card-header" id="card_radius">
 <h1>
     Renew Tag (ต่ออายุคำขอ)
 
 </h1>
-
+<div class="card-body">
 <div class="card-header" id="card_radius">
     <div class="table-responsive">
 

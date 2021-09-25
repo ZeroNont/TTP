@@ -8,12 +8,14 @@
     * @Create Date 2564-07-24
     * @Update Date 2564-07-28
     */ -->
-
+    <div class="card">
+    <div class="card-header" id="card_radius">
 <h1>
     Report (รายงานข้อมูล)
     <a href='<?php echo site_url() . 'Report/Report/show_report_export_excel'; ?>' class="btn btn-secondary btn-lg canter float-right" id="count_export"><i class="fa fa-download"></i> Export Excel</a>
     <!-- <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-primary float-right"><i class="fa fa-download"></i> Export Excel</a> -->
 </h1>
+<div class="card-body">
 <br>
 <div class="card-header" id="card_radius">
     <h1 style="text-align:center">
