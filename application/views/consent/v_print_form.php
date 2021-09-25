@@ -17,6 +17,7 @@ DIV.text {
 
 <body>
 <div class="card">
+<div class="card-header" id="card_radius">
     <h1 id="hid">
         Print Form (พิมพ์ใบขออนุญาตวางของ)
 

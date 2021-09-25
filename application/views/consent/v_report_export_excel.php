@@ -9,6 +9,7 @@
 
 <a href='#' id='download_link' onClick='javascript:ExcelReport();' class="btn btn-secondary btn-lg canter float-right"><i class="fa fa-download"></i> Export Excel</a>
 <div class="card">
+<div class="card-header" id="card_radius">
 <h1>
     &nbsp; Report (รายงานข้อมูล)
 </h1>
