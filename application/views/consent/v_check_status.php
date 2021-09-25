@@ -11,7 +11,7 @@
 <div class="card">
     <div class="card-header" id="card_radius">
         <h1>
-            Check status (ตรวจสอบสถานะคำร้องขอ)
+        Status Form (ตรวจสอบสถานะคำร้องขอ)
         </h1>
     </div>
     <div class="card-body">

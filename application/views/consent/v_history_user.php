@@ -43,7 +43,7 @@
 
 <div class="card">
     <div class="card-header" id="card_radius">
-        <h1>History Form (ประวัติคำขอวางของ)</h1>
+        <h1>History Form (ประวัติคำขอการวางของ)</h1>
             <div class="card-body">
                 <!-- Table Requestd form -->
                 <div class="table-responsive">

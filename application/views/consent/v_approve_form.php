@@ -29,7 +29,7 @@
 <div class="card">
 <div class="card-header" id="card_radius">
 <h1>
-    Request (อนุมัติคำร้องขออนุญาต)
+    Approve Form (อนุมัติคำร้องขออนุญาต)
 </h1>
 <div class="card-body">
 <body>

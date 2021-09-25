@@ -35,7 +35,7 @@
 <div class="card">
     <div class="col-xl-12 order-xl-1">
         <div class="card-header" id="card_radius">
-            <h1>History Form (ประวัติคำขอวางของ)</h1>
+            <h1>History Form Detail (รายละเอียดประวัติคำขอการวางของ)</h1>
                 <div class="card-body ">
                     <form action="<?php echo site_url() . 'licence_form/licence_input/insert'; ?>" method="post"
                         enctype="multipart/form-data">
