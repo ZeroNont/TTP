@@ -28,11 +28,11 @@
     background-color: #adb5bd;
 }
 </style>
-
+<div class="card">
 <h1>
     Request (อนุมัติคำร้องขออนุญาต)
 </h1>
-
+<div class="card-body">
 <body>
     <!-- ตารางรายการคำขอ -->
     <!-- Table Requestd form -->
