@@ -12,7 +12,7 @@
         <div class="card-header">
             <div class="row align-items-center">
                 <div class="col-8">
-                    <h3 class="mb-0">Renewal tag ( แบบฟอร์มขอต่ออายุ )</h3>
+                    <h3 class="mb-0">Renew Tag (แบบฟอร์มขอต่ออายุ)</h3>
                 </div>
 
             </div>

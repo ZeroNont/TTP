@@ -14,7 +14,7 @@
 <div class="card-header" id="card_radius">
 
 <h1>
-    Permission to Place (การขออนุญาตวางของ)
+    Request Tag (การขออนุญาตวางของ)
 </h1><br>
 <div class="card-body ">
 <div class="col-xl-12 order-xl-1">

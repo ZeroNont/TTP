@@ -59,7 +59,7 @@ function getEmp_edit(i) {
 }
 </script>
 <h1>
-    Approve Plan Management (การจัดการข้อมูล Approve Plant)
+     Plan Management (การจัดการข้อมูล Approve Plant)
     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#Add"><i class="material-icons">Add
             Approve
             Plan</i></button>

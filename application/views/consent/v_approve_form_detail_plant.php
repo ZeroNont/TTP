@@ -22,7 +22,7 @@ $(document).ready(function() {
 <div class="card">
 <div class="card-header" id="card_radius">
 <h1>
-    Request (อนุมัติคำร้องขออนุญาต)
+    Approve Form Detail (รายละเอียดอนุมัติคำร้องขออนุญาต)
 </h1>
 <div class="card-body">
 <div class="col-xl-12 order-xl-1">
