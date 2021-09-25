@@ -24,12 +24,13 @@
     background-color: #adb5bd;
 }
 </style>
-
+<div class="card">
 <h1>
     Check Out (การแจ้งย้ายของ)
 
 </h1>
-
+<div class="card-body ">
+ 
 <div class="card-header" id="card_radius">
     <div class="table-responsive">
 

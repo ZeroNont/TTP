@@ -20,15 +20,13 @@ $(document).ready(function() {
 
 });
 </script>
-
+<div class="card">
 <h1>
     Request (อนุมัติคำร้องขออนุญาต)
 </h1>
+<div class="card-body ">
 <div class="col-xl-12 order-xl-1">
-    <div class="card">
-
-        <div class="card-body ">
-
+     
             <div class="pl-lg-4">
                 <div class="row">
                     <div class="col-lg-6">

@@ -10,11 +10,13 @@
 
 <!-- Include Date Range Picker -->
 
+<div class="card">
+ 
 
 <h1>
     Permission to Place (การขออนุญาตวางของ)
 </h1><br>
-
+<div class="card-body ">
 <div class="col-xl-12 order-xl-1">
     <div class="card">
         <div class="card-header">
