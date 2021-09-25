@@ -76,7 +76,8 @@
                                 <label class="form-control-label" for="input-address">Officer in Charge
                                     (ผู้รับผิดชอบ)</label>
                                 <input class="form-control" type="text" name="Officer"
-                                    value='<?php echo $arr_renew[0]->req_officer ?>' disabled>
+                                    value='<?php echo $arr_supervisor[0]->Empname_th . " " . $arr_supervisor[0]->Empsurname_th ?>'
+                                    disabled>
                             </div>
                         </div>
                         <div class="col-lg-4">
