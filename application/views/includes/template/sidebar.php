@@ -172,14 +172,14 @@
                               <?php if ($arr_req_hr != 0) { ?>
                                   <li class="nav-item">
                                       <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?>">
-                                          <i class="ni ni-active-40 text-red"></i>
+                                          <i class="ni ni-active-40 text-primary"></i>
                                           <span class="nav-link-text">Approve Form&nbsp;<span class="w3-badge"><?php echo $arr_req_hr ?></span></span>
                                       </a>
                                   </li>
                               <?php } else { ?>
                                   <li class="nav-item">
                                       <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?> ">
-                                          <i class="ni ni-active-40 text-red"></i>
+                                          <i class="ni ni-active-40 text-primary"></i>
                                           <span class="nav-link-text">Approve Form</span>
                                       </a>
                                   </li>
@@ -244,14 +244,14 @@
                               <?php if ($arr_req_plant != 0) { ?>
                                   <li class="nav-item">
                                       <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?>">
-                                          <i class="ni ni-active-40 text-red"></i>
+                                          <i class="ni ni-active-40 text-primary"></i>
                                           <span class="nav-link-text">Approve Form&nbsp;<span class="w3-badge"><?php echo $arr_req_plant ?></span></span>
                                       </a>
                                   </li>
                               <?php } else { ?>
                                   <li class="nav-item">
                                       <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?> ">
-                                          <i class="ni ni-active-40 text-red"></i>
+                                          <i class="ni ni-active-40 text-primary"></i>
                                           <span class="nav-link-text">Approve Form</span>
                                       </a>
                                   </li>
