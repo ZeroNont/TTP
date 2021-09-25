@@ -40,58 +40,63 @@
         margin-left: 10px;
     }
 </style>
-<h1>History Form (ประวัติคำขอวางของ)</h1>
-<!-- Table Requestd form -->
-<div class="card-header" id="card_radius">
-    <div class="table-responsive">
-        <table class="table align-items-center" id="history_table">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Running No.</th>
-                    <th scope="col">Item</th>
-                    <th scope="col">Schedule</th>
-                    <th scope="col">Officer in charge</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody class="list">
-                <?php for ($i = 0; $i < count($em_form); $i++) { ?>
-                    <tr>
-                        <td class="text-center">
-                            <?php echo ($i + 1); ?> </td>
-                        </td>
-                        <?php if ($em_form[$i]->req_hr_no == '') { ?>
-                            <td><?php echo '-'; ?></td>
-                        <?php } else { ?>
-                            <td><?php echo $em_form[$i]->req_hr_no; ?></td>
-                        <?php } ?>
-                        </td>
-                        <td>
-                            <?php echo $em_form[$i]->req_item ?></td>
-                        </td>
-                        <td>
-                            <?php
-                            $startDate = date("d/m/Y", strtotime($em_form[$i]->req_start_date));
-                            $endDate  = date("d/m/Y", strtotime($em_form[$i]->req_end_date)); ?>
-                            <?php echo $startDate . " - " . $endDate ?></td>
-                        </td>
-                        <td>
-                            <?php echo $arr_emp[0]->Empname_eng . ' ' . $arr_emp[0]->Empsurname_eng ?></td>
-                        </td>
-                        <!-- column ดำเนินการ -->
-                        <td style='text-align: center;'>
-                            <!-- ปุ่มดำเนินการ -->
-                            <a href=" <?php echo site_url() . '/history/History/show_history_detail/' . $em_form[$i]->req_form_id; ?>">
-                                <button type="button" class="btn btn-primary btn-sm" style="background-color: info;">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </a>
-                        </td>
-                    </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+
+<div class="card">
+    <div class="card-header" id="card_radius">
+        <h1>History Form (ประวัติคำขอวางของ)</h1>
+            <div class="card-body">
+                <!-- Table Requestd form -->
+                <div class="table-responsive">
+                    <table class="table align-items-center" id="history_table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Running No.</th>
+                                <th scope="col">Item</th>
+                                <th scope="col">Schedule</th>
+                                <th scope="col">Officer in charge</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list">
+                            <?php for ($i = 0; $i < count($em_form); $i++) { ?>
+                                <tr>
+                                    <td class="text-center">
+                                        <?php echo ($i + 1); ?> </td>
+                                    </td>
+                                    <?php if ($em_form[$i]->req_hr_no == '') { ?>
+                                        <td><?php echo '-'; ?></td>
+                                    <?php } else { ?>
+                                        <td><?php echo $em_form[$i]->req_hr_no; ?></td>
+                                    <?php } ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $em_form[$i]->req_item ?></td>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $startDate = date("d/m/Y", strtotime($em_form[$i]->req_start_date));
+                                        $endDate  = date("d/m/Y", strtotime($em_form[$i]->req_end_date)); ?>
+                                        <?php echo $startDate . " - " . $endDate ?></td>
+                                    </td>
+                                    <td>
+                                        <?php echo $arr_emp[0]->Empname_eng . ' ' . $arr_emp[0]->Empsurname_eng ?></td>
+                                    </td>
+                                    <!-- column ดำเนินการ -->
+                                    <td style='text-align: center;'>
+                                        <!-- ปุ่มดำเนินการ -->
+                                        <a href=" <?php echo site_url() . '/history/History/show_history_detail/' . $em_form[$i]->req_form_id; ?>">
+                                            <button type="button" class="btn btn-primary btn-sm" style="background-color: info;">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
     </div>
 </div>
 <script>
