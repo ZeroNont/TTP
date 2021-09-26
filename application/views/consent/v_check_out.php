@@ -71,7 +71,7 @@
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-warning" data-toggle="modal"
                             data-target="#exampleModalCenter<?php echo $i; ?>">
-                            แจ้งย้ายของออก
+                            Check Out
                         </button>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModalCenter<?php echo $i; ?>" tabindex="-1" role="dialog"
@@ -84,7 +84,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <h1 aligh=center>ยืนยันการแจ้งย้ายของออก</h1>
+                                        <h1 aligh=center>Confirm to check out?</h1>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger"
