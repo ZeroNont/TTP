@@ -175,7 +175,7 @@ $(document).ready(function() {
 
             <!-- label Reject Reason -->
                 <label for="" class="form-control-label">
-                    กรุณากรอกเหตุผล
+                    Please give a reason for reject this form.
                 </label>
 
                 <form method="POST" action="<?php echo site_url().'/request/Request_form/reject_form/'.$arr_req->req_form_id; ?>">
@@ -183,7 +183,7 @@ $(document).ready(function() {
                         <div class="col-md-12">
                             <div class="form-group">
                                 <input type="text" name="app_reject_reason" class="form-control"
-                                    placeholder="เหตุผลในการปฏิเสธ" required>
+                                    placeholder="reason for reject" required>
                             </div>
                         </div>
                     </div>
@@ -215,7 +215,7 @@ $(document).ready(function() {
                 </button>
             </div>
             <div class="modal-body" align="center">
-                <h1 class="modal-title" id="ModalLabel">ยืนยันการอนุมัติคำขอ</h1>
+                <h1 class="modal-title" id="ModalLabel">Confirm to Submit?</h1>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-lg float-right" data-dismiss="modal">Cancel</button>
@@ -239,7 +239,7 @@ $(document).ready(function() {
         <div class="modal-content">
 
             <div class="modal-body" align="center">
-                <h1> อนุมัติคำขอสำเร็จ </h1>
+                <h1> The request form was approved successfully. </h1>
             </div>
             <div class="modal-footer">
                 <a href="<?php echo site_url() . 'request/Request_form/update_request_form/'. $arr_req->req_form_id ; ?>">

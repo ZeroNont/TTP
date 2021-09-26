@@ -100,7 +100,7 @@ function getEmp_edit(i) {
                         <input type="text" class="form-control" name="Plant_name" required>
                     </div>
                     <button type="submit" class="btn btn-success float-right">Submit</button>
-                    <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Cancle</button>
+                    <button type="button" class="btn btn-danger float-right" data-dismiss="modal">Cancel</button>
                 </form>
             </div>
 
@@ -195,7 +195,7 @@ function getEmp_edit(i) {
                                             </div>
                                             <button type="submit" class="btn btn-success float-right">Submit</button>
                                             <button type="button" class="btn btn-danger float-right"
-                                                data-dismiss="modal">Cancle</button>
+                                                data-dismiss="modal">Cancel</button>
                                         </form>
                                     </div>
 
