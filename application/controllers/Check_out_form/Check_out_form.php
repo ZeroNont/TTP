@@ -61,7 +61,7 @@ class Check_out_form extends MainController
         $this->ttp->req_form_id = $id;
         $this->ttp->req_status = $num;
         $this->ttp->check_out();
-        redirect('Check_out_form/Check_out_form/index');
+        redirect('licence_form/licence_input/home');
     }
 }
 // 

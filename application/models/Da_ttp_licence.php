@@ -39,9 +39,9 @@ class Da_ttp_licence extends ttps_model
     public function update_form($id)
     {
         $sql = " UPDATE ttps_database.requested_form
-        SET req_emp_id=?,req_start_date=?,req_end_date=?,req_requested_date=?,req_item=?,req_tel=?,req_officer=?,req_reason=?,req_company_id=?,req_form_count=?
+        SET req_emp_id=?,req_start_date=?,req_end_date=?,req_requested_date=?,req_item=?,req_tel=?,req_reason=?,req_company_id=?,req_form_count=?
         WHERE req_form_id=$id;";
-        $this->db->query($sql, array($this->req_emp_id, $this->req_start_date, $this->req_end_date, $this->req_requested_date, $this->req_item, $this->req_tel, $this->req_officer, $this->req_reason, $this->req_company_id, $this->req_form_count));
+        $this->db->query($sql, array($this->req_emp_id, $this->req_start_date, $this->req_end_date, $this->req_requested_date, $this->req_item, $this->req_tel, $this->req_reason, $this->req_company_id, $this->req_form_count));
     }
     // *update_form
     // *update form to database
@@ -91,10 +91,10 @@ class Da_ttp_licence extends ttps_model
 
     public function insert_file()
     {
-        $sql = "INSERT INTO ttps_database.form_file(fil_layout_location,fil_plan_location) 
-                VALUES (?,?)";
+        $sql = "INSERT INTO ttps_database.form_file(fil_form_id,fil_layout_location,fil_plan_location) 
+                VALUES (?,?,?)";
 
-        $this->db->query($sql, array($this->fil_layout_location, $this->fil_plan_location));
+        $this->db->query($sql, array($this->fil_form_id, $this->fil_layout_location, $this->fil_plan_location));
     }
     // *insert_file
     // *insert file in database

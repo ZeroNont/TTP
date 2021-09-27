@@ -93,6 +93,7 @@ class Licence_input extends MainController
 	* @author 	Jirayut Saifah
 	* @Create Date 2564-7-16
 	*/
+
     function home()
     {
         // echo $_SESSION['UsEmp_ID'];
@@ -103,7 +104,6 @@ class Licence_input extends MainController
         // // print_r($_SESSION['Emp_ID']);
         $this->output('consent/v_home', $data);
     }
-
     function insert()
     {
         $date = date("Y-m-d");
@@ -145,7 +145,7 @@ class Licence_input extends MainController
         $this->ttp->fil_layout_location = $Layout_name;
         move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
         $this->ttp->fil_plan_location = $Plan_name;
-        $this->ttp->insert_file();
+        
 
         // echo  $id;
         $this->load->model('M_ttp_licence', 'get');
@@ -153,18 +153,17 @@ class Licence_input extends MainController
         // // print_r($_SESSION['Emp_ID']);
         $data['form'] = $this->get->get_form_id()->result();
         $this->ttp->app_form_id = $data['form'][0]->req_form_id;
+        $this->ttp->fil_form_id = $data['form'][0]->req_form_id;
+        $this->ttp->insert_file();
         $this->ttp->insert_approve();
         $form_id = $data['form'][0]->req_form_id;
         $this->ttp->sch_form_id = $data['form'][0]->req_form_id;
         $this->ttp->sch_end_date = $data['form'][0]->req_end_date;
         $this->ttp->sch_start_date = $data['form'][0]->req_start_date;
         $this->ttp->insert_date($form_id);
-        $this->load->model('M_ttp_licence', 'ttp');
-        $data['obj_status'] = $this->ttp->get_status($id)->result();
-        // // print_r($_SESSION['Emp_ID']);
-        $this->output('consent/v_home', $data);
+        // $this->load->view('consent/v_home');
         // $this->output('consent/v_check_status', $i);
-        // redirect('licence_form/licence_input/index');
+        redirect('licence_form/licence_input/home');
     }
     /*
 	* edit
