@@ -14,9 +14,9 @@ class Da_ttp_licence extends ttps_model
     }
     public function insert_form()
     {
-        $sql = "INSERT INTO ttps_database.requested_form(req_emp_id,req_start_date,req_end_date,req_requested_date,req_item,req_tel,req_officer,req_reason,req_company_id,req_form_count,req_status) 
-                VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-        $this->db->query($sql, array($this->req_emp_id, $this->req_start_date, $this->req_end_date, $this->req_requested_date, $this->req_item, $this->req_tel, $this->req_officer, $this->req_reason, $this->req_company_id, $this->req_form_count, $this->req_status));
+        $sql = "INSERT INTO ttps_database.requested_form(req_emp_id,req_start_date,req_end_date,req_requested_date,req_item,req_tel,req_reason,req_company_id,req_form_count,req_status) 
+                VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $this->db->query($sql, array($this->req_emp_id, $this->req_start_date, $this->req_end_date, $this->req_requested_date, $this->req_item, $this->req_tel, $this->req_reason, $this->req_company_id, $this->req_form_count, $this->req_status));
     }
     // *insert_form
     // *insert form in database
@@ -64,9 +64,9 @@ class Da_ttp_licence extends ttps_model
     // *@Create Date 18/07/2021
     public function insert_approve()
     {
-        $sql = "INSERT INTO ttps_database.approval(app_supervisor_id,app_approve_plant_id) 
-                VALUES (?,?)";
-        $this->db->query($sql, array($this->app_supervisor_id, $this->app_approve_plant_id));
+        $sql = "INSERT INTO ttps_database.approval(app_form_id,app_supervisor_id,app_approve_plant_id) 
+                VALUES (?,?,?)";
+        $this->db->query($sql, array($this->app_form_id, $this->app_supervisor_id, $this->app_approve_plant_id));
     }
     // *insert_approve
     // *insert approval in database

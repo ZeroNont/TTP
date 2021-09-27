@@ -93,7 +93,16 @@ class Licence_input extends MainController
 	* @author 	Jirayut Saifah
 	* @Create Date 2564-7-16
 	*/
-
+    function home()
+    {
+        // echo $_SESSION['UsEmp_ID'];
+        $id = $_SESSION['UsEmp_ID'];
+        // echo  $id;
+        $this->load->model('M_ttp_licence', 'ttp');
+        $data['obj_status'] = $this->ttp->get_status($id)->result();
+        // // print_r($_SESSION['Emp_ID']);
+        $this->output('consent/v_home', $data);
+    }
 
     function insert()
     {
@@ -107,6 +116,7 @@ class Licence_input extends MainController
         $tmp_Plan =  $_FILES['Plan']['tmp_name'];
 
         $this->load->model('Da_ttp_licence', 'ttp');
+        $this->load->model('M_ttp_licence', 'mttp');
         $this->ttp->req_emp_id = $id;
         // $i = $this->input->post('Emp_ID');
         $this->ttp->req_item = $this->input->post('Item');
@@ -129,8 +139,7 @@ class Licence_input extends MainController
         $this->ttp->req_end_date = $add_date;
 
         $this->ttp->insert_form();
-        $this->ttp->insert_approve();
-
+       
 
         move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
         $this->ttp->fil_layout_location = $Layout_name;
@@ -143,12 +152,17 @@ class Licence_input extends MainController
         $data['obj_status'] = $this->get->get_status($id)->result();
         // // print_r($_SESSION['Emp_ID']);
         $data['form'] = $this->get->get_form_id()->result();
+        $this->ttp->app_form_id = $data['form'][0]->req_form_id;
+        $this->ttp->insert_approve();
         $form_id = $data['form'][0]->req_form_id;
         $this->ttp->sch_form_id = $data['form'][0]->req_form_id;
         $this->ttp->sch_end_date = $data['form'][0]->req_end_date;
         $this->ttp->sch_start_date = $data['form'][0]->req_start_date;
         $this->ttp->insert_date($form_id);
-        $this->output('consent/v_check_status', $data);
+        $this->load->model('M_ttp_licence', 'ttp');
+        $data['obj_status'] = $this->ttp->get_status($id)->result();
+        // // print_r($_SESSION['Emp_ID']);
+        $this->output('consent/v_home', $data);
         // $this->output('consent/v_check_status', $i);
         // redirect('licence_form/licence_input/index');
     }

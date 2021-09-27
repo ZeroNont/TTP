@@ -186,7 +186,9 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-            FROM ttps_database.requested_form req WHERE req.req_emp_id=$id AND req.req_status < 5 AND req.req_form_count <= 4  AND CURDATE() <= req.req_end_date 
+            FROM ttps_database.requested_form AS req INNER JOIN ttps_database.approval AS app 
+            ON app.app_form_id  = req.req_form_id
+            WHERE req.req_emp_id=$id AND req.req_status < 5 AND req.req_form_count <= 4  AND CURDATE() <= req.req_end_date 
             LIMIT 0,30  ";
         $query = $this->db->query($sql);
         return $query;
