@@ -10,7 +10,7 @@
     Update date 30/7/2564
 -->
 <style>
-     #card_radius
+    #card_radius
     {
         border-radius: 20px;
     }
@@ -28,7 +28,6 @@
         
         width: 100px;
     }
-
 </style> 
     
     <!-- Card Detail form -->
@@ -119,7 +118,7 @@
                                     </div>
                                 </div>
                     </form>
-            <hr>
+                
                 <!-- ========== ข้อมูลผู้พิจารณา ========== -->
                 <?php if ($arr_form->req_status != 1) { ?>
                     <div class="card-body">            
@@ -215,17 +214,16 @@
                     </div>
                 <br>
                 <?php } ?>
-                                    </div>
+                </div>
+                <br><br>
+                <a href="<?php echo base_url().'history/History/show_history_employee/'.$_SESSION['UsEmp_ID']?>" >  
+                    <center><button type="button" class="btn btn-secondary btn-lg canter" id='button_UPsize'  ><i class="fas fa-arrow-alt-circle-left"></i>Back</button> </center>
+                </a>
+            <br>
+            <br>
             </div>
         </div>
     </div>
 </div>
 
-
-
-        <a href="<?php echo base_url().'history/History/show_history_employee/'.$_SESSION['UsEmp_ID']?>" >  
-                        <center><button type="button" class="btn btn-secondary btn-lg canter" id='button_UPsize'  ><i class="fas fa-arrow-alt-circle-left"></i>Back</button> </center>
-                    </a>
-            <br>
-            <br>
     
