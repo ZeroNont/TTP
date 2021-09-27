@@ -72,7 +72,7 @@ function getEmp_edit(i) {
 
                     <h4 align='center' class="modal-title" id="exampleModalLabel">
 
-                        Add Detail
+                        Add Approve plant Detail
                     </h4>
 
                     <button type=" button" class="close" data-dismiss="modal" aria-label="Close">
@@ -163,7 +163,7 @@ function getEmp_edit(i) {
 
                                             <h4 class="modal-title" id="exampleModalLabel">
 
-                                                Edit Detail
+                                                Edit Approve plant Detail
                                             </h4>
 
                                             <button type=" button" class="close" data-dismiss="modal"
