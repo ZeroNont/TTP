@@ -57,7 +57,7 @@ class Print_form extends MainController
         $data['obj_sup'] = $this->ttp->get_Supervisor_ID()->result();
         $data['obj_pre'] = $this->ttp->get_Prepare()->result();
         $this->output('consent/v_print_form', $data);
-        // print_r($data['obj_dep']);
+        // print_r($data['obj_his']);
     }
 }
 // 
