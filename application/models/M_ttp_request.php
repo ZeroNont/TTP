@@ -51,6 +51,23 @@ class M_ttp_request extends Da_ttp_request
     }//get_all ดึงข้อมูลที่อยู่ในตาราง requested_form ที่join กับตาราง employee 
 
     /*
+    * Function get_all_nofi
+    * @input  -   
+    * @output -
+    * @author Apinya Phadungkit
+    * @Create Date 2564-7-18
+    * @Update Date 2564-7-28
+    */
+    function get_all_nofi()
+    {
+        $sql = "SELECT *
+                FROM ttps_database.requested_form AS req
+                WHERE req.req_edit_count = 3 AND req.req_emp_id = ?";
+
+        $query = $this->db->query($sql,array($this->req_emp_id));
+        return $query;
+    }//get_all_nofi ดึงข้อมูลที่อยู่ในตาราง requested_form จำนวนครั้งที่ฟอร์มถุกปฏฺเสธ
+    /*
     * Function get_all_sup
     * @input  -   
     * @output -
