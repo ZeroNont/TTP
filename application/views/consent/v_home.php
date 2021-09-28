@@ -149,54 +149,59 @@
             Action Description (คำอธิบายปุ่มสัญลักษณ์)
         </h3>
         <br>
-        <!-- 1.)&emsp; -->
         &emsp;
         <button class="btn btn-primary btn-sm">
             <i class="fa fa-info-circle"></i>
         </button>&emsp;
-        =>&emsp;ปุ่มสัญลักษณ์นี้สามารถดูเหตุผลการถูกปฏิเสธแบบฟอร์มที่ขออนุญาตได้ ก็ต่อเมื่อถูกปฏิเสธแบบฟอร์ม
+        กดปุ่มสัญลักษณ์นี้เพื่อดูเหตุการณ์ปฏิเสธของคำร้องขอวางของ
         <br><br>
-        <!-- 2.)&emsp; -->
         &emsp;
         <button class="btn btn-warning btn-sm">
             <i class="fa fa-pencil"></i>
         </button>&emsp;
-        =>&emsp;ปุ่มสัญลักษณ์นี้สามารถทำการแก้ไขแบบฟอร์มการขออนุญาตได้ ก็ต่อเมื่อถูกปฏิเสธแบบฟอร์ม
+        กดปุ่มสัญลักษณ์นี้เพื่อทำการแก้ไขแบบฟอร์มการขออนุญาตวางของ
         <br><br>
-        <!-- 3.)&emsp; -->
         &emsp;
         <button class="btn btn-primary btn-sm">
             <i class="fa fa-refresh"></i>
         </button>&emsp;
-        =>&emsp;ปุ่มสัญลักษณ์นี้สามารถทำการต่ออายุคำร้องขอแบบฟอร์มได้ ก็ต่อเมื่อได้รับการอนุมัติแบบฟอร์ม 
+        กดปุ่มสัญลักษณ์นี้เพื่อต่ออายุคำร้องขออนุญาตวางของ
         <br><br>
-        <!-- 4.)&emsp; -->
         &emsp;
         <button class="btn btn-primary btn-sm">
             <i class="fa fa-check-square-o"></i>
         </button>&emsp;
-        =>&emsp;ปุ่มสัญลักษณ์นี้สามารถทำการแจ้งย้ายของออกได้ ก็ต่อเมื่อได้รับการอนุมัติแบบฟอร์ม 
+        กดปุ่มสัญลักษณ์นี้เพื่อทำการแจ้งย้ายของออก
         <br><br>
-        <!-- 5.)&emsp; -->
         &emsp;
         <button class="btn btn-primary btn-sm">
             <i class="fas fa-print"></i>
-        </button>&emsp;
-        =>&emsp;ปุ่มสัญลักษณ์นี้สามารถพิมพ์แบบฟอร์มได้ ก็ต่อเมื่อได้รับการอนุมัติแบบฟอร์ม และยังแสดงสถานะว่ายังไม่ได้มีการพิมพ์แบบฟอร์ม
-        <br><br>
-        <!-- 6.)&emsp; -->
-        &emsp;
+        </button>&ensp;
         <button class="btn btn-success btn-sm">
             <i class="fas fa-print"></i>
-        </button>&emsp;
-        =>&emsp;ปุ่มสัญลักษณ์นี้สามารถพิมพ์แบบฟอร์มได้ ก็ต่อเมื่อได้รับการอนุมัติแบบฟอร์ม และยังแสดงสถานะว่าได้มีการพิมพ์แบบฟอร์มแล้ว
-        <br><br>
-        <!-- 7.)&emsp; -->
-        &emsp;
+        </button>&ensp;
         <button class="btn btn-danger btn-sm">
             <i class="fas fa-print"></i>
         </button>&emsp;
-        =>&emsp;ปุ่มสัญลักษณ์นี้จะแสดงสถานะว่าไม่สามารถทำการพิมพ์แบบฟอร์มได้ ก็ต่อเมื่ออยู่ในระหว่างการพิจารณาคำร้องขอ
+        กดปุ่มสัญลักษณ์นี้เพื่อพิมพ์แบบฟอร์มการขออนุญาตวางของ
+        <br><br>
+        &emsp;
+        **หมายเหตุ**<br>
+        &emsp;
+        <button class="btn btn-primary btn-sm">
+            <i class="fas fa-print"></i>
+        </button>&ensp;
+        หมายถึง&ensp;ยังไม่ได้พิมพ์แบบฟอร์มออกจากระบบ<br>
+        &emsp;
+        <button class="btn btn-success btn-sm">
+            <i class="fas fa-print"></i>
+        </button>&ensp;
+        หมายถึง&ensp;พิมพ์แบบฟอร์มออกจากระบบแล้ว<br>
+        &emsp;
+        <button class="btn btn-danger btn-sm">
+            <i class="fas fa-print"></i>
+        </button>&ensp; 
+        หมายถึง&ensp;ไม่สามารถพิมพ์แบบฟอร์มออกจากระบบได้
         <br><br>
     </div>
 </div>
