@@ -322,7 +322,7 @@ LIMIT 1  ";
     {
         $sql =
             "SELECT *
-            FROM  ttps_database.requested_form WHERE req_plant_id=$k AND req_plant_id !=5 ";
+            FROM  ttps_database.requested_form WHERE req_plant_id=$k AND req_status !=5 ";
         $query = $this->db->query($sql);
         return $query;
     }
