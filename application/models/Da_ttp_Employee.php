@@ -14,6 +14,6 @@ class Da_ttp_Employee extends ttps_model
 
     function construct()
     {
-        parent::construct();
+        parent::__construct();
     }
 }

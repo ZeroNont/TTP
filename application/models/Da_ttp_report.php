@@ -15,7 +15,7 @@ class Da_ttp_report extends ttps_model
 
     function construct()
     {
-        parent::construct();
+        parent::__construct();
     }
   
 }

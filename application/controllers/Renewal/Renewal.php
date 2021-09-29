@@ -81,7 +81,7 @@ class Renewal extends MainController
 
 		$this->ttp->req_form_count = $num;
 		$this->ttp->req_status = $status;
-		$this->ttp->update_form(); //+1ให้กับฟอร์มที่ID ตรงกัน
+		$this->ttp->update_form_renewal(); //+1ให้กับฟอร์มที่ID ตรงกัน
 		$this->ttp->update_status(); //ขอวันเสร็จเปลี่ยนสถานะ
 		$this->ttp->update(); //อัพเดทวันที่
 

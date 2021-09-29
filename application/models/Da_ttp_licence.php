@@ -10,7 +10,7 @@ class Da_ttp_licence extends ttps_model
     // @Create Date:16/07/2021
     function construct()
     {
-        parent::construct();
+        parent::__construct();
     }
     public function insert_form()
     {

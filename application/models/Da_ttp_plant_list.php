@@ -20,7 +20,7 @@ class Da_ttp_plant_list extends ttps_model
 
     function construct()
     {
-        parent::construct();
+        parent::__construct();
     }
     public function insert()
     {

@@ -16,7 +16,7 @@ class Da_ttp_renewal extends ttps_model
     public $End_date;
     function construct()
     {
-        parent::construct();
+        parent::__construct();
     }
 
     /*
