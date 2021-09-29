@@ -72,7 +72,7 @@ class Plant_input extends MainController
         $this->ttp->pla_plant_id = $id;
         $this->ttp->delete();
         echo $id;
-        // redirect('Plant_management/Plant_list/index');
+        redirect('Plant_management/Plant_list/index');
     }
 }
 // 
