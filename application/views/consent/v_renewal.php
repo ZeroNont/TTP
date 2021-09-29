@@ -49,17 +49,19 @@ table {
                                             echo $No++;
                                         } ?></td>
 
-                                <td><?php
+                                <td>
+                                    <?php
                                         echo $arr_renew[$i]->req_hr_no;
-                                        ?></td>
+                                        ?>
+                                </td>
 
                                 <td><?php
                                         echo $arr_renew[$i]->req_item;
                                         ?></td>
 
-                                <td><?php
-                                        echo $arr_renew[$i]->req_officer;
-                                        ?></td>
+                                <td>
+                                    <?php echo $arr_supervisor[$i]->Empname_eng . ' ' . $arr_supervisor[$i]->Empsurname_eng ?>
+                                </td>
 
                                 <td><?php
                                         echo date("d/m/Y", strtotime($arr_renew[$i]->req_start_date));

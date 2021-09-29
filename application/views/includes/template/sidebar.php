@@ -118,7 +118,7 @@
                                   <li class="nav-item">
                                       <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                                           <i class="ni ni-email-83 text-primary"></i>
-                                          <span class="nav-link-text">Pending Approve<span class="w3-badge"><?php echo $arr_req_supervisor ?></span></span>
+                                          <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req_supervisor ?></span></span>
                                       </a>
                                   </li>
                               <?php } else { ?>
@@ -142,7 +142,7 @@
                       </div>
 
                   <?php } else if ($id == 3) { ?>
-                    <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
+                      <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
                           <?php echo "Role : HR/5S Center" ?>
                       </h2>
                       <!-- Collapse -->
@@ -167,7 +167,21 @@
                                       <span class="nav-link-text">History Form</span>
                                   </a>
                               </li>
-
+                              <?php if ($arr_req_hr != 0) { ?>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?>">
+                                          <i class="ni ni-email-83 text-primary"></i>
+                                          <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req_hr ?></span></span>
+                                      </a>
+                                  </li>
+                              <?php } else { ?>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?> ">
+                                          <i class="ni ni-email-83 text-primary"></i>
+                                          <span class="nav-link-text">Pending Approve</span>
+                                      </a>
+                                  </li>
+                              <?php } ?>
                           </ul>
                           <!-- Divider -->
                           <hr class="my-3">
@@ -216,7 +230,7 @@
 
 
                   <?php } else if ($id == 4) { ?>
-                    <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
+                      <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
                           <?php echo "Role : Approve Plant" ?>
                       </h2>
                       <!-- Collapse -->
@@ -241,7 +255,21 @@
                                       <span class="nav-link-text">History Form</span>
                                   </a>
                               </li>
-
+                              <?php if ($arr_req_plant != 0) { ?>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?>">
+                                          <i class="ni ni-email-83 text-primary"></i>
+                                          <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req_plant ?></span></span>
+                                      </a>
+                                  </li>
+                              <?php } else { ?>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?> ">
+                                          <i class="ni ni-email-83 text-primary"></i>
+                                          <span class="nav-link-text">Pending Approve</span>
+                                      </a>
+                                  </li>
+                              <?php } ?>
                           </ul>
                           <!-- Divider -->
                           <hr class="my-3">

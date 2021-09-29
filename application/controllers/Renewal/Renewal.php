@@ -29,6 +29,7 @@ class Renewal extends MainController
 		// $this->ttp->Status = 4;
 		$data['arr_renew'] = $this->ttp->get_all($id)->result();
 		$data['arr_sec'] = $this->ttp->get_schedule($id)->result();
+		$data['arr_supervisor'] = $this->ttp->get_supervisor()->result();
 		$this->output('consent/v_renewal', $data);
 	}
 

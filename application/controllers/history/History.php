@@ -74,6 +74,7 @@ class History extends MainController
         $data['arr_his_ap'] = $this->ttp->get_history_approve_plant($id)->row();
         $data['arr_list'] = $this->ttp->get_form_list()->row();
         $data['arr_file'] = $this->ttp->get_form_file($id)->result();
+        $data['arr_ver'] = $this->ttp->get_version_edit($id)->result();
         $this->output('consent/v_history_detail', $data);
 	}// function show_history_detail()
 

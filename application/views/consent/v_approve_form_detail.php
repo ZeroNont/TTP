@@ -149,19 +149,14 @@ $(document).ready(function() {
                     </button>
 
                 </div>
-
                 <div class="col-lg-4">
-
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-success btn-lg float-right" data-toggle="modal"
                         data-target="#Modal_approve">
                         Confirm
                     </button>
-
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
@@ -252,7 +247,7 @@ $(document).ready(function() {
             <div class="modal-footer">
                 <a
                     href="<?php echo site_url() . 'approve_form/Approve_form/update_approve_form/'. $arr_req->req_form_id ; ?>">
-                    <button type="button" class="btn btn-success btn-lg float-right">Agree</button>
+                    <button type="button" class="btn btn-success btn-lg float-right">OK</button>
                 </a>
             </div>
         </div>

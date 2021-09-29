@@ -183,11 +183,11 @@ DIV.text {
                         <td><?php echo $obj_his[$i]->req_hr_no ?></td>
                         <td><?php
 
-                                $newDate = date("d-m-Y", strtotime($obj_his[$i]->req_start_date));
+                                $newDate = date("d-m-Y", strtotime($obj_his[$i]->sch_start_date));
                                 echo $newDate;
                                 ?></td>
                         <td><?php
-                                $newDate = date("d-m-Y", strtotime($obj_his[$i]->req_end_date));
+                                $newDate = date("d-m-Y", strtotime($obj_his[$i]->sch_end_date));
                                 echo $newDate;
                                 ?></td>
                     </tr>
@@ -196,6 +196,7 @@ DIV.text {
             </table>
         </div>
     </div>
+    <center><a href="<?php echo site_url() . 'Check_status/Check_status/home'; ?>" class="btn btn-secondary float-center"><i class="fas fa-arrow-alt-circle-left"></i> Back</a></center>
 
 </body>
 

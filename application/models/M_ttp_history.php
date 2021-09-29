@@ -193,4 +193,23 @@ class M_ttp_history extends Da_ttp_history
         return $query;
     }
 
+    /*
+	* get_version_edit
+	* คืนค่าตาราง ไฟล์
+	* @input 	เลขใบคำขอ
+	* @output 	ข้อมูลตาราง ไฟล์
+	* @author 	Phatchara  
+	* @Create   Date 18/7/2564   
+	* @author   Pontakon
+	* @Update   Date 26/7/2564
+	*/
+    public function get_version_edit($id)
+    {
+        $sql = "SELECT * 
+                FROM ttps_database.history_edit AS his
+                where $id = his.his_form_id ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
 }
