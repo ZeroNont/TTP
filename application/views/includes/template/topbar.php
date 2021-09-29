@@ -44,24 +44,36 @@
                                       notifications.</h6>
                               </div>
                               <!-- List group -->
+                              <?php for ($i = 0; $i < count($arr_nofi); $i++) { ?>
                               <div class="list-group list-group-flush">
-                                  <a href="#!" class="list-group-item list-group-item-action">
+                                  <a href=" <?php echo base_url() . '/history/History/show_history_detail/' . $arr_nofi[$i]->req_form_id; ?>"
+                                      class="list-group-item list-group-item-action">
                                       <div class="row align-items-center">
+                                          <?php if($arr_edit!=0){ ?>
                                           <div class="col ml--2">
                                               <div class="d-flex justify-content-between align-items-center">
                                                   <div>
                                                       <h4 class="mb-0 text-sm">
-                                                          คำร้องขออนุญาติวาง<?php echo $arr_nofi->req_item.' ';?> ได้ถูกยกเลิก</h4>
+                                                      &emsp;คำร้องขออนุญาติวาง<?php echo $arr_nofi[$i]->req_item.' ';?>
+                                                          ได้ถูกยกเลิก</h4>
                                                   </div>
                                                   <div class="text-right text-muted">
-                                                      <small>2 hrs ago</small>
+                    
+                                                      <!-- ปุ่มยืนลบการแจ้งเตือน -->
+                                                          <!-- <button class="btn btn-danger" class='deleteMe'> <i class="fa fa-times"></i> </button> -->
                                                   </div>
                                               </div>
-                                              <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                                              <p class="text-sm mb-0">&emsp;คำร้องถูกยกเลิก เนื่องจากถูกปฏิเสธครบ 3 ครั้งแล้ว 
+                                              </p>
                                           </div>
+                                          <?php }else{ ?>
+                                          <p class="text-sm mb-0">&emsp; You don't have notifications.</p>
+                                          <?php } ?>
                                       </div>
                                   </a>
                               </div>
+                              <?php } ?>
+
                           </div>
 
                       </li>
