@@ -45,5 +45,6 @@ class Plant_list extends MainController
         $data['obj_plan'] = $this->ttp->get_plant()->result();
         $this->output('consent/v_plant_list', $data);
     }
+   
 }
 // 

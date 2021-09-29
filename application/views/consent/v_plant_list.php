@@ -151,8 +151,13 @@ function getEmp_edit(i) {
                         <td>
                             <?php if ($obj_plan[$i]->pla_status == 1) { ?>
 
-                            <button class="btn btn-warning" data-toggle="modal"
+                            <button class="btn btn-warning sm" data-toggle="modal"
                                 data-target="#exampleModal<?php echo $i; ?>"><i class="material-icons">Edit</i></button>
+                            <a
+                                href="<?php echo site_url() . 'Plant_management/Plant_input/delete/' . $obj_plan[$i]->pla_plant_id ?>">
+                                <button class="btn btn-danger sm"><i class="material-icons">Delete</i></button>
+                            </a>
+
                             <!-- Modal -->
 
 
@@ -211,7 +216,41 @@ function getEmp_edit(i) {
                                                     class="btn btn-success float-right">Submit</button>
                                                 <button type="button" class="btn btn-danger float-right"
                                                     data-dismiss="modal">Cancel</button>
-                                            </form>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="exampleModal2<?php echo $i; ?>" class="modal fade" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header ">
+
+                                            <h4 class="modal-title" id="exampleModalLabel">
+
+                                                Delete Approve plant
+                                            </h4>
+
+                                            <button type=" button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+
+                                            <h3 align='center'>confirm to delete</h3>
+                                            <a
+                                                href="<?php echo site_url() . 'Plant_management/Plant_input/delete/' . $obj_plan[$i]->pla_plant_id ?>">
+                                                <button type="submit"
+                                                    class="btn btn-success float-right">Confirm</button>
+                                            </a>
+
+                                            <button type="button" class="btn btn-danger float-right"
+                                                data-dismiss="modal">Cancel</button>
+
                                         </div>
 
                                     </div>
@@ -220,6 +259,7 @@ function getEmp_edit(i) {
                             <?php } else { ?>
 
                             <button class="btn btn-secondary"><i class="material-icons">Edit</i></button>
+                            <button class="btn btn-secondary"><i class="material-icons">Delete</i></button>
                             <?php } ?>
                         </td>
                     </tr>

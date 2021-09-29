@@ -318,4 +318,33 @@ LIMIT 1  ";
     // *@output Responsibility 
     // *@author Jirayut Saifah
     // *@Create Date 20/07/2021
+    public function get_form_by_plant($k)
+    {
+        $sql =
+            "SELECT *
+            FROM  ttps_database.requested_form WHERE req_plant_id=$k";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    // *get_name
+    // *get name Responsibility  form database
+    // *@input -
+    // *@output Responsibility 
+    // *@author Jirayut Saifah
+    // *@Create Date 20/07/2021
+    public function get_emp_plant($k)
+    {
+        $sql =
+            "SELECT *
+            FROM  ttps_database.plant WHERE pla_plant_id=$k";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+    // *get_name
+    // *get name Responsibility  form database
+    // *@input -
+    // *@output Responsibility 
+    // *@author Jirayut Saifah
+    // *@Create Date 20/07/2021
+
 }

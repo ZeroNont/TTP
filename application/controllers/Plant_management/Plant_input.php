@@ -66,5 +66,13 @@ class Plant_input extends MainController
         $this->ttp->update();
         redirect('Plant_management/Plant_list/index');
     }
+    function delete($id)
+    {
+        $this->load->model('Da_ttp_plant_list', 'ttp');
+        $this->ttp->pla_plant_id = $id;
+        $this->ttp->delete();
+        echo $id;
+        // redirect('Plant_management/Plant_list/index');
+    }
 }
 // 

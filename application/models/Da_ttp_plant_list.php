@@ -48,5 +48,33 @@ class Da_ttp_plant_list extends ttps_model
     // *@output -
     // *@author Jirayut Saifah
     // *@Create Date 20/07/2021
+    public function delete()
+    {
+        $sql =
+            "DELETE FROM ttps_database.plant 
+            WHERE pla_plant_id=?";
+        $this->db->query($sql, array($this->pla_plant_id));
+    }
+    // *delete
+    // *delete plant in database
+    // *@input plant id
+    // *@output -
+    // *@author Jirayut Saifah
+    // *@Create Date 29/09/2021
+    public function update_status()
+    {
+        $sql =
+            "UPDATE ttps_database.plant 
+        SET pla_status=?
+        WHERE pla_plant_id=?;";
+        $this->db->query($sql, array($this->pla_status, $this->pla_plant_id));
+    }
+    // *update
+    // *update approve plant in database
+    // *@input Emp_ID,Plant_name,Plant_No
+    // *@output -
+    // *@author Jirayut Saifah
+    // *@Create Date 20/07/2021
+
 
 }

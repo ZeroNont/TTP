@@ -78,6 +78,21 @@ class MainController extends CI_Controller
 
 	public function output($body, $data = '')
 	{
+		$this->load->model('M_ttp_licence', 'lin');
+		$this->load->model('M_ttp_plant_list', 'pla');
+		$data['plant'] = $this->pla->get_plant()->result();
+		for ($i = 0; $i < sizeof($this->pla->get_plant()->result()); $i++) {
+			if (sizeof($this->lin->get_form_by_plant($data['plant'][$i]->pla_plant_id)->result()) == 0) {
+				$this->pla->pla_plant_id = $data['plant'][$i]->pla_plant_id;
+				$this->pla->pla_status = 1;
+				$this->pla->update_status();
+			} else {
+				$this->pla->pla_plant_id = $data['plant'][$i]->pla_plant_id;
+				$this->pla->pla_status = 2;
+				$this->pla->update_status();
+			}
+		}
+			
 		$this->header();
 		$this->sidebar($data);
 		$this->topbar();
