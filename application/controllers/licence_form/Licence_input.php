@@ -203,7 +203,7 @@ class Licence_input extends MainController
         $this->ttp->app_supervisor_id = $this->input->post('Supervisor');
         $this->ttp->req_company_id = $this->input->post('Company_ID');
         $this->ttp->app_approve_plant_id = $this->input->post('Approve_Plant');
-        $this->ttp->req_form_count =   $j + 1;
+        $this->ttp->req_edit_count =   $j + 1;
         $set_date =  $this->input->post('Start_date');
         $add_date =  $this->input->post('End_date');
         //บวกวันที่ 
