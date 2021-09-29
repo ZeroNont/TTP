@@ -214,20 +214,49 @@ class Licence_input extends MainController
         $this->ttp->status_update($k);
         $this->ttp->update_form($k);
         $this->ttp->update_approve($k);
-        move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
-        $this->ttp->fil_layout_location = $Layout_name;
-        move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
-        $this->ttp->fil_plan_location = $Plan_name;
-        $this->ttp->fil_form_id = $this->input->post('from');
-        $this->ttp->update_file($k);
+        $plan = $this->input->post('Plan2');
+        $Layout = $this->input->post('Layout2');
+        $Plan_name;
+        $Layout_name;
+        if ($Plan_name == NULL && $Layout_name == NULL) {
+            move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
+            $this->ttp->fil_layout_location = $Layout;
+            move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
+            $this->ttp->fil_plan_location = $plan;
+            $this->ttp->fil_form_id = $this->input->post('from');
+            $this->ttp->update_file($k);
+        } else if ($Plan_name != NULL && $Layout_name != NULL) {
+            move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
+            $this->ttp->fil_layout_location = $Layout_name;
+            move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
+            $this->ttp->fil_plan_location = $Plan_name;
+            $this->ttp->fil_form_id = $this->input->post('from');
+            $this->ttp->update_file($k);
+        } else if ($Plan_name == NULL && $Layout_name != NULL) {
+            move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
+            $this->ttp->fil_layout_location = $Layout;
+            move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
+            $this->ttp->fil_plan_location = $plan;
+            $this->ttp->fil_form_id = $this->input->post('from');
+            $this->ttp->update_file($k);
+        } else if ($Plan_name != NULL && $Layout_name == NULL) {
+            move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
+            $this->ttp->fil_layout_location = $Layout_name;
+            move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
+            $this->ttp->fil_plan_location = $Plan_name;
+            $this->ttp->fil_form_id = $this->input->post('from');
+            $this->ttp->update_file($k);
+        } else {
+            move_uploaded_file($tmp_Layout, 'assets/file/Layout/' . $Layout_name);
+            $this->ttp->fil_layout_location = $Layout_name;
+            move_uploaded_file($tmp_Plan, 'assets/file/Plan/' . $Plan_name);
+            $this->ttp->fil_plan_location = $Plan_name;
+            $this->ttp->fil_form_id = $this->input->post('from');
+            $this->ttp->update_file($k);
+        }
 
-        // echo  $id;
-        $this->load->model('M_ttp_licence', 'get');
-        $data['obj_status'] = $this->get->get_status($id)->result();
-        // // print_r($_SESSION['Emp_ID']);
-        $this->output('consent/v_check_status', $data);
-        // $this->output('consent/v_check_status', $i);
-        // redirect('licence_form/licence_input/index');
+
+        redirect('licence_form/licence_input/home');
     }
 }
 // 
