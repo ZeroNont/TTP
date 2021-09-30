@@ -66,12 +66,12 @@ div.table-responsive {
                             <?php } else if ($obj_status[$i]->req_status <= 0 && $obj_status[$i]->req_edit_count == 3) { ?>
                             <span class="badge badge-dot mr-4">
                                 <i class="bg-danger"></i>
-                                <span class="status">cancelled</span>
+                                <span class="status">canceled</span>
                             </span>
                             <?php } else if ($obj_status[$i]->req_status <= 0 && $obj_status[$i]->req_form_count == 4) { ?>
                             <span class="badge badge-dot mr-4">
                                 <i class="bg-danger"></i>
-                                <span class="status">cancelled</span>
+                                <span class="status">canceled</span>
                             </span>
                             <?php } else if ($obj_status[$i]->req_status == 0) { ?>
                             <span class="badge badge-dot mr-4">
