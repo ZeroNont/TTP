@@ -141,10 +141,10 @@ function getEmp_edit(i) {
                             <span class="badge badge-dot mr-4">
                                 <?php if ($obj_plan[$i]->pla_status == 1) { ?>
                                 <i class="bg-success"></i>
-                                <span class="status">out of process</span>
+                                <span class="status">inactive</span>
                                 <?php } else if ($obj_plan[$i]->pla_status != 1) { ?>
                                 <i class="bg-warning"></i>
-                                <span class="status">In process</span>
+                                <span class="status">active</span>
                                 <?php } ?>
                             </span>
                         </td>
