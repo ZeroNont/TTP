@@ -86,11 +86,13 @@ div.table-responsive {
                             <button class="btn btn-primary btn-sm" data-toggle="modal"
                                 data-target="#exampleModal<?php echo $i; ?>">
                                 <i class="fa fa-info-circle"></i> </button>
+                            <?php if ($obj_status[$i]->req_edit_count <= 3) { ?>
                             <a class="btn btn-warning btn-sm"
                                 href="<?php echo site_url() . 'licence_form/Licence_input/edit_form/' . $obj_status[$i]->req_form_id ?>">
                                 <i class="fa fa-pencil"></i>
                             </a>
-                            <?php } else if ($obj_status[$i]->req_status == 4) { ?>
+                            <?php } ?>
+                            <?php } else if ($obj_status[$i]->req_status == 4 && $obj_status[$i]->req_form_count <= 4) { ?>
                             <a class="btn btn-primary btn-sm"
                                 href="<?php echo site_url() . 'Renewal/Renewal/show_reform/' . $obj_status[$i]->req_form_id ?>">
                                 <i class="fa fa-refresh"></i>
