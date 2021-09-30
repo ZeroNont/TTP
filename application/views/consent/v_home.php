@@ -63,6 +63,16 @@ div.table-responsive {
                                 <span class="status">pending (Approve Plant)</span>
                                 <?php } ?>
                             </span>
+                            <?php } else if ($obj_status[$i]->req_status <= 0 && $obj_status[$i]->req_edit_count == 3) { ?>
+                            <span class="badge badge-dot mr-4">
+                                <i class="bg-danger"></i>
+                                <span class="status">cancelled</span>
+                            </span>
+                            <?php } else if ($obj_status[$i]->req_status <= 0 && $obj_status[$i]->req_form_count == 4) { ?>
+                            <span class="badge badge-dot mr-4">
+                                <i class="bg-danger"></i>
+                                <span class="status">cancelled</span>
+                            </span>
                             <?php } else if ($obj_status[$i]->req_status == 0) { ?>
                             <span class="badge badge-dot mr-4">
                                 <i class="bg-danger"></i>
@@ -83,6 +93,7 @@ div.table-responsive {
                                 <i class="bg-success"></i>
                                 <span class="status">approved</span>
                             </span>
+
                             <?php } ?>
                         </td>
                         <td>
@@ -96,7 +107,7 @@ div.table-responsive {
                             <button class="btn btn-primary btn-sm" data-toggle="modal"
                                 data-target="#exampleModal<?php echo $i; ?>">
                                 <i class="fa fa-info-circle"></i> </button>
-                            <?php if ($obj_status[$i]->req_edit_count < 3) { ?>
+                            <?php if ($obj_status[$i]->req_edit_count < 3 && $obj_status[$i]->req_form_count != 4) { ?>
                             <a class="btn btn-warning btn-sm"
                                 href="<?php echo site_url() . 'licence_form/Licence_input/edit_form/' . $obj_status[$i]->req_form_id ?>">
                                 <i class="fa fa-pencil"></i>
