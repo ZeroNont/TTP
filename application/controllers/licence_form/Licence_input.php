@@ -257,6 +257,7 @@ class Licence_input extends MainController
             $this->ttp->fil_form_id = $this->input->post('from');
             $this->ttp->update_file($k);
         }
+        $today = date("Y-m-d");
         $this->ttp->his_form_id = $k;
         $this->ttp->his_hr_no = $this->input->post('hr_no');
         $this->ttp->his_start_date = $set_date;
@@ -264,8 +265,11 @@ class Licence_input extends MainController
         $this->ttp->his_item = $this->input->post('Item');
         $this->ttp->his_tel = $this->input->post('Tell');
         $this->ttp->his_reason = $this->input->post('Reason');
+        $this->ttp->his_edit_date = $today;
+        $this->ttp->his_plan_location = $Plan_name;
+        $this->ttp->his_layout_location = $Layout_name;
         $this->ttp->insert_edit_history();
-
+        // echo $today;
         redirect('licence_form/licence_input/home');
     }
 }
