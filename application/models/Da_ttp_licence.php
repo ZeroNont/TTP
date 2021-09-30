@@ -24,6 +24,20 @@ class Da_ttp_licence extends ttps_model
     // *@output -
     // *@author Jirayut Saifah
     // *@Create Date 17/07/2021
+    public function insert_edit_history()
+    {
+        $sql = "INSERT INTO ttps_database.history_edit(his_form_id,his_hr_no,his_start_date,his_end_date,his_item,his_tel,his_reason) 
+                VALUES (?,?,?,?,?,?,?)";
+        $this->db->query($sql, array(
+            $this->his_form_id, $this->his_hr_no, $this->his_start_date, $this->his_end_date, $this->his_item, $this->his_tel, $this->his_reason
+        ));
+    }
+    // *insert_edit_history
+    // *insert_edit_history to database
+    // *@input Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count
+    // *@output -
+    // *@author Jirayut Saifah
+    // *@Create Date 17/07/2021
     public function insert_date()
     {
         $sql = "INSERT INTO ttps_database.schedule(sch_form_id,sch_start_date,sch_end_date) 
@@ -39,9 +53,9 @@ class Da_ttp_licence extends ttps_model
     public function update_form($id)
     {
         $sql = " UPDATE ttps_database.requested_form
-        SET req_emp_id=?,req_start_date=?,req_end_date=?,req_requested_date=?,req_item=?,req_tel=?,req_reason=?,req_company_id=?,req_form_count=?
+        SET req_emp_id=?,req_start_date=?,req_end_date=?,req_requested_date=?,req_item=?,req_tel=?,req_reason=?,req_company_id=?,req_edit_count=?
         WHERE req_form_id=$id;";
-        $this->db->query($sql, array($this->req_emp_id, $this->req_start_date, $this->req_end_date, $this->req_requested_date, $this->req_item, $this->req_tel, $this->req_reason, $this->req_company_id, $this->req_form_count));
+        $this->db->query($sql, array($this->req_emp_id, $this->req_start_date, $this->req_end_date, $this->req_requested_date, $this->req_item, $this->req_tel, $this->req_reason, $this->req_company_id, $this->req_edit_count));
     }
     // *update_form
     // *update form to database

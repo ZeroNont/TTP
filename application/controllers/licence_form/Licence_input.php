@@ -189,7 +189,7 @@ class Licence_input extends MainController
         $num = 1;
         $this->load->model('Da_ttp_licence', 'ttp');
         $this->ttp->req_emp_id = $id;
-        $j =   $this->input->post('count');
+        $j =   $this->input->post('form_edit');
         $k  = $this->input->post('form');
         // $i = $this->input->post('Emp_ID');
         $this->ttp->req_item = $this->input->post('Item');
@@ -203,7 +203,7 @@ class Licence_input extends MainController
         $this->ttp->app_supervisor_id = $this->input->post('Supervisor');
         $this->ttp->req_company_id = $this->input->post('Company_ID');
         $this->ttp->app_approve_plant_id = $this->input->post('Approve_Plant');
-        $this->ttp->req_form_count =   $j + 1;
+        $this->ttp->req_edit_count =   $j + 1;
         $set_date =  $this->input->post('Start_date');
         $add_date =  $this->input->post('End_date');
         //บวกวันที่ 
@@ -257,7 +257,14 @@ class Licence_input extends MainController
             $this->ttp->fil_form_id = $this->input->post('from');
             $this->ttp->update_file($k);
         }
-
+        $this->ttp->his_form_id = $k;
+        $this->ttp->his_hr_no = $this->input->post('hr_no');
+        $this->ttp->his_start_date = $set_date;
+        $this->ttp->his_end_date = $add_date;
+        $this->ttp->his_item = $this->input->post('Item');
+        $this->ttp->his_tel = $this->input->post('Tell');
+        $this->ttp->his_reason = $this->input->post('Reason');
+        $this->ttp->insert_edit_history();
 
         redirect('licence_form/licence_input/home');
     }

@@ -120,6 +120,10 @@
                                     disabled />
                                 <input class="form-control" type="text" name="Officer"
                                     value="<?php echo $detail[0]->Emp_ID ?>" hidden />
+                                <input class="form-control" type="text" name="form_edit"
+                                    value="<?php echo $obj_form[0]->req_edit_count ?>" hidden />
+                                <input class="form-control" type="text" name="hr_no"
+                                    value="<?php echo $obj_form[0]->req_hr_no ?>" hidden />
                             </div>
                         </div>
                         <div class="col-lg-4">
