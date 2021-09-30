@@ -35,11 +35,11 @@ class MainController extends CI_Controller
 
 	public function topbar()
 	{
-			$this->load->model('M_ttp_request', 'mreq');
-			$this->mreq->req_emp_id = $_SESSION["UsEmp_ID"];
-			$this->mreq->req_edit_count = 3;
-			$data['arr_nofi'] = $this->mreq->get_all_nofi()->result();
-        	$data['arr_edit'] = sizeof( $this->mreq->get_all_nofi()->result());
+			$this->load->model('M_ttp_request', 'medit');
+			$this->medit->req_emp_id = $_SESSION["UsEmp_ID"];
+			$this->medit->req_edit_count = 3;
+			$data['arr_nofi'] = $this->medit->get_all_nofi()->result();
+        	$data['arr_edit'] = sizeof( $this->medit->get_all_nofi()->result());
 			$this->load->view('includes/template/topbar',$data);
 	}
 

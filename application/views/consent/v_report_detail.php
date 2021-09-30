@@ -30,7 +30,7 @@
     <br>
     <h2 style="text-align:left">
         <b>Company :</b> <?php echo $Form_data->Company_name . ' ' . "(" .  $Form_data->Company_name_th . ")" ?><br><br>
-        <b>Requester :</b> <?php echo $Form_data->req_officer; ?><br><br>
+        <b>Requester :</b> <?php echo $Form_data->req_emp_id . ' ' . $Form_data->Empname_eng . ' ' . $Form_data->Empsurname_eng ?><br><br>
         <b>Plant No. :</b> <?php echo $Form_data->pla_plant_no; ?><br><br>
         <b>Plant Name. :</b> <?php echo $Form_data->pla_plant_name; ?><br><br>
         <b>Reason :</b> <?php echo $Form_data->req_reason; ?><br><br>
