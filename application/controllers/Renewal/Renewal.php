@@ -92,7 +92,7 @@ class Renewal extends MainController
 		$this->ttp->sch_form_id = $Form_ID;
 		$this->ttp->insert_schedule();
 		//$this->ttp->update_sec();
-		redirect('/Renewal/Renewal/show_renewal');
+		redirect('/Check_status/Check_status/home');
 	}
 }
 // 
