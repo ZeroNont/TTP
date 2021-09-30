@@ -63,10 +63,20 @@ div.table-responsive {
                                 <span class="status">pending (Approve Plant)</span>
                                 <?php } ?>
                             </span>
-                            <?php } else if ($obj_status[$i]->req_status <= 0) { ?>
+                            <?php } else if ($obj_status[$i]->req_status == 0) { ?>
                             <span class="badge badge-dot mr-4">
                                 <i class="bg-danger"></i>
-                                <span class="status">reject</span>
+                                <span class="status">reject (Supervisor)</span>
+                            </span>
+                            <?php } else if ($obj_status[$i]->req_status == -1) { ?>
+                            <span class="badge badge-dot mr-4">
+                                <i class="bg-danger"></i>
+                                <span class="status">reject (HR/5S center)</span>
+                            </span>
+                            <?php } else if ($obj_status[$i]->req_status == -2) { ?>
+                            <span class="badge badge-dot mr-4">
+                                <i class="bg-danger"></i>
+                                <span class="status">reject (Approve Plant)</span>
                             </span>
                             <?php } else if ($obj_status[$i]->req_status >= 4) { ?>
                             <span class="badge badge-dot mr-4">
@@ -92,11 +102,12 @@ div.table-responsive {
                                 <i class="fa fa-pencil"></i>
                             </a>
                             <?php } ?>
-                            <?php } else if ($obj_status[$i]->req_status == 4 && $obj_status[$i]->req_form_count < 4) { ?>
+                            <?php } else if ($obj_status[$i]->req_status == 4) { ?>
+                            <?php if ($obj_status[$i]->req_form_count < 4) { ?>
                             <a class="btn btn-primary btn-sm"
                                 href="<?php echo site_url() . 'Renewal/Renewal/show_reform/' . $obj_status[$i]->req_form_id ?>">
                                 <i class="fa fa-refresh"></i>
-                            </a>
+                            </a><?php } ?>
                             <a class="btn btn-primary btn-sm"
                                 href="<?php echo site_url() . 'Check_out_form/Check_out_form/check_out/' . $obj_status[$i]->req_form_id; ?>">
                                 <i class="fa fa-check-square-o"></i>
