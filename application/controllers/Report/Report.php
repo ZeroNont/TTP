@@ -61,6 +61,7 @@ class Report extends MainController
 		$this->load->model('M_ttp_report', 'ttp');
 		$this->ttp->req_form_id = $req_form_id;
 		$data['Form_data'] = $this->ttp->get_form_by_id()->row();
+		$data['Form_data_approver'] = $this->ttp->get_approver_by_id()->row();
 		$this->output('consent/v_report_detail', $data);
 	}
 
@@ -76,6 +77,7 @@ class Report extends MainController
 	{
 		$this->load->model('M_ttp_report', 'ttp');
 		$data['Form_data'] = $this->ttp->get_form_to_excel()->result();
+		$data['Form_data_approver'] = $this->ttp->get_approver_to_excel()->result();
 		$this->output('consent/v_report_export_excel', $data);
 	}
 }

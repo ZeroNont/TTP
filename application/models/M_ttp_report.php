@@ -69,6 +69,27 @@ class M_ttp_report extends Da_ttp_report
     }
 
     /*
+    * get_approver_by_id
+    * get data requested form by Form_ID
+    * @input    -
+    * @output   data of requested_form by Form_ID
+    * @author   Chakrit
+    * @Create Date 2564-10-01
+    */
+    public function get_approver_by_id()
+    {
+        $sql = "SELECT * 
+                FROM ttps_database.requested_form AS req
+                INNER JOIN ttps_database.approval AS app
+                ON app.app_form_id = req.req_form_id
+                INNER JOIN dbmc.employee AS emp
+                ON emp.Emp_ID = app.app_approve_plant_id
+                WHERE req.req_form_id = app.app_form_id";
+        $query = $this->db->query($sql, array($this->req_form_id));
+        return $query;
+    }
+
+    /*
     * get_form_to_excel
     * get data requested form to excel
     * @input    -
@@ -92,6 +113,26 @@ class M_ttp_report extends Da_ttp_report
         return $query;
     }
    
+    /*
+    * get_approver_to_excel
+    * get data requested form to excel
+    * @input    -
+    * @output   data of requested form to excel
+    * @author   Chakrit
+    * @Create Date 2564-10-01
+    */
+    public function get_approver_to_excel()
+    {
+        $sql = "SELECT * 
+                FROM ttps_database.requested_form AS req
+                INNER JOIN ttps_database.approval AS app
+                ON app.app_form_id = req.req_form_id
+                INNER JOIN dbmc.employee AS emp
+                ON emp.Emp_ID = app.app_approve_plant_id";
+        $query = $this->db->query($sql);
+        return $query;
+    }
+
     /*
     * get_department_to_chart
     * get data department to chart

@@ -63,7 +63,7 @@
                                         <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->req_requested_date)); ?></td>
                                         <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->req_start_date)) ?></td>
                                         <td><?php echo date("d-m-Y", strtotime($Form_data[$i]->req_end_date)) ?></td>
-                                        <td><?php echo $Form_data[$i]->Empname_engTitle . ' ' . $Form_data[$i]->Empname_eng . ' ' . $Form_data[$i]->Empsurname_eng; ?></td>
+                                        <td><?php echo $Form_data_approver[$i]->Empname_engTitle . ' ' . $Form_data_approver[$i]->Empname_eng . ' ' . $Form_data_approver[$i]->Empsurname_eng; ?></td>
                                         <?php
                                         if ($Form_data[$i]->req_status >= '4') {
                                             $Permission_Status = 'Approve';

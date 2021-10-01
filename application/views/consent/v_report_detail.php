@@ -31,14 +31,14 @@
     <h2 style="text-align:left">
         <b>Company :</b> <?php echo $Form_data->Company_name . ' ' . "(" .  $Form_data->Company_name_th . ")" ?><br><br>
         <b>Requester :</b> <?php echo $Form_data->req_emp_id . ' ' . $Form_data->Empname_eng . ' ' . $Form_data->Empsurname_eng ?><br><br>
-        <b>Plant No. :</b> <?php echo $Form_data->pla_plant_no; ?><br><br>
-        <b>Plant Name. :</b> <?php echo $Form_data->pla_plant_name; ?><br><br>
+        <b>Plant No :</b> <?php echo $Form_data->pla_plant_no; ?><br><br>
+        <b>Plant Name :</b> <?php echo $Form_data->pla_plant_name; ?><br><br>
         <b>Reason :</b> <?php echo $Form_data->req_reason; ?><br><br>
         <b>Requested date :</b> <?php echo date("d-m-Y", strtotime($Form_data->req_requested_date)); ?><br><br>
-        <b>Approval date :</b> <?php echo date("d-m-Y", strtotime($Form_data->req_approve_date)) ?><br><br>
+        <b>Approval date :</b> <?php echo date("d-m-Y", strtotime($Form_data_approver->app_approval_plant_date)) ?><br><br>
         <b>Starting date :</b> <?php echo date("d-m-Y", strtotime($Form_data->req_start_date)) ?><br><br>
         <b>End date :</b> <?php echo date("d-m-Y", strtotime($Form_data->req_end_date)) ?><br><br>
-        <b>Approver :</b> <?php echo $Form_data->Empname_engTitle . ' ' . $Form_data->Empname_eng . ' ' . $Form_data->Empsurname_eng; ?><br><br>
+        <b>Approver :</b> <?php echo $Form_data_approver->Empname_engTitle . ' ' . $Form_data_approver->Empname_eng . ' ' . $Form_data_approver->Empsurname_eng; ?><br><br>
         <?php
         if ($Form_data->req_status == '4') {
             $Status = 'ยังอยู่ในคลัง';

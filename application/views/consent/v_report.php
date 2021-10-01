@@ -384,7 +384,7 @@
             } else {
                 data_row += '<td>' + row.req_hr_no + '</td>';
             }
-            data_row += '<td>' + row.Empname_eng +''+ row.Empsurname_eng + '</td>';
+            data_row += '<td>' + row.Empname_eng +' '+ row.Empsurname_eng + '</td>';
             if (row.req_status == '4') {
                 data_row += '<td>ยังอยู่ในคลัง</td>';
             } else if (row.req_status > '4') {
