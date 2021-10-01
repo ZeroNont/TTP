@@ -94,7 +94,7 @@ function getEmp_edit(i) {
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Plant No.</label>
-                            <input type="text" class="form-control" name="Plant_No" required>
+                            <input type="number" class="form-control" name="Plant_No" min="1" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Plant Name</label>
@@ -198,9 +198,9 @@ function getEmp_edit(i) {
                                                 <div class="mb-3">
                                                     <label for="exampleInputPassword1" class="form-label">Plant
                                                         No.</label>
-                                                    <input type="text" class="form-control"
+                                                    <input type="number" class="form-control"
                                                         value="<?php echo $obj_plan[$i]->pla_plant_no ?>"
-                                                        name="Plant_No" required>
+                                                        name="Plant_No" min="1" required>
                                                     <input type="text" class="form-control"
                                                         value="<?php echo $obj_plan[$i]->pla_plant_id ?>"
                                                         name="Plant_ID" hidden>
