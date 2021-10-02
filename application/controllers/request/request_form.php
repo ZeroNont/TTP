@@ -95,6 +95,8 @@ class Request_form extends MainController
         $this->dain->app_form_id = $id; 
         $this->dain->update_reject();
 
+        $count =  $this->input->post('req_reject_count');
+        $this->dain->req_reject_count = $count+1;
         // ปฏิเสธแล้วให้ Status = 0
         $this->dain->req_status = 0;
         $this->dain->req_form_id = $id;   

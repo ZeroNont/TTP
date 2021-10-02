@@ -229,20 +229,38 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Reason of reject</th>
+                    <th scope="col">Running Number</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Tel</th>
+                    <th scope="col">Reason</th>
                     <th scope="col">Edit Date</th>
-
+                    <th scope="col">File</th>
                 </tr>
             </thead>
             <tbody>
                 <?php for ($i = 0; $i < count($arr_ver); $i++) { ?>
                     <tr>
                         <th scope="row"><?php echo $i + 1 ?></th>
+                        <td><?php echo $arr_ver[$i]->his_hr_no ?></td>
+                        <td><?php echo $arr_ver[$i]->his_start_date . ' - ' .  $arr_ver[$i]->his_end_date ?></td>
+                        <td><?php echo $arr_ver[$i]->his_item ?></td>
+                        <td><?php echo $arr_ver[$i]->his_tel ?></td>
                         <td><?php echo $arr_ver[$i]->his_reason ?></td>
                         <td><?php
                             $newDate = date("d-m-Y", strtotime($arr_ver[$i]->his_edit_date));
                             echo $newDate;
                             ?></td>
+                        <?php
+                        if ($arr_ver[$i]->his_layout_location == null || $arr_ver[$i]->his_plan_location == null) {
+                        ?>
+                            <td><?php echo "-" ?></td>
+                        <?php } else {
+                        ?>
+                            <td><?php echo $arr_ver[$i]->his_layout_location . ' ' . $arr_ver[$i]->his_plan_location ?></td>
+                        <?php
+                        }
+                        ?>
                     </tr>
                 <?php } ?>
             </tbody>

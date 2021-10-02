@@ -130,6 +130,8 @@ class Approve_form extends MainController
         $this->dain->app_form_id = $id; 
         $this->dain->update_reject();
 
+        $count =  $this->input->post('req_reject_count');
+        $this->dain->req_reject_count = $count+1;
         $this->dain->req_status = -1;
         $this->dain->req_form_id = $id;   
         $this->dain->update_form();
@@ -152,6 +154,8 @@ class Approve_form extends MainController
         $this->dain->app_form_id = $id; 
         $this->dain->update_reject();
 
+        $count =  $this->input->post('req_reject_count');
+        $this->dain->req_reject_count = $count+1;
         $this->dain->req_status = -2;
         $this->dain->req_form_id = $id;   
         $this->dain->update_form();

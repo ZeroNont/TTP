@@ -205,6 +205,8 @@ $(document).ready(function() {
                             <div class="form-group">
                                 <input type="text" name="app_reject_reason" class="form-control"
                                     placeholder="reason for reject" required>
+                                <input type="text" name="app_reject_reason" class="form-control" value="<?php echo $arr_req->req_reject_count; ?>" hidden>
+
                             </div>
                         </div>
                     </div>

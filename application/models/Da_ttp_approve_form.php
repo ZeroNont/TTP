@@ -59,9 +59,9 @@ class Da_ttp_approve_form extends ttps_model
     function update_form()
     {
         $sql = "UPDATE ttps_database.requested_form AS req
-                SET req.req_status = ? , req.req_hr_no = ?
+                SET req.req_status = ? , req.req_hr_no = ? , req.req_reject_count = ?
                 WHERE req.req_form_id = ? "; 
-        $this->db->query($sql, array($this->req_status,$this->req_hr_no,$this->req_form_id));
+        $this->db->query($sql, array($this->req_status,$this->req_hr_no,$this->req_reject_count,$this->req_form_id));
     } //อัพเดทสถานะของฟอร์มที่ถูกยกเลิกโดย HR
 
     /*
@@ -75,9 +75,9 @@ class Da_ttp_approve_form extends ttps_model
     function update_form_plant()
     {
         $sql = "UPDATE ttps_database.requested_form AS req
-                SET req.req_status = ? 
+                SET req.req_status = ? , req.req_reject_count = ?
                 WHERE req.req_form_id = ? "; 
-        $this->db->query($sql, array($this->req_status,$this->req_form_id));
+        $this->db->query($sql, array($this->req_status,$this->req_reject_count,$this->req_form_id));
     } //อัพเดทสถานะของฟอร์มที่ถูกยกเลิกโดย Plant
 
     

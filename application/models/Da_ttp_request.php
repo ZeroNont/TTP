@@ -60,9 +60,9 @@ class Da_ttp_request extends ttps_model
     function update_form()
     {
         $sql = "UPDATE ttps_database.requested_form AS req
-                SET req.req_status = ?
+                SET req.req_status = ? , req.req_reject_count = ?
                 WHERE req.req_form_id = ? "; 
-        $this->db->query($sql, array($this->req_status,$this->req_form_id));
+        $this->db->query($sql, array($this->req_status,$this->req_reject_count,$this->req_form_id));
     } //update_form อัพเดทสถานะของฟอร์มที่ถูกยกเลิกโดยหัวหน้างาน
 
     
