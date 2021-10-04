@@ -3,7 +3,6 @@
         text-align: center;
     }
 </style>
-<br>
 <div class="card">
     <div class="card-header" id="card_radius">
         <h1>
@@ -227,9 +226,9 @@
         </div>
     </div>
     <div class="card-footer">
-        <h3>
+        <h2>
             Action Description (คำอธิบายปุ่มสัญลักษณ์)
-        </h3>
+        </h2>
         <br>
         &emsp;
         <button class="btn btn-primary btn-sm">

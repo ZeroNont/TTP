@@ -73,7 +73,7 @@
                 <div class="card-body px-lg-5 py-lg-5">
                     <div class="text-center mb-4">
 
-                        <h3 style="font-size : 30px;font-family:Helvetica;color:black;">Login</h3>
+                        <h3 style="font-size : 30px;font-family:FC Lamoon;color:black;">Login</h3>
                     </div>
                     <div class="form-group mb-3">
                         <div class="input-group input-group-merge input-group-alternative">
