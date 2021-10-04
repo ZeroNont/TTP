@@ -139,6 +139,7 @@ class Licence_input extends MainController
         $date = $this->input->post('datefilter');
         $start_date = substr($date, 0, 10);
         $end_date = substr($date, 12, 21);
+        echo $start_date . "----" . $end_date;
         $this->ttp->req_start_date = $start_date;
         $this->ttp->req_end_date = $end_date;
 
@@ -180,8 +181,6 @@ class Licence_input extends MainController
     function edit()
     {
         $date = date("Y-m-d");
-
-
         $id = $_SESSION['UsEmp_ID'];
         $Layout_name =  $_FILES['Layout']['name'];
         $tmp_Layout =  $_FILES['Layout']['tmp_name'];
@@ -194,8 +193,21 @@ class Licence_input extends MainController
         $k  = $this->input->post('form');
         // $i = $this->input->post('Emp_ID');
         $date = $this->input->post('datefilter');
-        $start_date = substr($date, 0, 10);
-        $end_date = substr($date, 12, 21);
+        if ($date == "") {
+            $date1 = $this->input->post('Start_date');
+            $date2 =   $this->input->post('End_date');
+            $start_date = date("Y-m-d", strtotime($date1));
+            $end_date = date("Y-m-d", strtotime($date2));
+
+            echo $start_date . "____" . $end_date . "____1";
+        } else {
+            $start_date = substr($date, 0, 10);
+            $start_date = date("Y-m-d", strtotime($start_date));
+            $end_date = substr($date, 12, 21);
+            $end_date = date("Y-m-d", strtotime($end_date));
+            echo $start_date . "____" . $end_date . "____2";
+        }
+
         $this->ttp->req_start_date = $start_date;
         $this->ttp->req_end_date = $end_date;
         $this->ttp->req_item = $this->input->post('Item');
