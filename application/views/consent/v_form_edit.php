@@ -31,8 +31,8 @@
                                 <label class="form-control-label" for="input-username">Start Date
                                     (วันที่เริ่มต้น)</label> -->
 
-                    <input type="date" name="Start_date" class="form-control" min="<?php echo date('m-y-d'); ?>"
-                        value="<?php echo $obj_form[0]->req_start_date ?>" hidden>
+                    <input type="date" name="Start_date" id="S_date" class="form-control"
+                        min="<?php echo date('m-y-d'); ?>" value="<?php echo $obj_form[0]->req_start_date ?>" hidden>
                     <!-- 
                             </div>
                         </div>
@@ -52,7 +52,11 @@
                     <input type="text" id="date" name="datefilter" class="form-control" value="" required><br>
 
                     <script type="text/javascript">
+                    var date1 = document.getElementById("S_date").value;
+                    var date2 = document.getElementById("E_date").value;
                     var today = new Date();
+                    var start_date = new Date(date1);
+                    var end_date = new Date(date2);
                     var dd = String(today.getDate()).padStart(2, '0');
                     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
                     var yyyy = today.getFullYear();
@@ -63,8 +67,8 @@
                             "maxSpan": {
                                 "days": 30
                             },
-                            "startDate": today,
-                            "endDate": moment().startOf('day').add(30, 'day'),
+                            "startDate": start_date,
+                            "endDate": end_date,
                             "minDate": today,
                             // "maxDate": moment().startOf('day').add(30, 'day'),
                         }, function(start, end, label) {
