@@ -25,7 +25,7 @@
                             enctype="multipart/form-data" onSubmit="JavaScript:return fncSubmit();" name="licence">
 
                             <div class="pl-lg-4">
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-username">Start Date
@@ -43,45 +43,52 @@
 
                                             <input type="date" name="End_date" class="form-control"
                                                 min="<?php echo date('Y-m-d'); ?>" required>
-                                            <!-- อัพเดท/เพิ่มวันขออนุญาตวาง
-                                <label class="form-control-label" for="input-email">Specify the end date.
-                                    (ระบุวันสิ้นสุดวันที่)
-                                    <select class="form-control" name="End_date" style="text-align:center" required><br>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                        <option value="28">28</option>
-                                        <option value="29">29</option>
-                                        <option value="30">30</option>
-
-                                    </select> -->
+                     
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
+
+                                <label class="form-control-label" for="input-username">Date Picker
+                                    (วันที่ต้องการวาง)</label>
+                                <input type="text" id="date" name="datefilter" class="form-control" value=""
+                                    required /><br>
+
+                                <script type="text/javascript">
+                                var today = new Date();
+                                var dd = String(today.getDate()).padStart(2, '0');
+                                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                                var yyyy = today.getFullYear();
+
+
+                                $(function() {
+                                    $('#date').daterangepicker({
+                                        "maxSpan": {
+                                            "days": 30
+                                        },
+                                        "startDate": today,
+                                        "endDate": moment().startOf('day').add(30, 'day'),
+                                        "minDate": today,
+                                        // "maxDate": moment().startOf('day').add(30, 'day'),
+                                    }, function(start, end, label) {
+                                        console.log(
+                                            "New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')"
+                                        );
+                                    });
+
+                                    $('input[name="datefilter"]').on('apply.daterangepicker', function(ev,
+                                        picker) {
+                                        $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' +
+                                            picker.endDate.format('YYYY-MM-DD'));
+                                    });
+
+                                    $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev,
+                                        picker) {
+                                        $(this).val('');
+                                    });
+
+                                });
+                                </script>
+
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">

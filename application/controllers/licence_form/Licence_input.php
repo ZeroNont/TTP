@@ -120,7 +120,7 @@ class Licence_input extends MainController
         $this->ttp->req_emp_id = $id;
         // $i = $this->input->post('Emp_ID');
         $this->ttp->req_item = $this->input->post('Item');
-        $this->ttp->req_start_date = $this->input->post('Start_date');
+        
 
         $this->ttp->req_requested_date = $date;
         $this->ttp->req_reason = $this->input->post('Reason');
@@ -136,10 +136,11 @@ class Licence_input extends MainController
         $this->ttp->req_status = $status;
         $set_date =  $this->input->post('Start_date');
         $add_date =  $this->input->post('End_date');
-        //บวกวันที่ 
-        $date1 = str_replace('-', '/', $set_date);
-        $Update = date('Y-m-d', strtotime($date1 . "+" . $add_date . " days"));
-        $this->ttp->req_end_date = $add_date;
+        $date = $this->input->post('datefilter');
+        $start_date = substr($date, 0, 10);
+        $end_date = substr($date, 12, 21);
+        $this->ttp->req_start_date = $start_date;
+        $this->ttp->req_end_date = $end_date;
 
         $this->ttp->insert_form();
        
@@ -192,9 +193,14 @@ class Licence_input extends MainController
         $j =   $this->input->post('form_edit');
         $k  = $this->input->post('form');
         // $i = $this->input->post('Emp_ID');
+        $date = $this->input->post('datefilter');
+        $start_date = substr($date, 0, 10);
+        $end_date = substr($date, 12, 21);
+        $this->ttp->req_start_date = $start_date;
+        $this->ttp->req_end_date = $end_date;
         $this->ttp->req_item = $this->input->post('Item');
-        $this->ttp->req_start_date = $this->input->post('Start_date');
-        $this->ttp->sch_start_date = $this->input->post('Start_date');
+        $this->ttp->req_start_date = $start_date;
+        $this->ttp->sch_start_date = $start_date;
         // echo    $this->input->post('form');
         $this->ttp->req_requested_date = $date;
         $this->ttp->req_reason = $this->input->post('Reason');
@@ -204,13 +210,12 @@ class Licence_input extends MainController
         $this->ttp->req_company_id = $this->input->post('Company_ID');
         $this->ttp->app_approve_plant_id = $this->input->post('Approve_Plant');
         $this->ttp->req_edit_count =   $j + 1;
-        $set_date =  $this->input->post('Start_date');
-        $add_date =  $this->input->post('End_date');
-        //บวกวันที่ 
-        $date1 = str_replace('-', '/', $set_date);
-        $Update = date('Y-m-d', strtotime($date1 . "+" . $add_date . " days"));
-        $this->ttp->req_end_date = $add_date;
-        $this->ttp->sch_end_date = $add_date;
+
+
+
+
+        $this->ttp->req_end_date = $end_date;
+        $this->ttp->sch_end_date = $end_date;
         $this->ttp->req_status = 1;
         $this->ttp->req_form_id = $this->input->post('form');
         $this->ttp->update_date($k);
@@ -260,8 +265,8 @@ class Licence_input extends MainController
         $today = date("Y-m-d");
         $this->ttp->his_form_id = $k;
         $this->ttp->his_hr_no = $this->input->post('hr_no');
-        $this->ttp->his_start_date = $set_date;
-        $this->ttp->his_end_date = $add_date;
+        $this->ttp->his_start_date = $start_date;
+        $this->ttp->his_end_date = $end_date;
         $this->ttp->his_item = $this->input->post('Item');
         $this->ttp->his_tel = $this->input->post('Tell');
         $this->ttp->his_reason = $this->input->post('Reason');

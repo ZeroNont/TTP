@@ -26,10 +26,10 @@ class Da_ttp_licence extends ttps_model
     // *@Create Date 17/07/2021
     public function insert_edit_history()
     {
-        $sql = "INSERT INTO ttps_database.history_edit(his_form_id,his_hr_no,his_start_date,his_end_date,his_item,his_tel,his_reason,his_edit_date,his_layout_location,his_plan_location) 
-                VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO ttps_database.history_edit(his_form_id,his_start_date,his_end_date,his_item,his_tel,his_reason,his_edit_date,his_layout_location,his_plan_location) 
+                VALUES (?,?,?,?,?,?,?,?,?)";
         $this->db->query($sql, array(
-            $this->his_form_id, $this->his_hr_no, $this->his_start_date, $this->his_end_date, $this->his_item, $this->his_tel, $this->his_reason, $this->his_edit_date, $this->his_layout_location, $this->his_plan_location
+            $this->his_form_id, $this->his_start_date, $this->his_end_date, $this->his_item, $this->his_tel, $this->his_reason, $this->his_edit_date, $this->his_layout_location, $this->his_plan_location
         ));
     }
     // *insert_edit_history
