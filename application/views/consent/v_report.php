@@ -386,11 +386,11 @@
             }
             data_row += '<td>' + row.Empname_eng +' '+ row.Empsurname_eng + '</td>';
             if (row.req_status == '4') {
-                data_row += '<td>ยังอยู่ในคลัง</td>';
+                data_row += '<td>Waiting for remove</td>';
             } else if (row.req_status > '4') {
-                data_row += '<td>สิ้นสุดการวาง</td>';
+                data_row += '<td>Completed</td>';
             } else if (row.req_status < '4') {
-                data_row += '<td>รอการอนุมัติ</td>';
+                data_row += '<td>Pending for check</td>';
             }
             data_row += '<td><a href="<?php echo site_url() ?>Report/Report/show_report_detail?req_form_id= ' + row.req_form_id + ' ">'
             data_row += '<button type="button" class="btn btn-primary btn-sm" style="background-color: info;">'

@@ -41,11 +41,11 @@
         <b>Approver :</b> <?php echo $Form_data_approver->Empname_engTitle . ' ' . $Form_data_approver->Empname_eng . ' ' . $Form_data_approver->Empsurname_eng; ?><br><br>
         <?php
         if ($Form_data->req_status == '4') {
-            $Status = 'ยังอยู่ในคลัง';
+            $Status = 'Waiting for remove';
         } else if ($Form_data->req_status > '4') {
-            $Status = 'สิ้นสุดการวาง';
+            $Status = 'Completed';
         } else if ($Form_data->req_status < '4') {
-            $Status = 'รอการอนุมัติ';
+            $Status = 'Pending for check';
         }
         ?>
         <b>Status :</b> <?php echo $Status; ?><br>

@@ -74,7 +74,7 @@
                                         <td><?php echo $Permission_Status; ?></td>
                                         <?php
                                         if ($Form_data[$i]->req_status == '4') {
-                                            $Tag_Status = 'Wating for remove';
+                                            $Tag_Status = 'Watiing for remove';
                                         } else if ($Form_data[$i]->req_status > '4') {
                                             $Tag_Status = 'Completed';
                                         } else if ($Form_data[$i]->req_status < '4') {
