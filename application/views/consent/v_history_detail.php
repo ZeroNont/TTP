@@ -257,12 +257,12 @@
                             <?php
                             }
                             ?>
-                            <td><?php echo $arr_ver[$i]->his_start_date . ' - ' .  $arr_ver[$i]->his_end_date ?></td>
+                            <td><?php echo date("d/m/Y", strtotime($arr_ver[$i]->his_start_date)) . ' - ' .  date("d/m/Y", strtotime($arr_ver[$i]->his_end_date)) ?></td>
                             <td><?php echo $arr_ver[$i]->his_item ?></td>
                             <td><?php echo $arr_ver[$i]->his_tel ?></td>
                             <td><?php echo $arr_ver[$i]->his_reason ?></td>
                             <td><?php
-                                $newDate = date("d-m-Y", strtotime($arr_ver[$i]->his_edit_date));
+                                $newDate = date("d/m/Y", strtotime($arr_ver[$i]->his_edit_date));
                                 echo $newDate;
                                 ?></td>
                             <?php
