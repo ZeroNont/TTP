@@ -287,6 +287,7 @@
         <br><br>
     </div>
 </div>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css">
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
