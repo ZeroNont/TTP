@@ -167,16 +167,16 @@
                                       <span class="nav-link-text">History Form</span>
                                   </a>
                               </li>
-                              <?php if ($arr_req_hr != 0) { ?>
+                              <?php if ($arr_req_supervisor  != 0) { ?>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?>">
+                                      <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                                           <i class="ni ni-email-83 text-primary"></i>
-                                          <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req_hr ?></span></span>
+                                          <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req_supervisor ?></span></span>
                                       </a>
                                   </li>
                               <?php } else { ?>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?> ">
+                                      <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?> ">
                                           <i class="ni ni-email-83 text-primary"></i>
                                           <span class="nav-link-text">Pending Approve</span>
                                       </a>
@@ -255,16 +255,16 @@
                                       <span class="nav-link-text">History Form</span>
                                   </a>
                               </li>
-                              <?php if ($arr_req_plant != 0) { ?>
+                              <?php if ($arr_req_supervisor != 0) { ?>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?>">
+                                      <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                                           <i class="ni ni-email-83 text-primary"></i>
-                                          <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req_plant ?></span></span>
+                                          <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req_supervisor ?></span></span>
                                       </a>
                                   </li>
                               <?php } else { ?>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?> ">
+                                      <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?> ">
                                           <i class="ni ni-email-83 text-primary"></i>
                                           <span class="nav-link-text">Pending Approve</span>
                                       </a>

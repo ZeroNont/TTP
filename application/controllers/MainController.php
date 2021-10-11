@@ -62,12 +62,24 @@ class MainController extends CI_Controller
 			$this->req->app_hr_id = $_SESSION["UsEmp_ID"];
 			$this->req->req_status = 2;
 			$data['arr_req_hr'] = sizeof($this->req->get_all_hr()->result());
+
+			$this->load->model('M_ttp_request', 'msup');
+			$this->msup->app_supervisor_id = $_SESSION["UsEmp_ID"];
+			$this->msup->req_status = 1;
+			$data['arr_req_supervisor'] = sizeof( $this->msup->get_all_sup()->result() );
 			$this->load->view('includes/template/sidebar',$data);
+
 		}else if($_SESSION["Usrole"]==4){
 			$this->load->model('M_ttp_approve_form', 'req');
 			$this->req->app_approve_plant_id = $_SESSION["UsEmp_ID"];
 			$this->req->req_status = 3;
 			$data['arr_req_plant'] = sizeof($this->req->get_all_plant()->result());
+
+			$this->load->model('M_ttp_request', 'msup');
+			$this->msup->app_supervisor_id = $_SESSION["UsEmp_ID"];
+			$this->msup->req_status = 1;
+			$data['arr_req_supervisor'] = sizeof( $this->msup->get_all_sup()->result() );
+
 			$this->load->view('includes/template/sidebar',$data);
 		}
 		else{
