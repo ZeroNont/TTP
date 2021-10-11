@@ -226,9 +226,9 @@
         </div>
     </div>
     <div class="card-footer">
-        <h2>
+        <h3>
             Action Description (คำอธิบายปุ่มสัญลักษณ์)
-        </h2>
+        </h3>
         <br>
         &emsp;
         <button class="btn btn-primary btn-sm">
