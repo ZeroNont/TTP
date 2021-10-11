@@ -196,7 +196,7 @@ DIV.text {
             </table>
         </div>
     </div>
-    <center><a href="<?php echo site_url() . 'Check_status/Check_status/home'; ?>" class="btn btn-secondary float-center"><i class="fas fa-arrow-alt-circle-left"></i> Back</a></center>
+    <center><a id="hid" href="<?php echo site_url() . 'Check_status/Check_status/home'; ?>" class="btn btn-secondary float-center"><i class="fas fa-arrow-alt-circle-left"></i> Back</a></center>
 
 </body>
 

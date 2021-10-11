@@ -234,7 +234,7 @@
         <button class="btn btn-primary btn-sm">
             <i class="fa fa-info-circle"></i>
         </button>&emsp;
-        กดปุ่มสัญลักษณ์นี้เพื่อดูเหตุการณ์ปฏิเสธของคำร้องขอวางของ
+        กดปุ่มสัญลักษณ์นี้เพื่อดูเหตุผลปฏิเสธของคำร้องขอวางของ
         <br><br>
         &emsp;
         <button class="btn btn-warning btn-sm">
@@ -286,6 +286,7 @@
         <br><br>
     </div>
 </div>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css">
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
