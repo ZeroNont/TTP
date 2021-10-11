@@ -55,9 +55,15 @@ class Approve_form extends MainController
     */
     function show_approve_form_list() 
     {
+        $this->load->model('M_ttp_request', 'msup');
+        $this->msup->app_supervisor_id = $_SESSION["UsEmp_ID"];
+        $this->msup->req_status = 1;
+        $data['arr_req'] = $this->msup->get_all_sup()->result();
+
         $this->load->model('M_ttp_approve_form', 'mreq');
         $this->mreq->req_status = 2;
         $data['arr_req'] = $this->mreq->get_all_hr()->result();
+
         $this->output('consent/v_approve_form', $data);
     } //แสดงรายการคำขอทั้งหมดสำหรับhr
 
@@ -71,6 +77,11 @@ class Approve_form extends MainController
     */
     function show_approve_form_plant() 
     {
+        $this->load->model('M_ttp_request', 'msup');
+        $this->msup->app_supervisor_id = $_SESSION["UsEmp_ID"];
+        $this->msup->req_status = 1;
+        $data['arr_req'] = $this->msup->get_all_sup()->result();
+        
         $this->load->model('M_ttp_approve_form', 'mreq');
         $this->mreq->app_approve_plant_id = $_SESSION["UsEmp_ID"];
         $this->mreq->req_status = 3;
