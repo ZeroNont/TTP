@@ -49,7 +49,7 @@
                 if (obj.length != 0) {
                     setTimeout(function() {
                         window.location.href =
-                            '<?php echo site_url() . 'Login/Login/show_user_home/' ?>' + obj.Enp_ID
+                            '<?php echo site_url() . 'Login/Login/show_user_home/' ?>' + obj.Emp_ID
                     }, 500) //function set
                 } //if
                 else {
