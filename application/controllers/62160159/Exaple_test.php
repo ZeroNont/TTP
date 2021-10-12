@@ -1,4 +1,4 @@
-<?php
+<!-- 
 /*
 * 62160159
 * Controller
@@ -7,7 +7,7 @@
 * @author Phatchara
 * @Create Date 2564-10-12
 */
-?>
+-->
 
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');

@@ -1,4 +1,4 @@
-<?php
+<!-- 
 /*
 * v_62160159
 * View Form 
@@ -7,74 +7,60 @@
 * @author Phatchara
 * @Create Date 2564-10-12
 */
-?>
+-->
 
 <style>
-#card_padding 
-{
-    padding: 1.5rem;
-}
+    #card_padding {
+        padding: 1.5rem;
+    }
 
-input,
-select 
-{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+    .card {
+        border-radius: 20px;
+    }
 
-#label 
-{
-    font-size: 14px;
-    line-height: 1.42857;
-    color: black;
-    font-weight: 400;
-    padding-left: 9px;
-}
+    input,
+    select {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
 
-.label 
-{
-    padding-left: unset;
-}
+    #label {
+        font-size: 14px;
+        line-height: 1.42857;
+        color: black;
+        font-weight: 400;
+        padding-left: 9px;
+    }
 
-.form-control 
-{
-    border: 0px;
-    border-radius: 0px;
-}
+    .label {
+        padding-left: unset;
+    }
 
-#input 
-{
-    border: 0px;
-    border-bottom: 2px solid;
-    border-bottom-color: #5e72e4;
-}
+    .form-control {
+        border: 0px;
+        border-radius: 0px;
+    }
 
-#input:active 
-{
-    border: 0px;
-    border-bottom: 2px solid;
-    border-bottom-color: #5e72e4;
-}
-
-a 
-{
-    text-decoration: none;
-}
+    #input {
+        border: 0px;
+        border-bottom: 2px solid;
+        border-bottom-color: #9055FF;
+    }
+    
 </style>
 <!--css-->
 
 <html>
-
 <body>
     <div class="card">
         <!-------------------------------------------------------------- start form ----------------------------------------------------------->
         <form action="#">
-            <div class="card-header" id="card_padding">
+            <div class="card-header">
                 <h1 style="text-align: center;">แบบสอบถามข้อมูลส่วนบุคคล</h1>
             </div>
             <!----- card header ----->
-            <div class="card-body">
+            <div class="card-body" id="card_padding">
                 <div class="container">
                     <div class="row">
                         <div class="form-group col-md-2 mb-3">
@@ -115,7 +101,8 @@ a
                     <div class="row">
                         <div class="form-group col-md-6 mb-3">
                             <label id="label">อีเมล :</label>
-                            <input id="input" type="email" class="form-control mt-1" placeholder="example@email.com" required>
+                            <input id="input" type="email" class="form-control mt-1" placeholder="example@email.com"
+                                required>
                         </div>
                         <!----- col อีเมล ----->
                         <div class="form-group col-md-6 mb-3">
@@ -153,7 +140,8 @@ a
                                 <label class="custom-control-label" for="customRadio1">Team leader</label>
                             </div><br>
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" checked>
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"
+                                    checked>
                                 <label class="custom-control-label" for="customRadio2">Developer</label>
                             </div><br>
                             <div class="custom-control custom-radio">
@@ -198,6 +186,11 @@ a
                     <!----- row 5 ----->
                 </div>
                 <!----- container ----->
+                <br><br>
+                <div style="text-align: center;">
+                        <button id="submit" class="btn btn-success success"><b>Confirm</b></button>
+                </div>
+                <!----- button Confirm ----->
             </div>
             <!----- card body ----->
         </form>
