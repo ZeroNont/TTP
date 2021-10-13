@@ -51,12 +51,12 @@ h1 {
                             <!-----  คำนำหน้า ----->
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label id="label">ชื่อ : </label>
+                                    <label id="Fname">ชื่อ : </label>
                                     <input type="text" class="form-control " placeholder="ชื่อ" required>
                                 </div>
                                 <!-----  ชื่อ ----->
                                 <div class="col-md-6 mb-3 ">
-                                    <label id="label">นามสกุล :</label>
+                                    <label id="Lname">นามสกุล :</label>
                                     <input type="text" class="form-control" placeholder="นามสกุล" required>
                                 </div>
                                 <!-----  นามสกุล ----->
@@ -64,12 +64,12 @@ h1 {
                             <!-- <row> -->
                             <div class="row">
                                 <div class=" col-md-6 mb-3 ">
-                                    <label id="label">วันเกิด :</label>
+                                    <label id="Birthday">วันเกิด :</label>
                                     <input type="date" class="form-control" placeholder="วันเกิด" required>
                                 </div>
                                 <!-----  วันเกิด ----->
                                 <div class="col-md-6 mb-3">
-                                    <label id="label">รหัสนิสิต : </label>
+                                    <label id="StudenID">รหัสนิสิต : </label>
                                     <input type="number" class="form-control" placeholder="รหัสนิสิต" required>
                                 </div>
                                 <!-----  รหัสนิสิต ----->
@@ -77,12 +77,12 @@ h1 {
                             <!-- <row> -->
                             <div class="row">
                                 <div class="col-md-6 mb-3 ">
-                                    <label id="label">อีเมล :</label>
+                                    <label id="email">อีเมล :</label>
                                     <input type="email" class="form-control" placeholder="example@email.com" required>
                                 </div>
                                 <!-----  อีเมล ----->
                                 <div class="col-md-6 mb-3 ">
-                                    <label id="label">รหัสผ่าน :</label>
+                                    <label id="password">รหัสผ่าน :</label>
                                     <input type="password" class="form-control" placeholder="รหัสผ่าน" required>
                                 </div>
                                 <!----- รหัสผ่าน ----->
@@ -90,7 +90,7 @@ h1 {
                             <!-- <row> -->
                             <div class="row">
                                 <div class="col-md-6 mb-3 ">
-                                    <label id="label">สาขา :</label><br>
+                                    <label id="Branch">สาขา :</label><br>
                                     <select id="input" class="form-control " disabled>
                                         <option value="1">คณะแพทยศาสตร์</option>
                                         <option value="2">คณะพยายาลศาสตร์</option>
@@ -100,8 +100,8 @@ h1 {
                                 </div>
                                 <!----- สาขา ----->
                                 <div class="col-md-6 mb-3">
-                                    <label id="label">นิสิตชั้นปีที่ :</label><br>
-                                    <input class="form-control" type="number" size="8" value="3" disabled>
+                                    <label id="Years">นิสิตชั้นปีที่ :</label><br>
+                                    <input class="form-control" type="number" value="3" disabled>
                                 </div>
                                 <!----- นิสิตชั้นปีที่ ----->
                             </div>
@@ -109,7 +109,7 @@ h1 {
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <label id="label">ตำแหน่ง :</label><br>
+                                        <label id="Position">ตำแหน่ง :</label><br>
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="customRadio1" name="rad"
                                                 class="custom-control-input">
@@ -140,7 +140,7 @@ h1 {
                                 <!-----  ตำแหน่ง ----->
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <label id="label">ภาษาที่ถนัด :</label><br>
+                                        <label id="lang">ภาษาที่ถนัด :</label><br>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck1"
                                                 checked>
