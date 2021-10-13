@@ -49,7 +49,7 @@
                 if (obj.length != 0) {
                     setTimeout(function() {
                         window.location.href =
-                            '<?php echo site_url() . 'Login/Login/show_user_home/' ?>' + obj.Enp_ID
+                            '<?php echo site_url() . 'Login/Login/show_user_home/' ?>' + obj.Emp_ID
                     }, 500) //function set
                 } //if
                 else {
@@ -73,7 +73,7 @@
                 <div class="card-body px-lg-5 py-lg-5">
                     <div class="text-center mb-4">
 
-                        <h3 style="font-size : 30px;font-family:FC Lamoon;color:black;">Login</h3>
+                        <h3 style="font-size : 30px;font-family:Helvetica;color:black;">Login</h3>
                     </div>
                     <div class="form-group mb-3">
                         <div class="input-group input-group-merge input-group-alternative">

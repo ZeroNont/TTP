@@ -200,7 +200,7 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">Supervisor
                                     (หัวหน้างาน)</label><br>
-                                <select name="Supervisor" id="Supervisor" class="form-select"
+                                <select name="Supervisor" id="Supervisor" class="form-control"
                                     aria-label="Default select example">
                                     <option value="<?php echo $obj_sup[0]->Emp_ID ?>"><?php
                                                                                         echo $obj_sup[0]->Empname_eng . " " . $obj_sup[0]->Empsurname_eng;
@@ -225,7 +225,7 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">Approve Plant
                                 </label><br>
-                                <select name="Approve_Plant" id="Approve_Plant" class="form-select"
+                                <select name="Approve_Plant" id="Approve_Plant" class="form-control"
                                     aria-label="Default select example">
                                     <option value="<?php echo $obj_app[0]->Emp_ID ?>">
                                         <?php echo "Plan: " . $obj_app[0]->pla_plant_no . "  :  " . $obj_app[0]->pla_plant_name . " : " . $obj_app[0]->Empname_eng . " " . $obj_app[0]->Empsurname_eng ?>

@@ -8,7 +8,7 @@
                   <img src="<?php echo site_url() . '/argon/assets/img/brand/blue.png' ?>" class="navbar-brand-img" alt="...">
               </a>
           </div>
-          <h2 style="font-size : 18px;font-family:FC Lamoon;color:gray;text-align: center;">
+          <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
               Welcome!<br><?php echo $_SESSION['UsName_EN'] ?>
           </h2>
           <div class="navbar-inner">
@@ -17,7 +17,7 @@
                   <!-- Nav items -->
                   <?php $id = $_SESSION['Usrole'];
                     if ($id == 1) { ?>
-                      <h2 style="font-size : 16px;font-family:FC Lamoon;color:gray;text-align: center;">
+                      <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
                           <?php echo "Role : Employee" ?>
                       </h2>
                       <ul class="navbar-nav">
@@ -89,7 +89,7 @@
                           </li>
                       </ul>
                   <?php } else if ($id == 2) { ?>
-                      <h2 style="font-size : 16px;font-family:FC Lamoon;color:gray;text-align: center;">
+                      <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
                           <?php echo "Role : Supervisor" ?>
                       </h2>
                       <!-- Collapse -->
@@ -142,7 +142,7 @@
                       </div>
 
                   <?php } else if ($id == 3) { ?>
-                      <h2 style="font-size : 16px;font-family:FC Lamoon;color:gray;text-align: center;">
+                      <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
                           <?php echo "Role : HR/5S Center" ?>
                       </h2>
                       <!-- Collapse -->
@@ -167,16 +167,16 @@
                                       <span class="nav-link-text">History Form</span>
                                   </a>
                               </li>
-                              <?php if ($arr_req_hr != 0) { ?>
+                              <?php if ($arr_req_supervisor  != 0) { ?>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?>">
+                                      <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                                           <i class="ni ni-email-83 text-primary"></i>
-                                          <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req_hr ?></span></span>
+                                          <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req_supervisor ?></span></span>
                                       </a>
                                   </li>
                               <?php } else { ?>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_list/' ?> ">
+                                      <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?> ">
                                           <i class="ni ni-email-83 text-primary"></i>
                                           <span class="nav-link-text">Pending Approve</span>
                                       </a>
@@ -230,7 +230,7 @@
 
 
                   <?php } else if ($id == 4) { ?>
-                      <h2 style="font-size : 16px;font-family:FC Lamoon;color:gray;text-align: center;">
+                      <h2 style="font-size : 12px;font-family:Helvetica;color:gray;text-align: center;">
                           <?php echo "Role : Approve Plant" ?>
                       </h2>
                       <!-- Collapse -->
@@ -255,16 +255,16 @@
                                       <span class="nav-link-text">History Form</span>
                                   </a>
                               </li>
-                              <?php if ($arr_req_plant != 0) { ?>
+                              <?php if ($arr_req_supervisor != 0) { ?>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?>">
+                                      <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?>">
                                           <i class="ni ni-email-83 text-primary"></i>
-                                          <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req_plant ?></span></span>
+                                          <span class="nav-link-text">Pending Approve&nbsp;<span class="w3-badge"><?php echo $arr_req_supervisor ?></span></span>
                                       </a>
                                   </li>
                               <?php } else { ?>
                                   <li class="nav-item">
-                                      <a class="nav-link" href="<?php echo base_url() . 'approve_form/Approve_form/show_approve_form_plant/' ?> ">
+                                      <a class="nav-link" href="<?php echo base_url() . 'request/Request_form/show_request_form_list/' ?> ">
                                           <i class="ni ni-email-83 text-primary"></i>
                                           <span class="nav-link-text">Pending Approve</span>
                                       </a>

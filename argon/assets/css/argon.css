@@ -62,7 +62,7 @@
 }
 
 html {
-    font-family: FC Lamoon;
+    font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -82,8 +82,8 @@ section {
 }
 
 body {
-    font-family: FC Lamoon;
-    font-size: 18px;
+    font-family: Open Sans, sans-serif;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     margin: 0;
@@ -210,7 +210,7 @@ pre,
 code,
 kbd,
 samp {
-    font-family: FC Lamoon;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     font-size: 1em;
 }
 
@@ -269,7 +269,7 @@ button,
 select,
 optgroup,
 textarea {
-    font-family: FC Lamoon;
+    font-family: inherit;
     font-size: inherit;
     line-height: inherit;
     margin: 0;
@@ -406,7 +406,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-family: FC Lamoon;
+    font-family: inherit;
     font-weight: 600;
     line-height: 1.5;
     margin-bottom: .5rem;
@@ -415,7 +415,7 @@ h6,
 
 h1,
 .h1 {
-    font-size: 30px;
+    font-size: 1.625rem;
 }
 
 @media (max-width: 1200px) {
@@ -427,27 +427,27 @@ h1,
 
 h2,
 .h2 {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 h3,
 .h3 {
-    font-size: 18px;
+    font-size: 1.0625rem;
 }
 
 h4,
 .h4 {
-    font-size: 16px;
+    font-size: .9375rem;
 }
 
 h5,
 .h5 {
-    font-size: 14px;
+    font-size: .8125rem;
 }
 
 h6,
 .h6 {
-    font-size: 12px;
+    font-size: .625rem;
 }
 
 .lead {
@@ -2107,7 +2107,7 @@ pre code {
 }
 
 .form-control {
-    font-size: 16px;
+    font-size: .875rem;
     font-weight: 400;
     line-height: 1.5;
     display: block;
@@ -2183,21 +2183,21 @@ select.form-control:focus::-ms-value {
 }
 
 .col-form-label-lg {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5;
     padding-top: calc(.875rem + 1px);
     padding-bottom: calc(.875rem + 1px);
 }
 
 .col-form-label-sm {
-    font-size: 16px;
+    font-size: .75rem;
     line-height: 1.5;
     padding-top: calc(.25rem + 1px);
     padding-bottom: calc(.25rem + 1px);
 }
 
 .form-control-plaintext {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5;
     display: block;
     width: 100%;
@@ -2216,7 +2216,7 @@ select.form-control:focus::-ms-value {
 }
 
 .form-control-sm {
-    font-size: 16px;
+    font-size: .75rem;
     line-height: 1.5;
     height: calc(1.5em + .5rem + 2px);
     padding: .25rem .5rem;
@@ -2224,7 +2224,7 @@ select.form-control:focus::-ms-value {
 }
 
 .form-control-lg {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5;
     height: calc(1.5em + 1.75rem + 2px);
     padding: .875rem 1rem;
@@ -2306,7 +2306,7 @@ textarea.form-control {
 }
 
 .valid-tooltip {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1;
     position: absolute;
     z-index: 5;
@@ -2427,7 +2427,7 @@ textarea.form-control {
 }
 
 .invalid-tooltip {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1;
     position: absolute;
     z-index: 5;
@@ -2599,7 +2599,7 @@ textarea.form-control {
 }
 
 .btn {
-    font-size: 16px;
+    font-size: .875rem;
     font-weight: 600;
     line-height: 1.5;
     display: inline-block;
@@ -3604,7 +3604,7 @@ fieldset:disabled a.btn {
 
 .btn-lg,
 .btn-group-lg>.btn {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5;
     padding: .875rem 1rem;
     border-radius: .4375rem;
@@ -3612,7 +3612,7 @@ fieldset:disabled a.btn {
 
 .btn-sm,
 .btn-group-sm>.btn {
-    font-size: 16px;
+    font-size: .75rem;
     line-height: 1.5;
     padding: .25rem .5rem;
     border-radius: .25rem;
@@ -3691,7 +3691,7 @@ input[type='button'].btn-block {
 }
 
 .dropdown-menu {
-    font-size: 16px;
+    font-size: 1rem;
     position: absolute;
     z-index: 1000;
     top: 100%;
@@ -3905,7 +3905,7 @@ input[type='button'].btn-block {
 }
 
 .dropdown-header {
-    font-size: 16px;
+    font-size: .875rem;
     display: block;
     margin-bottom: 0;
     padding: .5rem 1rem;
@@ -4157,7 +4157,7 @@ input[type='button'].btn-block {
 }
 
 .input-group-text {
-    font-size: 16px;
+    font-size: .875rem;
     font-weight: 400;
     line-height: 1.5;
     display: flex;
@@ -4188,7 +4188,7 @@ input[type='button'].btn-block {
 .input-group-lg>.input-group-append>.input-group-text,
 .input-group-lg>.input-group-prepend>.btn,
 .input-group-lg>.input-group-append>.btn {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5;
     padding: .875rem 1rem;
     border-radius: .4375rem;
@@ -4205,7 +4205,7 @@ input[type='button'].btn-block {
 .input-group-sm>.input-group-append>.input-group-text,
 .input-group-sm>.input-group-prepend>.btn,
 .input-group-sm>.input-group-append>.btn {
-    font-size: 16px;
+    font-size: .75rem;
     line-height: 1.5;
     padding: .25rem .5rem;
     border-radius: .25rem;
@@ -4395,7 +4395,7 @@ input[type='button'].btn-block {
 }
 
 .custom-select {
-    font-size: 16px;
+    font-size: .875rem;
     font-weight: 400;
     line-height: 1.5;
     display: inline-block;
@@ -4446,7 +4446,7 @@ input[type='button'].btn-block {
 }
 
 .custom-select-sm {
-    font-size: 16px;
+    font-size: .75rem;
     height: calc(1.5em + .5rem + 2px);
     padding-top: .25rem;
     padding-bottom: .25rem;
@@ -4454,7 +4454,7 @@ input[type='button'].btn-block {
 }
 
 .custom-select-lg {
-    font-size: 16px;
+    font-size: .875rem;
     height: calc(1.5em + 1.75rem + 2px);
     padding-top: .875rem;
     padding-bottom: .875rem;
@@ -5538,7 +5538,7 @@ input[type='button'].btn-block {
 }
 
 .pagination-sm .page-link {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5;
     padding: .25rem .5rem;
 }
@@ -6069,7 +6069,7 @@ a.badge:focus {
 }
 
 .progress {
-    font-size: 16px;
+    font-size: .75rem;
     display: flex;
     overflow: hidden;
     height: 1rem;
@@ -6784,8 +6784,8 @@ a.close.disabled {
 }
 
 .tooltip {
-    font-family: FC Lamoon;
-    font-size: 16px;
+    font-family: Open Sans, sans-serif;
+    font-size: .875rem;
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
@@ -6907,8 +6907,8 @@ a.close.disabled {
 }
 
 .popover {
-    font-family: FC Lamoon;
-    font-size: 16px;
+    font-family: Open Sans, sans-serif;
+    font-size: .875rem;
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
@@ -7068,7 +7068,7 @@ a.close.disabled {
 }
 
 .popover-header {
-    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 0;
     padding: .5rem .95rem;
     color: #32325d;
@@ -14326,7 +14326,7 @@ button.bg-darker:focus {
 }
 
 .text-monospace {
-    font-family: FC Lamoon !important;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
 }
 
 .text-justify {
@@ -14680,11 +14680,11 @@ a.text-darker:focus {
 }
 
 .alert {
-    font-size: 16px;
+    font-size: .875rem;
 }
 
 .alert-heading {
-    font-size: 18px;
+    font-size: .9375rem;
     font-weight: 600;
     margin-top: .15rem;
 }
@@ -14748,7 +14748,7 @@ a.text-darker:focus {
 }
 
 .avatar {
-    font-size: 16px;
+    font-size: 1rem;
     display: inline-flex;
     width: 48px;
     height: 48px;
@@ -14770,13 +14770,13 @@ a.text-darker:focus {
 }
 
 .avatar-lg {
-    font-size: 16px;
+    font-size: .875rem;
     width: 58px;
     height: 58px;
 }
 
 .avatar-sm {
-    font-size: 16px;
+    font-size: .875rem;
     width: 36px;
     height: 36px;
 }
@@ -14842,7 +14842,7 @@ a.text-darker:focus {
 }
 
 .badge-circle {
-    font-size: 16px;
+    font-size: .75rem;
     font-weight: 600;
     display: inline-flex;
     width: 1.25rem;
@@ -14865,7 +14865,7 @@ a.text-darker:focus {
 }
 
 .badge-dot {
-    font-size: 16px;
+    font-size: .875rem;
     font-weight: 400;
     padding-right: 0;
     padding-left: 0;
@@ -14897,7 +14897,7 @@ a.text-darker:focus {
 }
 
 .btn {
-    font-size: 16px;
+    font-size: .875rem;
     position: relative;
     transition: all .15s ease;
     letter-spacing: .025em;
@@ -14932,12 +14932,12 @@ a.text-darker:focus {
 
 .btn-sm,
 .btn-group-sm>.btn {
-    font-size: 16px;
+    font-size: .75rem;
 }
 
 .btn-lg,
 .btn-group-lg>.btn {
-    font-size: 16px;
+    font-size: .875rem;
 }
 
 [class*='btn-outline-'] {
@@ -15386,8 +15386,8 @@ a.btn-icon-only {
 }
 
 .btn-icon-clipboard {
-    font-family: FC Lamoon;
-    font-size: 16px;
+    font-family: inherit;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.25;
     display: inline-block;
@@ -15424,7 +15424,7 @@ a.btn-icon-only {
 }
 
 .btn-icon-clipboard span {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5;
     display: inline-block;
     overflow: hidden;
@@ -15529,18 +15529,18 @@ a.btn-icon-only {
 }
 
 .card-profile-stats>div .heading {
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: bold;
     display: block;
 }
 
 .card-profile-stats>div .description {
-    font-size: 16px;
+    font-size: .875rem;
     color: #adb5bd;
 }
 
 .card-profile-actions {
-    padding: 16px;
+    padding: .875rem;
 }
 
 .card-stats .card-body {
@@ -15564,7 +15564,7 @@ a.btn-icon-only {
 }
 
 .chart-legend {
-    font-size: 16px;
+    font-size: .875rem;
     display: flex;
     margin-top: 2.5rem;
     text-align: center;
@@ -15691,7 +15691,7 @@ a.btn-icon-only {
 }
 
 .custom-checkbox .custom-control-input~.custom-control-label {
-    font-size: 16px;
+    font-size: .875rem;
     cursor: pointer;
 }
 
@@ -15753,7 +15753,7 @@ a.btn-icon-only {
 }
 
 .custom-checkbox .custom-control-input~.custom-control-label {
-    font-size: 16px;
+    font-size: .875rem;
     height: 1rem;
     cursor: pointer;
 }
@@ -15883,7 +15883,7 @@ a.btn-icon-only {
 }
 
 .custom-radio .custom-control-input~.custom-control-label {
-    font-size: 16px;
+    font-size: .875rem;
     height: 1rem;
     cursor: pointer;
 }
@@ -15974,8 +15974,8 @@ a.btn-icon-only {
 }
 
 .custom-toggle-slider:after {
-    font-family: FC Lamoon;
-    font-size: 16px;
+    font-family: inherit;
+    font-size: .75rem;
     font-weight: 600;
     line-height: 24px;
     position: absolute;
@@ -16249,19 +16249,19 @@ a.btn-icon-only {
 }
 
 .dropdown-menu .dropdown-item {
-    font-size: 16px;
+    font-size: .875rem;
     padding: .5rem 1rem;
 }
 
 .dropdown-menu .dropdown-item>i,
 .dropdown-menu .dropdown-item>svg {
-    font-size: 16px;
+    font-size: 1rem;
     margin-right: 1rem;
     vertical-align: -17%;
 }
 
 .dropdown-header {
-    font-size: 18px;
+    font-size: .625rem;
     font-weight: 700;
     padding-right: 1rem;
     padding-left: 1rem;
@@ -16302,7 +16302,7 @@ a.btn-icon-only {
 }
 
 .footer .col-footer .heading {
-    font-size: 16px;
+    font-size: .875rem;
     font-weight: 600;
     margin-bottom: 1rem;
     letter-spacing: 0;
@@ -16321,7 +16321,7 @@ a.btn-icon-only {
 }
 
 .footer .list-unstyled li a {
-    font-size: 16px;
+    font-size: .85rem;
     display: inline-block;
     padding: .125rem 0;
     color: #8898aa;
@@ -16332,7 +16332,7 @@ a.btn-icon-only {
 }
 
 .footer .copyright {
-    font-size: 16px;
+    font-size: .875rem;
 }
 
 .footer-dark .col-footer .heading {
@@ -16340,7 +16340,7 @@ a.btn-icon-only {
 }
 
 .nav-footer .nav-link {
-    font-size: 16px;
+    font-size: .875rem;
 }
 
 .nav-footer .nav-item:last-child .nav-link {
@@ -16379,13 +16379,13 @@ a.btn-icon-only {
 }
 
 .form-control-label {
-    font-size: 16px;
+    font-size: .875rem;
     font-weight: 600;
     color: #525f7f;
 }
 
 .form-control {
-    font-size: 16px;
+    font-size: .875rem;
     height: calc(1.5em + 1.25rem + 5px);
     transition: all .15s ease-in-out;
 }
@@ -16464,7 +16464,7 @@ textarea[resize='horizontal'] {
 .form-control-lg,
 .input-group-lg .form-control,
 .input-group-text {
-    font-size: 16px !important;
+    font-size: 1rem !important;
 }
 
 .custom-control {
@@ -16502,7 +16502,7 @@ textarea[resize='horizontal'] {
 }
 
 .input-group-text i {
-    font-size: 16px;
+    font-size: .875rem;
 }
 
 .input-group-text .custom-control {
@@ -16586,7 +16586,7 @@ textarea[resize='horizontal'] {
 
 .has-success:after,
 .has-danger:after {
-    font-family: FC Lamoon;
+    font-family: 'NucleoIcons';
     font-size: 9px;
     line-height: 19px;
     position: absolute;
@@ -16644,7 +16644,7 @@ textarea[resize='horizontal'] {
 
 .row-example>.col span,
 .row-example>[class^='col-'] span {
-    font-size: 16px;
+    font-size: .875rem;
     display: block;
     margin: 1rem 0;
     padding: .75rem;
@@ -16853,7 +16853,7 @@ textarea[resize='horizontal'] {
 }
 
 .list-group-heading {
-    font-size: 18px;
+    font-size: 1rem;
     color: #32325d;
 }
 
@@ -16886,7 +16886,7 @@ textarea[resize='horizontal'] {
 }
 
 .modal-title {
-    font-size: 18px;
+    font-size: 1.0625rem;
 }
 
 .modal-fluid .modal-dialog {
@@ -17163,7 +17163,7 @@ textarea[resize='horizontal'] {
 }
 
 .navbar-horizontal .navbar-nav .nav-link {
-    font-size: 20px;
+    font-size: .875rem;
     font-weight: 500;
     letter-spacing: 0;
     text-transform: normal;
@@ -17174,8 +17174,8 @@ textarea[resize='horizontal'] {
 }
 
 .navbar-horizontal .navbar-brand {
-    font-size: 20px;
-    font-size: 20px;
+    font-size: .875rem;
+    font-size: .875rem;
     font-weight: 600;
     letter-spacing: .05px;
     text-transform: uppercase;
@@ -17216,7 +17216,7 @@ textarea[resize='horizontal'] {
         margin-right: .625rem;
     }
     .navbar-horizontal .navbar-nav .nav-link-icon {
-        font-size: 20px;
+        font-size: 1rem;
         padding-right: .5rem !important;
         padding-left: .5rem !important;
         border-radius: .375rem;
@@ -17506,7 +17506,7 @@ textarea[resize='horizontal'] {
 }
 
 .navbar-vertical .navbar-nav .nav-link {
-    font-size: 20px;
+    font-size: .875rem;
     font-weight: 500;
     padding-right: 1rem;
     padding-left: 1rem;
@@ -17517,7 +17517,7 @@ textarea[resize='horizontal'] {
 }
 
 .navbar-vertical .navbar-nav .nav-link>i {
-    font-size: 20px;
+    font-size: .9375rem;
     line-height: 1.5rem;
     min-width: 2rem;
 }
@@ -17531,7 +17531,7 @@ textarea[resize='horizontal'] {
 }
 
 .navbar-vertical .navbar-nav .nav-sm .nav-link {
-    font-size: 20px;
+    font-size: .8125rem;
 }
 
 .navbar-vertical .navbar-nav .nav-link {
@@ -17540,7 +17540,7 @@ textarea[resize='horizontal'] {
 }
 
 .navbar-vertical .navbar-nav .nav-link[data-toggle='collapse']:after {
-    font-family: FC Lamoon;
+    font-family: 'Font Awesome 5 Free';
     font-weight: 700;
     font-style: normal;
     font-variant: normal;
@@ -17573,7 +17573,7 @@ textarea[resize='horizontal'] {
 }
 
 .navbar-vertical .navbar-heading {
-    font-size: 20px;
+    font-size: .75rem;
     padding-top: .25rem;
     padding-bottom: .25rem;
     letter-spacing: .04em;
@@ -18662,7 +18662,7 @@ textarea[resize='horizontal'] {
 }
 
 .nav-pills .nav-link {
-    font-size: 20px;
+    font-size: .875rem;
     font-weight: 500;
     padding: .75rem 1rem;
     transition: all .15s ease;
@@ -18704,7 +18704,7 @@ textarea[resize='horizontal'] {
 
 .nav-pills-circle .nav-link-icon i,
 .nav-pills-circle .nav-link-icon svg {
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .page-item.active .page-link {
@@ -18713,7 +18713,7 @@ textarea[resize='horizontal'] {
 
 .page-item .page-link,
 .page-item span {
-    font-size: 16px;
+    font-size: .875rem;
     display: flex;
     width: 36px;
     height: 36px;
@@ -19243,7 +19243,7 @@ textarea[resize='horizontal'] {
 }
 
 .progress-label span {
-    font-size: 16px;
+    font-size: .625rem;
     font-weight: 600;
     display: inline-block;
     padding: .25rem 1rem;
@@ -19258,7 +19258,7 @@ textarea[resize='horizontal'] {
 }
 
 .progress-percentage span {
-    font-size: 16px;
+    font-size: .875rem;
     font-weight: 600;
     display: inline-block;
     color: #8898aa;
@@ -19430,7 +19430,7 @@ textarea[resize='horizontal'] {
 }
 
 .table thead th {
-    font-size: 16px;
+    font-size: .65rem;
     padding-top: .75rem;
     padding-bottom: .75rem;
     letter-spacing: 1px;
@@ -19450,7 +19450,7 @@ textarea[resize='horizontal'] {
 
 .table td,
 .table th {
-    font-size: 16px;
+    font-size: .8125rem;
     white-space: nowrap;
 }
 
@@ -19518,13 +19518,13 @@ textarea[resize='horizontal'] {
 }
 
 p {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.7;
 }
 
 .lead {
-    font-size: 16px;
+    font-size: 1.25rem;
     font-weight: 300;
     line-height: 1.7;
     margin-top: 1.5rem;
@@ -19535,7 +19535,7 @@ p {
 }
 
 .description {
-    font-size: 16px;
+    font-size: .875rem;
 }
 
 article h4:not(:first-child),
@@ -19574,14 +19574,14 @@ h6>a {
 }
 
 .heading {
-    font-size: 18px;
+    font-size: .95rem;
     font-weight: 600;
     letter-spacing: .025em;
     text-transform: uppercase;
 }
 
 .heading-small {
-    font-size: 16px;
+    font-size: .75rem;
     padding-top: .25rem;
     padding-bottom: .25rem;
     letter-spacing: .04em;
@@ -19589,14 +19589,14 @@ h6>a {
 }
 
 .heading-title {
-    font-size: 18px;
+    font-size: 1.375rem;
     font-weight: 600;
     letter-spacing: .025em;
     text-transform: uppercase;
 }
 
 .heading-section {
-    font-size: 16px;
+    font-size: 1.375rem;
     font-weight: 600;
     letter-spacing: .025em;
     text-transform: uppercase;
@@ -21128,7 +21128,7 @@ a.text-lighter:focus {
 
 .datepicker table tr td,
 .datepicker table tr th {
-    font-size: 16px;
+    font-size: .875rem;
     width: 36px;
     height: 36px;
     transition: all .15s ease;
@@ -21410,7 +21410,7 @@ a.text-lighter:focus {
 }
 
 .dataTables_wrapper {
-    font-size: 16px;
+    font-size: .875rem;
 }
 
 table.dataTable {
@@ -21530,7 +21530,7 @@ table.dataTable tbody>tr.selected {
 }
 
 .fc th {
-    font-size: 16px;
+    font-size: .75rem;
     font-weight: 600;
     padding: .75rem 1rem;
     text-transform: uppercase;
@@ -21555,7 +21555,7 @@ table.dataTable tbody>tr.selected {
 }
 
 .fc-event {
-    font-size: 16px;
+    font-size: .75rem;
     padding: 0;
     border: 0;
     border-radius: .25rem;
@@ -21593,8 +21593,8 @@ table.dataTable tbody>tr.selected {
 }
 
 .fc-icon {
-    font-family: FC Lamoon;
-    font-size: 16px;
+    font-family: NucleoIcons, sans-serif;
+    font-size: 1rem;
     line-height: 35px;
     width: 35px;
     height: 35px;
@@ -21648,7 +21648,7 @@ table.dataTable tbody>tr.selected {
 
 @media (min-width: 576px) {
     .calendar .fc-day-number {
-        font-size: 16px;
+        font-size: .875rem;
         font-weight: 600;
         color: #67779d;
     }
@@ -21753,7 +21753,7 @@ table.dataTable tbody>tr.selected {
 }
 
 .widget-calendar .fc-toolbar h2 {
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .widget-calendar .fc-day-number {
@@ -21763,11 +21763,11 @@ table.dataTable tbody>tr.selected {
 }
 
 .widget-calendar .fc table {
-    font-size: 16px;
+    font-size: .875rem;
 }
 
 .widget-calendar .fc th {
-    font-size: 16px;
+    font-size: .75rem;
     padding: .75rem .5rem;
 }
 
@@ -22289,7 +22289,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 /* Range slider value labels */
 
 .range-slider-value {
-    font-size: 16px;
+    font-size: .75rem;
     font-weight: 500;
     padding: .4em .8em .3em .85em;
     color: #fff;
@@ -22338,7 +22338,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .ql-container {
-    font-family: FC Lamoon;
+    font-family: Open Sans, sans-serif;
 }
 
 .ql-toolbar {
@@ -22360,7 +22360,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .ql-editor {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.5;
     display: block;
     width: 100%;
@@ -22513,7 +22513,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .ql-tooltip .ql-preview {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5;
     width: 100%;
     padding: .25rem .5rem;
@@ -22532,7 +22532,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .ql-tooltip input {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5;
     display: none;
     width: 100%;
@@ -22558,7 +22558,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 
 .ql-tooltip .ql-action::before,
 .ql-tooltip .ql-remove::before {
-    font-size: 16px;
+    font-size: .875rem;
     font-weight: 600;
     line-height: 1.5;
     display: inline-block;
@@ -23665,7 +23665,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 .select2-container--default.select2-container--focus .select2-selection--multiple,
 .select2-container--default .select2-selection--multiple,
 .select2-container--default .select2-search--dropdown .select2-search__field {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.5;
     display: block;
     width: 100%;
@@ -23756,7 +23756,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .select2-results__option {
-    font-size: 16px;
+    font-size: .875rem;
     padding: .5rem .75rem;
     color: #212529;
     background-color: #fff;
@@ -23792,7 +23792,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5rem;
     display: inline-flex;
     margin: 0 0 .25rem .25rem;
@@ -23827,7 +23827,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5;
     padding: .25rem .5rem;
     border-radius: .25rem;
@@ -23836,7 +23836,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 .form-control-sm+.select2-container .select2-selection--single,
 .form-control-sm+.select2-container--default.select2-container--focus .select2-selection--multiple,
 .form-control-sm+.select2-container--default .select2-selection--multiple {
-    font-size: 16px;
+    font-size: .875rem;
     line-height: 1.5;
     height: calc(1.5em + .5rem + 2px);
     padding: .25rem .5rem;
@@ -24196,7 +24196,7 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .bootstrap-datetimepicker-widget table td.cw>div {
-    font-size: 16px;
+    font-size: .8em;
     line-height: 20px;
     height: 20px;
     color: #cfcfca;
