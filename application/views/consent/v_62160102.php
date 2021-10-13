@@ -101,7 +101,7 @@ h1 {
                                 <!----- สาขา ----->
                                 <div class="col-md-6 mb-3">
                                     <label id="Years">นิสิตชั้นปีที่ :</label><br>
-                                    <input class="form-control" type="number" size="8" value="3" disabled>
+                                    <input class="form-control" type="number" value="3" disabled>
                                 </div>
                                 <!----- นิสิตชั้นปีที่ ----->
                             </div>
