@@ -91,7 +91,7 @@
                                         width="20" height="20"></span>
                             </div>
                             <!-- Insert password -->
-                            <input class="form-control" id="Pass_login" placeholder="  Password" type="password"
+                            <input class="form-control" id="User_pass_login" placeholder="  Password" type="password"
                                 required>
 
                         </div>
