@@ -35,15 +35,15 @@ class Login extends MainController
 /*
 * show_user_home
 * show login
-* @input Enp_ID
+* @input Emp_ID
 * @output show display home for user
 * @Niphat Kuhokciw
 * @Create Date 2564-07-28
 */	
-	public function show_user_home($Enp_ID)
+	public function show_user_home($Emp_ID)
 	{//show home
 		$this->load->model('M_ttp_Employee','meng');
-		$this->meng->Emp_ID = $Enp_ID;
+		$this->meng->Emp_ID = $Emp_ID;
 		$data['Emp_ID'] = $this->meng->get_emp()->row();
 		
 		$temp = $data['Emp_ID'];
