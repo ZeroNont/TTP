@@ -1,7 +1,7 @@
 <?php
 /*
 * 62160015
-* Example_tast_62160015
+* Example_tast
 * @input  -   
 * @output -
 * @author Pontakon
@@ -12,7 +12,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
 
-class Example_tast_62160015 extends MainController
+class Example_tast extends MainController
 {
 
     /**

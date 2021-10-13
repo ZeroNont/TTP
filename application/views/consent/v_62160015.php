@@ -1,14 +1,25 @@
- 
+<!--
+/*
+* v_62160015
+* หน้าจอแบบสอบถามข้อมูลส่วนบุคคล
+* @input  -
+* @output -
+* @author pontakon 
+* @Create Date 2564-10-13
+*/ --> 
 
 <div class ="container ">
-
+<div class="card" >
+    
+<div class ="container ">
 <h1> HTML 4.1 : 14 points </h1>
 <div class ="container">
 - คำนำหน้า มีตัวเลือกคือ นาย นาง และนางสาว <br> - ชื่อจริง และนามสกุล บันทึกข้อมูลได้มากสุด 5 ตัวอักษร<br> - วันเกิดใช้เป็นแบบปฏิทิน <br> - รหัสนิสิตบันทึกได้แค่ตัวเลขเท่านั้น <br> - รหัสผ่าน เมื่อบันทึกจะเห็นข้อความเป็นจุดกลมดำ <br> - อีเมล บังคับผู้ใช้ให้บันทึกในรูปแบบอีเมล
 <br> - สาขามีตัวเลือกเป็น คณะแพทยศาสตร์ คณะพยายาลศาสตร์ และคณะวิทยาการสารสนเทศ ตามลำดับ โดยเลือกคณะวิทยาการสารสนเทศเป็นค่าเริ่มต้น และไม่สามารถเปลี่ยนแปลงค่าได้ <br> - นิสิตชั้นปีที่ ให้กำหนดค่าเริ่มต้นเป็น 3 และเปลี่ยนแปลงค่าไม่ได้ <br> - ตำแหน่งประกอบด้วย
 Team leader, Developer, Quality, Support ชนิดเลือกได้รายการเดียว และเลือก Developer เป็นค่าเริ่มต้น <br> - ภาษาที่ถนัด ประกอบด้วย HTML, CSS, MySQL, JS, PHP ชนิดเลือกได้หลายรายการ โดยเลือกทุกภาษาเป็นค่าเริ่มต้น 
-</div>
+</div></div>
 <!-- Coding html 4.1 here!!!! -->
+<div class ="container ">
 <h1>แบบสอบถามข้อมูลส่วนบุคคล</h1>
 <hr>
 <form>
@@ -70,8 +81,8 @@ Team leader, Developer, Quality, Support ชนิดเลือกได้ร
     <input type="checkbox" checked required>MySQL<br>
     <input type="checkbox" checked required>JS<br>
     <input type="checkbox" checked required>PHP<br>
-    </div>
-    </div>
+    </div></div>
+    </div></div>
 </form>
 
 </div>
