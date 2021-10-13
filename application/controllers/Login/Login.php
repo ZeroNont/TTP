@@ -40,10 +40,10 @@ class Login extends MainController
 * @Niphat Kuhokciw
 * @Create Date 2564-07-28
 */	
-	public function show_user_home($Emp_ID)
+	public function show_user_home($User_emp_id)
 	{//show home
 		$this->load->model('M_ttp_Employee','meng');
-		$this->meng->Emp_ID = $Emp_ID;
+		$this->meng->Emp_ID  = $User_emp_id;
 		$data['Emp_ID'] = $this->meng->get_emp()->row();
 		
 		$temp = $data['Emp_ID'];
@@ -66,11 +66,11 @@ class Login extends MainController
     public function login()
 	{//login for user
 		$User_login = $this->input->POST('User_login');
-		$Pass_login = $this->input->POST('Pass_login');
+		$User_pass_login = $this->input->POST('User_pass_login');
 		
 		$this->load->model('M_ttp_login','mlog');
 
-		$userlogin = $this->mlog->check_login($User_login,$Pass_login)->row();
+		$userlogin = $this->mlog->check_login($User_login,$User_pass_login)->row();
 		if(count($userlogin)==1){
 			$data = $userlogin;
 			echo json_encode($data);
