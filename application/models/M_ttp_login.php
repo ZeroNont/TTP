@@ -26,12 +26,12 @@ class M_ttp_login extends Da_ttp_login
 * @author Niphat Kuhokciw
 * @Create Date 2564-07-28
 */
-	function check_login($User_login,$Pass_login)
+	function check_login($User_login,$User_pass_login)
 	{//check User_login and Pass_login in database
 		$sql="SELECT *
 			FROM ttps_database.user_login AS ulog 
 			WHERE User_login='$User_login' 
-			AND Pass_login = '$Pass_login'
+			AND User_pass_login = '$User_pass_login'
 			";
 		$query = $this->db->query($sql);
         return $query;

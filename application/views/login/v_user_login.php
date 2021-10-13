@@ -42,14 +42,14 @@
             url: '<?php echo site_url() . 'Login/Login/login' ?>',
             data: {
                 User_login: $('#User_login').val(),
-                Pass_login: $('#Pass_login').val()
+                User_pass_login: $('#User_pass_login').val()
             },
             success: function(data, status) { // function success
                 var obj = JSON.parse(data)
                 if (obj.length != 0) {
                     setTimeout(function() {
                         window.location.href =
-                            '<?php echo site_url() . 'Login/Login/show_user_home/' ?>' + obj.Emp_ID
+                            '<?php echo site_url() . 'Login/Login/show_user_home/' ?>' + obj.User_emp_id
                     }, 500) //function set
                 } //if
                 else {
@@ -91,7 +91,7 @@
                                         width="20" height="20"></span>
                             </div>
                             <!-- Insert password -->
-                            <input class="form-control" id="Pass_login" placeholder="  Password" type="password"
+                            <input class="form-control" id="User_pass_login" placeholder="  Password" type="password"
                                 required>
 
                         </div>
