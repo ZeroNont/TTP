@@ -1,15 +1,15 @@
+<!-- 
+    // Table Name:ttps_database.requested_form
+    // Describtion:Requested Form
+    // @author:Jirayut
+    // @Create Date:16/07/2021
+ -->
+
 <?php
 include_once("Da_ttp_licence.php");
 
 class M_ttp_licence extends Da_ttp_licence
 {
-
-    // Table Name:ttps_database.requested_form
-    // Describtion:Requested Form
-    // @author:Jirayut
-    // @Create Date:16/07/2021
-
-
 
     public function get_form($id)
     {

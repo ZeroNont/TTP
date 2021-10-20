@@ -1,3 +1,11 @@
+<!--
+    M_ttp_employee
+    Model for Employee
+    @author Niphat Kuhokciw
+    Create date 2564-07-28  
+    Update date 2564-07-29
+-->
+
 <?php
 include_once("Da_ttp_Employee.php");
 
@@ -9,8 +17,8 @@ class M_ttp_Employee extends Da_ttp_Employee
 * get name
 * @input  -
 * @output - 
-* @author 
-* @Create 
+* @author Jirayut Saifah
+* @Create Date 2564-07-29
 */
     public function get_name_emp()
     {
