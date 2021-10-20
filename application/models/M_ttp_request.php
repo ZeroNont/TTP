@@ -134,22 +134,7 @@ class M_ttp_request extends Da_ttp_request
     * @Create Date 2564-7-18
     * @Update Date 2564-7-28
     */
-    function update_app()
-    {
-        $sql = "UPDATE ttps_database.approval AS app
-                SET app.app_supervisor_date = CURRENT_TIMESTAMP()
-                WHERE app.app_form_id = ? "; 
-        $this->db->query($sql, array($this->app_form_id));
-    } //update_app อัพเดทข้อมูลในตาราง approval
 
-    /*
-    * Function get_history_user
-    * @input  $id
-    * @output -
-    * @author Apinya Phadungkit
-    * @Create Date 2564-7-18
-    * @Update Date 2564-7-28
-    */
     function get_history_user($id)
     {
         $sql = "SELECT *
