@@ -1,11 +1,13 @@
 <!--
-    Check_schedule
-    Controller for check schedule module
-    @input -
-    @output -
-    @author Phatchara and Pontakon 
-    Create date 18/7/2564 
-    Update date 25/7/2564
+    /*
+    * Check_schedule
+    * Controller for check schedule module
+    * @input -
+    * @output -
+    * @author Phatchara and Pontakon 
+    * Create date 18/7/2564 
+    * Update date 25/7/2564
+    */
 -->
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');

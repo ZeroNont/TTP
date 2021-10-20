@@ -1,11 +1,13 @@
 <!--
-    History
-    Controller for history schedule module
-    @input -
-    @output -
-    @author Phatchara  and Pontakon 
-    Create date 18/7/2564  
-    Update date 26/7/2564
+    /*
+    * History
+    * Controller for history schedule module
+    * @input -
+    * @output -
+    * @author Phatchara  and Pontakon 
+    * Create date 18/7/2564  
+    * Update date 26/7/2564
+    */
 -->
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');

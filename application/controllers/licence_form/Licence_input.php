@@ -34,7 +34,7 @@ class Licence_input extends MainController
     /*
 	* index
 	* Show a form to get information 
-	* @input 
+	* @input -
 	* @output employee,plant,company detail
 	* @author 	Jirayut Saifah
 	* @Create Date 2564-7-16
@@ -59,8 +59,8 @@ class Licence_input extends MainController
 	* edit_form
 	* show form detail 
 	* @input  Form_ID
-	* @output 
-	* @author 	Jirayut Saifah
+	* @output -
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-22
 	*/
     function edit_form($id)
@@ -89,8 +89,8 @@ class Licence_input extends MainController
 	* insert
 	* insert form data into model
 	* @input  Emp_ID,req_start_date,End_date,Requested_date,req_item,req_tel,req_officer,req_reason,req_company_id,req_form_count
-	* @output 
-	* @author 	Jirayut Saifah
+	* @output -
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-16
 	*/
 
@@ -175,7 +175,7 @@ class Licence_input extends MainController
 	* update form data into model 
 	* @input  Emp_ID,req_start_date,End_date,Requested_date,req_item,req_tel,req_officer,req_reason,req_company_id,req_form_count
 	* @output 
-	* @author 	Jirayut Saifah
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-22
 	*/
     function edit()
