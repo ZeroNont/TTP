@@ -1,13 +1,15 @@
+<!-- 
+    // Table Name:ttps_database.plant
+    // Describtion:Approve Plant management
+    // @author:Jirayut
+    // @Create Date:20/07/2021 
+-->
+
 <?php
 include_once("Da_ttp_plant_list.php");
 
 class M_ttp_plant_list extends Da_ttp_plant_list
 {
-    // Table Name:ttps_database.plant
-    // Describtion:Approve Plant management
-    // @author:Jirayut
-    // @Create Date:20/07/2021
-
     public function get_plant()
     {
         $sql =

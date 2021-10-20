@@ -1,13 +1,15 @@
+<!-- 
+// Table Name:ttps_database.requested_form
+// Describtion:Requested Form
+// @author:Jirayut
+// @Create Date:16/07/2021 -->
+
 <?php
 include_once("ttps_model.php");
 
 
 class Da_ttp_licence extends ttps_model
 {
-    // Table Name:ttps_database.requested_form
-    // Describtion:Requested Form
-    // @author:Jirayut
-    // @Create Date:16/07/2021
     function construct()
     {
         parent::__construct();

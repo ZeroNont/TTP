@@ -120,9 +120,9 @@ class Request_form extends MainController
         $this->dreq->req_form_id = $id;   
         $this->dreq->update_form();
 
-        $this->load->model('M_ttp_request', 'mreq');
-        $this->mreq->app_form_id = $id;   
-        $this->mreq->update_app();
+        $this->load->model('Da_ttp_request', 'dapp');
+        $this->dapp->app_form_id = $id;   
+        $this->dapp->update_app();
         redirect('/request/Request_form/show_request_form_list');
     } //update request form เปลี่ยนสถานะของคำขอที่ถูกอนุมัติแล้ว ให้มี Status = 2
 

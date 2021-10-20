@@ -214,10 +214,10 @@ class Approve_form extends MainController
             $HR_No = "HR".date("Y")."-001";
         }
     
-        $this->load->model('M_ttp_approve_form', 'mapp');
-        $this->mapp->app_hr_id = $_SESSION["UsEmp_ID"]; 
-        $this->mapp->app_form_id = $form_id;         
-        $this->mapp->update_app();
+        $this->load->model('Da_ttp_approve_form', 'dapp');
+        $this->dapp->app_hr_id = $_SESSION["UsEmp_ID"]; 
+        $this->dapp->app_form_id = $form_id;         
+        $this->dapp->update_app();
         
         //อัพเดท status ในตาราง requested_form ให้เป็น 3
         $this->load->model('Da_ttp_approve_form', 'dreq');
@@ -244,9 +244,9 @@ class Approve_form extends MainController
         $this->dreq->req_form_id = $id;    
         $this->dreq->update_form_plant();
 
-        $this->load->model('M_ttp_approve_form', 'mreq');
-        $this->mreq->app_form_id = $id;  
-        $this->mreq->update_app_plant();
+        $this->load->model('Da_ttp_approve_form', 'dreq');
+        $this->dreq->app_form_id = $id;  
+        $this->dreq->update_app_plant();
         redirect('/approve_form/Approve_form/show_approve_form_plant');
     } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย Plant
 
