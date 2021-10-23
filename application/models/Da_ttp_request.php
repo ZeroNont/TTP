@@ -65,5 +65,21 @@ class Da_ttp_request extends ttps_model
         $this->db->query($sql, array($this->req_status,$this->req_reject_count,$this->req_form_id));
     } //update_form อัพเดทสถานะของฟอร์มที่ถูกยกเลิกโดยหัวหน้างาน
 
+    function update_app()
+    {
+        $sql = "UPDATE ttps_database.approval AS app
+                SET app.app_supervisor_date = CURRENT_TIMESTAMP()
+                WHERE app.app_form_id = ? "; 
+        $this->db->query($sql, array($this->app_form_id));
+    } //update_app อัพเดทข้อมูลในตาราง approval
+
+    /*
+    * Function get_history_user
+    * @input  $id
+    * @output -
+    * @author Apinya Phadungkit
+    * @Create Date 2564-7-18
+    * @Update Date 2564-7-28
+    */
     
 }

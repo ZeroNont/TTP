@@ -112,7 +112,8 @@ class MainController extends CI_Controller
 		$this->load->view($body, $data);
 		$this->javascript();
 		$this->footer();
-	}public function output_login($body, $data = '')
+	}
+	public function output_login($body, $data = '')
 	{
 		
 		$this->header();

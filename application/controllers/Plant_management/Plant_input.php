@@ -66,6 +66,14 @@ class Plant_input extends MainController
         $this->ttp->update();
         redirect('Plant_management/Plant_list/index');
     }
+    /*
+	* delete
+	* delete plant data into model
+	* @input Emp_ID 
+	* @output -
+	* @author Jirayut Saifah
+	* @Create Date 2564-7-22
+	*/
     function delete($id)
     {
         $this->load->model('Da_ttp_plant_list', 'ttp');

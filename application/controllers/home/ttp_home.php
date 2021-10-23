@@ -34,9 +34,9 @@ class ttp_home extends MainController
 	/*
 	* index
 	* 
-	* @input 
-	* @output 
-	* @author 	Kunanya Singmee
+	* @input  -
+	* @output -
+	* @author Kunanya Singmee
 	* @Create Date 2564-7-10
 	*/
 	function index()

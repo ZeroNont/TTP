@@ -2,7 +2,7 @@
 /*
 * Plant_list
 * show plant detail to list
-* @input  
+* @input  -
 * @output Plant detail
 * @author Jirayut Saifah
 * @Create Date 2564-7-22
@@ -34,9 +34,9 @@ class Plant_list extends MainController
     /*
 	* index
 	* 
-	* @input 
-	* @output 
-	* @author 	Jirayut Saifah
+	* @input  -
+	* @output -
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-21
 	*/
     function index()
