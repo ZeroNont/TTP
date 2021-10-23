@@ -98,7 +98,7 @@
                     </div>
                     <div class="text-center">
                         <!-- Button login -->
-                        <button type="submit" class="btn btn-danger my-4" onclick='login()'>Sign In</button>
+                        <button type="submit" class="btn btn-danger my-4" id="btn_signin" onclick='login()'>Sign In</button>
                     </div>
                 </div>
             </div>
