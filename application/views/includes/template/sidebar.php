@@ -187,7 +187,7 @@
                           <hr class="my-3">
                           <!-- Heading -->
                           <h6 class="navbar-heading p-0 text-muted">
-                              <span class="docs-normal">HR/5S Cennter</span>
+                              <span class="docs-normal">HR/5S Center</span>
                           </h6>
                           <!-- Navigation -->
                           <ul class="navbar-nav mb-md-3">
