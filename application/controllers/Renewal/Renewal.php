@@ -67,13 +67,30 @@ class Renewal extends MainController
 
 		$this->load->model('Da_ttp_renewal', 'ttp');
 		$Form_ID = $this->input->post('Form_ID');
-		$set_date = $this->input->post('date_review');
+		//	$set_date = $this->input->post('datefilter');
 		$new_startdate = $this->input->post('set_Enddate');
+		//	echo $set_date;
+		$date = $this->input->post('datefilter');
+		if ($date == "") {
+			$date1 = $this->input->post('Start_date');
+			$date2 =   $this->input->post('End_date');
+			$start_date = date("Y-m-d", strtotime($date1));
+			$end_date = date("Y-m-d", strtotime($date2));
+
+			echo $start_date . "____" . $end_date . "____1";
+		} else {
+			$start_date = substr($date, 0, 10);
+			$start_date = date("Y-m-d", strtotime($start_date));
+			$end_date = substr($date, 12, 21);
+			$end_date = date("Y-m-d", strtotime($end_date));
+			echo $start_date . "____" . $end_date . "____2";
+		}
+
 		//$add_date = $this->input->post('Add_date');
 		//บวกวันที่ 
 		//$date1 = str_replace('-', '/', $set_date);
 		//$Update = date('Y-m-d',strtotime($date1 . "+".$add_date." days"));
-		$this->ttp->req_end_date = $set_date;
+		$this->ttp->req_end_date = $end_date;
 		$this->ttp->req_form_id = $Form_ID;
 		$num = $this->input->post('Form_count');
 		$status = $this->input->post('Status');
@@ -90,7 +107,7 @@ class Renewal extends MainController
 		//เก็บประวัติการต่ออายุในแต่ละครั้ง
 
 		$this->ttp->sch_start_date = $new_startdate;
-		$this->ttp->sch_end_date = $set_date;
+		$this->ttp->sch_end_date = $end_date;
 		$this->ttp->sch_form_id = $Form_ID;
 		$this->ttp->insert_schedule();
 		//$this->ttp->update_sec();

@@ -28,23 +28,62 @@
 
                                 <input type="text" class="form-control" name="Form_ID"
                                     value='<?php echo $arr_renew[0]->req_form_id ?>' hidden>
-                                <input type="text" class="form-control" name="set_Enddate"
+                                <input type="text" class="form-control" name="set_Enddate" id="setStartdate"
                                     value='<?php echo $arr_renew[0]->req_end_date ?>' hidden>
                                 <input type="text" class="form-control" name="Form_count"
                                     value='<?php echo $arr_renew[0]->req_form_count ?>' hidden>
                                 <input type="text" class="form-control" name="Status"
                                     value='<?php echo $arr_renew[0]->req_status ?>' hidden>
                                 <!--อัพเดท/เพิ่มวันขออนุญาตวาง-->
-                                <label class="form-control-label" for="input-email">Add Days (กำหนดเวลาที่ต้องการเพิ่ม)
-                                    <input type="date" value="<?php echo $arr_renew[0]->req_end_date ?>"
-                                        min="<?php echo $arr_renew[0]->req_end_date ?>"
-                                        max="<?php echo $arr_renew[0]->req_end_date ?>+30" class="form-control"
-                                        name="date_review" id="date_review" required>
+                                <label class="form-control-label" for="input-username">Select Date
+                                    (เลือกระยะเวลาวันที่ต้องการต่ออายุ)</label>
+                                <input type="text" id="date" name="datefilter" class="form-control" value=""
+                                    required /><br>
 
-                                    <?php
-                                    $arr_renew[0]->req_end_date = strtotime(date("Y-m-d", strtotime($arr_renew[0]->req_end_date) + 1) . "days");
-                                    echo  $arr_renew[0]->req_end_date;
-                                    ?>
+                                <script type="text/javascript">
+                                var setStartdate = document.getElementById("setStartdate").value;
+                                var today = new Date();
+                                var start_date = new Date(setStartdate);
+                                start_date.setDate(start_date.getDate() + 1);
+                                var dd = String(today.getDate()).padStart(2, '0');
+                                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                                var yyyy = today.getFullYear();
+
+
+                                $(function() {
+                                    $('#date').daterangepicker({
+                                        "maxSpan": {
+                                            "days": 30
+                                        },
+                                        "startDate": start_date,
+
+                                        "endDate": moment().startOf('day').add(30, 'day'),
+                                        "minDate": moment().startOf('day').add(1, 'day'),
+                                        // "maxDate": moment().startOf('day').add(30, 'day'),
+                                    }, function(start, end, label) {
+                                        console.log(
+                                            "New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')"
+                                        );
+                                    });
+
+                                    $('input[name="datefilter"]').on('apply.daterangepicker', function(ev,
+                                        picker) {
+                                        $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' +
+                                            picker.endDate.format('YYYY-MM-DD'));
+                                    });
+
+                                    $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev,
+                                        picker) {
+                                        $(this).val('');
+                                    });
+
+                                });
+                                </script>
+
+                                <?php
+                                $arr_renew[0]->req_end_date = strtotime(date("Y-m-d", strtotime($arr_renew[0]->req_end_date) + 1) . "days");
+                                echo  $arr_renew[0]->req_end_date;
+                                ?>
                             </div>
                         </div>
                     </div>
