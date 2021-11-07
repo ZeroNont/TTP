@@ -210,7 +210,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success btn-lg float-right">Confirm</button>
+                            <button type="submit" class="btn btn-success btn-lg float-right" id="bt_confirm">Confirm</button>
                         </form>
                     </div>
                 </div>

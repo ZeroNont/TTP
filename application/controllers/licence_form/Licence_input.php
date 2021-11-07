@@ -85,15 +85,14 @@ class Licence_input extends MainController
         $data['detail'] = $this->det->get_emp_detail($k)->result();
         $this->output('consent/v_form_edit', $data);
     }
-    /*
-	* insert
-	* insert form data into model
-	* @input  Emp_ID,req_start_date,End_date,Requested_date,req_item,req_tel,req_officer,req_reason,req_company_id,req_form_count
-	* @output -
+     /*
+	* home
+	* get id employee
+	* @input  Emp_ID
+	* @output Status form
 	* @author Jirayut Saifah
-	* @Create Date 2564-7-16
+	* @Create Date 2564-9-27
 	*/
-
     function home()
     {
         // echo $_SESSION['UsEmp_ID'];
@@ -104,6 +103,14 @@ class Licence_input extends MainController
         // // print_r($_SESSION['Emp_ID']);
         $this->output('consent/v_home', $data);
     }
+    /*
+	* insert
+	* insert form data into model
+	* @input  Emp_ID,req_start_date,End_date,Requested_date,req_item,req_tel,req_officer,req_reason,req_company_id,req_form_count
+	* @output -
+	* @author Jirayut Saifah
+	* @Create Date 2564-7-16
+	*/
     function insert()
     {
         $date = date("Y-m-d");
