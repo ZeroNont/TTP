@@ -168,9 +168,9 @@
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-city">Supervisor
                                                 (หัวหน้างาน)</label><br>
-                                            <select name="Supervisor" id="Supervisor" class="form-control"
-                                                aria-label="Default select example" required>
-                                                <option value="0">-----------Please select-----------</option>
+                                            <select name="Supervisor" id="Supervisor" required class="form-control">
+                                                <option value="">-----------Please select-----------</option>
+
                                                 <?php for ($i = 0; $i < count($obj_supervisor); $i++) { ?>
 
                                                 <?php
@@ -192,11 +192,9 @@
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-city">Approve Plant
                                             </label><br>
-                                            <select name="Approve_Plant" id="Approve_Plant" class="form-control"
-                                                aria-label="Default select example" required>
-                                                <option value="0">-------------------------Please
-                                                    select-------------------------
-                                                </option>
+                                            <select name="Approve_Plant" id="Approve_Plant" required
+                                                class="form-control">
+                                                <option value="">-----------Please select-----------</option>
                                                 <?php for ($i = 0; $i < count($obj_plan); $i++) { ?>
                                                 <option value="<?php echo $obj_plan[$i]->pla_plant_id ?>">
                                                     <?php echo "Plan: " . $obj_plan[$i]->pla_plant_no . "  :  " . $obj_plan[$i]->pla_plant_name . " : " . $obj_plan[$i]->Empname_eng . " " . $obj_plan[$i]->Empsurname_eng ?>
@@ -210,7 +208,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success btn-lg float-right" id="bt_confirm">Confirm</button>
+                            <button type="submit" class="btn btn-success btn-lg float-right"
+                                id="bt_confirm">Confirm</button>
                         </form>
                     </div>
                 </div>
