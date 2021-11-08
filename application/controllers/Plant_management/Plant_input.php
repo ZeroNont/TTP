@@ -2,8 +2,6 @@
 /*
 * Plant_input
 * Plant Management
-* @input  Emp_ID,plant_name,plant_No,plant_ID   
-* @output -
 * @author Jirayut Saifah
 * @Create Date 2564-7-22
 */
@@ -35,8 +33,8 @@ class Plant_input extends MainController
 	* insert
 	* insert plant data into model
 	* @input Emp_ID,plant_name,plant_No,plant_ID 
-	* @output 
-	* @author 	Jirayut Saifah
+	* @output -
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-22
 	*/
     function insert()
@@ -51,9 +49,9 @@ class Plant_input extends MainController
     /*
 	* edit
 	* update plant data into model
-	* @input Emp_ID,plant_name,plant_No,plant_ID 
-	* @output 
-	* @author 	Jirayut Saifah
+	* @input  Emp_ID,plant_name,plant_No,plant_ID 
+	* @output -
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-22
 	*/
     function edit()
@@ -69,7 +67,7 @@ class Plant_input extends MainController
     /*
 	* delete
 	* delete plant data into model
-	* @input Emp_ID 
+	* @input  Emp_ID 
 	* @output -
 	* @author Jirayut Saifah
 	* @Create Date 2564-7-22
@@ -83,4 +81,3 @@ class Plant_input extends MainController
         redirect('Plant_management/Plant_list/index');
     }
 }
-// 

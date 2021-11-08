@@ -1,9 +1,7 @@
 <?php
 /*
 * Print_form
-* Print_form
-* @input  -   
-* @output -
+* Print form
 * @author Jirayut Saifah
 * @Create Date 2564-7-24
 */
@@ -33,10 +31,10 @@ class Print_form extends MainController
 
     /*
 	* print_detail
-	* 
-	* @input Form_ID
+	* Show view print form detail
+	* @input  Form_ID
 	* @output Form_detail and schedul
-	* @author 	Jirayut Saifah
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-24
 	*/
     function print_detail($id)
@@ -60,4 +58,4 @@ class Print_form extends MainController
         // print_r($data['obj_his']);
     }
 }
-// 
+ 

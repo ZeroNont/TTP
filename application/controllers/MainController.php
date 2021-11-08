@@ -1,8 +1,7 @@
 <?php
 /*
-* MainCcontroller
-* @input  -
-* @output -
+* MainController
+* Main controller TTPS
 * @author Jiratyut Saifah
 * @Update Date 2563-09-1
 */

@@ -2,8 +2,6 @@
 /*
 * Licence_input
 * Form Management
-* @input  Emp_ID,req_start_date,End_date,Requested_date,req_item,req_tel,req_officer,req_reason,req_company_id,req_form_count   
-* @output -
 * @author Jirayut Saifah
 * @Create Date 2564-7-16
 */
@@ -34,9 +32,9 @@ class Licence_input extends MainController
     /*
 	* index
 	* Show a form to get information 
-	* @input -
+	* @input  -
 	* @output employee,plant,company detail
-	* @author 	Jirayut Saifah
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-16
 	*/
     function index()
@@ -85,7 +83,8 @@ class Licence_input extends MainController
         $data['detail'] = $this->det->get_emp_detail($k)->result();
         $this->output('consent/v_form_edit', $data);
     }
-     /*
+    
+    /*
 	* home
 	* get id employee
 	* @input  Emp_ID
@@ -181,7 +180,7 @@ class Licence_input extends MainController
 	* edit
 	* update form data into model 
 	* @input  Emp_ID,req_start_date,End_date,Requested_date,req_item,req_tel,req_officer,req_reason,req_company_id,req_form_count
-	* @output 
+	* @output -
 	* @author Jirayut Saifah
 	* @Create Date 2564-7-22
 	*/

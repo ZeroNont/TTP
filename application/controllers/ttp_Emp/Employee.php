@@ -2,8 +2,6 @@
 /*
 * Employee
 * Employee detail
-* @input  -   
-* @output Employee detail
 * @author Jirayut Saifah
 * @Create Date 2564-7-23
 */
@@ -32,7 +30,7 @@ class Employee extends MainController
      */
 
     /*
-	* search_by_employee_idindex
+	* search_by_employee_id
 	* search employee detail by emp_id
 	* @input emp_id
 	* @output employee detail
@@ -50,4 +48,3 @@ class Employee extends MainController
         echo json_encode($data);
     }
 }
-// 

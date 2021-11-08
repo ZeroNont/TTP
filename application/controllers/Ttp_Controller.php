@@ -1,9 +1,7 @@
 <?php
 /*
-* Trs_Controller
+* Ttp_Controller
 * Form Management
-* @input  -   
-* @output -
 * @author Kunanya Singmee
 * @Create Date 2564-7-10
 */
@@ -33,10 +31,10 @@ class Ttp_Controller extends MainController
 
 	/*
 	* index
-	* 
-	* @input 
-	* @output 
-	* @author 	Kunanya Singmee
+	* Show page login
+	* @input  -
+	* @output -
+	* @author Kunanya Singmee
 	* @Create Date 2564-7-10
 	*/
 	function index()

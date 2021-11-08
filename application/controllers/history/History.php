@@ -1,14 +1,12 @@
-<!--
+<?php
     /*
     * History
     * Controller for history schedule module
-    * @input -
-    * @output -
-    * @author Phatchara  and Pontakon 
+    * @author Phatchara Khongthandee and Pontakon Munjit 
     * Create date 18/7/2564  
     * Update date 26/7/2564
     */
--->
+?>
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(dirname(__FILE__) . "/../MainController.php");
@@ -32,38 +30,44 @@ class History extends MainController
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
 
-
+    /*
+	* index
+	* Show page history user
+	* @input  -
+	* @output view history user
+	* @author Phatchara Khongthandee
+	* @Create Date 18/7/2564   
+    */
     function index()
     {
         $this->output('consent/v_history_user');
     }
     
-        /*
+    /*
 	* show_history_employee
-	* เรียกหน้าจอ v_history_user
-	* @input 	-
-	* @output 	หน้าจอประวัติใบคำขอ
-	* @author 	Phatchara  Khongthandee
-	* @Create   Date 18/7/2564   
-	* @Update   Date 26/7/2564
+	* Display view history user
+	* @input  -
+	* @output view history user
+	* @author Phatchara Khongthandee
+	* @Create Date 18/7/2564   
+	* @Update Date 26/7/2564
 	*/
-    
     function show_history_employee(){
         $id = $_SESSION['UsEmp_ID'];
         $this->load->model('M_ttp_history', 'ttp');
         $data['em_form'] = $this->ttp->get_history_em($id)->result();
         $data['arr_emp'] = $this->ttp->get_employee($id)->result();
         $this->output('consent/v_history_user', $data);
-    }// function show_history_em()
-        /*
-	* show_history_employee
-	* เรียกหน้าจอ show_history_detail
-	* @input 	เลขใบคำขอ
-	* @output 	หน้าจอรายละเอียดประวัติใบคำขอ
-	* @author 	Phatchara  Khongthandee
-	* @Create   Date 18/7/2564   
-    * @author 	Pontakon Munjit
-	* @Update   Date 26/7/2564
+    }// function show_history_employee
+    
+    /*
+	* show_history_detail
+	* Display view history detail
+	* @input  form_id
+	* @output view history detail
+	* @author Phatchara Khongthandee and Pontakon Munjit
+	* @Create Date 18/7/2564   
+	* @Update Date 26/7/2564
 	*/
     public function show_history_detail($id)
 	{
@@ -80,4 +84,4 @@ class History extends MainController
         $this->output('consent/v_history_detail', $data);
 	}// function show_history_detail()
 
-}
+}//History

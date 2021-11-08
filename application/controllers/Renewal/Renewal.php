@@ -1,12 +1,10 @@
 <!--
 	/*
-    * Renewal_controller
+    * Renewal
     * display for edit End date
-    * @input Form_ID
-    * @output -
     * @author Nattakorn
-    * Create date 2564-07-19
-    * Update date 2564-07-27
+    * @Create Date 2564-07-19
+    * @Update Date 2564-07-27
 	/*
 -->
 <?php
@@ -19,9 +17,9 @@ class Renewal extends MainController
 	/*
 	* show_renewal
 	* show list of request form
-	* @input -
+	* @input  -
 	* @output list of request form
-	* @author 	Nattakorn
+	* @author Nattakorn
 	* @Create Date 2564-7-19
 	*/
 	function show_renewal()
@@ -38,9 +36,9 @@ class Renewal extends MainController
 	/*
 	* show_reform
 	* show page of edit renew date
-	* @input Add_date
+	* @input  Add_date
 	* @output End_date update
-	* @author 	Nattakorn
+	* @author Nattakorn
 	* @Create Date 2564-7-19
 	*/
 	function show_reform($Form_ID)
@@ -57,14 +55,13 @@ class Renewal extends MainController
 	/*
 	* update_date
 	* change date from database
-	* @input Add_date
+	* @input  Add_date
 	* @output End_date update
-	* @author 	Nattakorn
+	* @author Nattakorn
 	* @Create Date 2564-7-19
 	*/
 	function update_date()
 	{
-
 		$this->load->model('Da_ttp_renewal', 'ttp');
 		$Form_ID = $this->input->post('Form_ID');
 		//	$set_date = $this->input->post('datefilter');
@@ -114,4 +111,3 @@ class Renewal extends MainController
 		redirect('/Check_status/Check_status/home');
 	}
 }
-// 

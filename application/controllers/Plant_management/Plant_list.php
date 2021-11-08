@@ -2,8 +2,6 @@
 /*
 * Plant_list
 * show plant detail to list
-* @input  -
-* @output Plant detail
 * @author Jirayut Saifah
 * @Create Date 2564-7-22
 */
@@ -33,7 +31,7 @@ class Plant_list extends MainController
 
     /*
 	* index
-	* 
+	* Show page plant list
 	* @input  -
 	* @output -
 	* @author Jirayut Saifah
@@ -45,6 +43,6 @@ class Plant_list extends MainController
         $data['obj_plan'] = $this->ttp->get_plant()->result();
         $this->output('consent/v_plant_list', $data);
     }
-   
+
 }
 // 
