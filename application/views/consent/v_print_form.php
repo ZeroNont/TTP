@@ -13,7 +13,15 @@ DIV.text {
     display: table-cell;
     vertical-align: middle
 }
+
+@media screen,
+print {
+    div #requiredprinting {
+        ;
+    }
+}
 </style>
+
 
 <body>
     <div class="card">
