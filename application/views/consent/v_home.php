@@ -1,3 +1,11 @@
+<!--
+    v_home
+    display home menu
+    @input -
+    @output -
+    @author Jirayut Saifah
+    Create 25/9/2564
+-->
 <style>
 div.table-responsive {
     text-align: center;
@@ -194,7 +202,7 @@ div.table-responsive {
 
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" 
+                                            <button type="button" class="btn btn-danger"
                                                 data-dismiss="modal">Cancel</button>
                                             <form
                                                 action="<?php echo site_url() . 'Check_out_form/Check_out_form/check_out/' . $obj_status[$i]->req_form_id; ?> "
