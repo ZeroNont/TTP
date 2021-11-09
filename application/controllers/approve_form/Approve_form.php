@@ -1,9 +1,7 @@
 <?php
 /*
-* Ttps_Controller
 * Approve Form
-* @input  -   
-* @output -
+* Controller for Approve Form 
 * @author Apinya Phadungkit
 * @Create Date 2564-7-27
 */
@@ -33,10 +31,10 @@ class Approve_form extends MainController
 
     /*
 	* index
-	* 
-	* @input 
-	* @output 
-	* @author 	Apinya Phadungkit
+	* Show page approve form
+	* @input  -
+	* @output -
+	* @author Apinya Phadungkit
 	* @Create Date 2564-7-18
 	*/
     function index()
@@ -46,7 +44,8 @@ class Approve_form extends MainController
     // function index
 
     /*
-    * Function show_approve_form_list
+    * show_approve_form_list
+    * Display view approve form list for HR
     * @input  -  
     * @output show v_approve_form.php
     * @author Apinya Phadungkit
@@ -68,7 +67,8 @@ class Approve_form extends MainController
     } //แสดงรายการคำขอทั้งหมดสำหรับhr
 
     /*
-    * Function show_approve_form_plant
+    * show_approve_form_plant
+    * Display view approve form list for plant
     * @input  -  
     * @output show v_approve_form_plant.php
     * @author Apinya Phadungkit
@@ -90,8 +90,9 @@ class Approve_form extends MainController
     } //แสดงรายการคำขอทั้งหมดสำหรับ plant
 
     /*
-    * Function show_approve_form_detail
-    * @input  $id 
+    * show_approve_form_detail
+    * Display view approve form detail HR
+    * @input  id 
     * @output show v_approve_form_detail.php
     * @author Apinya Phadungkit
     * @Create Date 2564-7-18
@@ -108,8 +109,9 @@ class Approve_form extends MainController
 	} //แสดงรายละเอียดเพิ่มเติมของรายการคำขอ สำหรับ HR
 
     /*
-    * Function show_approve_form_plant_detail
-    * @input  $id 
+    * show_approve_form_plant_detail
+    * Display view approve form detail plant
+    * @input  id 
     * @output show v_approve_form_detail_plant.php
     * @author Apinya Phadungkit
     * @Create Date 2564-7-18
@@ -127,8 +129,9 @@ class Approve_form extends MainController
 	} //แสดงรายละเอียดเพิ่มเติมของรายการคำขอ สำหรับ Plant
 
     /*
-    * Function reject_form_HR
-    * @input  $id 
+    * reject_form_HR
+    * Get reject form by HR and update data
+    * @input  id 
     * @output -
     * @author Apinya Phadungkit
     * @Create Date 2564-7-18
@@ -150,9 +153,10 @@ class Approve_form extends MainController
         redirect('/approve_form/Approve_form/show_approve_form_list');
     } //ปฏิเสธแบบฟอร์มสำหรับ HR
 
-     /*
-    * Function reject_form_Plant
-    * @input  $id 
+    /*
+    * reject_form_Plant
+    * Get reject form by Plant and update data
+    * @input  id 
     * @output -
     * @author Apinya Phadungkit
     * @Create Date 2564-7-18
@@ -175,8 +179,9 @@ class Approve_form extends MainController
     } //ปฏิเสธแบบฟอร์มสำหรับ Plant
 
     /*
-    * Function update_approve_form
-    * @input  $form_id
+    * update_approve_form
+    * Get approve form by HR and update data
+    * @input  form_id
     * @output -
     * @author Apinya Phadungkit
     * @Create Date 2564-7-18
@@ -230,8 +235,9 @@ class Approve_form extends MainController
     } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย HR
 
     /*
-    * Function update_approve_form_plant
-    * @input  $id
+    * update_approve_form_plant
+    * Get approve form by Plant and update data
+    * @input  id
     * @output -
     * @author Apinya Phadungkit
     * @Create Date 2564-7-18
@@ -251,4 +257,3 @@ class Approve_form extends MainController
     } //เปลี่ยนสถานะของคำขอที่ถูกอนุมัติโดย Plant
 
 }
-// 

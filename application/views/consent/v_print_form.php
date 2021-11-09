@@ -151,16 +151,16 @@ print {
                                                     value="<?php echo $obj_form[0]->req_form_count ?>">
                                             </td>
                                             <td><input type="text" class="form-control"
-                                                    value="<?php echo $obj_pre[0]->Empname_eng . '  ' . $obj_pre[0]->Empsurname_eng[0] ?>">
+                                                    value="<?php echo ucfirst($obj_pre[0]->Empname_eng) . '  ' . $obj_pre[0]->Empsurname_eng[0] . "."?>">
                                             </td>
                                             <td><input type="text" class="form-control"
-                                                    value="<?php echo $obj_sup[0]->Empname_eng . '  ' . $obj_sup[0]->Empsurname_eng[0] ?>">
+                                                    value="<?php echo $obj_sup[0]->Empname_eng . '  ' . $obj_sup[0]->Empsurname_eng[0] . "."?>">
                                             </td>
                                             <td><input type="text" class="form-control"
-                                                    value="<?php echo $obj_hr[0]->Empname_eng . '  ' . $obj_hr[0]->Empsurname_eng[0] ?>">
+                                                    value="<?php echo $obj_hr[0]->Empname_eng . '  ' . $obj_hr[0]->Empsurname_eng[0] . "."?>">
                                             </td>
                                             <td><input type="text" class="form-control"
-                                                    value="<?php echo $obj_app[0]->Empname_eng . '  ' . $obj_app[0]->Empsurname_eng[0] ?>">
+                                                    value="<?php echo $obj_app[0]->Empname_eng . '  ' . $obj_app[0]->Empsurname_eng[0] . "."?>">
                                             </td>
                                         </tr>
                                     </table>

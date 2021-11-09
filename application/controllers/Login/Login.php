@@ -2,7 +2,7 @@
 /*
 * Login.php
 * Login เข้าสู่ระบบ
-* @Niphat Kuhokciw
+* @author Niphat Kuhokciw
 * @Create Date 2564-07-28
 */
 defined('BASEPATH') or exit('No direct script access allowed');
@@ -22,9 +22,9 @@ class Login extends MainController
 /*
 * show_user_login
 * show login
-* @input -
+* @input  -
 * @output show display login for user
-* @Niphat Kuhokciw
+* @author Niphat Kuhokciw
 * @Create Date 2564-07-28
 */
     public function show_user_login()
@@ -35,9 +35,9 @@ class Login extends MainController
 /*
 * show_user_home
 * show login
-* @input Emp_ID
+* @input  Emp_ID
 * @output show display home for user
-* @Niphat Kuhokciw
+* @author Niphat Kuhokciw
 * @Create Date 2564-07-28
 */	
 	public function show_user_home($User_emp_id)
@@ -58,9 +58,9 @@ class Login extends MainController
 /*
 * login
 * Login for user
-* @input User_login and Pass_login
+* @input  User_login and Pass_login
 * @output -
-* @Niphat Kuhokciw
+* @author Niphat Kuhokciw
 * @Create Date 2564-07-28
 */	
     public function login()
@@ -83,9 +83,9 @@ class Login extends MainController
 /*
 * check_role
 * check role for user
-* @input UsEmp_ID  and Usrole
+* @input  UsEmp_ID  and Usrole
 * @output show display home for role
-* @Niphat Kuhokciw
+* @author Niphat Kuhokciw
 * @Create Date 2564-07-28
 */	
 	public function check_role()
@@ -111,9 +111,9 @@ class Login extends MainController
 /*
 * main
 * Login for user
-* @input User_login and Pass_login
+* @input  User_login and Pass_login
 * @output -
-* @Niphat Kuhokciw
+* @author Niphat Kuhokciw
 * @Create Date 2564-07-28
 */	
     public function logout()

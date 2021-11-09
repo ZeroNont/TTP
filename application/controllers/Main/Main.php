@@ -2,11 +2,11 @@
 	/*
     * Main
     * controller of main page
-    * @input -
+    * @input  -
     * @output -
     * @author Nattakorn
-    * Create date 2564-07-16
-    * Update date 2564-07-18
+    * @Create Date 2564-07-16
+    * @Update Date 2564-07-18
 	*/
 -->
 <?php
@@ -18,17 +18,15 @@ class Main extends MainController
 	/*
 	* show_main
 	* show main page of web
-	* @input -
+	* @input  -
 	* @output -
 	* @author Nattakorn
 	* @Create Date 2564-7-16
 	*/
 	function show_main()
 	{
-		
 		$this->output('consent/v_main');
 	}
 	
 
 }
-// 

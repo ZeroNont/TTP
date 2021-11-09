@@ -1,10 +1,7 @@
 <?php
 /*
-* request_form
+* Request_form
 * Controller Request Form
-* @input  - Form_ID   
-* @output - Show Request Form List
-          - Show Request Form Detail
 * @author Apinya Phadungkit
 * @Create Date 2564-7-18
 * @Update Date 2564-7-28
@@ -34,7 +31,8 @@ class Request_form extends MainController
      */
 
     /*
-    * Function index
+    * index
+    * Show page request form
     * @input  -   
     * @output show v_request_form.php
     * @author Apinya Phadungkit
@@ -47,7 +45,8 @@ class Request_form extends MainController
     } // function index()
 
     /*
-    * Function show_request_list
+    * show_request_list
+    * Show page request form list
     * @input  -   
     * @output show v_request_form.php
     * @author Apinya Phadungkit
@@ -64,8 +63,9 @@ class Request_form extends MainController
     } //show request list แสดงายการคำขอทั้งหมด สำหรับหัวหน้างานคนนั้นๆ
 
     /*
-    * Function show_request_detail
-    * @input  $id   
+    * show_request_detail
+    * Show page request form detail
+    * @input  id   
     * @output show v_request_form_detail.php
     * @author Apinya Phadungkit
     * @Create Date 2564-7-18
@@ -81,9 +81,10 @@ class Request_form extends MainController
 	} //show request detail แสดงรายละเอียดเพิ่มเติมของรายการคำขอ
 
     /*
-    * Function reject_form
-    * @input  $id   
-    * @output show_request_form_list.php
+    * reject_form
+    * Get reject form and update form
+    * @input  id   
+    * @output -
     * @author Apinya Phadungkit
     * @Create Date 2564-7-18
     * @Update Date 2564-7-28
@@ -106,9 +107,10 @@ class Request_form extends MainController
     } //reject form ใช้ในการปฏิเสธแบบฟอร์ม
 
     /*
-    * Function update_request_form
-    * @input  $id   
-    * @output show_request_form_list.php
+    * update_request_form
+    * Get request form and update request form
+    * @input  id   
+    * @output -
     * @author Apinya Phadungkit
     * @Create Date 2564-7-18
     * @Update Date 2564-7-28

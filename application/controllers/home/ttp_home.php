@@ -1,9 +1,7 @@
 <?php
 /*
-* Trs_Controller
-* Form Management
-* @input  -   
-* @output -
+* ttp_home
+* Controller for home
 * @author Kunanya Singmee
 * @Create Date 2564-7-10
 */
@@ -33,7 +31,7 @@ class ttp_home extends MainController
 
 	/*
 	* index
-	* 
+	* Show page home
 	* @input  -
 	* @output -
 	* @author Kunanya Singmee

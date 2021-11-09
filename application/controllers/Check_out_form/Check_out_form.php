@@ -1,9 +1,7 @@
 <?php
 /*
-* Check_out
-* check form status and edit form
-* @input  Emp_ID,Form_ID 
-* @output 
+* Check_out_form
+* check form status and edit form 
 * @author Jirayut Saifah
 * @Create Date 2564-7-21
 */
@@ -34,9 +32,9 @@ class Check_out_form extends MainController
     /*
 	* index
 	* Show a form list
-	* @input 
+	* @input  -
 	* @output form detail
-	* @author 	Jirayut Saifah
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-21
 	*/
     function index()
@@ -49,9 +47,9 @@ class Check_out_form extends MainController
     /*
 	* check_out
 	* update form status
-	* @input Form_ID
-	* @output 
-	* @author 	Jirayut Saifah
+	* @input  Form_ID
+	* @output -
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-23
 	*/
     function check_out($id)

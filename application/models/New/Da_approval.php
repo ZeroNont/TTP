@@ -47,13 +47,15 @@ class Da_approval extends ttps_model
                 WHERE app.app_form_id = ? ";
         $this->db->query($sql, array($this->app_reject_reason, $this->app_form_id));
     } //เพิ่มเหตุผลในการปฏิเสธลงในตาราง approval
-
-    // *update_form
-    // *update form to database
-    // *@input Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count
-    // *@output -
-    // *@author Jirayut Saifah
-    // *@Create Date 18/07/2021
+    
+    /*
+       *insert_approve
+       *insert approval in database
+       *@input Supervisor_ID,Approve_Plant_ID
+       *@output -
+       *@author Jirayut Saifah
+       *@Create Date 18/07/2021
+    */
     public function insert_approve()
     {
         $sql = "INSERT INTO ttps_database.approval(app_form_id,app_supervisor_id,app_approve_plant_id) 
@@ -61,13 +63,14 @@ class Da_approval extends ttps_model
         $this->db->query($sql, array($this->app_form_id, $this->app_supervisor_id, $this->app_approve_plant_id));
     }
 
-    // *insert_approve
-    // *insert approval in database
-    // *@input Supervisor_ID,Approve_Plant_ID
-    // *@output -
-    // *@author Jirayut Saifah
-    // *@Create Date 18/07/2021
-
+    /* 
+      *update_form
+      *update form to database
+      *@input Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count
+      *@output -
+      *@author Jirayut Saifah
+      *@Create Date 18/07/2021
+    */  
     public function update_approve($id)
     {
         $sql = " UPDATE ttps_database.approval

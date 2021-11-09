@@ -2,8 +2,6 @@
 /*
 * Check_status
 * check form status and edit form
-* @input  Emp_ID,Start_date,End_date,Requested_date,Item,Tell,Officer,Reason,Company_ID,Form_count   
-* @output form status
 * @author Jirayut Saifah
 * @Create Date 2564-7-20
 */
@@ -34,9 +32,9 @@ class Check_status extends MainController
     /*
 	* index
 	* Show a form status
-	* @input 
+	* @input  -
 	* @output employee,plant,company detail
-	* @author 	Jirayut Saifah
+	* @author Jirayut Saifah
 	* @Create Date 2564-7-16
 	*/
     function index()
@@ -49,6 +47,15 @@ class Check_status extends MainController
         // // print_r($_SESSION['Emp_ID']);
         $this->output('consent/v_check_status', $data);
     }
+
+    /*
+	* home
+	* Show form list and status form
+	* @input  -
+	* @output employee,plant,company detail
+	* @author Jirayut Saifah
+	* @Create Date 2564-7-16
+	*/
     function home()
     {
         // echo $_SESSION['UsEmp_ID'];

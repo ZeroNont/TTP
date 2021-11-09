@@ -2,7 +2,7 @@
 /*
 * Report
 * show and get data of report
-* @author   Chakrit
+* @author Chakrit
 * @Create Date 2564-07-24
 * @Update Date 2564-07-28
 */  
@@ -15,9 +15,9 @@ class Report extends MainController
 	/*
 	* show_report
 	* show view report
-	* @input    -
-	* @output   -
-	* @author   Chakrit
+	* @input  -
+	* @output -
+	* @author Chakrit
 	* @Create Date 2564-07-24
 	* @Update Date 2564-07-27
 	*/
@@ -31,9 +31,9 @@ class Report extends MainController
 	/*
 	* get_report
 	* get data between Start date and End date
-	* @input    Start date and End date
-	* @output   data of report
-	* @author   Chakrit
+	* @input  Start date and End date
+	* @output data of report
+	* @author Chakrit
 	* @Create Date 2564-07-26
 	* @Update Date 2564-07-28
 	*/
@@ -49,9 +49,9 @@ class Report extends MainController
 	/*
 	* show_report_detail
 	* show view report detail
-	* @input    Form_ID
-	* @output   -
-	* @author   Chakrit
+	* @input  Form_ID
+	* @output -
+	* @author Chakrit
 	* @Create Date 2564-07-26
 	* @Update Date 2564-07-27
 	*/
@@ -68,9 +68,9 @@ class Report extends MainController
 	/*
 	* show_report_export_excel
 	* show view export excel
-	* @input    -
-	* @output   -
-	* @author   Chakrit
+	* @input  -
+	* @output -
+	* @author Chakrit
 	* @Create Date 2564-07-28
 	*/
 	public function show_report_export_excel()
