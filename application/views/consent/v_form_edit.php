@@ -1,8 +1,6 @@
 <!--
     v_form_edit
     display form edit
-    @input -
-    @output -
     @author Jirayut Saifah
     Create 25/7/2564 
     Update date 
@@ -137,7 +135,7 @@
                             <div class="form-group">
                                 <label class="form-control-label" for="input-city">Tel No.
                                     (เบอร์โทรศัพท์)</label>
-                                <input type="text" class="form-control" name="Tell" required
+                                <input type="number" class="form-control" name="Tell" maxlength="10" required
                                     value="<?php echo $obj_form[0]->req_tel ?>">
                             </div>
                         </div>

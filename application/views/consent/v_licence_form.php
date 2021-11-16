@@ -51,7 +51,7 @@
                                 <label class="form-control-label" for="input-username">Date Picker
                                     (วันที่ต้องการวาง)</label>
                                 <input type="text" id="date" name="datefilter" class="form-control" value=""
-                                    required /><br>
+                                    data-date-format="DD MMMM YYYY" required /><br>
 
                                 <script type="text/javascript">
                                 var today = new Date();
@@ -129,7 +129,7 @@
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-city">Tel No.
                                                 (เบอร์โทรศัพท์)</label>
-                                            <input type="text" class="form-control" name="Tell" maxlength="10"
+                                            <input type="number" class="form-control" name="Tell" maxlength="10"
                                                 required />
                                         </div>
                                     </div>
